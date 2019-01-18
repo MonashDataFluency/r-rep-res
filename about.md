@@ -6,18 +6,24 @@
 
 ## Learning outcomes:
 
-- Exposure to markup languages with heavy focus on Rmarkdown and bookdown
-- Learn how to compile different document types from Rmarkdown document, including pdf and docx
-- Some exposure to writing scientific papers and embedding citation in Rmarkdown
-- Some exposure to writing and theming slides presentation in Rmarkdown
-- Understanding what shiny application are and how to build them
-- Exposure to client-server model and different parts of shiny apps (user interface vs server side)
-- Exposure to different publishing platforms for shiny and Rmarkdown
+Attendees will learn how to:
+
+- write Rmarkdown and bookdown documents
+- use Rmarkdown to produce different document types including PDF, HTML and DOCX
+- include citations in Rmarkdown documents
+- create presentations including R code using Rmarkdown
+- write shiny applications, which allows your R code to be used by others over the web
+- write the two different parts of a shiny application, the user interface and the server R code
 
 ## Workshop description
 
-This workshop is an introduction to writing and communicating using Rmarkdown and shiny applications. While each one of those can be used separately together they can make any analysis highly reproducible, sharable and well presented. As will be discussed in the opening of the workshop Rmarkdown is an extension of an original markdown, which really augments an R language and adds nice features for the analysis reproducibility and sharibility. Rmarkdown is widely used for inline analysis documentation and papers writing just to name a couple. You will also get an exposure to a bookdown a further extension that without much more effort enables can turn your Rmarkdown into a book. Bookdown has become very popular in recent year in many communities including communities outside of R ecosystem .  
-Shiny application is a more advanced way of sharing your analysis. You will need prior experience in R in order to participate. Shiny applications will enable you to to turn your static R code into dynamic application with toggle and buttons that can be shared with the world. You will get an exposure to writing and publishing your apps online. Shiny apps are very powerful way to simplify your workflow, enable less technical people (yet) to run your analysis without much extra effort, all staying within an R ecosystem. 
+This workshop is an introduction to writing and communicating using Rmarkdown and shiny applications. Rmarkdown is an easy way to create documents that include your R code and its output such figure and tables. Rmarkdown documents can be "knitted" and shared as various document types such as PDF and HTML. Rmarkdown supports scientific writing such as use of citations and figure cross-referencing. Rmarkdown can also be used to create presentations that include your R code and its output. We will also cover bookdown, which is an extension to Rmarkdown that allows creation of larger documents such as books with multiple chapters.
+
+Shiny applications are a more advanced way of sharing your analysis. Shiny applications will enable you to to turn your static R code into dynamic applications with toggle and buttons that can be shared with the world.
+
+ You will get an exposure to writing and publishing your apps online. Shiny apps are very powerful way to simplify your workflow, enable less technical people (yet) to run your analysis without much extra effort, all staying within an R ecosystem. 
+
+ You will need prior experience in R in order to participate.
 
 ## Keywords
 
