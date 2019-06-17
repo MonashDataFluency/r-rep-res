@@ -9,4 +9,32 @@ Rmarkdown has become much more then just embeding R code into a document. For me
 Rmarkdown is a natural evolution of vanilla markdown, backed by R package `knitr` and an external tool `pandoc`. Markdown is a powerful language for writing plain text documents that are easily parsed and/or converted to other more safisticated document types, for example **PDF** or **HTML** to name a couple.
 
 There are other plain text langugaes alike markdown that have the same goal of simplify documents writing and with means of light text tagging or marking up ability to indicate important parts of the text such as titles, paragraphs and code blocks. The underlying idea for then markdown is that it is easy-to-write and easy-to-read. In this workshop we will be mainly focusing on Rmarkdown flavour, although it has really diverged into it's own language essentially now. And although you can use any [text editor](https://en.wikipedia.org/wiki/Text_editor) to write your markdown, we'll be using [RStudio](https://rstudio.com) for all of our work.
+``
 
+## Three main parts to Rmarkdown document
+
+### [YAML header section](#yaml-header-intro)
+
+```
+`r ''` ---
+`r ''` title: "Hello world"
+`r ''` author: "Kirill"
+`r ''` date: "17 June 2019"
+`r ''` output: html_document
+`r ''` ---
+```
+
+### [The R chunks](#the-r-chunks)
+
+```{r, echo=FALSE, comment=""}
+cat(c("```{r}",
+      "plot(mtcars)",
+      "```"),
+    sep='\n')
+```
+
+### [Everything else is plain old markdown](#vanilla-markdown)
+
+```
+`r '' ` # Have I been Marked Down?
+```
