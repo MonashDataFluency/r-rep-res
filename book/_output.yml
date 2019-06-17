@@ -1,0 +1,5 @@
+bookdown::gitbook:
+  #css: style.css
+  toc_depth: 2
+  download: ["r-comm.pdf"]
+  sharing: no

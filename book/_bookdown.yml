@@ -1,0 +1,9 @@
+
+rmd_files:
+  - 00-index.Rmd
+  - 01-introduction.Rmd
+  - 02-markdown.Rmd
+
+new_session: yes
+output_dir: "../docs"
+book_filename: "Communications in R"

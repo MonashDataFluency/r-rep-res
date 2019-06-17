@@ -1,0 +1,39 @@
+---
+title: Communication in R
+subtitle: "Version 1"
+documentclass: report
+classoption: a4paper
+links-as-notes: yes
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhead[L]{}
+  - \DeclareUnicodeCharacter{2212}{-}
+  - \DeclareUnicodeCharacter{30C4}{-}
+---
+
+# {#index -}
+
+<!--
+```{r echo=F, out.width="100%", fig.align="left"}
+knitr::include_graphics("figures/rnaseq.png")
+```
+-->
+
+These are course notes for the "Communication in R" course given by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) for the [Monash Data Fluency](https://monashdatafluency.github.io/) initiative. Our teaching style is based on the style of [The Carpentries](https://carpentries.org/).
+
+* [PDF version for printing](https://monashdatafluency.github.io/r-comm/r-comm.pdf)
+
+### Source code {-}
+
+* [GitHub page](https://github.com/MonashDataFluency/r-comm)
+
+### Authors and copyright {-}
+
+This course is developed for the Monash Bioinformatics Platform by [Paul Harrison](mailto:paul.harrison@monash.edu), [Adele Barugahare](mailto:Adele.Barugahare@monash.edu) and [Kirill Tsyganov](mailto:kirill.tsyganov@monash.edu)
+
+```{r echo=F}
+knitr::include_graphics("figures/CC-BY.png")
+```
+
+This work is licensed under a [CC BY-4: Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). The attribution is "Monash Bioinformatics Platform" if copying or modifying these notes.
