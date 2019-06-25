@@ -1,0 +1,201 @@
+# The R chunk 2
+
+Let's now try a different example and use the `mtcars` dataset and learn a few more chunk options.
+
+```{r echo=FALSE, comment=""}
+text1 <- c("```{r}",
+	   "summary(mtcars)",
+	   "```")
+
+print(text1)
+```
+
+```{r}
+summary(cars)
+```
+
+**Remembber** You can go between Rmarkdown and _console_, to check your code, at any time. You should see your code block is highlighted differently and you should see a green arrow at the right hand site of that block. Press the green arrow to get an output in the _console_. You can also use `ctrl+enter` to do the same with the keyboard short cut.
+
+How about little data exploration? We are going to start working in the _console_ and then copy interesting bits into R document. In the _console_ check a data type using `class()` function, then get first few rows of the table with `head()`. It looks like a `data.frame` with two columns. Now let's plot our finding so we can share it with others.
+
+```r
+`r ''` ```{r}
+`r ''` plot(cars)
+`r ''` ```
+```
+
+```{r}
+plot(cars)
+```
+
+Here is a perfect example where we can hide our code from the viewer, since it isn't most interesting bit about this data. Let's turn `echo=FALSE` options for all our plots below.
+
+Properly labelled plots are very informative, let's do that as well, starting with a title `main="Travelling speed vs Breaking distance"` and then labelling axis, x `xlab="Travelling speed (mhp)"` and y `ylab="Stopping distance (ft)"`
+
+```r
+`r ''` ```{r echo = FALSE}
+`r ''` plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+`r ''` ```
+```
+
+```{r echo = FALSE}
+plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+```
+
+Okay, this looks much nicer. Let me show you some other useful options that can manipulate figures.
+
+Figure alignment can be done with `fig.align` options e.g ```{r fig.align=default} ..``` default means what ever your style sheet has. The other options are, "left", "center" and "right". let's try one out.
+
+```r
+`r ''` ```{r echo = FALSE, fig.align = 'right'}
+`r ''` plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+`r ''` ```
+```
+
+```{r echo = FALSE, fig.align = 'right'}
+plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+```
+
+**Remeber** that you can you always execute code in the _console_ by pressing "green arrow" or using keyborad short cut `ctrl+enter`
+
+We know now how to align figure to where we want, how about changing the size of it? We can do that with `fig.height` and `fig.width`, the units are inches. Let's make 4 X 4 inches figure e.g ```{r fig.height=4, fig.widht=4} ..``` and also align the figure to the center
+
+```r
+`r ''` ```{r echo=FALSE, fig.height=4, fig.width=4, fig.align='center'}
+`r ''` plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+`r ''` ```
+```
+
+```{r echo=FALSE, fig.height=4, fig.width=4, fig.align='center'}
+plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+```
+
+One last thing I'd like to share with you is how to add a figure legend or a caption - with `fig.cap` of course e.g ```{r, fig.cap="This is my legend"} ..``` Go ahead and add a figure description.
+
+```r
+`r ''` ```{r, echo=FALSE, fig.cap="**Figure: 1** This figure illustrates breaking distance as a function of travelling speed"}
+`r ''` plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+`r ''` ```
+```
+
+```{r, echo=FALSE, fig.cap="**Figure: 1** This figure illustrates breaking distance as a function of travelling speed"}
+plot(cars, main="Travelling speed vs Breaking distance", xlab = "Travelling speed (mhp)", ylab="Stopping distance (ft)")
+```
+
+**Note** that the figure legend follows the same alignment as the figure itself.
+
+I'm going to share with you four other options that I find rather useful before moving onto [YAML header](#yaml-header) and [R slides](#r-slides---ioslides) sections.
+
+For this examplel I'm going to use simple `for` loop. We are going to use this variable `sentence <- c("Let", "the", "computer", "do", "the", "work")`
+
+```r
+`r ''` ```{r}
+`r ''` sentence <- c("Let", "the", "computer", "do", "the", "work")
+`r ''`
+`r ''` for(word in sentence){
+`r ''`   print(word)
+`r ''` }
+`r ''` ```
+```
+
+```{r}
+sentence <- c("Let", "the", "computer", "do", "the", "work")
+
+for(word in sentence){
+  print(word)
+}
+```
+
+These two options are cosmetis:
+
+  - `prompt=FALSE` is to turn prompt display on or off i.e trying to mimic _consosle_
+  - `comment=` this is to change or remove double hash symbol comments to something else
+
+Let's turn prompt on to see whats it looks like e.g ```{r prompt=TRUE} ..``` and change our comments symbol to double forward slash `//`
+
+```r
+`r ''` ```{r prompt=TRUE, comment="//"}
+`r ''` sentence <- c("Let", "the", "computer", "do", "the", "work")
+`r ''`
+`r ''` for(word in sentence){
+`r ''`   print(word)
+`r ''` }
+`r ''` ```
+```
+
+```{r prompt=TRUE, comment="//"}
+sentence <- c("Let", "the", "computer", "do", "the", "work")
+
+for(word in sentence){
+  print(word)
+}
+```
+
+The two other options I just would like to mention and will let you explore them at your own leisure.
+
+  - `engine=` you can use to specify different language type. This is very cool. You can actually embed python, BASH JavaScript and nubmer of other languages.
+  - `child=` You use this options to "merge" several `.Rmd` into one.
+
+## YAML header
+
+At the very top of your `.Rmd` file you can, optionaly, include YAML block. In this block you can fine turn your output document, add some metadata and change document's font and theme. You can also pass additional files such as stylesheet file `.css` and bibliography file `.bib` for text citation. I'm only going to show you a few possible options and will let you explore the rest on your own.
+
+Navigate to the top of your `.Rmd` document and find YAML section there. Just like with the options we passed in to manipulate R code block, YAML block also has **key = value** pairs, but instead they are separated by colon ( `:` ). Now let's add table of content to our document, this will make it easier to navigate your page as well as give nice over view of the content our **key** is `toc` with value `true` or `yes` which one you prefer better.
+
+```r
+`r ''` ---
+`r ''` title: "Hello world"
+`r ''` author: "Kirill"
+`r ''` date: "13 July 2016"
+`r ''` output:
+`r ''`   html_document:
+`r ''`     toc: true
+`r ''` ---
+```
+
+**Note** that you need to bring `html_document` onto new line and indent it with two spaces. `html_document` is a value of `output` key. `output` can have other values e.g `pdf_document`, `word_document`. However `html_document` also becomes a key for `toc` value and `toc` becames a key for its own value.
+
+Now that we have sort it initial YAML layout we can continue adding more options to style our HTML document. The other two useful options that I like to pass in are `toc_depth` and `number_sections`
+
+```r
+`r ''` ---
+`r ''` title: "Hello world"
+`r ''` author: "Kirill"
+`r ''` date: "13 July 2016"
+`r ''` output:
+`r ''`   html_document:
+`r ''`     toc: true
+`r ''`     toc_depth: 4
+`r ''`     number_sections: yes
+`r ''` ---
+```
+
+Most of those options are self explanatory. They best way to learn what each does, is to pass them in. Note that you can comment lines out inside YAML section with `#` symbol.
+
+The last two options that can change your document apperance are `theme` and `highlight`. There are nubmer of different themes and highlight options. I suggest you find the one you like in your own time.
+
+## R slides - ioslides
+
+As I mentioned in previous section, `output` has many options, one of which is `ioslides_presentation`. You can simple add
+
+```r
+`r ''` ---
+`r ''` output: ioslides_presentation
+`r ''` ---
+```
+
+at the top of your document and your `.Rmd` files will be complied to slide presentation instead.
+
+Another options is select **presentation** options when you were opening R markdown file. Either way you'll notice YAML header reflects your selected output type.
+Let's open new R markdown document and let's select presentation instead and let's select HTML (ioslides) option there. You can still save your files as `.Rmd`, and then press the\ the `Knit HTML` button.
+
+The syntax for the document is more or less the same, expcept `##` is now used to mark new slide.
+
+## Extras
+
+This is mainly to talk about [Rnotebook](https://rmarkdown.rstudio.com/r_notebooks.html) and give you some extra tips about it. Hopefully this will grow into section of it own in the near future.
+
+- to turn inline output (defualt behaviour) on R markdown documents on/off through settings, _Chunk output inline_ / _Chunk output in console_
+- Output doesn't go to Viewer/Plots pane, it stays inside the notebook
+- Working directory is the location of Rmd file. (I think changing directory with in the chunk isn't good idea)
+- In general [Rnotebook](https://rmarkdown.rstudio.com/r_notebooks.html) meant to have better error handling, sends one line at a time for execution, compare to all lines for Rmarkdown document

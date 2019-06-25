@@ -1,10 +1,11 @@
-
+repo: https://github.com/MonashDataFluency/r-comm
 rmd_files:
   - 00-index.Rmd
   - 01-introduction.Rmd
   - 02-markdown.Rmd
   - 03-yaml-header-intro.Rmd
-  - 04-r-chunk.Rmd
+  - 04-r-chunks.Rmd
+  - 05-r-chunks2.Rmd
 
 new_session: yes
 output_dir: "../docs"
