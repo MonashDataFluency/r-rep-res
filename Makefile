@@ -8,7 +8,7 @@ pdf :
 	Rscript -e "bookdown::render_book('.', 'bookdown::pdf_book')"
 
 html :
-	mkdir docs
+	if [ ! -d docs ];then mkdir docs;fi
 	cd book; \
 	Rscript -e "bookdown::render_book('.', 'bookdown::gitbook')"
 	cp -R book/figures docs
@@ -22,4 +22,4 @@ deploy :
 	git subtree push --prefix docs origin gh-pages
 
 clean :
-	rm -rf docs	rm book/*.rds
+	rm -rf docs/* rm book/*.rds rm -r book/_bookdown_files

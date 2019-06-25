@@ -1,3 +1,7 @@
 book/*.rds
 /docs/
 /*.swp
+.Rproj.user
+.Rhistory
+/book/_bookdown_files
+*.html
