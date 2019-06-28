@@ -1,18 +1,11 @@
 ---
-title: Communication in R
+title: Reproducible Research in R
 subtitle: "Version 1"
-documentclass: report
-classoption: a4paper
+documentclass: book
 links-as-notes: yes
-header-includes:
-  - \usepackage{fancyhdr}
-  - \pagestyle{fancy}
-  - \fancyhead[L]{}
-  - \DeclareUnicodeCharacter{2212}{-}
-  - \DeclareUnicodeCharacter{30C4}{-}
 ---
 
-# Reproducible research in R {#index -}
+# Reproducible Research in R {#index -}
 
 <!--
 ```{r echo=F, out.width="100%", fig.align="left"}

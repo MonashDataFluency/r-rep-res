@@ -5,3 +5,4 @@ book/*.rds
 .Rhistory
 /book/_bookdown_files
 *.html
+Reproducible-Research-in-R.*

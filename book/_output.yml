@@ -1,5 +1,13 @@
 bookdown::gitbook:
   css: ../css/style.css
   toc_depth: 2
-  download: ["r-comm.pdf"]
+  download: ["Reproducible-Research-in-R.pdf"]
   sharing: no
+bookdown::pdf_book:
+  keep_tex: yes
+  latex_engine: xelatex
+  pandoc_args: [--top-level-division=chapter, --wrap=none]
+  toc_depth: 3
+  toc_unnumbered: no
+  toc_appendix: yes
+  highlight_bw: yes

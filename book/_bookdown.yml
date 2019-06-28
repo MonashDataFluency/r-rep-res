@@ -9,4 +9,4 @@ rmd_files:
 
 new_session: yes
 output_dir: "../docs"
-book_filename: "Communications in R"
+book_filename: "Reproducible Research in R"
