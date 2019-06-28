@@ -25,5 +25,5 @@ clean :
 	rm -rf docs/* \
 	rm book/*.rds \
 	rm -r book/_bookdown_files \
-	rm book/Reproducible-Research-in-R.*
+	rm book/Reproducible-Research-in-R.* \
 	rm book/Reproducible\ Research\ in\ R.*
