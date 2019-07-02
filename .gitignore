@@ -7,3 +7,5 @@ book/*.rds
 *.html
 Reproducible-Research-in-R.*
 *.csv
+_example/*.csv
+_example/*.txt
