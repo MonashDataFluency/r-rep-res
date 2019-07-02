@@ -8,10 +8,10 @@ pdf :
 	Rscript -e "bookdown::render_book('.', 'bookdown::pdf_book')"
 
 html :
-	if [ ! -d build ];then mkdir build;fi
+	if [ ! -d _book ];then mkdir _book;fi
 	cd book; \
 	Rscript -e "bookdown::render_book('.', 'bookdown::gitbook')"
-	cp -R book/figures build
+	cp -R book/figures _book
 
 presentation:
 
@@ -19,11 +19,12 @@ presentation:
 	cd book ; Rscript -e "rmarkdown::render(input = 'questions.Rmd', output_format = 'pdf_document', output_file = 'questions.pdf')"
 
 deploy :
-	git subtree push --prefix build origin gh-pages
+	git subtree push --prefix _book origin gh-pages
 
 clean :
-	rm -rf build/* \
+	rm -rf _book/* \
 	rm book/*.rds \
+	rm book/*.md \
 	rm -r book/_bookdown_files \
 	rm book/Reproducible-Research-in-R.* \
 	rm book/Reproducible\ Research\ in\ R.*

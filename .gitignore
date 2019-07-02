@@ -1,8 +1,9 @@
 book/*.rds
-/build/
+/_book/
 /*.swp
 .Rproj.user
 .Rhistory
 /book/_bookdown_files
 *.html
 Reproducible-Research-in-R.*
+*.csv
