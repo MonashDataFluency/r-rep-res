@@ -8,5 +8,5 @@ rmd_files:
   - 05-r-chunks2.Rmd
 
 new_session: yes
-output_dir: "../build"
+output_dir: "../_book"
 book_filename: "Reproducible Research in R"
