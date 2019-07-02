@@ -17,7 +17,7 @@ author = "Me"
 
 ## Why Rmarkdown again?
 
-The reason that we are using [Rmarkdown](https://rmarkdown.rstudio.com/) is because there is no alternative, really. Really?
+The reason that we are using [Rmarkdown](https://rmarkdown.rstudio.com/) is because there is no alternative, really? Really.
 
 Irrespective of the programming language used we'll have to write code and one way or anther you'll be writing notes and comments that will go along with that chunk of code. It makes sense to keep those comments (text) close to the code, inside the same file ideally. That idea isn't novel I and hope that all of you comment your code well. Common commenting characters:
 
@@ -230,6 +230,25 @@ ab
 
 And now we only see `print()` statement and no output.
 
-##  Cheatsheet
+
+## Challenge: code chunks {.exercise}
+
+> 3 minutes
+
+<details>
+  <summary>
+    1. Go through all of your code so far and give each chunk a name
+  </summary>
+
+  ```{r, echo=FALSE, comment=""}
+  text1 <- c("```",
+             "{r chunk_name, options}",
+             "```")
+
+  cat(text1, sep = "\n")
+  ```
+</details>
+
+##  References
 
 [Here is nice cheatsheet](http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) that has comprehensive cover of all the options you can pass in.
