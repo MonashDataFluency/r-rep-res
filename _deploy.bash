@@ -22,8 +22,6 @@
 
 echo "MSG: starting deployment $(date)"
 
-make clean
-make
 cd _book # build directory
 
 build_number=$(git --no-pager log --format=%B -n 1 | sed '/^$/d' | cut -f2 -d" ")

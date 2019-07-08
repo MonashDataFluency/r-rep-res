@@ -1,10 +1,6 @@
 dist: xenial
 language: R
 pandoc_version: 2.3.1
-
-apt_packages:
-  - libxml2-dev
-  - make
-
 script:
+  - make
   - make deploy
