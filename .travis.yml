@@ -1,0 +1,5 @@
+language: R
+pandoc_version: 2.3.1
+
+script:
+  - make

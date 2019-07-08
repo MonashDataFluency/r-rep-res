@@ -1,7 +1,7 @@
 
 .PHONY : all pdf html clean deploy
 
-all : pdf html
+all : pdf html deploy
 
 pdf :
 	cd book; \
@@ -19,7 +19,7 @@ presentation:
 	cd book ; Rscript -e "rmarkdown::render(input = 'questions.Rmd', output_format = 'pdf_document', output_file = 'questions.pdf')"
 
 deploy :
-	git subtree push --prefix _book origin gh-pages
+	./_deploy.bash
 
 clean :
 	rm -rf _book/* \
