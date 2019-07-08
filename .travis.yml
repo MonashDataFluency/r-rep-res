@@ -7,5 +7,4 @@ apt_packages:
   - make
 
 script:
-  - make
   - make deploy
