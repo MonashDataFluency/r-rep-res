@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 The R chunk 2 | Reproducible Research in R</title>
+  <meta name="description" content="5 The R chunk 2 | Reproducible Research in R" />
+  <meta name="generator" content="bookdown 0.11.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 The R chunk 2 | Reproducible Research in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 The R chunk 2 | Reproducible Research in R" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-r-chunks-1.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Reproducible Research in R</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i><b>0.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#workshop-description"><i class="fa fa-check"></i><b>0.2</b> Workshop description</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i><b>0.3</b> Prerequisite</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#keywords"><i class="fa fa-check"></i><b>0.4</b> Keywords</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#notes"><i class="fa fa-check"></i><b>0.5</b> Notes</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>0.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html"><i class="fa fa-check"></i><b>1</b> Introduction to Rmarkdown</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html#rmarkdown-document-parts"><i class="fa fa-check"></i><b>1.1</b> Rmarkdown document parts</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html#challenge-rmarkdown-101"><i class="fa fa-check"></i><b>1.2</b> Challenge: Rmarkdown 101</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html#useful-to-know"><i class="fa fa-check"></i><b>1.3</b> Useful to know</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html"><i class="fa fa-check"></i><b>2</b> Vanilla Markdown</a><ul>
+<li class="chapter" data-level="2.1" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#vanilla-tags"><i class="fa fa-check"></i><b>2.1</b> Vanilla tags</a></li>
+<li class="chapter" data-level="2.2" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#practice-vanilla-markdown"><i class="fa fa-check"></i><b>2.2</b> Practice vanilla markdown</a></li>
+<li class="chapter" data-level="2.3" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#challenge-markdown-101"><i class="fa fa-check"></i><b>2.3</b> Challenge: Markdown 101</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html"><i class="fa fa-check"></i><b>3</b> YAML header introduction</a><ul>
+<li class="chapter" data-level="3.1" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html#yaml-header"><i class="fa fa-check"></i><b>3.1</b> YAML header</a></li>
+<li class="chapter" data-level="3.2" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html#r-slides---ioslides"><i class="fa fa-check"></i><b>3.2</b> R slides - ioslides</a></li>
+<li class="chapter" data-level="3.3" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html#extras"><i class="fa fa-check"></i><b>3.3</b> Extras</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html"><i class="fa fa-check"></i><b>4</b> The R chunks</a><ul>
+<li class="chapter" data-level="4.1" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#why-rmarkdown-again"><i class="fa fa-check"></i><b>4.1</b> Why Rmarkdown again?</a></li>
+<li class="chapter" data-level="4.2" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#embedding-r-code"><i class="fa fa-check"></i><b>4.2</b> Embedding R code</a></li>
+<li class="chapter" data-level="4.3" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#challenge-code-chunks"><i class="fa fa-check"></i><b>4.3</b> Challenge: code chunks</a></li>
+<li class="chapter" data-level="4.4" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#references-1"><i class="fa fa-check"></i><b>4.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html"><i class="fa fa-check"></i><b>5</b> The R chunk 2</a><ul>
+<li class="chapter" data-level="5.1" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#working-with-code-chunks"><i class="fa fa-check"></i><b>5.1</b> Working with code chunks</a></li>
+<li class="chapter" data-level="5.2" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#figures-related-chunk-options"><i class="fa fa-check"></i><b>5.2</b> Figures related chunk options</a></li>
+<li class="chapter" data-level="5.3" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#challenge-code-chunks-1"><i class="fa fa-check"></i><b>5.3</b> Challenge: code chunks</a></li>
+<li class="chapter" data-level="5.4" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#more-useful-chunk-options"><i class="fa fa-check"></i><b>5.4</b> More useful chunk options</a></li>
+<li class="chapter" data-level="5.5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#challenge-more-code-chunks"><i class="fa fa-check"></i><b>5.5</b> Challenge: more code chunks</a></li>
+<li class="chapter" data-level="5.6" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#references-2"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducible Research in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-r-chunk-2" class="section level1">
+<h1><span class="header-section-number">5</span> The R chunk 2</h1>
+<div id="working-with-code-chunks" class="section level2">
+<h2><span class="header-section-number">5.1</span> Working with code chunks</h2>
+<p>Let’s continue our exploration of chunk options and now try a different example using <code>mtcars</code> dataset and learn a few more chunk options.</p>
+<pre><code>```{r}
+summary(mtcars)
+```</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="the-r-chunk-2.html#cb34-1"></a><span class="kw">summary</span>(mtcars)</span></code></pre>
+<pre><code>##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000</code></pre>
+<p><strong>Remember</strong> You can go between Rmarkdown and <em>console</em>, to check your code, at any time. You should see your code block is highlighted differently and you should see a green arrow at the right hand site of that block. Press the green arrow to get an output in the <em>console</em>. You can also use <code>ctrl+enter</code> to do the same with the keyboard short cut.</p>
+<pre><code>```{r}
+plot(mtcars)
+```</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="the-r-chunk-2.html#cb37-1"></a><span class="kw">plot</span>(mtcars)</span></code></pre>
+<p><img src="05-r-chunks2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>This is great, but a bit too much information, lets just focus on number of cylinders and hourse power.</p>
+<pre><code>```{r}
+plot(mtcars$cyl, mtcars$hp)
+```</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="the-r-chunk-2.html#cb39-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl, mtcars<span class="op">$</span>hp)</span></code></pre>
+<p><img src="05-r-chunks2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>We can add a bit more information to our plot, to make more self descriptive.</p>
+<pre><code>```{r}
+plot(mtcars$cyl,
+           mtcars$hp,
+           main=&#39;House power vs number of cylinders&#39;,
+           xlab = &#39;Numer of cylinders&#39;,
+           ylab=&#39;House power&#39;)
+```</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="the-r-chunk-2.html#cb41-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
+<span id="cb41-2"><a href="the-r-chunk-2.html#cb41-2"></a>     mtcars<span class="op">$</span>hp,</span>
+<span id="cb41-3"><a href="the-r-chunk-2.html#cb41-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
+<span id="cb41-4"><a href="the-r-chunk-2.html#cb41-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
+<span id="cb41-5"><a href="the-r-chunk-2.html#cb41-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
+<p><img src="05-r-chunks2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Here is a good example where we can hide our code from the viewer, since it isn’t most interesting bit about this data. Let’s turn <code>echo=FALSE</code> options for all our plots below.</p>
+<p>Properly labelled plots are very informative, let’s do that as well, starting with a title <code>main="Travelling speed vs Breaking distance"</code> and then labelling axis, x <code>xlab="Travelling speed (mhp)"</code> and y <code>ylab="Stopping distance (ft)"</code></p>
+<p><img src="05-r-chunks2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>We are no longer seeing the code, rather just the figure. You can try <code>eval = FALSE</code> by yourself to see what happens.</p>
+</div>
+<div id="figures-related-chunk-options" class="section level2">
+<h2><span class="header-section-number">5.2</span> Figures related chunk options</h2>
+<ul>
+<li><code>fig.align</code> - left, right, center or default (left)</li>
+<li><code>fig.height</code> - height specified in inches</li>
+<li><code>fig.width</code> - width specified in inches</li>
+<li><code>fig.cap</code> - string of text in quotes</li>
+</ul>
+<p>Let me show you a how to resize the plot with <code>fig.height</code> and <code>fig.width</code> and then we are going to do a challenge.</p>
+<pre><code>```{r fig.height = 4, fig.width = 4}
+plot(mtcars$cyl,
+           mtcars$hp,
+           main=&#39;House power vs number of cylinders&#39;,
+           xlab = &#39;Numer of cylinders&#39;,
+           ylab=&#39;House power&#39;)
+```</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="the-r-chunk-2.html#cb43-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
+<span id="cb43-2"><a href="the-r-chunk-2.html#cb43-2"></a>     mtcars<span class="op">$</span>hp,</span>
+<span id="cb43-3"><a href="the-r-chunk-2.html#cb43-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
+<span id="cb43-4"><a href="the-r-chunk-2.html#cb43-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
+<span id="cb43-5"><a href="the-r-chunk-2.html#cb43-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
+<p><img src="05-r-chunks2_files/figure-html/unnamed-chunk-11-1.png" width="384" /></p>
+<p>Let’s try to make it very big, by trying to set height and width to 15 inches.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="the-r-chunk-2.html#cb44-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
+<span id="cb44-2"><a href="the-r-chunk-2.html#cb44-2"></a>     mtcars<span class="op">$</span>hp,</span>
+<span id="cb44-3"><a href="the-r-chunk-2.html#cb44-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
+<span id="cb44-4"><a href="the-r-chunk-2.html#cb44-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
+<span id="cb44-5"><a href="the-r-chunk-2.html#cb44-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
+<p><img src="05-r-chunks2_files/figure-html/unnamed-chunk-12-1.png" width="1440" /></p>
+<p>Note that we are starting to hit “boundaries” of the documents. (want to talk about the fact that plot sits inside a <code>&lt;div&gt;</code> box)</p>
+</div>
+<div id="challenge-code-chunks-1" class="section level2 exercise">
+<h2><span class="header-section-number">5.3</span> Challenge: code chunks</h2>
+<blockquote>
+<p>5 minutes</p>
+</blockquote>
+<details>
+<summary>
+1. Can you align figure to the right??
+</summary>
+<code>fig.align = 'right'</code>
+</details>
+<details>
+<summary>
+2. Align figure to the center and add figure legend
+</summary>
+<code>fig.align = 'center', fig.cap = 'Figure 1: blah'</code>
+</details>
+<details>
+<summary>
+3. Can you add some emphasis to figure legend, e.g make important parts bold or underlined?
+</summary>
+Remember that figure legend is just a string of text and any text can be marked
+</details>
+</div>
+<div id="more-useful-chunk-options" class="section level2">
+<h2><span class="header-section-number">5.4</span> More useful chunk options</h2>
+<p>I’m going to share a few more useful code chunks, some are cosmetic, some you may never use, but hey can be handy in making your document visually different.</p>
+<ul>
+<li><code>prompt=FALSE</code> i.e mimic <em>consosle</em></li>
+<li><code>comment=</code> remove hash symbol at the front of the output</li>
+<li><code>child=</code> path to another <code>Rmd</code> file</li>
+<li><code>warning=FALSE</code></li>
+<li><code>messages=FALSE</code></li>
+</ul>
+<p>For this example I’m going to use simple <code>for</code> loop. We are going to use this variable <code>sentence &lt;- c("Let", "the", "computer", "do", "the", "work")</code></p>
+<pre><code>```{r}
+sentence &lt;- c(&#39;Let&#39;, &#39;the&#39;, &#39;computer&#39;, &#39;do&#39;, &#39;the&#39;, &#39;work&#39;)
+
+for(word in sentence){
+  print(word)
+}
+```</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="the-r-chunk-2.html#cb46-1"></a>sentence &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
+<span id="cb46-2"><a href="the-r-chunk-2.html#cb46-2"></a></span>
+<span id="cb46-3"><a href="the-r-chunk-2.html#cb46-3"></a><span class="cf">for</span>(word <span class="cf">in</span> sentence){</span>
+<span id="cb46-4"><a href="the-r-chunk-2.html#cb46-4"></a>  <span class="kw">print</span>(word)</span>
+<span id="cb46-5"><a href="the-r-chunk-2.html#cb46-5"></a>}</span></code></pre>
+<pre><code>## [1] &quot;Let&quot;
+## [1] &quot;the&quot;
+## [1] &quot;computer&quot;
+## [1] &quot;do&quot;
+## [1] &quot;the&quot;
+## [1] &quot;work&quot;</code></pre>
+<p>Let’s add <code>prompt=TRUE</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="the-r-chunk-2.html#cb48-1"></a><span class="op">&gt;</span><span class="st"> </span>sentence &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
+<span id="cb48-2"><a href="the-r-chunk-2.html#cb48-2"></a><span class="op">&gt;</span><span class="st"> </span></span>
+<span id="cb48-3"><a href="the-r-chunk-2.html#cb48-3"></a><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span>(word <span class="cf">in</span> sentence){</span>
+<span id="cb48-4"><a href="the-r-chunk-2.html#cb48-4"></a><span class="op">+</span><span class="st">   </span><span class="kw">print</span>(word)</span>
+<span id="cb48-5"><a href="the-r-chunk-2.html#cb48-5"></a><span class="op">+</span><span class="st"> </span>}</span></code></pre>
+<pre><code>## [1] &quot;Let&quot;
+## [1] &quot;the&quot;
+## [1] &quot;computer&quot;
+## [1] &quot;do&quot;
+## [1] &quot;the&quot;
+## [1] &quot;work&quot;</code></pre>
+<p>Now let’s add an external Rmd content into this file using <code>child</code> option</p>
+<pre><code>```{r child = &#39;child_chunk_example.Rmd&#39;}
+sentence &lt;- c(&#39;Let&#39;, &#39;the&#39;, &#39;computer&#39;, &#39;do&#39;, &#39;the&#39;, &#39;work&#39;)
+
+for(word in sentence){
+  print(word)
+}
+```</code></pre>
+<hr />
+<blockquote>
+<p>START of lonely file</p>
+</blockquote>
+<div id="stand-alone-rmarkdown-file" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Stand alone Rmarkdown file</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="the-r-chunk-2.html#cb51-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb51-2"><a href="the-r-chunk-2.html#cb51-2"></a>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb51-3"><a href="the-r-chunk-2.html#cb51-3"></a><span class="kw">cor</span>(a, b)</span></code></pre>
+<pre><code>## Warning in cor(a, b): the standard deviation is zero</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>I’m a very lonely Rmarkdown file, can somebody include me in?</p>
+<p>Cheer,</p>
+<p>Rmd</p>
+<blockquote>
+<p>END of lonely file</p>
+</blockquote>
+<hr />
+</div>
+</div>
+<div id="challenge-more-code-chunks" class="section level2 exercise">
+<h2><span class="header-section-number">5.5</span> Challenge: more code chunks</h2>
+<blockquote>
+<p>5 minutes</p>
+</blockquote>
+<details>
+<summary>
+1. Add <code>library(tidyverse)</code> to get lots of messages and try to suppress them with chunk options
+</summary>
+<code>message = FALSE</code>
+</details>
+<details>
+<p><summary>
+2. In the example about <code>child_chunk_example.R</code> gives warning messages, can you suppress them from the output
+</summary>
+<code>message = FALSE</code></p>
+</div>
+<div id="references-2" class="section level2">
+<h2><span class="header-section-number">5.6</span> References</h2>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/r-code.html">Section 2.6</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/">Pimp my RMD</a></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-r-chunks-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

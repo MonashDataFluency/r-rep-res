@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Vanilla Markdown | Reproducible Research in R</title>
+  <meta name="description" content="2 Vanilla Markdown | Reproducible Research in R" />
+  <meta name="generator" content="bookdown 0.11.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Vanilla Markdown | Reproducible Research in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Vanilla Markdown | Reproducible Research in R" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-rmarkdown.html">
+<link rel="next" href="yaml-header-introduction.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Reproducible Research in R</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i><b>0.1</b> Learning outcomes</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#workshop-description"><i class="fa fa-check"></i><b>0.2</b> Workshop description</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i><b>0.3</b> Prerequisite</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#keywords"><i class="fa fa-check"></i><b>0.4</b> Keywords</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#notes"><i class="fa fa-check"></i><b>0.5</b> Notes</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>0.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html"><i class="fa fa-check"></i><b>1</b> Introduction to Rmarkdown</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html#rmarkdown-document-parts"><i class="fa fa-check"></i><b>1.1</b> Rmarkdown document parts</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html#challenge-rmarkdown-101"><i class="fa fa-check"></i><b>1.2</b> Challenge: Rmarkdown 101</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-rmarkdown.html"><a href="introduction-to-rmarkdown.html#useful-to-know"><i class="fa fa-check"></i><b>1.3</b> Useful to know</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html"><i class="fa fa-check"></i><b>2</b> Vanilla Markdown</a><ul>
+<li class="chapter" data-level="2.1" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#vanilla-tags"><i class="fa fa-check"></i><b>2.1</b> Vanilla tags</a></li>
+<li class="chapter" data-level="2.2" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#practice-vanilla-markdown"><i class="fa fa-check"></i><b>2.2</b> Practice vanilla markdown</a></li>
+<li class="chapter" data-level="2.3" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#challenge-markdown-101"><i class="fa fa-check"></i><b>2.3</b> Challenge: Markdown 101</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html"><i class="fa fa-check"></i><b>3</b> YAML header introduction</a><ul>
+<li class="chapter" data-level="3.1" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html#yaml-header"><i class="fa fa-check"></i><b>3.1</b> YAML header</a></li>
+<li class="chapter" data-level="3.2" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html#r-slides---ioslides"><i class="fa fa-check"></i><b>3.2</b> R slides - ioslides</a></li>
+<li class="chapter" data-level="3.3" data-path="yaml-header-introduction.html"><a href="yaml-header-introduction.html#extras"><i class="fa fa-check"></i><b>3.3</b> Extras</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html"><i class="fa fa-check"></i><b>4</b> The R chunks</a><ul>
+<li class="chapter" data-level="4.1" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#why-rmarkdown-again"><i class="fa fa-check"></i><b>4.1</b> Why Rmarkdown again?</a></li>
+<li class="chapter" data-level="4.2" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#embedding-r-code"><i class="fa fa-check"></i><b>4.2</b> Embedding R code</a></li>
+<li class="chapter" data-level="4.3" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#challenge-code-chunks"><i class="fa fa-check"></i><b>4.3</b> Challenge: code chunks</a></li>
+<li class="chapter" data-level="4.4" data-path="the-r-chunks-1.html"><a href="the-r-chunks-1.html#references-1"><i class="fa fa-check"></i><b>4.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html"><i class="fa fa-check"></i><b>5</b> The R chunk 2</a><ul>
+<li class="chapter" data-level="5.1" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#working-with-code-chunks"><i class="fa fa-check"></i><b>5.1</b> Working with code chunks</a></li>
+<li class="chapter" data-level="5.2" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#figures-related-chunk-options"><i class="fa fa-check"></i><b>5.2</b> Figures related chunk options</a></li>
+<li class="chapter" data-level="5.3" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#challenge-code-chunks-1"><i class="fa fa-check"></i><b>5.3</b> Challenge: code chunks</a></li>
+<li class="chapter" data-level="5.4" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#more-useful-chunk-options"><i class="fa fa-check"></i><b>5.4</b> More useful chunk options</a></li>
+<li class="chapter" data-level="5.5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#challenge-more-code-chunks"><i class="fa fa-check"></i><b>5.5</b> Challenge: more code chunks</a></li>
+<li class="chapter" data-level="5.6" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#references-2"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducible Research in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vanilla-markdown" class="section level1">
+<h1><span class="header-section-number">2</span> Vanilla Markdown</h1>
+<p>The original (vanilla) version of Markdown invented by <a href="https://en.wikipedia.org/wiki/Markdown">John Gruber</a> defines a handful tags, discussed shortly. <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> isn’t the only flavour, <a href="http://commonmark.org/">CommonMark</a> that tries to unify all the different flavours and <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> which mainly enhances content appears on github site.</p>
+<div id="vanilla-tags" class="section level2">
+<h2><span class="header-section-number">2.1</span> Vanilla tags</h2>
+<pre><code>File
+ └── New File
+        └── R Markdown
+
+title = &quot;Learning Rmarkdown&quot;
+author = &quot;Me&quot;</code></pre>
+<ul>
+<li>select document type <strong>HTML</strong></li>
+<li>to build (compile) the document press <code>knitr</code> button or <code>ctrl+alt+k</code></li>
+<li>to save as <code>.Rmd</code> file</li>
+</ul>
+<p>I know I said vanilla, but we are launching an Rmarkdown file. It doesn’t matter for two reasons, under the hood Rmarkdown will always be converted to vanilla markdown and we are simply using RStudio to write text, can be anything.</p>
+<p>From now onward we are going to start using <code>knitr</code> is an R package that does all the magic of converting and running your R markdown and R code respectively.</p>
+<p>There actually not that much to core (vanila) of markdown essentially all of it can be summarised below</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="vanilla-markdown.html#cb5-1"></a> <span class="co"># Header1</span></span>
+<span id="cb5-2"><a href="vanilla-markdown.html#cb5-2"></a> <span class="co">## Header2</span></span>
+<span id="cb5-3"><a href="vanilla-markdown.html#cb5-3"></a> <span class="co">### Header3</span></span>
+<span id="cb5-4"><a href="vanilla-markdown.html#cb5-4"></a></span>
+<span id="cb5-5"><a href="vanilla-markdown.html#cb5-5"></a> Paragraphs are separated</span>
+<span id="cb5-6"><a href="vanilla-markdown.html#cb5-6"></a> by a blank line.</span>
+<span id="cb5-7"><a href="vanilla-markdown.html#cb5-7"></a></span>
+<span id="cb5-8"><a href="vanilla-markdown.html#cb5-8"></a> Two spaces at the end of a line</span>
+<span id="cb5-9"><a href="vanilla-markdown.html#cb5-9"></a> produces a line break.</span>
+<span id="cb5-10"><a href="vanilla-markdown.html#cb5-10"></a></span>
+<span id="cb5-11"><a href="vanilla-markdown.html#cb5-11"></a> Text attributes _italic_,</span>
+<span id="cb5-12"><a href="vanilla-markdown.html#cb5-12"></a> <span class="op">**</span>bold<span class="op">**</span>, <span class="st">`</span><span class="dt">monospace</span><span class="st">`</span>.</span>
+<span id="cb5-13"><a href="vanilla-markdown.html#cb5-13"></a></span>
+<span id="cb5-14"><a href="vanilla-markdown.html#cb5-14"></a> Horizontal rule<span class="op">:</span></span>
+<span id="cb5-15"><a href="vanilla-markdown.html#cb5-15"></a></span>
+<span id="cb5-16"><a href="vanilla-markdown.html#cb5-16"></a><span class="st"> </span><span class="op">---</span></span>
+<span id="cb5-17"><a href="vanilla-markdown.html#cb5-17"></a></span>
+<span id="cb5-18"><a href="vanilla-markdown.html#cb5-18"></a><span class="st"> </span>Bullet list<span class="op">:</span></span>
+<span id="cb5-19"><a href="vanilla-markdown.html#cb5-19"></a></span>
+<span id="cb5-20"><a href="vanilla-markdown.html#cb5-20"></a><span class="st">   </span><span class="er">*</span><span class="st"> </span>apples</span>
+<span id="cb5-21"><a href="vanilla-markdown.html#cb5-21"></a>   <span class="op">*</span><span class="st"> </span>oranges</span>
+<span id="cb5-22"><a href="vanilla-markdown.html#cb5-22"></a>   <span class="op">*</span><span class="st"> </span>pears</span>
+<span id="cb5-23"><a href="vanilla-markdown.html#cb5-23"></a></span>
+<span id="cb5-24"><a href="vanilla-markdown.html#cb5-24"></a> Numbered list<span class="op">:</span></span>
+<span id="cb5-25"><a href="vanilla-markdown.html#cb5-25"></a></span>
+<span id="cb5-26"><a href="vanilla-markdown.html#cb5-26"></a><span class="st">   </span><span class="fl">1.</span> wash</span>
+<span id="cb5-27"><a href="vanilla-markdown.html#cb5-27"></a>   <span class="fl">2.</span> rinse</span>
+<span id="cb5-28"><a href="vanilla-markdown.html#cb5-28"></a>   <span class="fl">3.</span> <span class="cf">repeat</span></span>
+<span id="cb5-29"><a href="vanilla-markdown.html#cb5-29"></a></span>
+<span id="cb5-30"><a href="vanilla-markdown.html#cb5-30"></a> A [link](http<span class="op">:</span><span class="er">//</span>example.com).</span>
+<span id="cb5-31"><a href="vanilla-markdown.html#cb5-31"></a></span>
+<span id="cb5-32"><a href="vanilla-markdown.html#cb5-32"></a> <span class="op">!</span>[Image](Image_icon.png)</span>
+<span id="cb5-33"><a href="vanilla-markdown.html#cb5-33"></a></span>
+<span id="cb5-34"><a href="vanilla-markdown.html#cb5-34"></a> <span class="op">&gt;</span><span class="st"> </span>Markdown uses email<span class="op">-</span>style <span class="op">&gt;</span><span class="st"> </span>characters <span class="cf">for</span> blockquoting.</span></code></pre>
+</div>
+<div id="practice-vanilla-markdown" class="section level2">
+<h2><span class="header-section-number">2.2</span> Practice vanilla markdown</h2>
+<p>Now it’s just a matter of learning some of the markdown syntax. Let’s delete all current text from the opened document except the YAML header and type this new text in <code>Hello world, I'm learning R markdown !</code> and pressing the <code>knit HTML</code> button.</p>
+<pre><code> Hello world, I&#39;m learning R markdown !</code></pre>
+<p>Not much happened. This is because we didn’t mark our text in any way. You can put as much text as you want and it will appear as is, unless “specially” marked to look differently.</p>
+<p>Now add the <code>#</code> symbol at the start of the line and press the <code>knit HTML</code> button again. We’ll be pressing this button a lot! For those who like keyboard short cuts use <code>ctrl+shift+k</code> instead.</p>
+<pre><code> # Hello world, I&#39;m learning R markdown !</code></pre>
+<p>How about now? A single hash symbol made it whole lot bigger didn’t it? We’ve marked this whole line to be the header line.</p>
+<p>Now make three new lines with the same text, but different numbers of <code>#</code> symbols, one, two and three respectively and keep pressing the <code>Knit HTML</code> button</p>
+<pre><code> # Hello world, I&#39;m learning R markdown !
+ ## Hello world, I&#39;m learning R markdown !
+ ### Hello world, I&#39;m learning R markdown !</code></pre>
+<p>This is how you can specify different headers type using markdown.</p>
+<p><strong>Remember</strong> that <a href="https://daringfireball.net/projects/markdown/syntax">vanilla markdown</a> is comprised entirely of punctuation characters.</p>
+</div>
+<div id="challenge-markdown-101" class="section level2 exercise">
+<h2><span class="header-section-number">2.3</span> Challenge: Markdown 101</h2>
+<blockquote>
+<p>5 minutes</p>
+</blockquote>
+<details>
+<summary>
+1. How to mark text so that it appears <u>underlined</u>?
+</summary>
+<a href="https://softwareengineering.stackexchange.com/questions/207727/why-there-is-no-markdown-for-underline">answer link</a>
+</details>
+<details>
+<summary>
+2. Can markdown replace <a href="https://en.wikipedia.org/wiki/HTML">html</a> (discussion question)?
+</summary>
+It has replaced html and latex in documention and communication of results. My feeling is that data science ecosystem heavily rotates around markdown. But html, pdf and latex in this context are simply communication and sharing medium.
+On would not want to replace html + css for large website project
+</details>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-rmarkdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="yaml-header-introduction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
