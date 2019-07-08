@@ -1,5 +1,7 @@
 # Reproducible research in R
 
+[![Build Status](https://travis-ci.org/MonashDataFluency/r-rep-res.svg?branch=master)](https://travis-ci.org/MonashDataFluency/r-rep-res)
+
 > RRR
 
 More to come soon, watch this space !
