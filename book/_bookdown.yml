@@ -1,4 +1,4 @@
-repo: https://github.com/MonashDataFluency/r-comm
+repo: https://github.com/MonashDataFluency/r-rep-res
 rmd_files:
   - 00-index.Rmd
   - 01-introduction.Rmd
