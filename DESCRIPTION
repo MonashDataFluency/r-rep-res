@@ -1,22 +1,18 @@
 Package: r-rep-res
 Title: Reproducible Research in R
-Version: 0.0.0.9000
+Version: 0.1
+Authors@R: c(
+    person("Kirill", "Tsyganov", email = "kirill.tsyganov@monash.edu", role = "cre"),
+    person("Paul", "Harrison", email = "paul.harrison@monash.edu ", role = "aut"))
 Description: Using Rmarkdown for reproducible research
-Authors@R:
-    person(given = "Kirill",
-           family = "Tsyganov",
-           role = c("aut", "cre"),
-           email = "kirill.tsyganov@monash.edu")
 Imports:
     tidyverse,
     rmarkdown,
     bookdown,
     knitr
-#Remotes:
-#    rstudio/bookdown
+Depends: R (>= 3.1.0)
 License: Creative Commons Attribution-NonCommercial 4.0 International License
-Suggests:
-    spelling
 Language: en-US
 URL: https://github.com/MonashDataFluency/r-rep-res
 BugReports: https://github.com/MonashDataFluency/r-rep-res/issues
+LazyData: true
