@@ -41,11 +41,9 @@ This is an introductory level workshop, however some prior exposure to R is assu
 
 - R
 - Rmarkdown
-- shiny
-- shinyapps
 - communication
 - reproducibility
-- web
+- git and github
 
 ## Notes
 

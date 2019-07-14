@@ -55,7 +55,7 @@ plot(mtcars)
 plot(mtcars)
 ```
 
-<img src="05-r-chunks2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="06-r-chunks2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 This is great, but a bit too much information, lets just focus on number of cylinders and hourse power.
 
@@ -72,7 +72,7 @@ plot(mtcars$cyl, mtcars$hp)
 plot(mtcars$cyl, mtcars$hp)
 ```
 
-<img src="05-r-chunks2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="06-r-chunks2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 We can add a bit more information to our plot, to make more self descriptive.
 
@@ -96,14 +96,14 @@ plot(mtcars$cyl,
      ylab='House power')
 ```
 
-<img src="05-r-chunks2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<img src="06-r-chunks2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 Here is a good example where we can hide our code from the viewer, since it isn't most interesting bit about this data. Let's turn `echo=FALSE` options for all our plots below.
 
 Properly labelled plots are very informative, let's do that as well, starting with a title `main="Travelling speed vs Breaking distance"` and then labelling axis, x `xlab="Travelling speed (mhp)"` and y `ylab="Stopping distance (ft)"`
 
 
-<img src="05-r-chunks2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="06-r-chunks2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 We are no longer seeing the code, rather just the figure. You can try `eval = FALSE` by yourself to see what happens.
 
@@ -136,7 +136,7 @@ plot(mtcars$cyl,
      ylab='House power')
 ```
 
-<img src="05-r-chunks2_files/figure-html/unnamed-chunk-11-1.png" width="384" />
+<img src="06-r-chunks2_files/figure-html/unnamed-chunk-11-1.png" width="384" />
 
 Let's try to make it very big, by trying to set height and width to 15 inches.
 
@@ -149,7 +149,7 @@ plot(mtcars$cyl,
      ylab='House power')
 ```
 
-<img src="05-r-chunks2_files/figure-html/unnamed-chunk-12-1.png" width="1440" />
+<img src="06-r-chunks2_files/figure-html/unnamed-chunk-12-1.png" width="1440" />
 
 Note that we are starting to hit "boundaries" of the documents. (want to talk about the fact that plot sits inside a `<div>` box)
 

@@ -1,7 +1,6 @@
 # Introduction to Rmarkdown
 
-Work towards remote repository becomes your "cannonical" location for the project
-and gives you nice workflow with your supervisor
+Work towards remote repository becomes your "cannonical" location for the project and gives you nice workflow with your supervisor
 
 Rmarkdown has become much more then just embedding R code into a document. For me it has essentially become the status quo of doing research. These days Rmarkdown document goes without saying with any analysis I do. The Rmarkdown incepts the right practices of doing analysis; it makes you write things down, to explain to yourself and others what you did, it makes your analysis open, anyone can see exactly what you've done and it makes your analysis reproducible since you'll be able to re-run that code to get those same tables and figures again and again. The ultimate goal for any projects, be that honours, PhD or any other analytical work, to be logged and shared via Rmarkdown with peers and supervisor(s). Depending on the aspects of the work, sharing should be done via remote repositories, for example github or gitlab two popular resources.
 
