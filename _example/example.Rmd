@@ -20,7 +20,7 @@ First thing first is to download it. Note that `read_csv` from [`readr`](https:/
 
 ### Loading libraries
 
-We are going to use 
+We are going to use
 ```{r message = F}
 library(tidyverse)
 library(knitr)
@@ -46,11 +46,11 @@ fn_notes <- "domestic_airline_performance_notes.txt"
 if(!file.exists(fn_data)) {
   url_data <- "https://data.gov.au/data/dataset/29128ebd-dbaa-4ff5-8b86-d9f30de56452/resource/cf663ed1-0c5e-497f-aea9-e74bfda9cf44/download/otp_time_series_web.csv"
   url_notes <- "https://data.gov.au/data/dataset/29128ebd-dbaa-4ff5-8b86-d9f30de56452/resource/69e214b9-b66f-4636-9c84-3efda2d0d8ae/download/otptimeserieswebnotes.txt"
-  
+
   download.file(url_data, fn_data)
   download.file(url_notes, fn_notes)
 }
-  
+
 df <- read_csv(fn_data, quote = "")
 
 df
@@ -62,7 +62,7 @@ df %>% head %>% kable
 
 ## Exploring the data
 
-Now that we've got the data lets explore it. It always helps if we can find more information about the data set, particular what information each column might have. 
+Now that we've got the data lets explore it. It always helps if we can find more information about the data set, particular what information each column might have.
 
 ### External notes about the data
 
@@ -72,7 +72,7 @@ Now that we've got the data lets explore it. It always helps if we can find more
 
 ***
 
-### Working with data 
+### Working with data
 
 Great, the information above gives us some starting material. However it wasn't that explicit what each column meant and how man columns are there. Let's quickly take a pick
 
@@ -85,8 +85,8 @@ The reason I'm going to converted to `data.frame` is simply becasue I want to se
 ```{r warning=F}
 df %>%
   colnames %>%
-  unlist %>% 
-  sort %>% 
+  unlist %>%
+  sort %>%
   data.frame
 ```
 
@@ -95,27 +95,27 @@ There are many ways you can explore this data, but i just want to have a look at
 ```{r}
 df %>%
   select(Airline) %>%
-  distinct() %>% 
+  distinct() %>%
   arrange(Airline)
 ```
 
-## Cleaning up 
+## Cleaning up
 
 I've noticed that there "All Airlines" name in the `Airline` column that appears to have the most number of occurrences in the data
 
 ```{r}
-df %>% 
-  group_by(Airline) %>% 
-  summarise(n = n()) %>% 
+df %>%
+  group_by(Airline) %>%
+  summarise(n = n()) %>%
   arrange(-n)
 ```
 
-Also there one of the routes is `All Ports-All Ports`. Googling for that name didn't reveal any places in Australia by that name. 
+Also there one of the routes is `All Ports-All Ports`. Googling for that name didn't reveal any places in Australia by that name.
 
 ```{r}
-df %>% 
-  group_by(Route) %>% 
-  summarise(n = n()) %>% 
+df %>%
+  group_by(Route) %>%
+  summarise(n = n()) %>%
   arrange(-n)
 ```
 
@@ -124,7 +124,7 @@ I decide going forward to drop those data points.
 ```{r}
 df2 <- df %>%
           filter(Airline != "All Airlines",
-                 Route != "All Ports-All Ports") 
+                 Route != "All Ports-All Ports")
 ```
 
 
@@ -133,9 +133,9 @@ df2 <- df %>%
 ### Bar plot
 
 ```{r}
-df2 %>% 
-  group_by(Airline, Route) %>% 
-  summarise(n = n()) %>% 
+df2 %>%
+  group_by(Airline, Route) %>%
+  summarise(n = n()) %>%
   ungroup %>%
   ggplot(aes(Route, n)) +
     geom_bar(stat = 'identity') +
@@ -146,12 +146,12 @@ df2 %>%
 ### Scatter plot
 
 ```{r}
-p2 <- df2 %>% 
-  group_by(Airline, Year, Departing_Port, Arriving_Port) %>% 
-  summarise(n = n()) %>% 
+p2 <- df2 %>%
+  group_by(Airline, Year, Departing_Port, Arriving_Port) %>%
+  summarise(n = n()) %>%
   ungroup %>%
   ggplot(aes(Departing_Port, Arriving_Port, color = factor(Year))) +
-    geom_point(aes(size = n)) + 
+    geom_point(aes(size = n)) +
     facet_wrap(~Airline, ncol = 5, scales = "free") +
     theme(axis.text.x=element_text(angle=45, hjust=1))
 
@@ -185,9 +185,9 @@ p4 <- df2 %>%
 p4
 ```
 
-It appears that after normalising for number of flights in that year by a particular Airline that Virgin Aus, ATR has the higest number of cancellations. 
+It appears that after normalising for number of flights in that year by a particular Airline that Virgin Aus, ATR has the higest number of cancellations.
 
-Need to check but I think the intepretation of the my normalisation is that for every 10 flights 6 are cancelled 
+Need to check but I think the intepretation of the my normalisation is that for every 10 flights 6 are cancelled
 
 ## Next step
 
