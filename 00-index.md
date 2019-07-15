@@ -1,19 +1,21 @@
 ---
 title: Reproducible Research in R
-subtitle: "Version 1"
 documentclass: book
 links-as-notes: yes
 ---
 
 # Reproducible Research in R {#index -}
 
-<!--
-<img src="figures/rnaseq.png" width="100%" style="display: block; margin: auto auto auto 0;" />
--->
-
 > - Level: beginner-intermediate
 > - Duration: 6 hours
 > - Student numbers: 25-30
+
+Welcome to the [Reproducible Research in R (RRR)](https://github.com/MonashDataFluency/r-rep-res) workshop. The main aim of this workshop is to set you on the right path of making your research more reproducible and shariable. Reproducible research means that future you and anyone else will be able to pick up your analysis and reproduce the same results including figures and tables. Reproducible research also implies well documented reasearch, your code should be well commented and the reasons behind functions and methods should be well explained through out the analysis. The communication aspect should not be after thought, but stays with your analysis as you are going through it. Rmarkdown is a way of [literal programing]() that keeps code and words and sentences together. The other important aspect that goes hand and hand with reproducibility is ability to easily collaborate and share your analysis. We are going to repurpose git version cotrol tool and leverage GitHub remote hosting provider for managing and sharining our work. Git + GitHub will provide very powerful way for global collaboration and exposure of your work. In this workshop we are going to verstion control our work and push it to github, which can then be accessible by your collaborators and supervisors. Git + GitHub should become integral part of your workflow.
+
+The RRR course given by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) for the [Monash Data Fluency](https://monashdatafluency.github.io/) initiative. Our teaching style is based on the style of [The Carpentries](https://carpentries.org/).
+
+- [HTML versoin](https://monashdatafluency.github.io/r-rep-res/)
+- [PDF version](https://monashdatafluency.github.io/r-rep-res/Reproducible-Research-in-R.pdf)
 
 ## Learning outcomes
 
@@ -35,7 +37,7 @@ In this workshop we will also cover [git version control tool](https://git-scm.c
 
 ## Prerequisite
 
-This is an introductory level workshop, however some prior exposure to R is assumed.
+This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed.
 
 ## Keywords
 
@@ -45,24 +47,31 @@ This is an introductory level workshop, however some prior exposure to R is assu
 - reproducibility
 - git and github
 
-## Notes
+## Schedule
 
-These are course notes for the "Reproducible Research in R" course given by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) for the [Monash Data Fluency](https://monashdatafluency.github.io/) initiative. Our teaching style is based on the style of [The Carpentries](https://carpentries.org/).
-
-* [PDF version for printing](https://monashdatafluency.github.io/r-rep-res/Reproducible-Research-in-R.pdf)
-
-### Source code {-}
-
-* [GitHub page](https://github.com/MonashDataFluency/r-rep-res)
-
-### Authors and copyright {-}
-
-This course is developed for the Monash Bioinformatics Platform by [Paul Harrison](mailto:paul.harrison@monash.edu), [Adele Barugahare](mailto:Adele.Barugahare@monash.edu) and [Kirill Tsyganov](mailto:kirill.tsyganov@monash.edu)
-
-<img src="figures/CC-BY.png" width="44" />
+- 10:00-10:30am (30 minutes) Welcome and warm up
+- 10:30-12:00pm (1.5 hours)  Rmarkdown
+- 12:00-1:00pm  (1 hour)     lunch
+- 1:00-3:00pm   (2 hours)    More Rmarkdown
+- 3:00-3:15pm   (15 minutes) Tea break
+- 3:15-4:45pm   (1.5 hours)  Even more Rmarkdown
+- 4:45-5:00pm   (15 minutes) Warm down
 
 ## References
 
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+- [knitr](https://yihui.name/knitr/)
 - [knitr vs rmarkdown vs bookdown](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+## Authors and copyright
+
+This course is developed for the Monash Bioinformatics Platform by:
+
+- [Paul Harrison](mailto:paul.harrison@monash.edu)
+- [Adele Barugahare](mailto:Adele.Barugahare@monash.edu)
+- [Kirill Tsyganov](mailto:kirill.tsyganov@monash.edu)
 
 This work is licensed under a [CC BY-4: Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). The attribution is "Monash Bioinformatics Platform" if copying or modifying these notes.
+
+<img src="figures/CC-BY.png" width="44" />

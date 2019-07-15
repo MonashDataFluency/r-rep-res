@@ -1,6 +1,4 @@
-# YAML header introduction
-
-## YAML header
+# YAML header
 
 At the very top of your `.Rmd` file you can, optionaly, include YAML block. In this block you can fine turn your output document, add some metadata and change document's font and theme. You can also pass additional files such as stylesheet file `.css` and bibliography file `.bib` for text citation. I'm only going to show you a few possible options and will let you explore the rest on your own.
 

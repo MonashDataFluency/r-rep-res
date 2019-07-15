@@ -1,24 +1,16 @@
 # Introduction to Rmarkdown
 
-Work towards remote repository becomes your "cannonical" location for the project and gives you nice workflow with your supervisor
-
-Rmarkdown has become much more then just embedding R code into a document. For me it has essentially become the status quo of doing research. These days Rmarkdown document goes without saying with any analysis I do. The Rmarkdown incepts the right practices of doing analysis; it makes you write things down, to explain to yourself and others what you did, it makes your analysis open, anyone can see exactly what you've done and it makes your analysis reproducible since you'll be able to re-run that code to get those same tables and figures again and again. The ultimate goal for any projects, be that honours, PhD or any other analytical work, to be logged and shared via Rmarkdown with peers and supervisor(s). Depending on the aspects of the work, sharing should be done via remote repositories, for example github or gitlab two popular resources.
-
-Rmarkdown is a natural evolution of vanilla markdown, backed by R package `knitr` and an external tool `pandoc`. Markdown is a powerful language for writing plain text documents that are easily parsed and/or converted to other more sophisticated document types, for example **PDF** or **HTML** to name a couple.
-
-There are other plain text languages alike markdown that have the same goal of simplify documents writing and with means of light text tagging or marking up ability to indicate important parts of the text such as titles, paragraphs and code blocks. The underlying idea for then markdown is that it is easy-to-write and easy-to-read. In this workshop we will be mainly focusing on Rmarkdown flavour, although it has really diverged into it's own language essentially now. And although you can use any [text editor](https://en.wikipedia.org/wiki/Text_editor) to write your markdown, we'll be using [RStudio](https://rstudio.com) for all of our work.
-
-## Rmarkdown document parts
+Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf docuemnts and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let's call it a thesis or a paper or a course book. And with essentially no effort you can change from "rendering" your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time. Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the ecosystem discussed next. Markdown is relativelly small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but greatly enhanced by pandoc tool.
 
 Any Rmarkdown documents is broken into three main parts:
 
-- [YAML header](#yaml-header-intro)
+- [YAML header](#yaml-header)
 - [The R chunks](#the-r-chunks)
 - [markdown - plain text](#vanilla-markdown)
 
-Those are different parts of the document that all work together to form - render a final document. Each one of those parts can be customised with further options, which will cover later in the book. One thing to note is that Rmarkdown is multi-component ecosystem, for example [YAML](https://en.wikipedia.org/wiki/YAML) is a stand alone language and can be used outside of Rmarkdown context. For example [ansible configuration management software](https://en.wikipedia.org/wiki/Ansible_(software)) uses YAMl as internal definition language. In Rmarkdown case we are using YAML header to pass additional information about type and apperance of the final document, but more on that later.
+Those are different parts of the document that all work together to form - render a final document. Each one of those parts can be customised with further options, which will cover later in the book.
 
-### [YAML header section](#yaml-header-intro)
+### [YAML header](#yaml-header)
 
 YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, `---`. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.
 
@@ -33,6 +25,8 @@ YAML header will always seat at the very top of your Rmarkdown document and it s
 
 ### [The R chunks](#the-r-chunks)
 
+These are special parts of the document that hold code that can be executed inline of the Rmarkdown document. R chunks are highly customisable via chunk options. We will spending a lot of time in the course working with code chunks and different options types.
+
 
 ````
 ```{r}
@@ -46,7 +40,7 @@ plot(mtcars)
  # Have I been Marked Down?
 ```
 
-## Challenge: Rmarkdown 101 {.exercise}
+## Challenge: Introduction 1 {.exercise}
 
 > 5 minutes
 
@@ -85,10 +79,97 @@ plot(mtcars)
 
 </details>
 
-## Useful to know
+## Rmarkdown ecosystem
 
+Rmarkdown has relativelly complicated ecosystem. It includes several different R packages. Most of those packages wrap other existing tools, written by different people, thereby providing an "easy" way to interface with the tools via R language. A large part of the ecosystem exists thanks to [pandoc](https://pandoc.org/) tool.
+
+### Pandoc
+
+Pandoc is a stand alone tool (command line tool) that one can run in the terminal to convert markdown documents to other documents types including html, pdf and MS docs. Since vanilla markdown is pretty simple in what it can produce, pandoc added whole lot of "features", additional marking tags, that one can use to build more elaborate documents from plain text.
+
+### YAML
+
+This is stand along language that is used in variety of places, with main advantage to it is that it can be easily ready by humans as well easily parsed by computer. A lot of the time YAML can be used ad a configuration file. This is example how it is used with Rmarkdown. We will talk about [YAML in more depth in a different section](#yaml-header-introduction). In brief we will use YAML to set documents appearance and link additional files with the documents, such as bibliographies.
+
+### LaTeX
+
+```
+¯\_(ツ)_/¯
+
+```
+
+### Knitr
+
+As was mentioned before we are using [pandoc](https://pandoc.org/) to convert markdown to other document types. [knitr](https://yihui.name/knitr/) provides function to convert Rmarkdown files into vanialla markdown, which then in turn can be converted by pandoc into html document for example. Some of the things that [knitr](https://yihui.name/knitr/) does includes R code execution and assembling the results into markdown.
+
+### Rmarkdown
+
+An [rmarkdown R package](https://github.com/rstudio/rmarkdown) will convert `.Rmd` files into other format types. Under the hood it will use [pandoc](https://pandoc.org/) to do so. The main function that we are concerned with is `rmarkdown::render()` which will call `knitr::knit()` when required.
+
+### Bookdown
+
+A [bookdown R package](https://github.com/rstudio/bookdown) enhances [rmarkdown](https://github.com/rstudio/rmarkdown) by enabling multi-page documents e.g books and easy cross-referencing.
+
+### Others
+
+These are more R packages that enable more things via Rmarkdown.
+
+- [xaringan](https://github.com/yihui/xaringan)
+- [blogdown](https://github.com/rstudio/blogdown)
+- [thesisdown](https://github.com/ismayc/thesisdown)
+
+## Setup
+
+We will need to install these packages. Let's install these packages
+
+
+
+```r
+packages <- c("tidyverse",
+              "rmarkdown",
+              "knitr",
+              "bookdown",
+              "tinytex")
+
+install.packages(packages)
+```
+
+## Challenge: Introduction 2 {.exercise}
+
+> 2 minutes
+
+<details>
+
+  <summary>
+    1. Now is a good time to tweak your RStudio to your needs.
+  </summary>
+
+  - change font size
+  - change themes and backgroung color
+  - rearrange panels
+
+</details>
+
+<details>
+
+  <summary>
+    2. Please turn off "Restore .RData into workspace at startup" in "Tools -> Global Options".
+  </summary>
+
+</details>
+
+
+## Useful tips
+
+<!--
+#NOTE you found gold !
 > One cannot know all of Rmarkdown wisdom. One would continuesly learn to make oneself more Rsome.
-> --- Kirill Tsyganov (2019)
+-->
 
 - don't attempt to compile to `pdf_document` until absolutelly necesserary. `LaTeX` engine that is used for Rmarkdown to pdf conversion known to have issues with aligning figures and tables. This typically causes figures and tables overflow to next pages and general text misalignment. Get your content written first, intermidiate compilation to `html_documents` are totaly fine, before worrying about technical issues
+- don't save data into `.RData`, this will make your work less reproducible
 
+## References
+
+- [related stackoverflow question](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
+a- [Presentation slides on Rmarkdown ecosystem](https://slides.yihui.name/2017-DSM-rmarkdown-Yihui-Xie.html)

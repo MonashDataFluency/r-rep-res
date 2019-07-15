@@ -1,4 +1,4 @@
-# Git introduction
+# Git and GitHub introduction
 
 > When you are rock climbing you want to set your anchors often
 > How often will depend on your experience and desire not to fall
@@ -118,3 +118,15 @@ http://r-pkgs.had.co.nz/git.html#commit-best-practices
 ## Which files to commit?
 
 This section will be extended in the future release, but I highly recommend reading this article, specifically [section 10: Which files to commit from here](https://peerj.com/preprints/3159/)
+
+## Github introduction
+
+make a diagram where git at the center and arrows out to different places gitlab, github, bitbucket personal server, even the same comoputer but different "bare" folder (this isnt "safe" nor accessible by others, but totaly possible)
+
+briefly talk about github things like PR, gitissues, staring and watching projects, collaborators and update dates/commits as a proxy of how active the project is. also do check which files typically being changed. Also mention the fact that it is very explicit when the project was started (initiated) how much work has gone into it (commits history) and roughly time frame and intervals of work
+
+
+mention at some point README file as a general means of "silent"  communication then README.md and index.html as "special" files. README.md is the front page - apperance for your project. One can have multiple README.md files in subdirectories if necessary.
+
+
+in simple workflow and collaborations git merge will work just fine. git will happy merge two different branches i.e all files in one location with all files in the other location if no two file conflict
