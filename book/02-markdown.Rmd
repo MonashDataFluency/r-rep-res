@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/35459166/embed-rmarkdown-with-rmarkdown-with
 
 # Vanilla Markdown
 
-The original (vanilla) version of Markdown invented by [John Gruber](https://en.wikipedia.org/wiki/Markdown) defines a handful tags, discussed shortly. [Rmarkdown](https://rmarkdown.rstudio.com/) isn't the only flavour, [CommonMark](http://commonmark.org/) that tries to unify all the different flavours and [GitHub Flavored Markdown (GFM)](https://guides.github.com/features/mastering-markdown/) which mainly enhances content appears on github site.
+The original (vanilla) version of Markdown invented by [John Gruber](https://en.wikipedia.org/wiki/Markdown) defines a handful of tags, discussed shortly. [Rmarkdown](https://rmarkdown.rstudio.com/) isn't the only flavour, [CommonMark](http://commonmark.org/) that tries to unify all the different flavours and [GitHub Flavored Markdown (GFM)](https://guides.github.com/features/mastering-markdown/) which mainly enhances content appears on github site all via pandoc in one way or another.
 
 ## Vanilla tags
 

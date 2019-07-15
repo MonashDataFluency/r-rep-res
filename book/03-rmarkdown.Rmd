@@ -1,4 +1,4 @@
-# The R chunks
+# Rmarkdown
 
 In [Markdown section](#vanilla-markdown) I've showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that.
 

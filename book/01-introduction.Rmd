@@ -2,6 +2,83 @@
 
 Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf docuemnts and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let's call it a thesis or a paper or a course book. And with essentially no effort you can change from "rendering" your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time. Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the ecosystem discussed next. Markdown is relativelly small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but greatly enhanced by pandoc tool.
 
+Any Rmarkdown documents is broken into three main parts:
+
+- [YAML header](#yaml-header)
+- [The R chunks](#the-r-chunks)
+- [markdown - plain text](#vanilla-markdown)
+
+Those are different parts of the document that all work together to form - render a final document. Each one of those parts can be customised with further options, which will cover later in the book.
+
+### [YAML header](#yaml-header)
+
+YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, `---`. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.
+
+```
+`r ''` ---
+`r ''` title: "Hello world"
+`r ''` author: "Kirill"
+`r ''` date: "17 June 2019"
+`r ''` output: html_document
+`r ''` ---
+```
+
+### [The R chunks](#the-r-chunks)
+
+These are special parts of the document that hold code that can be executed inline of the Rmarkdown document. R chunks are highly customisable via chunk options. We will spending a lot of time in the course working with code chunks and different options types.
+
+```{r, echo=FALSE, comment=""}
+cat(c("```{r}",
+      "plot(mtcars)",
+      "```"),
+    sep='\n')
+```
+
+### [Everything else is plain old markdown](#vanilla-markdown)
+
+```
+`r '' ` # Have I been Marked Down?
+```
+
+## Challenge: Introduction 1 {.exercise}
+
+> 5 minutes
+
+<details>
+
+  <summary>
+    1. What file extention should we typically use for saving our <u>**Rm**</u>ark<u>**d**</u>own files?
+  </summary>
+  [answer link](https://superuser.com/questions/249436/file-extension-for-markdown-files)
+
+</details>
+
+
+<details>
+
+  <summary>
+    2. What document types can be produced (compiled) from Rmarkdown?
+  </summary>
+
+  <a href="https://r4ds.had.co.nz/r-markdown-formats.html">
+    <img src="figures/document_types2.png" title="Rmarkdown document types" alt="doc_types">
+  </a>
+
+</details>
+
+<details>
+  <summary>
+    3. Will I have to learn more "languges" to use Rmarkdown (discussion question)?
+  </summary>
+
+  The short answer is no. Learning and writing Rmarkdown will take you a very long way.
+
+  The longer answer is yes. At some point in the future you might want to very sophisticated documents and for that you'll most certainly will need at least tiny amount of html + css knowledge and maybe some knowledge about LaTeX (I've yet to learn a single thing about LaTeX - so far so good :D )
+
+  [check out this bit of Rmarkdown](link to github that the line of code above)
+
+</details>
+
 ## Rmarkdown ecosystem
 
 Rmarkdown has relativelly complicated ecosystem. It includes several different R packages. Most of those packages wrap other existing tools, written by different people, thereby providing an "easy" way to interface with the tools via R language. A large part of the ecosystem exists thanks to [pandoc](https://pandoc.org/) tool.
@@ -41,82 +118,45 @@ These are more R packages that enable more things via Rmarkdown.
 - [blogdown](https://github.com/rstudio/blogdown)
 - [thesisdown](https://github.com/ismayc/thesisdown)
 
-## Rmarkdown document parts
+## Setup
 
-Any Rmarkdown documents is broken into three main parts:
+We will need to install these packages. Let's install these packages
 
-- [YAML header](#yaml-header-intro)
-- [The R chunks](#the-r-chunks)
-- [markdown - plain text](#vanilla-markdown)
 
-Those are different parts of the document that all work together to form - render a final document. Each one of those parts can be customised with further options, which will cover later in the book. One thing to note is that Rmarkdown is multi-component ecosystem, for example [YAML](https://en.wikipedia.org/wiki/YAML) is a stand alone language and can be used outside of Rmarkdown context. For example [ansible configuration management software](https://en.wikipedia.org/wiki/Ansible_(software)) uses YAMl as internal definition language. In Rmarkdown case we are using YAML header to pass additional information about type and apperance of the final document, but more on that later.
+```{r, eval = F}
+packages <- c("tidyverse",
+              "rmarkdown",
+              "knitr",
+              "bookdown",
+              "tinytex")
 
-### [YAML header section](#yaml-header-intro)
-
-YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, `---`. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.
-
-```
-`r ''` ---
-`r ''` title: "Hello world"
-`r ''` author: "Kirill"
-`r ''` date: "17 June 2019"
-`r ''` output: html_document
-`r ''` ---
+install.packages(packages)
 ```
 
-### [The R chunks](#the-r-chunks)
+## Challenge: Introduction 2 {.exercise}
 
-```{r, echo=FALSE, comment=""}
-cat(c("```{r}",
-      "plot(mtcars)",
-      "```"),
-    sep='\n')
-```
-
-### [Everything else is plain old markdown](#vanilla-markdown)
-
-```
-`r '' ` # Have I been Marked Down?
-```
-
-## Challenge: Rmarkdown 101 {.exercise}
-
-> 5 minutes
+> 2 minutes
 
 <details>
 
   <summary>
-    1. What file extention should we typically use for saving our <u>**Rm**</u>ark<u>**d**</u>own files?
-  </summary>
-  [answer link](https://superuser.com/questions/249436/file-extension-for-markdown-files)
-
-</details>
-
-
-<details>
-
-  <summary>
-    2. What document types can be produced (compiled) from Rmarkdown?
+    1. Now is a good time to tweak your RStudio to your needs.
   </summary>
 
-  <a href="https://r4ds.had.co.nz/r-markdown-formats.html">
-    <img src="figures/document_types2.png" title="Rmarkdown document types" alt="doc_types">
-  </a>
+  - change font size
+  - change themes and backgroung color
+  - rearrange panels
 
 </details>
 
 <details>
+
   <summary>
-    3. Will I have to learn more "languges" to use Rmarkdown (discussion question)?
+    2. Please turn off "Restore .RData into workspace at startup" in "Tools -> Global Options".
   </summary>
 
-  The short answer is no. Learning and writing Rmarkdown will take you a very long way.
-
-  The longer answer is yes. At some point in the future you might want to very sophisticated documents and for that you'll most certainly will need at least tiny amount of html + css knowledge and maybe some knowledge about LaTeX (I've yet to learn a single thing about LaTeX - so far so good :D )
-
-  [check out this bit of Rmarkdown](link to github that the line of code above)
-
 </details>
+
 
 ## Useful tips
 
