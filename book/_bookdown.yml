@@ -1,17 +1,18 @@
-repo: https://github.com/MonashDataFluency/r-rep-res
+repo: https://github.com/MonashDataFluency/r-rep-res/
 rmd_files:
   - 00-index.Rmd
   # want to spend 50 minutes on ecosystem, intro and vanilla markdown
   - 01-introduction.Rmd
   - 02-markdown.Rmd
-  - 03-rmarkdown-ecosystem.Rmd
   # want to spend 2 hours on R chunks, options and git intro
   - 04-r-chunks.Rmd
   - 05-git-intro.Rmd
-  - 06-r-chunks2.Rmd
-    # 3 hours
   - 07-github-intro.Rmd
+    # 3 hours
+  - 06-r-chunks2.Rmd
   - 08-r-chunk3.Rmd
+    # advanecd yamls,
+  - 10-bookdown.Rmd
   - 09-bibliographies.Rmd
   - 99-working-doc.Rmd
 

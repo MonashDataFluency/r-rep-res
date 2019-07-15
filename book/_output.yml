@@ -1,8 +1,13 @@
+# https://github.com/rstudio/bookdown/blob/master/inst/examples/_output.yml
 bookdown::gitbook:
   css: ../css/style.css
-  toc_depth: 2
+  config:
+    toc:
+      toc_depth: 2
+    sharing:
+      github: yes
+      facebook: no
   download: ["Reproducible-Research-in-R.pdf"]
-  sharing: no
 bookdown::pdf_book:
   keep_tex: no
   latex_engine: xelatex
