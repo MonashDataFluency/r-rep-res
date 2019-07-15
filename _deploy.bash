@@ -14,13 +14,16 @@
 # git checkout master
 
 # Step 2
+echo "MSG: starting deployment $(date)"
 
-# rm -rf _book
-# git worktree add -B gh-pages _book origin/gh-pages
+echo "MSG: Stage 1 adding new worktree"
+
+rm -rf _book
+git worktree add -B gh-pages _book origin/gh-pages
 
 # Step 3
 
-echo "MSG: starting deployment $(date)"
+echo "MSG: Stage 2 building $(date)"
 
 cd _book # build directory
 
