@@ -1,7 +1,7 @@
 
 .PHONY : all pdf html clean deploy
 
-all : pdf html deploy
+all : pdf html
 
 pdf :
 	cd book; \
