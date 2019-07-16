@@ -33,25 +33,25 @@ We are going to start with GitHub first approach. An alternative approach discus
 
 Let's go to [GitHub](https://github.com/) and create new repository and let's name it "learning_rmarkdown".
 
-```{r echo = F, out.width = "100%, fig.align = "left}
+```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github1.png")
 ```
 
 Description of the repository is optional, but a good idea to write a brief sentence there to message to yourself and the public what this project is about. Let's write the following brief sentence; "I'm learning Rmarkdown". Also note that I ticked "Initialize this repository with a README". This completely optional.
 
-```{r echo = F, out.width = "100%, fig.align = "left}
+```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github2.png")
 ```
 
 This is the screen you are going to get when you've initialised it with a README file
 
-```{r echo = F, out.width = "100%, fig.align = "left}
+```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github3.png")
 ```
 
 And this is a screen you are going to get if you haven't initialised it with a README file
 
-```{r echo = F, out.width = "100%, fig.align = "left}
+```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github5.png")
 ```
 
@@ -73,7 +73,7 @@ There are at least three components in that url
 
 You can get this url, but either looking at the address bar of your browser or there is a little drop down menu on the right hand site.
 
-```{r echo = F, out.width = "100%, fig.align = "left}
+```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github4.png")
 ```
 
