@@ -1,0 +1,5 @@
+# Resources
+
+- [Great presentation about data story telling](https://docs.google.com/presentation/d/1q1MNPAURLVfrIvqG9hiJip-DBBmm5_ZFMC-8-lNfmPk/edit#slide=id.p)
+- [Awesome presentation](https://jules32.github.io/useR-2019-keynote/#1)
+- [RMarkdown for Scientists by Nicholas Tierney](https://rmd4sci.njtierney.com/)

@@ -37,7 +37,7 @@ In this workshop we will also cover [git version control tool](https://git-scm.c
 
 ## Prerequisite
 
-This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed.
+This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recomended that you read [this article in full](https://peerj.com/preprints/3159/), if you have to prioritise, read at least these section (1,2,6,10).
 
 ## Keywords
 
