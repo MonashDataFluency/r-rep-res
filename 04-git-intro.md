@@ -2,20 +2,94 @@
 
 > When you are rock climbing you want to set your anchors often
 > How often will depend on your experience and desire not to fall
-> Git commit like your vertically handing off 70 feet rock
+> Git commit like you are vertically hanging off 70 feet rock
 
-[Git](https://git-scm.com/doc) is one of many tool, but very popular, that was design for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strickly design with scientific research projects in mind we will happily repurpose git to help us stay on top of our research projects. Git will help us:
-
-- organise our directory structure
-- create "milestones" a.k.a `git commits`
-- make apparent which parts of the projects (files) are important
-- git will also help us to share our work
-- and last but not least git will help us collaborate
+[Git](https://git-scm.com/doc) is one of many tool, but very popular, that was design for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strickly design with scientific research projects in mind we will happily repurpose git to help us stay on top of our research projects. In git world everything rotates around git repository, which is "special" folder. Inside that folder every file and folder is "tracked" for changes. Git repositories often are synonymous with project folder. It is a "bucket" or "container" that holds everything related to a particular project.
 
 <div class="figure" style="text-align: left">
 <img src="figures/git_vs_filesystem.png" alt="This is an example of git version cotrol vs DIY versioning via filesystem" width="100%" />
 <p class="caption">(\#fig:unnamed-chunk-1)This is an example of git version cotrol vs DIY versioning via filesystem</p>
 </div>
+
+GitHub on the another hand is a place where people can deposit, store and share their git repositories. GitHub also one of many different places that people can choose to use to store and share their git repositories. Image below illustrates some of other common place one can choose to store they git repositories a.k.a projects
+
+<div class="figure" style="text-align: left">
+<img src="figures/remote_repos.jpg" alt="https://www.geekboots.com/story/what-is-the-difference-between-bitbucket-github-and-gitlab" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2)https://www.geekboots.com/story/what-is-the-difference-between-bitbucket-github-and-gitlab</p>
+</div>
+
+For this workshop we are going to go with GitHub, mainly it is very popular and it has a lot of useful features, some of which I'll share with you later in the workshop.
+
+Git and GitHub will help you:
+
+- organise our directory structure
+- create "milestones" a.k.a `git commits`
+- make apparent which parts of the projects (files) are important
+- share your work (e.g GitHub)
+- collaborate at the global scale
+
+## Github setup
+
+There are a couple of different ways you start a project and initiate git repository - git tracking.
+We are going to start with GitHub first approach. An alternative approach discussed in [appendix section D](#d). I hope that everyone had already created [GitHub](https://github.com/) account. We are going to create a new github repository, which is also automatically a git repository. Remember that GitHub is just a place where we are storing out git repositories and you can only store git repositories on GitHub.
+
+Let's go to [GitHub](https://github.com/) and create new repository and let's name it "learning_rmarkdown".
+
+<img src="figures/github1.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+
+Description of the repository is optional, but a good idea to write a brief sentence there to message to yourself and the public what this project is about. Let's write the following brief sentence; "I'm learning Rmarkdown". Also note that I ticked "Initialize this repository with a README". This completely optional.
+
+<img src="figures/github2.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+
+This is the screen you are going to get when you've initialised it with a README file
+
+<img src="figures/github3.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+
+And this is a screen you are going to get if you haven't initialised it with a README file
+
+<img src="figures/github5.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+
+A brief note about README files. It is regarded as a "silent" way of communication, where you can tell all necessary information another person need to know about your project. For a software tool you would put information about how to build that particular tool and dependencies. In our case we will add information how to build final html report. We will do this a bit later in the workshop.
+
+Either way is completely fine! Once we have our GitHub repository we need to find a link (URL) and copy a.k.a **clone** (git clone) our repository to our working computer, in our case [rstudio.cloud](https://rstudio.cloud). We want to establish connection between [rstudio.cloud](https://rstudio.cloud) and GitHub such that we can with little effort we can copy our work, that is file from [rstudio.cloud](https://rstudio.cloud) to GitHub.
+
+This is how typical URL looks like
+
+```
+https://github.com/serine/learing_rmarkdown.git
+```
+
+There are at least three components in that url
+
+- `https://github.com/` the place i.e the name of the website
+- `serine/` username
+- `learing_rmarkdown.git` repository name (project name)
+
+You can get this url, but either looking at the address bar of your browser or there is a little drop down menu on the right hand site.
+
+<img src="figures/github4.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+
+## RStudio setup
+
+Add description about starting a project from a github at RStudio.
+
+## GitHub things
+
+- PR (pull request)
+- gitissues place to talk about issues related to a project
+- stars acknowledgement
+- watch interested in updates on a projects
+
+<!--
+TODO in future need to make an annotated images to all those buttons
+-->
+
+collaborators and update dates/commits as a proxy of how active the project is. also do check which files typically being changed. Also mention the fact that it is very explicit when the project was started (initiated) how much work has gone into it (commits history) and roughly time frame and intervals of work
+
+in simple workflow and collaborations git merge will work just fine. git will happily merge two different branches i.e all files in one location with all files in the other location if no two file conflict
+
+
+## More git
 
 Git is a command line tool however you don't have to learn command line just yet. There are a [few git clients available](https://happygitwithr.com/git-client.html) - graphical user interface (GUI) tool / applications that we can use instead of learning command line. We are going to use RStudio which has good git support and therefore Rstudio will be our git client. One rather important note about git clients, most (all) clients will "simply" form a git commands as you would type it out and execute on command line. This means a couple of things:
 
@@ -119,14 +193,3 @@ http://r-pkgs.had.co.nz/git.html#commit-best-practices
 
 This section will be extended in the future release, but I highly recommend reading this article, specifically [section 10: Which files to commit from here](https://peerj.com/preprints/3159/)
 
-## Github introduction
-
-make a diagram where git at the center and arrows out to different places gitlab, github, bitbucket personal server, even the same comoputer but different "bare" folder (this isnt "safe" nor accessible by others, but totaly possible)
-
-briefly talk about github things like PR, gitissues, staring and watching projects, collaborators and update dates/commits as a proxy of how active the project is. also do check which files typically being changed. Also mention the fact that it is very explicit when the project was started (initiated) how much work has gone into it (commits history) and roughly time frame and intervals of work
-
-
-mention at some point README file as a general means of "silent"  communication then README.md and index.html as "special" files. README.md is the front page - apperance for your project. One can have multiple README.md files in subdirectories if necessary.
-
-
-in simple workflow and collaborations git merge will work just fine. git will happy merge two different branches i.e all files in one location with all files in the other location if no two file conflict

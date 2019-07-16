@@ -166,14 +166,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#references-2"><i class="fa fa-check"></i><b>3.4</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
-<li class="chapter" data-level="4.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#git-no-nos"><i class="fa fa-check"></i><b>4.1</b> git no nos</a></li>
-<li class="chapter" data-level="4.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#starting-with-git"><i class="fa fa-check"></i><b>4.2</b> Starting with git</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#configuring-git"><i class="fa fa-check"></i><b>4.2.1</b> Configuring git</a></li>
-<li class="chapter" data-level="4.2.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#intiating-git-repository"><i class="fa fa-check"></i><b>4.2.2</b> Intiating git repository</a></li>
-<li class="chapter" data-level="4.2.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#first-commit"><i class="fa fa-check"></i><b>4.2.3</b> First commit</a></li>
+<li class="chapter" data-level="4.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#github-setup"><i class="fa fa-check"></i><b>4.1</b> Github setup</a></li>
+<li class="chapter" data-level="4.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#rstudio-setup"><i class="fa fa-check"></i><b>4.2</b> RStudio setup</a></li>
+<li class="chapter" data-level="4.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#github-things"><i class="fa fa-check"></i><b>4.3</b> GitHub things</a></li>
+<li class="chapter" data-level="4.4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#more-git"><i class="fa fa-check"></i><b>4.4</b> More git</a></li>
+<li class="chapter" data-level="4.5" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#git-no-nos"><i class="fa fa-check"></i><b>4.5</b> git no nos</a></li>
+<li class="chapter" data-level="4.6" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#starting-with-git"><i class="fa fa-check"></i><b>4.6</b> Starting with git</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#configuring-git"><i class="fa fa-check"></i><b>4.6.1</b> Configuring git</a></li>
+<li class="chapter" data-level="4.6.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#intiating-git-repository"><i class="fa fa-check"></i><b>4.6.2</b> Intiating git repository</a></li>
+<li class="chapter" data-level="4.6.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#first-commit"><i class="fa fa-check"></i><b>4.6.3</b> First commit</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#which-files-to-commit"><i class="fa fa-check"></i><b>4.3</b> Which files to commit?</a></li>
-<li class="chapter" data-level="4.4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#github-introduction"><i class="fa fa-check"></i><b>4.4</b> Github introduction</a></li>
+<li class="chapter" data-level="4.7" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#which-files-to-commit"><i class="fa fa-check"></i><b>4.7</b> Which files to commit?</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html"><i class="fa fa-check"></i><b>5</b> The R chunk 2</a><ul>
 <li class="chapter" data-level="5.1" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#working-with-code-chunks"><i class="fa fa-check"></i><b>5.1</b> Working with code chunks</a></li>
@@ -218,16 +221,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">6</span> YAML header</h1>
 <p>At the very top of your <code>.Rmd</code> file you can, optionaly, include YAML block. In this block you can fine turn your output document, add some metadata and change document’s font and theme. You can also pass additional files such as stylesheet file <code>.css</code> and bibliography file <code>.bib</code> for text citation. I’m only going to show you a few possible options and will let you explore the rest on your own.</p>
 <p>Navigate to the top of your <code>.Rmd</code> document and find YAML section there. Just like with the options we passed in to manipulate R code block, YAML block also has <strong>key = value</strong> pairs, but instead they are separated by colon ( <code>:</code> ). Now let’s add table of content to our document, this will make it easier to navigate your page as well as give nice over view of the content our <strong>key</strong> is <code>toc</code> with value <code>true</code> or <code>yes</code> which one you prefer better.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="yaml-header-1.html#cb55-1"></a> <span class="op">---</span></span>
-<span id="cb55-2"><a href="yaml-header-1.html#cb55-2"></a><span class="st"> </span>title<span class="op">:</span><span class="st"> &quot;Hello world&quot;</span></span>
-<span id="cb55-3"><a href="yaml-header-1.html#cb55-3"></a> author<span class="op">:</span><span class="st"> &quot;Kirill&quot;</span></span>
-<span id="cb55-4"><a href="yaml-header-1.html#cb55-4"></a> date<span class="op">:</span><span class="st"> &quot;13 July 2016&quot;</span></span>
-<span id="cb55-5"><a href="yaml-header-1.html#cb55-5"></a> output<span class="op">:</span></span>
-<span id="cb55-6"><a href="yaml-header-1.html#cb55-6"></a><span class="st">   </span>html_document<span class="op">:</span></span>
-<span id="cb55-7"><a href="yaml-header-1.html#cb55-7"></a><span class="st">     </span>toc<span class="op">:</span><span class="st"> </span>true</span>
-<span id="cb55-8"><a href="yaml-header-1.html#cb55-8"></a> <span class="op">---</span></span></code></pre>
-<p><strong>Note</strong> that you need to bring <code>html_document</code> onto new line and indent it with two spaces. <code>html_document</code> is a value of <code>output</code> key. <code>output</code> can have other values e.g <code>pdf_document</code>, <code>word_document</code>. However <code>html_document</code> also becomes a key for <code>toc</code> value and <code>toc</code> becames a key for its own value.</p>
-<p>Now that we have sort it initial YAML layout we can continue adding more options to style our HTML document. The other two useful options that I like to pass in are <code>toc_depth</code> and <code>number_sections</code></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="yaml-header-1.html#cb56-1"></a> <span class="op">---</span></span>
 <span id="cb56-2"><a href="yaml-header-1.html#cb56-2"></a><span class="st"> </span>title<span class="op">:</span><span class="st"> &quot;Hello world&quot;</span></span>
 <span id="cb56-3"><a href="yaml-header-1.html#cb56-3"></a> author<span class="op">:</span><span class="st"> &quot;Kirill&quot;</span></span>
@@ -235,17 +228,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb56-5"><a href="yaml-header-1.html#cb56-5"></a> output<span class="op">:</span></span>
 <span id="cb56-6"><a href="yaml-header-1.html#cb56-6"></a><span class="st">   </span>html_document<span class="op">:</span></span>
 <span id="cb56-7"><a href="yaml-header-1.html#cb56-7"></a><span class="st">     </span>toc<span class="op">:</span><span class="st"> </span>true</span>
-<span id="cb56-8"><a href="yaml-header-1.html#cb56-8"></a>     toc_depth<span class="op">:</span><span class="st"> </span><span class="dv">4</span></span>
-<span id="cb56-9"><a href="yaml-header-1.html#cb56-9"></a>     number_sections<span class="op">:</span><span class="st"> </span>yes</span>
-<span id="cb56-10"><a href="yaml-header-1.html#cb56-10"></a> <span class="op">---</span></span></code></pre>
+<span id="cb56-8"><a href="yaml-header-1.html#cb56-8"></a> <span class="op">---</span></span></code></pre>
+<p><strong>Note</strong> that you need to bring <code>html_document</code> onto new line and indent it with two spaces. <code>html_document</code> is a value of <code>output</code> key. <code>output</code> can have other values e.g <code>pdf_document</code>, <code>word_document</code>. However <code>html_document</code> also becomes a key for <code>toc</code> value and <code>toc</code> becames a key for its own value.</p>
+<p>Now that we have sort it initial YAML layout we can continue adding more options to style our HTML document. The other two useful options that I like to pass in are <code>toc_depth</code> and <code>number_sections</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="yaml-header-1.html#cb57-1"></a> <span class="op">---</span></span>
+<span id="cb57-2"><a href="yaml-header-1.html#cb57-2"></a><span class="st"> </span>title<span class="op">:</span><span class="st"> &quot;Hello world&quot;</span></span>
+<span id="cb57-3"><a href="yaml-header-1.html#cb57-3"></a> author<span class="op">:</span><span class="st"> &quot;Kirill&quot;</span></span>
+<span id="cb57-4"><a href="yaml-header-1.html#cb57-4"></a> date<span class="op">:</span><span class="st"> &quot;13 July 2016&quot;</span></span>
+<span id="cb57-5"><a href="yaml-header-1.html#cb57-5"></a> output<span class="op">:</span></span>
+<span id="cb57-6"><a href="yaml-header-1.html#cb57-6"></a><span class="st">   </span>html_document<span class="op">:</span></span>
+<span id="cb57-7"><a href="yaml-header-1.html#cb57-7"></a><span class="st">     </span>toc<span class="op">:</span><span class="st"> </span>true</span>
+<span id="cb57-8"><a href="yaml-header-1.html#cb57-8"></a>     toc_depth<span class="op">:</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb57-9"><a href="yaml-header-1.html#cb57-9"></a>     number_sections<span class="op">:</span><span class="st"> </span>yes</span>
+<span id="cb57-10"><a href="yaml-header-1.html#cb57-10"></a> <span class="op">---</span></span></code></pre>
 <p>Most of those options are self explanatory. They best way to learn what each does, is to pass them in. Note that you can comment lines out inside YAML section with <code>#</code> symbol.</p>
 <p>The last two options that can change your document apperance are <code>theme</code> and <code>highlight</code>. There are nubmer of different themes and highlight options. I suggest you find the one you like in your own time.</p>
 <div id="r-slides---ioslides" class="section level2">
 <h2><span class="header-section-number">6.1</span> R slides - ioslides</h2>
 <p>As I mentioned in previous section, <code>output</code> has many options, one of which is <code>ioslides_presentation</code>. You can simple add</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="yaml-header-1.html#cb57-1"></a> <span class="op">---</span></span>
-<span id="cb57-2"><a href="yaml-header-1.html#cb57-2"></a><span class="st"> </span>output<span class="op">:</span><span class="st"> </span>ioslides_presentation</span>
-<span id="cb57-3"><a href="yaml-header-1.html#cb57-3"></a> <span class="op">---</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="yaml-header-1.html#cb58-1"></a> <span class="op">---</span></span>
+<span id="cb58-2"><a href="yaml-header-1.html#cb58-2"></a><span class="st"> </span>output<span class="op">:</span><span class="st"> </span>ioslides_presentation</span>
+<span id="cb58-3"><a href="yaml-header-1.html#cb58-3"></a> <span class="op">---</span></span></code></pre>
 <p>at the top of your document and your <code>.Rmd</code> files will be complied to slide presentation instead.</p>
 <p>Another options is select <strong>presentation</strong> options when you were opening R markdown file. Either way you’ll notice YAML header reflects your selected output type.
 Let’s open new R markdown document and let’s select presentation instead and let’s select HTML (ioslides) option there. You can still save your files as <code>.Rmd</code>, and then press the the <code>Knit HTML</code> button.</p>

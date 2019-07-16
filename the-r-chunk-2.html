@@ -166,14 +166,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#references-2"><i class="fa fa-check"></i><b>3.4</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
-<li class="chapter" data-level="4.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#git-no-nos"><i class="fa fa-check"></i><b>4.1</b> git no nos</a></li>
-<li class="chapter" data-level="4.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#starting-with-git"><i class="fa fa-check"></i><b>4.2</b> Starting with git</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#configuring-git"><i class="fa fa-check"></i><b>4.2.1</b> Configuring git</a></li>
-<li class="chapter" data-level="4.2.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#intiating-git-repository"><i class="fa fa-check"></i><b>4.2.2</b> Intiating git repository</a></li>
-<li class="chapter" data-level="4.2.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#first-commit"><i class="fa fa-check"></i><b>4.2.3</b> First commit</a></li>
+<li class="chapter" data-level="4.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#github-setup"><i class="fa fa-check"></i><b>4.1</b> Github setup</a></li>
+<li class="chapter" data-level="4.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#rstudio-setup"><i class="fa fa-check"></i><b>4.2</b> RStudio setup</a></li>
+<li class="chapter" data-level="4.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#github-things"><i class="fa fa-check"></i><b>4.3</b> GitHub things</a></li>
+<li class="chapter" data-level="4.4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#more-git"><i class="fa fa-check"></i><b>4.4</b> More git</a></li>
+<li class="chapter" data-level="4.5" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#git-no-nos"><i class="fa fa-check"></i><b>4.5</b> git no nos</a></li>
+<li class="chapter" data-level="4.6" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#starting-with-git"><i class="fa fa-check"></i><b>4.6</b> Starting with git</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#configuring-git"><i class="fa fa-check"></i><b>4.6.1</b> Configuring git</a></li>
+<li class="chapter" data-level="4.6.2" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#intiating-git-repository"><i class="fa fa-check"></i><b>4.6.2</b> Intiating git repository</a></li>
+<li class="chapter" data-level="4.6.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#first-commit"><i class="fa fa-check"></i><b>4.6.3</b> First commit</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#which-files-to-commit"><i class="fa fa-check"></i><b>4.3</b> Which files to commit?</a></li>
-<li class="chapter" data-level="4.4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#github-introduction"><i class="fa fa-check"></i><b>4.4</b> Github introduction</a></li>
+<li class="chapter" data-level="4.7" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#which-files-to-commit"><i class="fa fa-check"></i><b>4.7</b> Which files to commit?</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html"><i class="fa fa-check"></i><b>5</b> The R chunk 2</a><ul>
 <li class="chapter" data-level="5.1" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#working-with-code-chunks"><i class="fa fa-check"></i><b>5.1</b> Working with code chunks</a></li>
@@ -222,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>```{r}
 summary(mtcars)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="the-r-chunk-2.html#cb35-1"></a><span class="kw">summary</span>(mtcars)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="the-r-chunk-2.html#cb36-1"></a><span class="kw">summary</span>(mtcars)</span></code></pre>
 <pre><code>##       mpg             cyl             disp             hp       
 ##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
 ##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
@@ -248,13 +251,13 @@ summary(mtcars)
 <pre><code>```{r}
 plot(mtcars)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="the-r-chunk-2.html#cb38-1"></a><span class="kw">plot</span>(mtcars)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="the-r-chunk-2.html#cb39-1"></a><span class="kw">plot</span>(mtcars)</span></code></pre>
 <p><img src="05-r-chunks_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>This is great, but a bit too much information, lets just focus on number of cylinders and hourse power.</p>
 <pre><code>```{r}
 plot(mtcars$cyl, mtcars$hp)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="the-r-chunk-2.html#cb40-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl, mtcars<span class="op">$</span>hp)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="the-r-chunk-2.html#cb41-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl, mtcars<span class="op">$</span>hp)</span></code></pre>
 <p><img src="05-r-chunks_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>We can add a bit more information to our plot, to make more self descriptive.</p>
 <pre><code>```{r}
@@ -264,11 +267,11 @@ plot(mtcars$cyl,
            xlab = &#39;Numer of cylinders&#39;,
            ylab=&#39;House power&#39;)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="the-r-chunk-2.html#cb42-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
-<span id="cb42-2"><a href="the-r-chunk-2.html#cb42-2"></a>     mtcars<span class="op">$</span>hp,</span>
-<span id="cb42-3"><a href="the-r-chunk-2.html#cb42-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
-<span id="cb42-4"><a href="the-r-chunk-2.html#cb42-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
-<span id="cb42-5"><a href="the-r-chunk-2.html#cb42-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="the-r-chunk-2.html#cb43-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
+<span id="cb43-2"><a href="the-r-chunk-2.html#cb43-2"></a>     mtcars<span class="op">$</span>hp,</span>
+<span id="cb43-3"><a href="the-r-chunk-2.html#cb43-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
+<span id="cb43-4"><a href="the-r-chunk-2.html#cb43-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
+<span id="cb43-5"><a href="the-r-chunk-2.html#cb43-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
 <p><img src="05-r-chunks_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Here is a good example where we can hide our code from the viewer, since it isn’t most interesting bit about this data. Let’s turn <code>echo=FALSE</code> options for all our plots below.</p>
 <p>Properly labelled plots are very informative, let’s do that as well, starting with a title <code>main="Travelling speed vs Breaking distance"</code> and then labelling axis, x <code>xlab="Travelling speed (mhp)"</code> and y <code>ylab="Stopping distance (ft)"</code></p>
@@ -291,18 +294,18 @@ plot(mtcars$cyl,
            xlab = &#39;Numer of cylinders&#39;,
            ylab=&#39;House power&#39;)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="the-r-chunk-2.html#cb44-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
-<span id="cb44-2"><a href="the-r-chunk-2.html#cb44-2"></a>     mtcars<span class="op">$</span>hp,</span>
-<span id="cb44-3"><a href="the-r-chunk-2.html#cb44-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
-<span id="cb44-4"><a href="the-r-chunk-2.html#cb44-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
-<span id="cb44-5"><a href="the-r-chunk-2.html#cb44-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
-<p><img src="05-r-chunks_files/figure-html/unnamed-chunk-11-1.png" width="384" /></p>
-<p>Let’s try to make it very big, by trying to set height and width to 15 inches.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="the-r-chunk-2.html#cb45-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
 <span id="cb45-2"><a href="the-r-chunk-2.html#cb45-2"></a>     mtcars<span class="op">$</span>hp,</span>
 <span id="cb45-3"><a href="the-r-chunk-2.html#cb45-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
 <span id="cb45-4"><a href="the-r-chunk-2.html#cb45-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
 <span id="cb45-5"><a href="the-r-chunk-2.html#cb45-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
+<p><img src="05-r-chunks_files/figure-html/unnamed-chunk-11-1.png" width="384" /></p>
+<p>Let’s try to make it very big, by trying to set height and width to 15 inches.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="the-r-chunk-2.html#cb46-1"></a><span class="kw">plot</span>(mtcars<span class="op">$</span>cyl,</span>
+<span id="cb46-2"><a href="the-r-chunk-2.html#cb46-2"></a>     mtcars<span class="op">$</span>hp,</span>
+<span id="cb46-3"><a href="the-r-chunk-2.html#cb46-3"></a>     <span class="dt">main=</span><span class="st">&#39;House power vs number of cylinders&#39;</span>,</span>
+<span id="cb46-4"><a href="the-r-chunk-2.html#cb46-4"></a>     <span class="dt">xlab =</span> <span class="st">&#39;Numer of cylinders&#39;</span>,</span>
+<span id="cb46-5"><a href="the-r-chunk-2.html#cb46-5"></a>     <span class="dt">ylab=</span><span class="st">&#39;House power&#39;</span>)</span></code></pre>
 <p><img src="05-r-chunks_files/figure-html/unnamed-chunk-12-1.png" width="1440" /></p>
 <p>Note that we are starting to hit “boundaries” of the documents. (want to talk about the fact that plot sits inside a <code>&lt;div&gt;</code> box)</p>
 </div>
@@ -348,11 +351,11 @@ for(word in sentence){
   print(word)
 }
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="the-r-chunk-2.html#cb47-1"></a>sentence &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
-<span id="cb47-2"><a href="the-r-chunk-2.html#cb47-2"></a></span>
-<span id="cb47-3"><a href="the-r-chunk-2.html#cb47-3"></a><span class="cf">for</span>(word <span class="cf">in</span> sentence){</span>
-<span id="cb47-4"><a href="the-r-chunk-2.html#cb47-4"></a>  <span class="kw">print</span>(word)</span>
-<span id="cb47-5"><a href="the-r-chunk-2.html#cb47-5"></a>}</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="the-r-chunk-2.html#cb48-1"></a>sentence &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
+<span id="cb48-2"><a href="the-r-chunk-2.html#cb48-2"></a></span>
+<span id="cb48-3"><a href="the-r-chunk-2.html#cb48-3"></a><span class="cf">for</span>(word <span class="cf">in</span> sentence){</span>
+<span id="cb48-4"><a href="the-r-chunk-2.html#cb48-4"></a>  <span class="kw">print</span>(word)</span>
+<span id="cb48-5"><a href="the-r-chunk-2.html#cb48-5"></a>}</span></code></pre>
 <pre><code>## [1] &quot;Let&quot;
 ## [1] &quot;the&quot;
 ## [1] &quot;computer&quot;
@@ -360,11 +363,11 @@ for(word in sentence){
 ## [1] &quot;the&quot;
 ## [1] &quot;work&quot;</code></pre>
 <p>Let’s add <code>prompt=TRUE</code></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="the-r-chunk-2.html#cb49-1"></a><span class="op">&gt;</span><span class="st"> </span>sentence &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
-<span id="cb49-2"><a href="the-r-chunk-2.html#cb49-2"></a><span class="op">&gt;</span><span class="st"> </span></span>
-<span id="cb49-3"><a href="the-r-chunk-2.html#cb49-3"></a><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span>(word <span class="cf">in</span> sentence){</span>
-<span id="cb49-4"><a href="the-r-chunk-2.html#cb49-4"></a><span class="op">+</span><span class="st">   </span><span class="kw">print</span>(word)</span>
-<span id="cb49-5"><a href="the-r-chunk-2.html#cb49-5"></a><span class="op">+</span><span class="st"> </span>}</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="the-r-chunk-2.html#cb50-1"></a><span class="op">&gt;</span><span class="st"> </span>sentence &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
+<span id="cb50-2"><a href="the-r-chunk-2.html#cb50-2"></a><span class="op">&gt;</span><span class="st"> </span></span>
+<span id="cb50-3"><a href="the-r-chunk-2.html#cb50-3"></a><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span>(word <span class="cf">in</span> sentence){</span>
+<span id="cb50-4"><a href="the-r-chunk-2.html#cb50-4"></a><span class="op">+</span><span class="st">   </span><span class="kw">print</span>(word)</span>
+<span id="cb50-5"><a href="the-r-chunk-2.html#cb50-5"></a><span class="op">+</span><span class="st"> </span>}</span></code></pre>
 <pre><code>## [1] &quot;Let&quot;
 ## [1] &quot;the&quot;
 ## [1] &quot;computer&quot;
@@ -385,9 +388,9 @@ for(word in sentence){
 </blockquote>
 <div id="stand-alone-rmarkdown-file" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Stand alone Rmarkdown file</h3>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="the-r-chunk-2.html#cb52-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb52-2"><a href="the-r-chunk-2.html#cb52-2"></a>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb52-3"><a href="the-r-chunk-2.html#cb52-3"></a><span class="kw">cor</span>(a, b)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="the-r-chunk-2.html#cb53-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb53-2"><a href="the-r-chunk-2.html#cb53-2"></a>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb53-3"><a href="the-r-chunk-2.html#cb53-3"></a><span class="kw">cor</span>(a, b)</span></code></pre>
 <pre><code>## Warning in cor(a, b): the standard deviation is zero</code></pre>
 <pre><code>## [1] NA</code></pre>
 <p>I’m a very lonely Rmarkdown file, can somebody include me in?</p>
