@@ -1,23 +1,5 @@
 # Work in progress
 
-Remeber to say that each option will have some default value, sometime default can be None/NULL/NA, but it is still a default.
-
-- `collapsed` (defaults to TRUE) controls whether the TOC appears with only the top-level (e.g., H2) headers. If collapsed initially, the TOC is automatically expanded inline when necessary.
-
-- `smooth_scroll` (defaults to TRUE) controls whether page scrolls are animated when TOC items are navigated to via mouse clicks.
-
-```
----
-title: "Habits"
-output:
-  html_document:
-    toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
----
-```
-
 
 ## Tabbed sections
 

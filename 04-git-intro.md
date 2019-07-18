@@ -4,6 +4,8 @@
 > How often will depend on your experience and desire not to fall
 > Git commit like you are vertically hanging off 70 feet rock
 
+I going to break to you right at the start that (unfortunatelly) doing git and GitHub is like rock climbing, but nonetheless it has great benefits for your research and analysis including making it more visiable, reproducible and potentially collaborative.
+
 [Git](https://git-scm.com/doc) is one of many tool, but very popular, that was design for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strickly design with scientific research projects in mind we will happily repurpose git to help us stay on top of our research projects. In git world everything rotates around git repository, which is "special" folder. Inside that folder every file and folder is "tracked" for changes. Git repositories often are synonymous with project folder. It is a "bucket" or "container" that holds everything related to a particular project.
 
 <div class="figure" style="text-align: left">

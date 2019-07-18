@@ -4,9 +4,11 @@ https://stackoverflow.com/questions/35459166/embed-rmarkdown-with-rmarkdown-with
 
 # Vanilla Markdown
 
-The original (vanilla) version of Markdown invented by [John Gruber](https://en.wikipedia.org/wiki/Markdown) defines a handful of tags, discussed shortly. [Rmarkdown](https://rmarkdown.rstudio.com/) isn't the only flavour, [CommonMark](http://commonmark.org/) that tries to unify all the different flavours and [GitHub Flavored Markdown (GFM)](https://guides.github.com/features/mastering-markdown/) which mainly enhances content appears on github site all via pandoc in one way or another.
+The original (vanilla) version of Markdown invented by [John Gruber](https://en.wikipedia.org/wiki/Markdown) defines a handful of tags, [discussed next](#vanilla-tags). Markdown is relativelly small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but it is greatly enhanced and extended by pandoc tool. 
 
 ## Vanilla tags
+
+Let's open our first Markdown file.
 
 ```
 File
@@ -21,11 +23,11 @@ author = "Me"
 - to build (compile) the document press `knitr` button or `ctrl+alt+k`
 - to save as `.Rmd` file
 
-I know I said vanilla, but we are launching an Rmarkdown file. It doesn't matter for two reasons, under the hood Rmarkdown will always be converted to vanilla markdown and we are simply using RStudio to write text, can be anything.
+Since we are using RStudio and R it is inevitable that will be using Rmarkdown flaour, but we can still write only vanilla markdown and remember that under the hood Rmarkdown will always be converted to vanilla markdown.
 
-From now onward we are going to start using `knitr` is an R package that does all the magic of converting and running your R markdown and R code respectively.
+From now onward we are going to start using `knitr` to complie Rmarkdown into html. Remember from the [Rmarkdown ecosystem]() that `knitr` will convert Rmarkdown to markdonw and `rmarkdown` R package will convert - render markdown file into html. By pressing that blue button both things will happen automatically and we don't need to think about, but I wanted you to know that.
 
-There actually not that much to core (vanila) of markdown essentially all of it can be summarised below
+These are essintially all core (vanilla) markdown tags. Let's practice writting them.
 
 ```r
  # Header1

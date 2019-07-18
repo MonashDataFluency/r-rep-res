@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Bibliographies | Reproducible Research in R</title>
-  <meta name="description" content="9 Bibliographies | Reproducible Research in R" />
+  <title>6 More Rmarkdown | Reproducible Research in R</title>
+  <meta name="description" content="6 More Rmarkdown | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.11.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Bibliographies | Reproducible Research in R" />
+  <meta property="og:title" content="6 More Rmarkdown | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Bibliographies | Reproducible Research in R" />
+  <meta name="twitter:title" content="6 More Rmarkdown | Reproducible Research in R" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="bookdown-1.html">
-<link rel="next" href="work-in-progress.html">
+<link rel="prev" href="the-r-chunk-2.html">
+<link rel="next" href="yaml-header-1.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -231,21 +231,175 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bibliographies" class="section level1">
-<h1><span class="header-section-number">9</span> Bibliographies</h1>
-<p>Note that .bib file is yet another plain text file that has some type of structure. Once again we need structure so that computer can parse them out and extract meaningful information</p>
-<p><a href="https://www.lifewire.com/bibtex-file-2619874" class="uri">https://www.lifewire.com/bibtex-file-2619874</a></p>
-<p><a href="http://www.bibtex.org/" class="uri">http://www.bibtex.org/</a></p>
-<p><a href="https://tug.org/interviews/patashnik.html" class="uri">https://tug.org/interviews/patashnik.html</a></p>
+<div id="more-rmarkdown" class="section level1">
+<h1><span class="header-section-number">6</span> More Rmarkdown</h1>
+<p>We are going to inrease the difficulty a little now. We are going to start working towards our <a href="example.html">final documnet</a>.</p>
+<p>Typically you will have some data set that you are trying to analyse. There are likely to be some other prior steps before you get your tabular data. Those prior steps should also be documented. In this workshop we are going to start with a tabular data set. I found this rather interesting data set at <a href="https://data.gov.au">data.gov.au</a>, <a href="https://data.gov.au/data/dataset/domestic-airline-on-time-performance">Domestic Airlines - On Time Performance</a> and I decided to investigate it a bit closer.</p>
+<div id="setup-1" class="section level2">
+<h2><span class="header-section-number">6.1</span> Setup</h2>
+<p>First thing first is we need to download it. Note that <code>read_csv</code> from <a href="https://readr.tidyverse.org/"><code>readr</code></a> package can “read” directly from url, but I wasn’t sure if everytime I compile Rmarkdown to html it would re-download the file or use chached version. I decide to store a local copy on my computer for speed and simplisity. You should always check a licence on the data set, especially if you are going to publish some of your analysis. This data is <em>Creative Commons Attribution 3.0 Australia</em> licence, there is no problem in downloading and using the data.</p>
+<p>Let’s open new Rmarkdown file and delete everything from it except the yaml header.</p>
+<div id="setting-global-chunk-options" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Setting global chunk options</h3>
+<p>As you have learned already you can manipulate each R chunk with options, but you can also set global settings for each chunk. Let’s set <code>echo = TRUE</code> and <code>message = FALSE</code> globally. This means every R chunk will be echoed i.e shown in the finale document and no messages will appear anywhere in the document.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="more-rmarkdown.html#cb65-1"></a><span class="kw">options</span>(<span class="dt">encoding=</span><span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb65-2"><a href="more-rmarkdown.html#cb65-2"></a></span>
+<span id="cb65-3"><a href="more-rmarkdown.html#cb65-3"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">echo =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb65-4"><a href="more-rmarkdown.html#cb65-4"></a>                      <span class="dt">message =</span> <span class="ot">FALSE</span>)</span></code></pre>
+</div>
+<div id="loading-libraries" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Loading libraries</h3>
+<p>We are going to do our analysis with the help of <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> library, that in itself includes many other libraries.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="more-rmarkdown.html#cb66-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre>
+</div>
+<div id="downloading-the-data" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> Downloading the data</h3>
+<p>We are doing conditional download here, don’t re-download if we already have the file.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="more-rmarkdown.html#cb67-1"></a>fn_data &lt;-<span class="st"> &quot;domestic_airline_performance.csv&quot;</span></span>
+<span id="cb67-2"><a href="more-rmarkdown.html#cb67-2"></a>fn_notes &lt;-<span class="st"> &quot;domestic_airline_performance_notes.txt&quot;</span></span>
+<span id="cb67-3"><a href="more-rmarkdown.html#cb67-3"></a></span>
+<span id="cb67-4"><a href="more-rmarkdown.html#cb67-4"></a><span class="cf">if</span>(<span class="op">!</span><span class="kw">file.exists</span>(fn_data)) {</span>
+<span id="cb67-5"><a href="more-rmarkdown.html#cb67-5"></a>  url_data &lt;-<span class="st"> &quot;https://data.gov.au/data/dataset/29128ebd-dbaa-4ff5-8b86-d9f30de56452/resource/cf663ed1-0c5e-497f-aea9-e74bfda9cf44/download/otp_time_series_web.csv&quot;</span></span>
+<span id="cb67-6"><a href="more-rmarkdown.html#cb67-6"></a>  url_notes &lt;-<span class="st"> &quot;https://data.gov.au/data/dataset/29128ebd-dbaa-4ff5-8b86-d9f30de56452/resource/69e214b9-b66f-4636-9c84-3efda2d0d8ae/download/otptimeserieswebnotes.txt&quot;</span></span>
+<span id="cb67-7"><a href="more-rmarkdown.html#cb67-7"></a></span>
+<span id="cb67-8"><a href="more-rmarkdown.html#cb67-8"></a>  <span class="kw">download.file</span>(url_data, fn_data)</span>
+<span id="cb67-9"><a href="more-rmarkdown.html#cb67-9"></a>  <span class="kw">download.file</span>(url_notes, fn_notes)</span>
+<span id="cb67-10"><a href="more-rmarkdown.html#cb67-10"></a>}</span>
+<span id="cb67-11"><a href="more-rmarkdown.html#cb67-11"></a></span>
+<span id="cb67-12"><a href="more-rmarkdown.html#cb67-12"></a>df &lt;-<span class="st"> </span><span class="kw">read_csv</span>(fn_data, <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb67-13"><a href="more-rmarkdown.html#cb67-13"></a>df</span></code></pre>
+<pre><code>## # A tibble: 79,537 x 14
+##    Route Departing_Port Arriving_Port Airline Month Sectors_Schedul…
+##    &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;   &lt;dbl&gt;            &lt;dbl&gt;
+##  1 Adel… Adelaide       Brisbane      All Ai… 37987              155
+##  2 Adel… Adelaide       Canberra      All Ai… 37987               75
+##  3 Adel… Adelaide       Gold Coast    All Ai… 37987               40
+##  4 Adel… Adelaide       Melbourne     All Ai… 37987              550
+##  5 Adel… Adelaide       Perth         All Ai… 37987              191
+##  6 Adel… Adelaide       Sydney        All Ai… 37987              486
+##  7 Albu… Albury         Sydney        All Ai… 37987              168
+##  8 Alic… Alice Springs  Sydney        All Ai… 37987               63
+##  9 All … All Ports      All Ports     All Ai… 37987            31913
+## 10 Bris… Brisbane       Adelaide      All Ai… 37987              155
+## # … with 79,527 more rows, and 8 more variables: Sectors_Flown &lt;dbl&gt;,
+## #   Cancellations &lt;dbl&gt;, Departures_On_Time &lt;dbl&gt;, Arrivals_On_Time &lt;dbl&gt;,
+## #   Departures_Delayed &lt;dbl&gt;, Arrivals_Delayed &lt;dbl&gt;, Year &lt;dbl&gt;,
+## #   Month_Num &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div id="challenge-1" class="section level2 exercise">
+<h2><span class="header-section-number">6.2</span> Challenge: 1</h2>
+<blockquote>
+<p>2 minutes</p>
+</blockquote>
+<details>
+<p><summary>
+1. Exploring and familiarising yourself with the data set
+</summary></p>
+<p>The Bureau of Infrastructure, Transport and Regional Economics (BITRE) monitors the punctuality and reliability of major domestic airlines operating between Australian airports. The purpose of this is to allow for evaluation of overall industry and individual airline performance, so that consumers of air travel can make informed decisions.</p>
+<p>Information presented in this report is for Australian domestic routes for which the passenger load averaged 8 000 or more passengers per month over the previous six months and where two or more airlines operated in competition on those routes. There were 66 routes that met this definition in April 2016. Over time, routes which meet these criteria change as airline networks and traffic levels vary.</p>
+<p>On time arrival - A flight arrival is counted as “on time” if it arrived at the gate before 15 minutes after the scheduled arrival time shown in the carriers’ schedule.<br />
+Neither diverted nor cancelled flights count as on time.
+On time departure - A flight departure is counted as “on time” if it departs the gate before 15 minutes after the scheduled departure time shown in the carriers’ schedule.
+Cancellation - A flight removed from service within 7 days of scheduled departure is regarded as a cancellation.</p>
+<p>Participating airlines report their overall monthly network performance where this is possible.
+Total industry figures encompass all services operated by reporting airlines only. These airlines collectively carried over 95 per cent of total domestic passengers (regular public transport only) in 2015.</p>
+The following domestic airlines currently report this information monthly to the BITRE: Jetstar, Qantas, QantasLink, Regional Express, Tigerair Australia, Virgin Australia and Virgin Australia Regional Airlines. Data has been gathered since November 2003, although some airlines commenced reporting at a later date, including Jetstar which first reported in May 2004, MacAir in July 2005, Tigerair Australia in April 2008 and Virgin Australia Regional Airlines in May 2013. MacAir ceased operations in February 2009 and data was not received for December 2008 onwards. Virgin Blue was rebranded as Virgin Australia in May 2011 and Tiger Airways was rebranded as Tigerair Australia in July 2013 and time series data in Microsoft Excel spread sheet format on the BITRE website have been revised to reflect these changes. Services operated by Skywest on behalf of Virgin Australia using ATR/F100 aircraft commenced in November 2011 and were shown separately as Virgin Australia
+</details>
+</div>
+<div id="exploring-the-data" class="section level2">
+<h2><span class="header-section-number">6.3</span> Exploring the data</h2>
+<p>Now that we’ve got the data lets explore it. It always helps if we can find more information about the data set, particular what information each column might have.</p>
+<p>Let’s understand a bit better our data set by firstly figuring out how many observations and different variables we have. Instead of executing and showing the code we instead going to keep the chunk “silent” but still executing the R code and we are going to reuse our <code>d</code> variable later in the document.</p>
+<pre><code>```{r echo = F}
+d &lt;- df %&gt;% dim
+```</code></pre>
+<p>Later in the text we’ll access our <code>d</code> variable like you would in R</p>
+<pre><code>`r d[1]`</code></pre>
+<p>Lets add the following sentence to our Rmarkdown document and then <code>knit</code> to see the results.</p>
+<pre><code>total number of observation `r d[1]` and total number of variables `r d[2]`</code></pre>
+<p>Now we are going to look at total number of airlines, include the following code into your Rmarkdown document.</p>
+<pre><code>```{r echo = F}
+df %&gt;%
+select(Airline) %&gt;%
+distinct() %&gt;%
+arrange(Airline)
+```</code></pre>
+<p>Let’s summarise our data to see how many observation each airline has.</p>
+<pre><code>```{r echo = F}
+df %&gt;%
+group_by(Airline) %&gt;%
+summarise(n = n()) %&gt;%
+arrange(-n)
+```</code></pre>
+<p>I hope you have noticed “All Airlines” name in the <code>Airline</code> column. I’m fairly certain that this isn’t any specif airlines. In general we would need to consult people who we got the data from, but in our case we are simply going to filter those observations out.</p>
+<pre><code>```{r echo = F}
+df2 &lt;- df %&gt;% filter(Airline != &#39;All Airlines&#39;
+```</code></pre>
+</div>
+<div id="challenge-1-1" class="section level2 exercise">
+<h2><span class="header-section-number">6.4</span> Challenge: 1</h2>
+<blockquote>
+<p>5 minutes</p>
+</blockquote>
+<details>
+<summary>
+1. Can you summarise routes in similar way as we did with airlines?
+</summary>
+use <code>group_by(Route)</code>
+</details>
+<details>
+<summary>
+2. Can spot an odd route in you summary? If you can filter is our from <code>df2</code>.
+</summary>
+<code>filter(Route != "All Ports-All Ports")</code>
+</details>
+</div>
+<div id="visualising-the-data" class="section level2">
+<h2><span class="header-section-number">6.5</span> Visualising the data</h2>
+<p>In this section we are going to learn a few more chunk options, all to do with figure manipulation.</p>
+<ul>
+<li><code>fig.align</code></li>
+<li><code>fig.cap</code></li>
+<li><code>fig.height</code></li>
+<li><code>fig.width</code></li>
+</ul>
+<p>Firstly lets make sure we have our data properly filtered, just in case you missed the challenge above</p>
+<pre><code>```{r}
+df2 &lt;- df %&gt;% filter(Airline != &#39;All Airlines&#39;, Route != &#39;All Ports-All Ports&#39;)
+```</code></pre>
+<p>Here we are summarising so that we have an idea of how many times a particular location had be use per airline per year and we are only going to look at two airlines, Jetstar and Qantas.</p>
+<pre><code>```{r}
+df2 %&gt;%
+  group_by(Airline, Year, Departing_Port) %&gt;%
+  summarise(n = n()) %&gt;%
+  ungroup %&gt;%
+  filter(Airline == &#39;Jetstar&#39; | Airline == &#39;Qantas&#39;) %&gt;%
+    ggplot(aes(Departing_Port, n, color = Airline)) +
+    geom_boxplot() +
+    theme(axis.text.x=element_text(angle=45, hjust=1))
+```</code></pre>
+<p>In any given year what is the distribution of cancellation</p>
+<p>Note the <code>warning</code> message that comes up in the text, let’s assume we understand it and let’s just turn it off by setting <code>warning = F</code></p>
+<pre><code>```{r, fig.width = 14, fig.height = 9}
+df2 %&gt;%
+  filter(Airline == &#39;Jetstar&#39; | Airline == &#39;Qantas&#39;) %&gt;%
+  select(Airline, Departing_Port, Cancellations, Year) %&gt;%
+    ggplot(aes(Departing_Port, Cancellations, color = factor(Year))) +
+      geom_boxplot() +
+      facet_wrap(~Airline) +
+      theme(axis.text.x=element_text(angle= 45, hjust=1))
+```</code></pre>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="bookdown-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="work-in-progress.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-r-chunk-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="yaml-header-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
