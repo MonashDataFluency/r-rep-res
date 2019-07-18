@@ -1,0 +1,16 @@
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+# Appendix
+
+## Long list of chunk options
+
+```{r echo = F, message = F}
+chunks <- readr::read_tsv("../supplementary/chunk_options.tsv") %>%
+		select(-this)
+chunks %>% kable
+```
+

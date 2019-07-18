@@ -4,37 +4,72 @@ At the very top of your `.Rmd` file you can, optionaly, include YAML block. In t
 
 Navigate to the top of your `.Rmd` document and find YAML section there. Just like with the options we passed in to manipulate R code block, YAML block also has **key = value** pairs, but instead they are separated by colon ( `:` ). Now let's add table of content to our document, this will make it easier to navigate your page as well as give nice over view of the content our **key** is `toc` with value `true` or `yes` which one you prefer better.
 
-```r
-`r ''` ---
-`r ''` title: "Hello world"
-`r ''` author: "Kirill"
-`r ''` date: "13 July 2016"
-`r ''` output:
-`r ''`   html_document:
-`r ''`     toc: true
-`r ''` ---
+```{r echo = F, comment=""}
+text <- c("---",
+          "title: 'Hello world'",
+          "author: 'Kirill'",
+          "date: '13 July 2016'",
+          "date: `r format(Sys.time(), '%d %B, %Y')`'",
+          "output:",
+          "  html_document:",
+          "    toc: true",
+          "---")
+
+cat(text, sep = "\n")
 ```
 
 **Note** that you need to bring `html_document` onto new line and indent it with two spaces. `html_document` is a value of `output` key. `output` can have other values e.g `pdf_document`, `word_document`. However `html_document` also becomes a key for `toc` value and `toc` becames a key for its own value.
 
 Now that we have sort it initial YAML layout we can continue adding more options to style our HTML document. The other two useful options that I like to pass in are `toc_depth` and `number_sections`
 
-```r
-`r ''` ---
-`r ''` title: "Hello world"
-`r ''` author: "Kirill"
-`r ''` date: "13 July 2016"
-`r ''` output:
-`r ''`   html_document:
-`r ''`     toc: true
-`r ''`     toc_depth: 4
-`r ''`     number_sections: yes
-`r ''` ---
-```
+```{r echo = F, comment=""}
+text <- c("---",
+          "title: 'Hello world'",
+          "author: 'Kirill'",
+          "date: '13 July 2016'",
+          "date: `r format(Sys.time(), '%d %B, %Y')`'",
+          "output:",
+          "  html_document:",
+          "    toc: true",
+          "    toc_depth: 3",
+          "    number_sections: yes",
+          "---")
 
+cat(text, sep = "\n")
+```
 Most of those options are self explanatory. They best way to learn what each does, is to pass them in. Note that you can comment lines out inside YAML section with `#` symbol.
 
+Good place to start reading about different option can be
+
+```
+?rmarkdown::html_document
+```
+
 The last two options that can change your document apperance are `theme` and `highlight`. There are nubmer of different themes and highlight options. I suggest you find the one you like in your own time.
+
+
+Remeber to say that each option will have some default value, sometime default can be None/NULL/NA, but it is still a default.
+
+- `collapsed` (defaults to TRUE) controls whether the TOC appears with only the top-level (e.g., H2) headers. If collapsed initially, the TOC is automatically expanded inline when necessary.
+
+- `smooth_scroll` (defaults to TRUE) controls whether page scrolls are animated when TOC items are navigated to via mouse clicks.
+
+
+```
+---
+title: "Habits"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+```
+
+## Tables
+
+To make your tables user friendly set `df_print: paged`
 
 ## R slides - ioslides
 

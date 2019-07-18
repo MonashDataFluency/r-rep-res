@@ -8,6 +8,7 @@ rmd_files:
   # 2 hours
   - 04-git-intro.Rmd
   - 05-r-chunks.Rmd
+  - 05-more-rmarkdown.Rmd
   - 06-yaml-header.Rmd
   # 1.5 hours
   - 07-bookdown.Rmd

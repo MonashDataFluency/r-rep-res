@@ -1,8 +1,3 @@
----
-output:
-  html_document:
-    toc: 2
----
 # More Rmarkdown
 
 We are going to inrease the difficulty a little now. We are going to start working towards our [final documnet](example.html).
@@ -18,7 +13,7 @@ Let's open new Rmarkdown file and delete everything from it except the yaml head
 
 ### Setting global chunk options
 
-As you have learned already you can manipulate each R chunk with options, but you can also set global settings for each chunk. Let's set `echo = TRUE` and `message = FALSE` globaly. This means every R chunk will be echoed i.e shown in the finale document and no messages will appear anywhere in the document.
+As you have learned already you can manipulate each R chunk with options, but you can also set global settings for each chunk. Let's set `echo = TRUE` and `message = FALSE` globally. This means every R chunk will be echoed i.e shown in the finale document and no messages will appear anywhere in the document.
 
 ```{r setup}
 options(encoding="utf-8")
@@ -75,125 +70,136 @@ df
 
 Now that we've got the data lets explore it. It always helps if we can find more information about the data set, particular what information each column might have.
 
-Let's understand a bit better the number of columns and rows that we are dealing with
+Let's understand a bit better our data set by firstly figuring out how many observations and different variables we have. Instead of executing and showing the code we instead going to keep the chunk "silent" but still executing the R code and we are going to reuse our `d` variable later in the document.
 
-```{r}
-df %>% dim
+```{r echo = F, comment=""}
+text <- c("```{r echo = F}",
+	  "d <- df %>% dim",
+	  "```")
+
+cat(text, sep = '\n')
 ```
 
-The reason I'm going to converted to `data.frame` is simply becasue I want to see one entry per line
+Later in the text we'll access our `d` variable like you would in R
 
-```{r warning=F}
-df %>%
-  colnames %>%
-  unlist %>%
-  sort %>%
-  data.frame
+```{r echo = F, comment=""}
+text <- c("`r d[1]`")
+cat(text, sep = '\n')
 ```
 
-There are many ways you can explore this data, but i just want to have a look at the types of Airlines there are.
+Lets add the following sentence to our Rmarkdown document and then `knit` to see the results.
 
-```{r}
-df %>%
-  select(Airline) %>%
-  distinct() %>%
-  arrange(Airline)
+```{r echo = F, comment=""}
+text <- c("total number of observation `r d[1]` and total number of variables `r d[2]`")
+cat(text, sep = '\n')
 ```
 
-## Cleaning up
+Now we are going to look at total number of airlines, include the following code into your Rmarkdown document.
 
-I've noticed that there "All Airlines" name in the `Airline` column that appears to have the most number of occurrences in the data
+```{r echo = F, comment=""}
+text <- c("```{r echo = F}",
+          "df %>%",
+           "select(Airline) %>%",
+           "distinct() %>%",
+           "arrange(Airline)",
+	   "```")
 
-```{r}
-df %>%
-  group_by(Airline) %>%
-  summarise(n = n()) %>%
-  arrange(-n)
+cat(text, sep = '\n')
 ```
 
-Also there one of the routes is `All Ports-All Ports`. Googling for that name didn't reveal any places in Australia by that name.
+Let's summarise our data to see how many observation each airline has.
 
-```{r}
-df %>%
-  group_by(Route) %>%
-  summarise(n = n()) %>%
-  arrange(-n)
+```{r echo = F, comment=""}
+text <- c("```{r echo = F}",
+          "df %>%",
+           "group_by(Airline) %>%",
+            "summarise(n = n()) %>%",
+            "arrange(-n)",
+	   "```")
+
+cat(text, sep = '\n')
 ```
 
-I decide going forward to drop those data points.
+I hope you have noticed "All Airlines" name in the `Airline` column. I'm fairly certain that this isn't any specif airlines. In general we would need to consult people who we got the data from, but in our case we are simply going to filter those observations out.
 
-```{r}
-df2 <- df %>%
-          filter(Airline != "All Airlines",
-                 Route != "All Ports-All Ports")
+```{r echo = F, comment=""}
+text <- c("```{r echo = F}",
+	  "df2 <- df %>% filter(Airline != 'All Airlines'",
+	  "```")
+
+cat(text, sep = '\n')
 ```
 
+
+## Challenge: 1 {.exercise}
+
+> 5 minutes
+
+<details>
+  <summary>
+    1. Can you summarise routes in similar way as we did with airlines?
+  </summary>
+   use `group_by(Route)`
+</details>
+
+<details>
+  <summary>
+    2. Can spot an odd route in you summary? If you can filter is our from `df2`.
+  </summary>
+   `filter(Route != "All Ports-All Ports")`
+</details>
 
 ## Visualising the data
 
-### Bar plot
+In this section we are going to learn a few more chunk options, all to do with figure manipulation.
 
-```{r}
-df2 %>%
-  group_by(Airline, Route) %>%
-  summarise(n = n()) %>%
-  ungroup %>%
-  ggplot(aes(Route, n)) +
-    geom_bar(stat = 'identity') +
-    facet_wrap(~Airline, ncol = 5, scales = "free_y") +
-    theme(axis.text.x=element_text(angle=45, hjust=1))
+- `fig.align`
+- `fig.cap`
+- `fig.height`
+- `fig.width`
+
+Firstly lets make sure we have our data properly filtered, just in case you missed the challenge above
+
+```{r echo = F, comment=""}
+text <- c("```{r}",
+          "df2 <- df %>% filter(Airline != 'All Airlines', Route != 'All Ports-All Ports')",
+	  "```")
+
+cat(text, sep = '\n')
 ```
 
-### Scatter plot
+Here we are summarising so that we have an idea of how many times a particular location had be use per airline per year and we are only going to look at two airlines, Jetstar and Qantas.
 
-```{r}
-p2 <- df2 %>%
-  group_by(Airline, Year, Departing_Port, Arriving_Port) %>%
-  summarise(n = n()) %>%
-  ungroup %>%
-  ggplot(aes(Departing_Port, Arriving_Port, color = factor(Year))) +
-    geom_point(aes(size = n)) +
-    facet_wrap(~Airline, ncol = 5, scales = "free") +
-    theme(axis.text.x=element_text(angle=45, hjust=1))
+```{r echo = F, comment=""}
+text <- c("```{r}",
+          "df2 %>%",
+          "  group_by(Airline, Year, Departing_Port) %>%",
+          "  summarise(n = n()) %>%",
+          "  ungroup %>%",
+          "  filter(Airline == 'Jetstar' | Airline == 'Qantas') %>%",
+          "    ggplot(aes(Departing_Port, n, color = Airline)) +",
+          "    geom_boxplot() +",
+          "    theme(axis.text.x=element_text(angle=45, hjust=1))",
+          "```")
 
-p2
+cat(text, sep = '\n')
 ```
 
-```{r}
-p3 <- df2 %>%
-        select(Airline, Route, Cancellations, Year, Month_Num) %>%
-        ggplot(aes(factor(Year), Cancellations, color = Airline)) +
-          geom_point() +
-          facet_wrap(~Airline, ncol = 5) +
-          theme(axis.text.x=element_text(angle= 45, hjust=1))
-p3
+In any given year what is the distribution of cancellation
+
+Note the `warning` message that comes up in the text, let's assume we understand it and let's just turn it off by setting `warning = F`
+
+
+```{r echo = F, comment=""}
+text <- c("```{r, fig.width = 14, fig.height = 9}",
+          "df2 %>%",
+          "  filter(Airline == 'Jetstar' | Airline == 'Qantas') %>%",
+          "  select(Airline, Departing_Port, Cancellations, Year) %>%",
+          "    ggplot(aes(Departing_Port, Cancellations, color = factor(Year))) +",
+          "      geom_boxplot() +",
+          "      facet_wrap(~Airline) +",
+          "      theme(axis.text.x=element_text(angle= 45, hjust=1))",
+          "```")
+
+cat(text, sep = '\n')
 ```
-
-```{r}
-
-k <- 10
-
-p4 <- df2 %>%
-        select(Airline, Route, Cancellations, Year, Month_Num) %>%
-        group_by(Airline, Year) %>%
-        mutate(tot = n()) %>%
-        ungroup %>%
-        mutate(norm_cancel = (Cancellations/tot) * k) %>%
-        ggplot(aes(factor(Year), norm_cancel, color = Airline)) +
-          geom_point() +
-          facet_wrap(~Airline, ncol = 5) +
-          theme(axis.text.x=element_text(angle=45, hjust=1))
-p4
-```
-
-It appears that after normalising for number of flights in that year by a particular Airline that Virgin Aus, ATR has the higest number of cancellations.
-
-Need to check but I think the intepretation of the my normalisation is that for every 10 flights 6 are cancelled
-
-## Next step
-
-Learn from the data which airlines appear to be departing/arrivign late and to which destinations
-
-## References
-
-- [themes](http://www.datadreaming.org/post/r-markdown-theme-gallery/)

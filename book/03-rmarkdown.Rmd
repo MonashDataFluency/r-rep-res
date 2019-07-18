@@ -1,6 +1,14 @@
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
 # Rmarkdown
 
-In [Markdown section](#vanilla-markdown) I've showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that.
+The reason that we are learning [Rmarkdown](https://rmarkdown.rstudio.com/) is because it gives us very straight forward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.
+This approach of interleaving analysis code, commentary and description is very explicit, which has direct implication in reproducibility, shearability and collaboration.
+
+In [Markdown section](#vanilla-markdown) I've showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that again.
 
 ```
 File
@@ -15,25 +23,12 @@ author = "Me"
 - to build (compile) the document press `knitr` button or `ctrl+alt+k`
 - to save as `.Rmd` file
 
-## Why Rmarkdown again?
-
-The reason that we are using [Rmarkdown](https://rmarkdown.rstudio.com/) is because there is no alternative, really? Really.
-
-Irrespective of the programming language used we'll have to write code and one way or anther you'll be writing notes and comments that will go along with that chunk of code. It makes sense to keep those comments (text) close to the code, inside the same file ideally. That idea isn't novel I and hope that all of you comment your code well. Common commenting characters:
-
-- `#`
-- `/*  */`
-- `//`
-
-But the comments are never seem in the output and can only be accessed by one looking into the source. But wouldn't it be nice if we can see the code, the output and the comments together?
-
-This type approach is supper common and supper useful when you working with some data and you are trying to convey some message to a different person (people) by means of examples and/or illustration of the analysis flow. Not only one can read your notes about the analysis, that are placed exactly next the piece of code or data by the way, but one can also see the code that one wrote for that analysis.
 
 ## Embedding R code
 
-RStudio is pretty good it templates our Rmd file a bit. Lets delete all the text past these lines.
+RStudio templates `.Rmd` file for us. However lets delete all the text after the yaml header.
 
-```{r, echo=FALSE, comment=""}
+```{r echo=FALSE, comment=""}
 text1 <- c("---",
            "title: 'Learning Rmarkdown'",
            "author: 'Kirill'",
@@ -52,18 +47,18 @@ cat(c(text1,
       text2), sep = "\n")
 ```
 
-I'm going to explain `knitr::opts_chunk` bit shortly, but for now let's skip that part and move on to embedding R code into the document.
+I'm going to explain `knitr::opts_chunk` in [later section](#more-rmarkdown). An R chunk is a "special" block with in the document that will be read and evaluated by `knitr`, ultimatelly converting everything into plain markdown. But for us it means that we can focus on our analysis and embed R code without having to worry about it. Additionally there are lage number of chunk options that helps with different aspects of the document including code decoration and evaluation, results and plots rendering and display.
 
-Any R code has to be inside "special" block - chunk, this one
+This is an R code chunk.
 
-```{r, echo=FALSE, comment=""}
-text1 <- c("```{r}",
-           "",
-           "```")
-cat(text1, sep = "\n")
+```{r echo=FALSE, comment=""}
+text <- c("```{r}",
+          "",
+          "```")
+cat(text, sep = "\n")
 ```
 
-Little `r` there specifies the "engine", which interpreter to use to "understand" the text inside that chunk. Here we are saying use `R` engine (language) to evaluate the code. The [list of languages](https://bookdown.org/yihui/rmarkdown/language-engines.html) is rather long actually, but for now let's only focus on R language, otherwise it becomes even harder to explain Rmarkdown. As I've hinted in the introduction section is so ubiquitous that you can't avoid it anymore.
+The little `r` there specifies the "engine", basically telling Rmarkdown how to evalute the code inside the chunk. Here we are saying use `R` engine (language) to evaluate the code. The [list of languages](https://bookdown.org/yihui/rmarkdown/language-engines.html) is rather long, hence why earlier comments about Rmarkdown spanning much greater area then one might think. In this workshop we are only going to focus on R language.
 
 Let's write our first bit of R code inside the Rmarkdown document. First we need to start a new R chunk, which can be done in either of three ways:
 
@@ -74,34 +69,40 @@ Let's write our first bit of R code inside the Rmarkdown document. First we need
 Let's start with a simple `print()` statement and print `Hello world, I'm learning Rmarkdown !` string, except we are going to split it between two variable
 
 
-```{r, echo=FALSE, comment=""}
-text1 <- c("```{r}",
-           "a <- 'Hello world,'",
-           "b <- 'Im learning Rmarkdown !'",
-           "ab <- paste(a, b)",
-           "print(ab)",
+```{r echo=FALSE, comment=""}
+text <- c("```{r}",
+           "a <- 'Hello world, Im learning Rmarkdown !'",
+           "a",
            "```")
-cat(text1, sep = "\n")
+cat(text, sep = "\n")
 ```
 
 Note that each chunk can be run independently in the console by pressing `ctrl^enter` or little green arrow.
 
-Each code chunk is highly customisable via [chunk options](https://bookdown.org/yihui/rmarkdown/r-code.html). We are going to learn a few today, but we won't be able to cover all of them. You probably never going to use some of them, but as long as you know what to look for you'll be able to search for then on the internet. Note that all chunk options have a default value, by not specifying the options you are simply using the default option.
+Each code chunk is highly customisable via [chunk options](https://bookdown.org/yihui/rmarkdown/r-code.html). We are going to learn a few today, but we won't be able to cover all of them. You probably never going to use some of them, but as long as you know what to look for you'll be able to search for then. Note that all chunk options have a default value. Not specifying an options means you are using the default value. These are chunk options that we are going to cover today.
+
+```{r echo = F, message = F}
+chunks <- readr::read_tsv("../supplementary/chunk_options.tsv") %>%
+       		filter(this) %>%
+       		arrange(type) %>%
+		select(-this)
+chunks %>% kable
+```
 
 General layout of any chunk is
 
-```{r, echo=FALSE, comment=""}
-text1 <- c("```",
-           "{r chunk_name, options}",
-           "```")
+```{r echo=FALSE, comment=""}
+text <- c("```{r chunk_name, options}",
+	  "",
+          "```")
 
-cat(text1, sep = "\n")
+cat(text, sep = "\n")
 ```
 
 Note a couple of things, there isn't a comma between `r` and `chunk_name`. Not sure why this is..
 Also note that `chunk_name` is optional, you can skip it, as we have in earlier examples. Naming chunks is good idea to conceptually label the chunk as to what it does, but also we you are going to build more sophisticated documents you'll be able to selectively include chunks by refer to them by the chunk name.
 
-Lets start off with these three chunk options:
+Lets start off with these four chunk options:
 
 - `echo` show what has been typed in i.e show the code
 - `eval` evaluate or execute that code
@@ -284,7 +285,3 @@ And now we only see `print()` statement and no output.
   cat(text1, sep = "\n")
   ```
 </details>
-
-##  References
-
-[Here is nice cheatsheet](http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) that has comprehensive cover of all the options you can pass in.
