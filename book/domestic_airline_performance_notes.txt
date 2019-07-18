@@ -1,0 +1,17 @@
+The Bureau of Infrastructure, Transport and Regional Economics (BITRE) monitors the punctuality and reliability of major domestic airlines operating between Australian airports. The purpose of this is to allow for evaluation of overall industry and individual airline performance, so that consumers of air travel can make informed decisions.
+
+Information presented in this report is for Australian domestic routes for which the passenger load averaged 8 000 or more passengers per month over the previous six months and where two or more airlines operated in competition on those routes.  There were 66 routes that met this definition in April 2016.  Over time, routes which meet these criteria change as airline networks and traffic levels vary.  
+
+On time arrival - A flight arrival is counted as "on time" if it arrived at the gate before 15 minutes after the scheduled arrival time shown in the carriers' schedule.  
+Neither diverted nor cancelled flights count as on time. 
+On time departure - A flight departure is counted as "on time" if it departs the gate before 15 minutes after the scheduled departure time shown in the carriers' schedule.
+Cancellation - A flight removed from service within 7 days of scheduled departure is regarded as a cancellation.
+
+Participating airlines report their overall monthly network performance where this is possible. 
+Total industry figures encompass all services operated by reporting airlines only.  These airlines collectively carried over 95 per cent of total domestic passengers (regular public transport only) in 2015.
+
+The following domestic airlines currently report this information monthly to the BITRE:  Jetstar, Qantas, QantasLink, Regional Express, Tigerair Australia, Virgin Australia and Virgin Australia Regional Airlines.  Data has been gathered since November 2003, although some airlines commenced reporting at a later date, including Jetstar which first reported in May 2004, MacAir in July 2005, Tigerair Australia in April 2008 and Virgin Australia Regional Airlines in May 2013. MacAir ceased operations in February 2009 and data was not received for December 2008 onwards. Virgin Blue was rebranded as Virgin Australia in May 2011 and Tiger Airways was rebranded as Tigerair Australia in July 2013 and time series data in Microsoft Excel spread sheet format on the BITRE website have been revised to reflect these changes. Services operated by Skywest on behalf of Virgin Australia using ATR/F100 aircraft commenced in November 2011 and were shown separately as Virgin Australia – ATR/F100 Operations. Virgin Australia Regional Airlines commenced operations in May 2013. It was formed after the acquisition of Skywest by Virgin Australia and represented a combination of operations previously reported under Skywest and Virgin Australia – ATR/F100 Operations. In January 2016, Virgin Australia transferred their ATR fleet from Virgin Australia Regional Airlines to Virgin Australia.  
+
+The method of capturing on time performance varies between airlines utilising different recording systems.  Jetstar and Qantas jet aircraft use Aircraft Communication Addressing and Reporting System (ACARS) to electronically measure on time performance.  Regional Express, Tigerair Australia, Virgin Australia, Virgin Australia Regional Airlines and the Qantas non-jet fleet record on time performance manually using records from pilots, gate agents and/or ground crews.
+
+After initial data is collected, aggregate reports are audited internally by participating airlines prior to publication.  

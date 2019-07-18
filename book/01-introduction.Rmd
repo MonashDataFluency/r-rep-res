@@ -131,7 +131,8 @@ packages <- c("tidyverse",
               "rmarkdown",
               "knitr",
               "bookdown",
-              "tinytex")
+              "tinytex",
+	      "citr")
 
 keep <- packages[!(packages %in% installed.packages()[,"Package"])]
 

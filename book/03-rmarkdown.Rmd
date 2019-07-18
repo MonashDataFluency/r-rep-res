@@ -105,9 +105,12 @@ Lets start off with these three chunk options:
 
 - `echo` show what has been typed in i.e show the code
 - `eval` evaluate or execute that code
+- `include` include execute code into the document, relies on `eval = TRUE`
 - `results` hide resulting output
 
 These allow us fine level control over the final document. Think about who are generating the document for and what type of information you need to share. Sometimes we might want to show the code, but not execute it and other times we might just want to execute it and share the results, e.g plot, without actually showing the code.
+
+### echo and eval
 
 Let's start with `echo = TRUE` and `eval = TRUE`.
 
@@ -170,6 +173,39 @@ b <- 'Im learning Rmarkdown !'
 ab <- paste(a, b)
 print(ab)
 ```
+
+### include
+
+This option also helps to manipulate your final document look. This option dictates whether the output of the executed code will be included into the final document. Sometimes you can simply trigger `eval` flag to achive similar result of code now being included, but other times you might way the code to actuall be executed but not included. For example when future R chunk relay on the output of this intermidiate chunk, but there is now need to include that into the document.
+
+
+```{r echo=FALSE, comment=""}
+text1 <- c("```{r echo = T, eval = T, include = F}",
+           "a <- 'Hello world,'",
+           "b <- 'Im learning Rmarkdown !'",
+           "ab <- paste(a, b)",
+           "print(ab)",
+           "```",
+           "",
+           "```{r, echo = T, include = T}",
+           "ab",
+           "```")
+
+cat(text1, sep = "\n")
+```
+
+```{r eval = F}
+a <- 'Hello world,'
+b <- 'Im learning Rmarkdown !'
+ab <- paste(a, b)
+print(ab)
+```
+
+```{r}
+ab
+```
+
+### results
 
 Now we see the code, but not the output. The difference between `echo` and `results` is subtle, at least in my head. Let's consider the following example.
 

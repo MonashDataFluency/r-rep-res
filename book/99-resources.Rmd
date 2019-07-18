@@ -2,12 +2,11 @@
 
 - [Great presentation about data story telling](https://docs.google.com/presentation/d/1q1MNPAURLVfrIvqG9hiJip-DBBmm5_ZFMC-8-lNfmPk/edit#slide=id.p)
 - [Awesome presentation](https://jules32.github.io/useR-2019-keynote/#1)
-
 - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 - [knitr](https://yihui.name/knitr/)
 - [knitr vs rmarkdown vs bookdown](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)
- [RMarkdown for Scientists by Nicholas Tierney](https://rmd4sci.njtierney.com/)
-
+- [RMarkdown for Scientists by Nicholas Tierney](https://rmd4sci.njtierney.com/)
 - [related stackoverflow question](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
 - [Presentation slides on Rmarkdown ecosystem](https://slides.yihui.name/2017-DSM-rmarkdown-Yihui-Xie.html)
+- [R chunks](https://kbroman.org/knitr_knutshell/pages/Rmarkdown.html)
