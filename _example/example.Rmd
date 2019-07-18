@@ -55,8 +55,6 @@ if(!file.exists(fn_data)) {
 df <- read_csv(fn_data, quote = "")
 
 df
-
-df %>% head %>% kable
 ```
 
 `kable` is a helper function to help us display tables in Rmarkdown
@@ -78,18 +76,10 @@ Now that we've got the data lets explore it. It always helps if we can find more
 Great, the information above gives us some starting material. However it wasn't that explicit what each column meant and how man columns are there. Let's quickly take a pick
 
 ```{r}
-df %>% dim
+d <- df %>% dim
 ```
 
-The reason I'm going to converted to `data.frame` is simply becasue I want to see one entry per line
-
-```{r warning=F}
-df %>%
-  colnames %>%
-  unlist %>%
-  sort %>%
-  data.frame
-```
+total number of observation `r d[1]` and total number of variables `r d[2]`
 
 There are many ways you can explore this data, but i just want to have a look at the types of Airlines there are.
 
@@ -131,68 +121,34 @@ df2 <- df %>%
 
 ## Visualising the data
 
-### Bar plot
-
-```{r}
-df2 %>%
-  group_by(Airline, Route) %>%
-  summarise(n = n()) %>%
-  ungroup %>%
-  ggplot(aes(Route, n)) +
-    geom_bar(stat = 'identity') +
-    facet_wrap(~Airline, ncol = 5, scales = "free_y") +
-    theme(axis.text.x=element_text(angle=45, hjust=1))
-```
-
-### Scatter plot
+Here we are summarising so that we have an idea of how many times a particular location had be use per airline per year and we are only going to look at two airlines, 
+Jetstar and Qantas.
 
 ```{r}
 p2 <- df2 %>%
-  group_by(Airline, Year, Departing_Port, Arriving_Port) %>%
+  group_by(Airline, Year, Departing_Port) %>%
   summarise(n = n()) %>%
   ungroup %>%
-  ggplot(aes(Departing_Port, Arriving_Port, color = factor(Year))) +
-    geom_point(aes(size = n)) +
-    facet_wrap(~Airline, ncol = 5, scales = "free") +
+  filter(Airline == "Jetstar" | Airline == "Qantas") %>% 
+  ggplot(aes(Departing_Port, n, color = Airline)) +
+    geom_boxplot() +
     theme(axis.text.x=element_text(angle=45, hjust=1))
 
 p2
 ```
 
-```{r}
+In any given year what is the distribution of cancellation
+
+```{r, fig.width=15, fig.height=9}
 p3 <- df2 %>%
-        select(Airline, Route, Cancellations, Year, Month_Num) %>%
-        ggplot(aes(factor(Year), Cancellations, color = Airline)) +
-          geom_point() +
-          facet_wrap(~Airline, ncol = 5) +
+        filter(Airline == "Jetstar" | Airline == "Qantas") %>% 
+        select(Airline, Departing_Port, Cancellations, Year) %>%
+        ggplot(aes(Departing_Port, Cancellations, color = factor(Year))) +
+          geom_boxplot() +
+          facet_wrap(~Airline) +
           theme(axis.text.x=element_text(angle= 45, hjust=1))
 p3
 ```
-
-```{r}
-
-k <- 10
-
-p4 <- df2 %>%
-        select(Airline, Route, Cancellations, Year, Month_Num) %>%
-        group_by(Airline, Year) %>%
-        mutate(tot = n()) %>%
-        ungroup %>%
-        mutate(norm_cancel = (Cancellations/tot) * k) %>%
-        ggplot(aes(factor(Year), norm_cancel, color = Airline)) +
-          geom_point() +
-          facet_wrap(~Airline, ncol = 5) +
-          theme(axis.text.x=element_text(angle=45, hjust=1))
-p4
-```
-
-It appears that after normalising for number of flights in that year by a particular Airline that Virgin Aus, ATR has the higest number of cancellations.
-
-Need to check but I think the intepretation of the my normalisation is that for every 10 flights 6 are cancelled
-
-## Next step
-
-Learn from the data which airlines appear to be departing/arrivign late and to which destinations
 
 ## References
 
