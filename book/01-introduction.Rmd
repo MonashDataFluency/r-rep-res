@@ -1,6 +1,9 @@
 # Introduction to Rmarkdown
 
-Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf docuemnts and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let's call it a thesis or a paper or a course book. And with essentially no effort you can change from "rendering" your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time. Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the ecosystem discussed next. Markdown is relativelly small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but greatly enhanced by pandoc tool.
+Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf documents and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let's call it a thesis or a paper or a course book. And with essentially no effort you can change from "rendering" your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time.
+Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the Rmrkdown ecosystem discussed [shortly](#rmarkdown-ecosystem). [Rmarkdown](https://rmarkdown.rstudio.com/) isn't the only other flavour of markdown. There are other initiatives such as [GitHub Flavored Markdown (GFM)](https://guides.github.com/features/mastering-markdown/) which mainly enhances content appears on github site and [CommonMark](http://commonmark.org/) that tries to unify all the different flavours of markdown syntax, but all will converge to pandoc tool.
+
+## Rmarkdown core parts
 
 Any Rmarkdown documents is broken into three main parts:
 
@@ -130,7 +133,11 @@ packages <- c("tidyverse",
               "bookdown",
               "tinytex")
 
-install.packages(packages)
+keep <- packages[!(packages %in% installed.packages()[,"Package"])]
+
+if(length(keep)) {
+  install.packages(keep)
+}
 ```
 
 ## Challenge: Introduction 2 {.exercise}
@@ -165,10 +172,5 @@ install.packages(packages)
 > One cannot know all of Rmarkdown wisdom. One would continuesly learn to make oneself more Rsome.
 -->
 
-- don't attempt to compile to `pdf_document` until absolutelly necesserary. `LaTeX` engine that is used for Rmarkdown to pdf conversion known to have issues with aligning figures and tables. This typically causes figures and tables overflow to next pages and general text misalignment. Get your content written first, intermidiate compilation to `html_documents` are totaly fine, before worrying about technical issues
+- don't attempt to compile to `pdf_document` until absolutelly necesserary. `LaTeX` engine that is used by Rmarkdown to pdf conversion known to have issues with aligning figures and tables. This typically causes figures and tables overflow to next pages and general text misalignment. Get your content written first, intermidiate compilation to `html_documents` are totaly fine, before worrying about technical issues
 - don't save data into `.RData`, this will make your work less reproducible
-
-## References
-
-- [related stackoverflow question](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
-a- [Presentation slides on Rmarkdown ecosystem](https://slides.yihui.name/2017-DSM-rmarkdown-Yihui-Xie.html)

@@ -10,7 +10,7 @@ links-as-notes: yes
 > - Duration: 6 hours
 > - Student numbers: 25-30
 
-Welcome to the [Reproducible Research in R (RRR)](https://github.com/MonashDataFluency/r-rep-res) workshop. The main aim of this workshop is to set you on the right path of making your research more reproducible and shariable. Reproducible research means that future you and anyone else will be able to pick up your analysis and reproduce the same results including figures and tables. Reproducible research also implies well documented reasearch, your code should be well commented and the reasons behind functions and methods should be well explained through out the analysis. The communication aspect should not be after thought, but stays with your analysis as you are going through it. Rmarkdown is a way of [literal programing]() that keeps code and words and sentences together. The other important aspect that goes hand and hand with reproducibility is ability to easily collaborate and share your analysis. We are going to repurpose git version cotrol tool and leverage GitHub remote hosting provider for managing and sharining our work. Git + GitHub will provide very powerful way for global collaboration and exposure of your work. In this workshop we are going to verstion control our work and push it to github, which can then be accessible by your collaborators and supervisors. Git + GitHub should become integral part of your workflow.
+Welcome to the [Reproducible Research in R (RRR)](https://github.com/MonashDataFluency/r-rep-res) workshop. The main aim of this workshop is to set you on the right path of making your research more reproducible and shariable. Reproducible research means that future you and anyone else will be able to pick up your analysis and reproduce the same results including figures and tables. Reproducible research also implies well documented reasearch, your code should be well commented and the reasons behind functions and methods should be well explained through out the analysis. The communication aspect should not be after thought, is should stay with your analysis as you are going through it. Rmarkdown is a way of [literal programing](http://www.literateprogramming.com/knuthweb.pdf) that keeps code and words and sentences together. The other important aspect that goes hand and hand with reproducibility is ability to easily collaborate and share your analysis. We are going to repurpose git version cotrol tool and leverage GitHub remote hosting provider for managing and sharining our work. Git + GitHub will provide very powerful way for global collaboration and exposure of your work. In this workshop we are going to verstion control our work and push it to github, which can then be accessible by your collaborators and supervisors. Git + GitHub should become integral part of your workflow.
 
 The RRR course given by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) for the [Monash Data Fluency](https://monashdatafluency.github.io/) initiative. Our teaching style is based on the style of [The Carpentries](https://carpentries.org/).
 
@@ -56,13 +56,6 @@ This is an introductory level workshop, however some prior exposure to R and fam
 - 3:00-3:15pm   (15 minutes) Tea break
 - 3:15-4:45pm   (1.5 hours)  Even more Rmarkdown
 - 4:45-5:00pm   (15 minutes) Warm down
-
-## References
-
-- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
-- [knitr](https://yihui.name/knitr/)
-- [knitr vs rmarkdown vs bookdown](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
-- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
 
 ## Authors and copyright
 
