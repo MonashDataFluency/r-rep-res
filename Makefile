@@ -1,27 +1,32 @@
 
-.PHONY : all pdf html clean deploy
+.PHONY : all pdf html clean deploy example
 
-all : pdf html
+all: pdf html
 
-pdf :
+pdf:
 	cd book; \
 	Rscript -e "bookdown::render_book('.', 'bookdown::pdf_book')"
 
-html :
+html:
 	if [ ! -d _book ];then mkdir _book;fi
 	cd book; \
 	Rscript -e "bookdown::render_book('.', 'bookdown::gitbook')"
 	cp -R book/figures _book
+
+example:
+	cd _example; \
+	Rscript -e "rmarkdown::render(input = 'example.Rmd', \
+	                              output_file = 'example.html')"
 
 presentation:
 
 	#cd book ; Rscript -e "rmarkdown::render(input = 'presentation.Rmd', output_format = 'ioslides_presentation', output_file = 'presentation.html')"
 	cd book ; Rscript -e "rmarkdown::render(input = 'questions.Rmd', output_format = 'pdf_document', output_file = 'questions.pdf')"
 
-deploy :
+deploy:
 	./_deploy.bash
 
-clean :
+clean:
 	rm -rf _book/* \
 	rm book/*.rds \
 	rm book/*.md \
