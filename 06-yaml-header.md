@@ -268,5 +268,3 @@ output: ioslides_presentation
 ```
 
 As you might have guessed `##` symbol in the case of `ioslides_presentation` means the beginning of the slide. While amount of work is minimal to convert between `html_document` and `ioslides_presentation` you will obviously need to reduce amount of text.
-
-## Bookdown yaml header
