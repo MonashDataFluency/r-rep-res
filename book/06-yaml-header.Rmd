@@ -1,98 +1,268 @@
-# YAML header
+# YAML introduction
 
-At the very top of your `.Rmd` file you can, optionaly, include YAML block. In this block you can fine turn your output document, add some metadata and change document's font and theme. You can also pass additional files such as stylesheet file `.css` and bibliography file `.bib` for text citation. I'm only going to show you a few possible options and will let you explore the rest on your own.
+As it was mentioned earlier in the book yaml is a stand along language, often it is used as a configuration file, which is true in the case of Rmarkdown. We are going to use it in conjunction with Rmarkdown documents by embeding yaml blob into Rmarkdown files, just like we did with R chunks. YAML blob, or in the context of Rmarkdown YAML header, must be at the very top of your Rmarkdown file. The yaml header enable high degree of customisation for our final documents. We can also use yaml header to "attach" or reference other external files such as bibliographies and styling in the form of [css](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).
 
-Navigate to the top of your `.Rmd` document and find YAML section there. Just like with the options we passed in to manipulate R code block, YAML block also has **key = value** pairs, but instead they are separated by colon ( `:` ). Now let's add table of content to our document, this will make it easier to navigate your page as well as give nice over view of the content our **key** is `toc` with value `true` or `yes` which one you prefer better.
+For the purpose of configuring Rmarkdown documents you need to know three variable types:
 
-```{r echo = F, comment=""}
-text <- c("---",
-          "title: 'Hello world'",
-          "author: 'Kirill'",
-          "date: '13 July 2016'",
-          "date: `r format(Sys.time(), '%d %B, %Y')`'",
-          "output:",
-          "  html_document:",
-          "    toc: true",
-          "---")
+- `scalar` stand along value e.g 3 or "car"
+- `list` a collection of items e.g ["learing", "to", "use" "yaml"]
+- `map` a different collection type that can hold simple types. e.g rmd_files: ["00-index.Rmd", "01-introduction.Rmd"]
 
-cat(text, sep = "\n")
-```
+## YAML header
 
-**Note** that you need to bring `html_document` onto new line and indent it with two spaces. `html_document` is a value of `output` key. `output` can have other values e.g `pdf_document`, `word_document`. However `html_document` also becomes a key for `toc` value and `toc` becames a key for its own value.
+YAML is relativelly similar to another file format [JSON](https://en.wikipedia.org/wiki/JSON), if you are familiar with one you should have little problem wrapping your head around the other. Fundamentally both file types trying to provide structured relationship between items via key = value pairing. Keys sometimes interchangeably used with tags. Remember that yaml language, unlike json, is very sensetive to spaces and indentations. Below are some examples of valid and invalid yaml syntax.
 
-Now that we have sort it initial YAML layout we can continue adding more options to style our HTML document. The other two useful options that I like to pass in are `toc_depth` and `number_sections`
+### Example 1
 
-```{r echo = F, comment=""}
-text <- c("---",
-          "title: 'Hello world'",
-          "author: 'Kirill'",
-          "date: '13 July 2016'",
-          "date: `r format(Sys.time(), '%d %B, %Y')`'",
-          "output:",
-          "  html_document:",
-          "    toc: true",
-          "    toc_depth: 3",
-          "    number_sections: yes",
-          "---")
-
-cat(text, sep = "\n")
-```
-Most of those options are self explanatory. They best way to learn what each does, is to pass them in. Note that you can comment lines out inside YAML section with `#` symbol.
-
-Good place to start reading about different option can be
-
-```
-?rmarkdown::html_document
-```
-
-The last two options that can change your document apperance are `theme` and `highlight`. There are nubmer of different themes and highlight options. I suggest you find the one you like in your own time.
-
-
-Remeber to say that each option will have some default value, sometime default can be None/NULL/NA, but it is still a default.
-
-- `collapsed` (defaults to TRUE) controls whether the TOC appears with only the top-level (e.g., H2) headers. If collapsed initially, the TOC is automatically expanded inline when necessary.
-
-- `smooth_scroll` (defaults to TRUE) controls whether page scrolls are animated when TOC items are navigated to via mouse clicks.
-
+This is a valid yaml header. In this exapmle we have a key `title` with scalar value `Learning Rmarkdown`
 
 ```
 ---
-title: "Habits"
+title: "Learning Rmarkdown"
+---
+```
+
+### Example 2
+
+This is also valid YAML header. Here we have `rmd_files` key that has as it's value a list of items. In yaml there is two ways one can specify a list.
+
+```
+---
+rmd_files:
+  - 00-index.Rmd
+  - 01-introduction.Rmd
+---
+```
+
+And
+
+This is an alternative way to specify a list.
+
+```
+---
+rmd_files: ["00-index.Rmd", "01-introduction.Rmd"}
+---
+```
+
+### Example 3
+
+This on the other hand isn't valid YAML header
+
+```
+---
+rmd_files:
+  00-index.Rmd
+  01-introduction.Rmd
+---
+```
+
+## Challenge: YAML 1 {.exercise}
+
+> 5 minutes
+
+<details>
+
+  <summary>
+    1. Is this a valid YAML header?
+
+       ----
+       title: "Hello world!"
+       author: Me!
+       ---
+
+  </summary>
+   Yes, everything looks good to me
+</details>
+
+<details>
+
+  <summary>
+    2. What about this YAML header?
+
+       ----
+       title: "Hello world!"
+       author: Me!
+       bookdown::gitbook:
+         config:
+           toc:
+             collapse: subsection
+       ---
+
+  </summary>
+   Yes, this is highly neted, but still a completely valid yaml header
+</details>
+
+<details>
+
+  <summary>
+    3. How do you get a list of all possible keys and values (discussion question) ?
+  </summary>
+  Read the docs (will need to expand this answer)
+
+</details>
+
+
+## General yaml header
+
+This handful of tags are general between different document types. Most other key, values are aimed at the specific document type. In the next few sections we will look at yamls keys specific for Rmarkdown, bookdown and pdf final files configuration.
+
+```
+---
+title: 'Hello world'
+author: 'Kirill'
+date: '13 July 2016'
+---
+```
+
+## Challenge: YAML 2 {.exercise}
+
+> 5 minutes
+
+<details>
+
+  <summary>
+    3. Is this a valid yaml?
+
+    ---
+    date: `r format(Sys.time(), '%d %B, %Y')`
+    ---
+
+  </summary>
+  It is certainly valid by Rmarkdown standards, but it may not be in other systems
+
+</details>
+
+## Rmarkdown yaml header
+
+Here we are starting to see another new key `output` with a value `html_document`
+
+```
+---
+title: 'Hello world'
+author: 'Kirill'
+date: '13 July 2016'
+output: html_document
+---
+```
+
+These are some of the possible values that `output` can take
+
+- `html_notebook` Interactive R Notebooks
+- `html_document` HTML document w/ Bootstrap CSS
+- `pdf_document`  PDF document (via LaTeX template)
+- `word_document` Microsoft Word document (docx)
+- `odt_document` OpenDocument Text document
+- `rtf_document` Rich Text Format document
+- `md_document` Markdown document (various flavors)
+
+Turns out that each one of those values is a also a key that can take other values.
+
+```
+---
+title: 'Hello world'
+author: 'Kirill'
+date: '13 July 2016'
 output:
   html_document:
     toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
+    toc_depth: 3
+    number_sections: yes
 ---
 ```
 
-## Tables
+Note that indentation is very important here as it reflects the relationship between key value pairs.
 
-To make your tables user friendly set `df_print: paged`
+## Rmarkdown rendering
 
-## R slides - ioslides
+As we have discussed in the introduction Rmarkdown is an abmigious word. It could mean an [rmarkdown R package](https://github.com/rstudio/rmarkdown) that converts or renders markdown into various document types. We can also be refering to an Rmarkdown document that we are writing. And we also could also use it in a more generic sence refering to the ecosystem.
 
-As I mentioned in previous section, `output` has many options, one of which is `ioslides_presentation`. You can simple add
+Here I'm going to specifically talk about Rmarkdown R package and the `render` function i.e `rmarkdown::render()`. `render` can take an option for output format. You can either specify the output format by directly giving it a function i.e
 
-```r
-`r ''` ---
-`r ''` output: ioslides_presentation
-`r ''` ---
+```{r eval = F}
+rmarkdown::render(output_format = "html_document")
 ```
 
-at the top of your document and your `.Rmd` files will be complied to slide presentation instead.
+Or pass that same information via yaml header. As you might have noted above, `html_document` itself has a bunch of options. There would be a way to pass them manually in R console, but it is much nice and more reproducible to pass them via yaml header.
 
-Another options is select **presentation** options when you were opening R markdown file. Either way you'll notice YAML header reflects your selected output type.
-Let's open new R markdown document and let's select presentation instead and let's select HTML (ioslides) option there. You can still save your files as `.Rmd`, and then press the\ the `Knit HTML` button.
+The two way to figure out which options are available for `html_document` is to either google (an obvious one) or take a look at the help page for that function i.e
 
-The syntax for the document is more or less the same, expcept `##` is now used to mark new slide.
 
-## Extras
+```{r eval = F}
+?rmarkdown::html_document
+```
 
-This is mainly to talk about [Rnotebook](https://rmarkdown.rstudio.com/r_notebooks.html) and give you some extra tips about it. Hopefully this will grow into section of it own in the near future.
+## Challenge: YAML 3 {.exercise}
 
-- to turn inline output (defualt behaviour) on R markdown documents on/off through settings, _Chunk output inline_ / _Chunk output in console_
-- Output doesn't go to Viewer/Plots pane, it stays inside the notebook
-- Working directory is the location of Rmd file. (I think changing directory with in the chunk isn't good idea)
-- In general [Rnotebook](https://rmarkdown.rstudio.com/r_notebooks.html) meant to have better error handling, sends one line at a time for execution, compare to all lines for Rmarkdown document
+> 5 minutes
+
+<details>
+
+  <summary>
+    1. Can you find in the help page which values `df_print` from `html_document` can take?
+  </summary>
+  run `?rmarkdown::html_document` in Rstudio console to open help page and search for `df_print`
+
+</details>
+
+<details>
+
+  <summary>
+    2. Set `df_print` to a value that will give you paginated HTML table.
+  </summary>
+  `paged`
+
+</details>
+
+## More Rmarkdown tags
+
+Let's add more options to our yaml file and `knit` it and see what has changed.
+
+```
+---
+title: 'Hello world'
+author: 'Kirill'
+date: '13 July 2016'
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: false
+    code_folding: "hide"
+    theme: sandstone
+    highlight: espresso
+---
+```
+
+As I have eluted earlier if you simply change `output: html_document` to `output: pdf_document` you are going to get pdf document instead. Also remember that all of those options that we gave to `html_document` are specific to that document type only, although some tags might have the same name in other document types e.g `toc` and `toc_depth` keys also exist in `pdf_document`.
+We are not going to spend time on building a pdf document. It is a more finicky to build because it relying on LaTeX engine and LaTeX can be very finicky. This is more relevant for more complex documents. This is why we recommend to firstly build html document and only once you have finished you analysis and start building your pdf documents.
+
+The more interesting, in my view, document type is `ioslides_presentation`
+
+## Presentation slides
+
+As I've mentioned in previous section, `output` has many options, one of which is `ioslides_presentation`. Let's comment `html_document` with all it's options out for now, add `output: ioslides_presentation` and re-compile out document
+
+```
+---
+title: 'Hello world'
+author: 'Kirill'
+date: '13 July 2016'
+output: ioslides_presentation
+#output:
+#  html_document:
+#    df_print: paged
+#    toc: true
+#    toc_float: true
+#    toc_collapsed: true
+#    toc_depth: 3
+#    number_sections: false
+#    code_folding: "hide"
+#    theme: sandstone
+#    highlight: espresso
+---
+```
+
+As you might have guessed `##` symbol in the case of `ioslides_presentation` means the beginning of the slide. While amount of work is minimal to convert between `html_document` and `ioslides_presentation` you will obviously need to reduce amount of text.

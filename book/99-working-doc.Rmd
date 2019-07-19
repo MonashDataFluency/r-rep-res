@@ -86,23 +86,6 @@ $$X = \begin{bmatrix}1 & x_{1}\\
 ## Quarterly Results {.tabset .tabset-fade .tabset-pills}
 ```
 
-## How documents looks
-
-- theme
-
-- highlight
-
-    - default
-    - tango
-    - pygments
-    - kate
-    - monochrome
-    - espresso
-    - zenburn
-    - haddock
-    - textmate
-    - null
-
 ## Figure options via yaml
 
 > This sounds interesting

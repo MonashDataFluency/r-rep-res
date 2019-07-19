@@ -13,3 +13,4 @@
 - [Here is nice cheatsheet](http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) that has comprehensive cover of all the options you can pass in.
 
   https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/
+  https://rmarkdown.rstudio.com/lesson-9.html
