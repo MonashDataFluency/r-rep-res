@@ -9,3 +9,5 @@ Reproducible-Research-in-R.*
 *.csv
 _example/*.csv
 _example/*.txt
+book/*.csv
+book/*.txt

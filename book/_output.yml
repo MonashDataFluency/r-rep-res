@@ -1,13 +1,33 @@
 # https://github.com/rstudio/bookdown/blob/master/inst/examples/_output.yml
+# https://bookdown.org/yihui/bookdown/html.html#gitbook-style
 bookdown::gitbook:
   css: ../css/style.css
   config:
     toc:
-      toc_depth: 2
+      collapse: subsection
+      scroll_highlight: yes
+      before: null
+      after: null
+    toolbar:
+      position: fixed
+    edit: "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/%s"
+    download:
+      - ["Reproducible-Research-in-R.pdf", "PDF"]
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
     sharing:
-      github: yes
       facebook: no
-  download: ["Reproducible-Research-in-R.pdf"]
+      twitter: yes
+      github: yes
+      google: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
 bookdown::pdf_book:
   keep_tex: no
   latex_engine: xelatex
