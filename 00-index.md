@@ -16,9 +16,6 @@ Welcome to the [Reproducible Research in R (RRR)](https://github.com/MonashDataF
 
 The RRR course given by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) for the [Monash Data Fluency](https://monashdatafluency.github.io/) initiative. Our teaching style is based on the style of [The Carpentries](https://carpentries.org/).
 
-- [HTML versoin](https://monashdatafluency.github.io/r-rep-res/)
-- [PDF version](https://monashdatafluency.github.io/r-rep-res/Reproducible-Research-in-R.pdf)
-
 ## Learning outcomes
 
 Attendees will learn how to:

@@ -219,17 +219,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.8" data-path="yaml-introduction.html"><a href="yaml-introduction.html#more-rmarkdown-tags"><i class="fa fa-check"></i><b>7.8</b> More Rmarkdown tags</a></li>
 <li class="chapter" data-level="7.9" data-path="yaml-introduction.html"><a href="yaml-introduction.html#presentation-slides"><i class="fa fa-check"></i><b>7.9</b> Presentation slides</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="bookdown-1.html"><a href="bookdown-1.html"><i class="fa fa-check"></i><b>8</b> Bookdown</a></li>
+<li class="part"><span><b>III Part III</b></span></li>
+<li class="chapter" data-level="8" data-path="bookdown-1.html"><a href="bookdown-1.html"><i class="fa fa-check"></i><b>8</b> Bookdown</a><ul>
+<li class="chapter" data-level="8.1" data-path="bookdown-1.html"><a href="bookdown-1.html#work-in-progress"><i class="fa fa-check"></i><b>8.1</b> work in progress</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="bibliographies.html"><a href="bibliographies.html"><i class="fa fa-check"></i><b>9</b> Bibliographies</a></li>
-<li class="chapter" data-level="10" data-path="work-in-progress.html"><a href="work-in-progress.html"><i class="fa fa-check"></i><b>10</b> Work in progress</a><ul>
-<li class="chapter" data-level="10.1" data-path="work-in-progress.html"><a href="work-in-progress.html#section"><i class="fa fa-check"></i><b>10.1</b> </a></li>
-<li class="chapter" data-level="10.2" data-path="work-in-progress.html"><a href="work-in-progress.html#check"><i class="fa fa-check"></i><b>10.2</b> check</a></li>
-<li class="chapter" data-level="10.3" data-path="work-in-progress.html"><a href="work-in-progress.html#section-1"><i class="fa fa-check"></i><b>10.3</b> </a></li>
-<li class="chapter" data-level="10.4" data-path="work-in-progress.html"><a href="work-in-progress.html#yaml-1"><i class="fa fa-check"></i><b>10.4</b> YAML</a></li>
-<li class="chapter" data-level="10.5" data-path="work-in-progress.html"><a href="work-in-progress.html#latex-1"><i class="fa fa-check"></i><b>10.5</b> LaTeX</a></li>
-<li class="chapter" data-level="10.6" data-path="work-in-progress.html"><a href="work-in-progress.html#tabbed-sections"><i class="fa fa-check"></i><b>10.6</b> Tabbed sections</a></li>
-<li class="chapter" data-level="10.7" data-path="work-in-progress.html"><a href="work-in-progress.html#figure-options-via-yaml"><i class="fa fa-check"></i><b>10.7</b> Figure options via yaml</a></li>
-<li class="chapter" data-level="10.8" data-path="work-in-progress.html"><a href="work-in-progress.html#tables-rmarkdown"><i class="fa fa-check"></i><b>10.8</b> tables Rmarkdown</a></li>
+<li class="chapter" data-level="10" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html"><i class="fa fa-check"></i><b>10</b> Work in progress</a><ul>
+<li class="chapter" data-level="10.1" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#yaml-1"><i class="fa fa-check"></i><b>10.1</b> YAML</a></li>
+<li class="chapter" data-level="10.2" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#latex-1"><i class="fa fa-check"></i><b>10.2</b> LaTeX</a></li>
+<li class="chapter" data-level="10.3" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#tabbed-sections"><i class="fa fa-check"></i><b>10.3</b> Tabbed sections</a></li>
+<li class="chapter" data-level="10.4" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#figure-options-via-yaml"><i class="fa fa-check"></i><b>10.4</b> Figure options via yaml</a></li>
+<li class="chapter" data-level="10.5" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#tables-rmarkdown"><i class="fa fa-check"></i><b>10.5</b> tables Rmarkdown</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>A</b> Appendix</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix.html"><a href="appendix.html#long-list-of-chunk-options"><i class="fa fa-check"></i><b>A.1</b> Long list of chunk options</a></li>
 </ul></li>
 </ul>
 
@@ -259,7 +263,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>_bookdown.yml</code> must co-exist with <code>.Rmd</code> files in the “book” directory</li>
 </ul>
 <p>Bookdown has extended markdown even further for math <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#tab:theorem-envs" class="uri">https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#tab:theorem-envs</a></p>
+<div id="work-in-progress" class="section level2">
+<h2><span class="header-section-number">8.1</span> work in progress</h2>
+<p>Besides these html_document() options,</p>
+<p>gitbook() has three other arguments:</p>
+<ul>
+<li><p><code>split_by</code> argument specifies how you want to split the HTML output into multiple pages</p>
+<ul>
+<li><code>rmd</code>: use the base filenames of the input Rmd files to create the HTML filenames, e.g., generate chapter3.html for chapter3.Rmd.</li>
+<li><code>none</code>: do not split the HTML file (the book will be a single HTML file).</li>
+<li><code>chapter</code>: split the file by the first-level headers.</li>
+<li><code>section</code>: split the file by the second-level headers.</li>
+<li><code>chapter+number</code> and <code>section+number</code>: similar to chapter and section, but the files will be numbered.</li>
+</ul></li>
+<li><p><code>split_bib</code></p></li>
+<li><p><code>config</code></p></li>
+<li><p><code>collapse</code></p>
+<ul>
+<li><p><code>section</code></p></li>
+<li><p><code>subsection</code></p>
+<p>scroll_highlight: yes
+before: null</p></li>
+</ul></li>
+</ul>
 
+</div>
 </div>
             </section>
 
