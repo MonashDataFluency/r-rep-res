@@ -16,7 +16,7 @@ Welcome to the [Reproducible Research in R (RRR)](https://github.com/MonashDataF
 
 The RRR course given by the [Monash Bioinformatics Platform](https://www.monash.edu/researchinfrastructure/bioinformatics) for the [Monash Data Fluency](https://monashdatafluency.github.io/) initiative. Our teaching style is based on the style of [The Carpentries](https://carpentries.org/).
 
-## Learning outcomes
+## Learning outcomes {-}
 
 Attendees will learn how to:
 
@@ -28,17 +28,17 @@ Attendees will learn how to:
 - work with `git` version control tool
 - create reproducible and "backed up" analysis via remote repositories (e.g github)
 
-## Workshop description
+## Workshop description {-}
 
 This workshop is an introduction to writing and communicating research using Rmarkdown. Rmarkdown is an easy way to create documents that include your R code and its output such figure and tables. Rmarkdown is a single documents that can be "knitted" and shared as various document types such as PDF and HTML. Rmarkdown supports scientific writing such as use of citations and figure cross-referencing. Rmarkdown can also be used to create presentations that include your R code and its output. We will also cover bookdown, which is an extension to Rmarkdown that allows creation of larger documents such as books with multiple chapters.
 
 In this workshop we will also cover [git version control tool](https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control) that can help with organising and "checkpointing" Rmarkdown documents, associated R code and data. Git is not a back up system, but it does allow one to retrieve older versions of your work. Git together with remote repositories like [GitHub](https://github.com) can provide centralised location for your research. All together Rmarkdown, git and github can enable reproducible research that is visiable and accessible by greater public including supervisors and management.
 
-## Prerequisite
+## Prerequisite {-}
 
 This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recomended that you read [this article in full](https://peerj.com/preprints/3159/), if you have to prioritise, read at least these section (1,2,6,10).
 
-## Keywords
+## Keywords {-}
 
 - R
 - Rmarkdown
@@ -46,7 +46,7 @@ This is an introductory level workshop, however some prior exposure to R and fam
 - reproducibility
 - git and github
 
-## Schedule
+## Schedule {-}
 
 - 10:00-10:30am (30 minutes) Welcome and warm up
 - 10:30-12:00pm (1.5 hours)  Rmarkdown
@@ -56,7 +56,7 @@ This is an introductory level workshop, however some prior exposure to R and fam
 - 3:15-4:45pm   (1.5 hours)  Even more Rmarkdown
 - 4:45-5:00pm   (15 minutes) Warm down
 
-## Authors and copyright
+## Authors and copyright {-}
 
 This course is developed for the Monash Bioinformatics Platform by:
 

@@ -1,4 +1,4 @@
-# (PART) Part III {-}
+# (PART) Part {-}
 
 # Bookdown
 
