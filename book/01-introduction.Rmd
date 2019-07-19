@@ -22,12 +22,12 @@ Those are different parts of the document that all work together to form - rende
 YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, `---`. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.
 
 ```
-`r ''` ---
-`r ''` title: "Hello world"
-`r ''` author: "Kirill"
-`r ''` date: "17 June 2019"
-`r ''` output: html_document
-`r ''` ---
+---
+title: "Hello world"
+author: "Kirill"
+date: "17 June 2019"
+output: html_document
+---
 ```
 
 ### [The R chunks](#the-r-chunks)
