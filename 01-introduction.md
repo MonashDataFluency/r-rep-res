@@ -1,3 +1,7 @@
+# (PART) Part I {-}
+
+In this part of the book we will beging by talking about Rmarkdown language, where it has originated and the ecosystem that surrounds it. We are then going to look closerly at the core parts of the Rmarkdown document. After that we will start with understanding basics of vanilla markdown as a building block of Rmarkdown. We will finish off this section of the book with hands on experience writting Rmarkdown documents with embeded R code chunks.
+
 # Introduction to Rmarkdown
 
 Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf documents and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let's call it a thesis or a paper or a course book. And with essentially no effort you can change from "rendering" your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time.
@@ -18,12 +22,12 @@ Those are different parts of the document that all work together to form - rende
 YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, `---`. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.
 
 ```
- ---
- title: "Hello world"
- author: "Kirill"
- date: "17 June 2019"
- output: html_document
- ---
+---
+title: "Hello world"
+author: "Kirill"
+date: "17 June 2019"
+output: html_document
+---
 ```
 
 ### [The R chunks](#the-r-chunks)

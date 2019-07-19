@@ -1,7 +1,9 @@
 ---
 title: Reproducible Research in R
-documentclass: book
 links-as-notes: yes
+date: "2019-07-19"
+documentclass: book
+github-repo: "MonashDataFluency/r-rep-res" #as far as I can tell I can't move this option into _outptu.yml
 ---
 
 # Reproducible Research in R {#index -}

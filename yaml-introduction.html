@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Rmarkdown | Reproducible Research in R</title>
-  <meta name="description" content="3 Rmarkdown | Reproducible Research in R" />
+  <title>7 YAML introduction | Reproducible Research in R</title>
+  <meta name="description" content="7 YAML introduction | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.11.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Rmarkdown | Reproducible Research in R" />
+  <meta property="og:title" content="7 YAML introduction | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Rmarkdown | Reproducible Research in R" />
+  <meta name="twitter:title" content="7 YAML introduction | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="vanilla-markdown.html">
-<link rel="next" href="git-and-github-introduction.html">
+<link rel="prev" href="more-rmarkdown.html">
+<link rel="next" href="bookdown-1.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -249,271 +249,225 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmarkdown-1" class="section level1">
-<h1><span class="header-section-number">3</span> Rmarkdown</h1>
-<p>The reason that we are learning <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> is because it gives us very straight forward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.
-This approach of interleaving analysis code, commentary and description is very explicit, which has direct implication in reproducibility, shearability and collaboration.</p>
-<p>In <a href="vanilla-markdown.html#vanilla-markdown">Markdown section</a> I’ve showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that again.</p>
-<pre><code>File
- └── New File
-        └── R Markdown
-
-title = &quot;Learning Rmarkdown&quot;
-author = &quot;Me&quot;</code></pre>
+<div id="yaml-introduction" class="section level1">
+<h1><span class="header-section-number">7</span> YAML introduction</h1>
+<p>As it was mentioned earlier in the book yaml is a stand along language, often it is used as a configuration file, which is true in the case of Rmarkdown. We are going to use it in conjunction with Rmarkdown documents by embeding yaml blob into Rmarkdown files, just like we did with R chunks. YAML blob, or in the context of Rmarkdown YAML header, must be at the very top of your Rmarkdown file. The yaml header enable high degree of customisation for our final documents. We can also use yaml header to “attach” or reference other external files such as bibliographies and styling in the form of <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">css</a>.</p>
+<p>For the purpose of configuring Rmarkdown documents you need to know three variable types:</p>
 <ul>
-<li>select document type <strong>HTML</strong></li>
-<li>to build (compile) the document press <code>knitr</code> button or <code>ctrl+alt+k</code></li>
-<li>to save as <code>.Rmd</code> file</li>
+<li><code>scalar</code> stand along value e.g 3 or “car”</li>
+<li><code>list</code> a collection of items e.g [“learing”, “to”, “use” “yaml”]</li>
+<li><code>map</code> a different collection type that can hold simple types. e.g rmd_files: [“00-index.Rmd”, “01-introduction.Rmd”]</li>
 </ul>
-<div id="embedding-r-code" class="section level2">
-<h2><span class="header-section-number">3.1</span> Embedding R code</h2>
-<p>RStudio templates <code>.Rmd</code> file for us. However lets delete all the text after the yaml header.</p>
+<div id="yaml-header-1" class="section level2">
+<h2><span class="header-section-number">7.1</span> YAML header</h2>
+<p>YAML is relativelly similar to another file format <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>, if you are familiar with one you should have little problem wrapping your head around the other. Fundamentally both file types trying to provide structured relationship between items via key = value pairing. Keys sometimes interchangeably used with tags. Remember that yaml language, unlike json, is very sensetive to spaces and indentations. Below are some examples of valid and invalid yaml syntax.</p>
+<div id="example-1" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Example 1</h3>
+<p>This is a valid yaml header. In this exapmle we have a key <code>title</code> with scalar value <code>Learning Rmarkdown</code></p>
 <pre><code>---
-title: &#39;Learning Rmarkdown&#39;
-author: &#39;Kirill&#39;
-date: &#39;21/06/2019&#39;
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```</code></pre>
-<p>I’m going to explain <code>knitr::opts_chunk</code> in <a href="more-rmarkdown.html#more-rmarkdown">later section</a>. An R chunk is a “special” block with in the document that will be read and evaluated by <code>knitr</code>, ultimatelly converting everything into plain markdown. But for us it means that we can focus on our analysis and embed R code without having to worry about it. Additionally there are lage number of chunk options that helps with different aspects of the document including code decoration and evaluation, results and plots rendering and display.</p>
-<p>This is an R code chunk.</p>
-<pre><code>```{r}
-
-```</code></pre>
-<p>The little <code>r</code> there specifies the “engine”, basically telling Rmarkdown how to evalute the code inside the chunk. Here we are saying use <code>R</code> engine (language) to evaluate the code. The <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html">list of languages</a> is rather long, hence why earlier comments about Rmarkdown spanning much greater area then one might think. In this workshop we are only going to focus on R language.</p>
-<p>Let’s write our first bit of R code inside the Rmarkdown document. First we need to start a new R chunk, which can be done in either of three ways:</p>
-<ul>
-<li>simply type it out</li>
-<li>press insert button at the top of the window</li>
-<li><code>ctrl+alt+i</code></li>
-</ul>
-<p>Let’s start with a simple <code>print()</code> statement and print <code>Hello world, I'm learning Rmarkdown !</code> string, except we are going to split it between two variable</p>
-<pre><code>```{r}
-a &lt;- &#39;Hello world, Im learning Rmarkdown !&#39;
-a
-```</code></pre>
-<p>Note that each chunk can be run independently in the console by pressing <code>ctrl^enter</code> or little green arrow.</p>
-<p>Each code chunk is highly customisable via <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">chunk options</a>. We are going to learn a few today, but we won’t be able to cover all of them. You probably never going to use some of them, but as long as you know what to look for you’ll be able to search for then. Note that all chunk options have a default value. Not specifying an options means you are using the default value. These are chunk options that we are going to cover today.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">name</th>
-<th align="left">value</th>
-<th align="left">type</th>
-<th align="left">description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">child</td>
-<td align="left">NULL</td>
-<td align="left">code_evaluation</td>
-<td align="left">A character vector of filenames. Knitr will knit the files and place them into the main document.</td>
-</tr>
-<tr class="even">
-<td align="left">engine</td>
-<td align="left">‘R’</td>
-<td align="left">code_evaluation</td>
-<td align="left">Knitr will evaluate the chunk in the named language, e.g. engine = ‘python’. Run names(knitr::knit_engines$get()) to see supported languages.</td>
-</tr>
-<tr class="odd">
-<td align="left">eval</td>
-<td align="left">TRUE</td>
-<td align="left">code_evaluation</td>
-<td align="left">If FALSE, knitr will not run the code in the code chunk.</td>
-</tr>
-<tr class="even">
-<td align="left">include</td>
-<td align="left">TRUE</td>
-<td align="left">code_evaluation</td>
-<td align="left">If FALSE, knitr will run the chunk but not include the chunk in the final document.</td>
-</tr>
-<tr class="odd">
-<td align="left">fig.align</td>
-<td align="left">‘default’</td>
-<td align="left">plots</td>
-<td align="left">How to align graphics in the final document. One of ‘left’, ‘right’, or ‘center’.</td>
-</tr>
-<tr class="even">
-<td align="left">fig.cap</td>
-<td align="left">NULL</td>
-<td align="left">plots</td>
-<td align="left">A character string to be used as a figure caption in LaTex.</td>
-</tr>
-<tr class="odd">
-<td align="left">fig.height</td>
-<td align="left">7</td>
-<td align="left">plots</td>
-<td align="left">The height to use in R for plots created by the chunk (in inches).</td>
-</tr>
-<tr class="even">
-<td align="left">fig.width</td>
-<td align="left">7</td>
-<td align="left">plots</td>
-<td align="left">The width to use in R for plots created by the chunk (in inches).</td>
-</tr>
-<tr class="odd">
-<td align="left">echo</td>
-<td align="left">TRUE</td>
-<td align="left">results</td>
-<td align="left">If FALSE, knitr will not display the code in the code chunk above it’s results in the final document.</td>
-</tr>
-<tr class="even">
-<td align="left">results</td>
-<td align="left">‘markup’</td>
-<td align="left">results</td>
-<td align="left">If ‘hide’, knitr will not display the code’s results in the final document. If ‘hold’,knitr will delay displaying all output pieces until the end of the chunk. If ‘asis’,knitr will pass through results without reformatting them (useful if results return raw HTML,etc.)</td>
-</tr>
-<tr class="odd">
-<td align="left">message</td>
-<td align="left">TRUE</td>
-<td align="left">results</td>
-<td align="left">If FALSE, knitr will not display any messages generated by the code.</td>
-</tr>
-<tr class="even">
-<td align="left">warning</td>
-<td align="left">TRUE</td>
-<td align="left">results</td>
-<td align="left">If FALSE, knitr will not display any warning messages generated by the code.</td>
-</tr>
-</tbody>
-</table>
-<p>General layout of any chunk is</p>
-<pre><code>```{r chunk_name, options}
-
-```</code></pre>
-<p>Note a couple of things, there isn’t a comma between <code>r</code> and <code>chunk_name</code>. Not sure why this is..
-Also note that <code>chunk_name</code> is optional, you can skip it, as we have in earlier examples. Naming chunks is good idea to conceptually label the chunk as to what it does, but also we you are going to build more sophisticated documents you’ll be able to selectively include chunks by refer to them by the chunk name.</p>
-<p>Lets start off with these four chunk options:</p>
-<ul>
-<li><code>echo</code> show what has been typed in i.e show the code</li>
-<li><code>eval</code> evaluate or execute that code</li>
-<li><code>include</code> include execute code into the document, relies on <code>eval = TRUE</code></li>
-<li><code>results</code> hide resulting output</li>
-</ul>
-<p>These allow us fine level control over the final document. Think about who are generating the document for and what type of information you need to share. Sometimes we might want to show the code, but not execute it and other times we might just want to execute it and share the results, e.g plot, without actually showing the code.</p>
-<div id="echo-and-eval" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> echo and eval</h3>
-<p>Let’s start with <code>echo = TRUE</code> and <code>eval = TRUE</code>.</p>
-<pre><code>```{r echo = T, eval = T}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="rmarkdown-1.html#cb22-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb22-2"><a href="rmarkdown-1.html#cb22-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb22-3"><a href="rmarkdown-1.html#cb22-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb22-4"><a href="rmarkdown-1.html#cb22-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>Now let’s turn <code>echo</code> off, <code>echo=FALSE</code>.</p>
-<pre><code>```{r echo = F}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```</code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>Okay, we don’t see our original <code>print()</code> statement. And now let’s pass <code>eval=FALSE</code> options instead</p>
-<pre><code>```{r eval = F}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="rmarkdown-1.html#cb27-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb27-2"><a href="rmarkdown-1.html#cb27-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb27-3"><a href="rmarkdown-1.html#cb27-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb27-4"><a href="rmarkdown-1.html#cb27-4"></a><span class="kw">print</span>(ab)</span></code></pre>
+title: &quot;Learning Rmarkdown&quot;
+---</code></pre>
 </div>
-<div id="include" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> include</h3>
-<p>This option also helps to manipulate your final document look. This option dictates whether the output of the executed code will be included into the final document. Sometimes you can simply trigger <code>eval</code> flag to achive similar result of code now being included, but other times you might way the code to actuall be executed but not included. For example when future R chunk relay on the output of this intermidiate chunk, but there is now need to include that into the document.</p>
-<pre><code>```{r echo = T, eval = T, include = F}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```
-
-```{r, echo = T, include = T}
-ab
-```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="rmarkdown-1.html#cb29-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb29-2"><a href="rmarkdown-1.html#cb29-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb29-3"><a href="rmarkdown-1.html#cb29-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb29-4"><a href="rmarkdown-1.html#cb29-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="rmarkdown-1.html#cb30-1"></a>ab</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
+<div id="example-2" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Example 2</h3>
+<p>This is also valid YAML header. Here we have <code>rmd_files</code> key that has as it’s value a list of items. In yaml there is two ways one can specify a list.</p>
+<pre><code>---
+rmd_files:
+  - 00-index.Rmd
+  - 01-introduction.Rmd
+---</code></pre>
+<p>And</p>
+<p>This is an alternative way to specify a list.</p>
+<pre><code>---
+rmd_files: [&quot;00-index.Rmd&quot;, &quot;01-introduction.Rmd&quot;}
+---</code></pre>
 </div>
-<div id="results" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> results</h3>
-<p>Now we see the code, but not the output. The difference between <code>echo</code> and <code>results</code> is subtle, at least in my head. Let’s consider the following example.</p>
-<pre><code>```{r echo = T, eval = F, results = &#39;asis&#39;}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```
-
-```{r}
-ab
-```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="rmarkdown-1.html#cb33-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb33-2"><a href="rmarkdown-1.html#cb33-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb33-3"><a href="rmarkdown-1.html#cb33-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb33-4"><a href="rmarkdown-1.html#cb33-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="rmarkdown-1.html#cb34-1"></a>ab</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>Let’s turn <code>results = 'hide'</code></p>
-<pre><code>```{r echo = T, eval = F, results = &#39;hide&#39;}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```
-```{r}
-ab
-```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="rmarkdown-1.html#cb37-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb37-2"><a href="rmarkdown-1.html#cb37-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb37-3"><a href="rmarkdown-1.html#cb37-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb37-4"><a href="rmarkdown-1.html#cb37-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<p>[1] “Hello world, Im learning Rmarkdown !”</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="rmarkdown-1.html#cb38-1"></a>ab</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>And now we only see <code>print()</code> statement and no output.</p>
+<div id="example-3" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Example 3</h3>
+<p>This on the other hand isn’t valid YAML header</p>
+<pre><code>---
+rmd_files:
+  00-index.Rmd
+  01-introduction.Rmd
+---</code></pre>
 </div>
 </div>
-<div id="challenge-code-chunks" class="section level2 exercise">
-<h2><span class="header-section-number">3.2</span> Challenge: code chunks</h2>
+<div id="challenge-yaml-1" class="section level2 exercise">
+<h2><span class="header-section-number">7.2</span> Challenge: YAML 1</h2>
 <blockquote>
-<p>3 minutes</p>
+<p>5 minutes</p>
 </blockquote>
 <details>
 <p><summary>
-1. Go through all of your code so far and give each chunk a name
-</summary></p>
-<pre><code>  ```
-  {r chunk_name, options}
-  ```</code></pre>
+1. Is this a valid YAML header?</p>
+<pre><code>   ----
+   title: &quot;Hello world!&quot;
+   author: Me!
+   ---</code></pre>
+</summary>
+Yes, everything looks good to me
 </details>
+<details>
+<p><summary>
+2. What about this YAML header?</p>
+<pre><code>   ----
+   title: &quot;Hello world!&quot;
+   author: Me!
+   bookdown::gitbook:
+     config:
+       toc:
+         collapse: subsection
+   ---</code></pre>
+</summary>
+Yes, this is highly neted, but still a completely valid yaml header
+</details>
+<details>
+<p><summary>
+3. How do you get a list of all possible keys and values (discussion question) ?
+</summary>
+Read the docs (will need to expand this answer)</p>
+</details>
+</div>
+<div id="general-yaml-header" class="section level2">
+<h2><span class="header-section-number">7.3</span> General yaml header</h2>
+<p>This handful of tags are general between different document types. Most other key, values are aimed at the specific document type. In the next few sections we will look at yamls keys specific for Rmarkdown, bookdown and pdf final files configuration.</p>
+<pre><code>---
+title: &#39;Hello world&#39;
+author: &#39;Kirill&#39;
+date: &#39;13 July 2016&#39;
+---</code></pre>
+</div>
+<div id="challenge-yaml-2" class="section level2 exercise">
+<h2><span class="header-section-number">7.4</span> Challenge: YAML 2</h2>
+<blockquote>
+<p>5 minutes</p>
+</blockquote>
+<details>
+<p><summary>
+3. Is this a valid yaml?</p>
+<pre><code>---
+date: 19 July, 2019
+---</code></pre>
+<p></summary>
+It is certainly valid by Rmarkdown standards, but it may not be in other systems</p>
+</details>
+</div>
+<div id="rmarkdown-yaml-header" class="section level2">
+<h2><span class="header-section-number">7.5</span> Rmarkdown yaml header</h2>
+<p>Here we are starting to see another new key <code>output</code> with a value <code>html_document</code></p>
+<pre><code>---
+title: &#39;Hello world&#39;
+author: &#39;Kirill&#39;
+date: &#39;13 July 2016&#39;
+output: html_document
+---</code></pre>
+<p>These are some of the possible values that <code>output</code> can take</p>
+<ul>
+<li><code>html_notebook</code> Interactive R Notebooks</li>
+<li><code>html_document</code> HTML document w/ Bootstrap CSS</li>
+<li><code>pdf_document</code> PDF document (via LaTeX template)</li>
+<li><code>word_document</code> Microsoft Word document (docx)</li>
+<li><code>odt_document</code> OpenDocument Text document</li>
+<li><code>rtf_document</code> Rich Text Format document</li>
+<li><code>md_document</code> Markdown document (various flavors)</li>
+</ul>
+<p>Turns out that each one of those values is a also a key that can take other values.</p>
+<pre><code>---
+title: &#39;Hello world&#39;
+author: &#39;Kirill&#39;
+date: &#39;13 July 2016&#39;
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: yes
+---</code></pre>
+<p>Note that indentation is very important here as it reflects the relationship between key value pairs.</p>
+</div>
+<div id="rmarkdown-rendering" class="section level2">
+<h2><span class="header-section-number">7.6</span> Rmarkdown rendering</h2>
+<p>As we have discussed in the introduction Rmarkdown is an abmigious word. It could mean an <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> that converts or renders markdown into various document types. We can also be refering to an Rmarkdown document that we are writing. And we also could also use it in a more generic sence refering to the ecosystem.</p>
+<p>Here I’m going to specifically talk about Rmarkdown R package and the <code>render</code> function i.e <code>rmarkdown::render()</code>. <code>render</code> can take an option for output format. You can either specify the output format by directly giving it a function i.e</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="yaml-introduction.html#cb88-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="dt">output_format =</span> <span class="st">&quot;html_document&quot;</span>)</span></code></pre>
+<p>Or pass that same information via yaml header. As you might have noted above, <code>html_document</code> itself has a bunch of options. There would be a way to pass them manually in R console, but it is much nice and more reproducible to pass them via yaml header.</p>
+<p>The two way to figure out which options are available for <code>html_document</code> is to either google (an obvious one) or take a look at the help page for that function i.e</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="yaml-introduction.html#cb89-1"></a>?rmarkdown<span class="op">::</span>html_document</span></code></pre>
+</div>
+<div id="challenge-yaml-3" class="section level2 exercise">
+<h2><span class="header-section-number">7.7</span> Challenge: YAML 3</h2>
+<blockquote>
+<p>5 minutes</p>
+</blockquote>
+<details>
+<p><summary>
+1. Can you find in the help page which values <code>df_print</code> from <code>html_document</code> can take?
+</summary>
+run <code>?rmarkdown::html_document</code> in Rstudio console to open help page and search for <code>df_print</code></p>
+</details>
+<details>
+<p><summary>
+2. Set <code>df_print</code> to a value that will give you paginated HTML table.
+</summary>
+<code>paged</code></p>
+</details>
+</div>
+<div id="more-rmarkdown-tags" class="section level2">
+<h2><span class="header-section-number">7.8</span> More Rmarkdown tags</h2>
+<p>Let’s add more options to our yaml file and <code>knit</code> it and see what has changed.</p>
+<pre><code>---
+title: &#39;Hello world&#39;
+author: &#39;Kirill&#39;
+date: &#39;13 July 2016&#39;
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: false
+    code_folding: &quot;hide&quot;
+    theme: sandstone
+    highlight: espresso
+---</code></pre>
+<p>As I have eluted earlier if you simply change <code>output: html_document</code> to <code>output: pdf_document</code> you are going to get pdf document instead. Also remember that all of those options that we gave to <code>html_document</code> are specific to that document type only, although some tags might have the same name in other document types e.g <code>toc</code> and <code>toc_depth</code> keys also exist in <code>pdf_document</code>.
+We are not going to spend time on building a pdf document. It is a more finicky to build because it relying on LaTeX engine and LaTeX can be very finicky. This is more relevant for more complex documents. This is why we recommend to firstly build html document and only once you have finished you analysis and start building your pdf documents.</p>
+<p>The more interesting, in my view, document type is <code>ioslides_presentation</code></p>
+</div>
+<div id="presentation-slides" class="section level2">
+<h2><span class="header-section-number">7.9</span> Presentation slides</h2>
+<p>As I’ve mentioned in previous section, <code>output</code> has many options, one of which is <code>ioslides_presentation</code>. Let’s comment <code>html_document</code> with all it’s options out for now, add <code>output: ioslides_presentation</code> and re-compile out document</p>
+<pre><code>---
+title: &#39;Hello world&#39;
+author: &#39;Kirill&#39;
+date: &#39;13 July 2016&#39;
+output: ioslides_presentation
+#output:
+#  html_document:
+#    df_print: paged
+#    toc: true
+#    toc_float: true
+#    toc_collapsed: true
+#    toc_depth: 3
+#    number_sections: false
+#    code_folding: &quot;hide&quot;
+#    theme: sandstone
+#    highlight: espresso
+---</code></pre>
+<p>As you might have guessed <code>##</code> symbol in the case of <code>ioslides_presentation</code> means the beginning of the slide. While amount of work is minimal to convert between <code>html_document</code> and <code>ioslides_presentation</code> you will obviously need to reduce amount of text.</p>
+</div>
+<div id="bookdown-yaml-header" class="section level2">
+<h2><span class="header-section-number">7.10</span> Bookdown yaml header</h2>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="vanilla-markdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="git-and-github-introduction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="more-rmarkdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -543,7 +497,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/03-rmarkdown.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/06-yaml-header.Rmd",
 "text": "Edit"
 },
 "history": {
