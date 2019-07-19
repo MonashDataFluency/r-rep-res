@@ -14,6 +14,7 @@ rmd_files:
   - 07-bookdown.Rmd
   - 08-bibliographies.Rmd
   - 99-working-doc.Rmd
+  - 99-appendix.Rmd
 
 new_session: yes
 output_dir: "../_book"
