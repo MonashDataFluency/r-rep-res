@@ -1,9 +1,5 @@
 # Bookdown
 
-```
-¯\_(ツ)_/¯
-```
-
 All `.Rmd` files located in the same directory will be compiled into the book in the (alphabetical?) order.
 
 - files that start with an underscore are skipped

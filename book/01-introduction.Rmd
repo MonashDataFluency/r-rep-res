@@ -9,7 +9,7 @@ Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the
 
 ## Rmarkdown core parts
 
-Any [see @xie_allaire_grolemund_2019] Rmarkdown documents is broken into three main parts:
+Any Rmarkdown documents is broken into three main parts:
 
 - [YAML header](#yaml-header)
 - [The R chunks](#the-r-chunks)
@@ -124,6 +124,22 @@ These are more R packages that enable more things via Rmarkdown.
 - [xaringan](https://github.com/yihui/xaringan)
 - [blogdown](https://github.com/rstudio/blogdown)
 - [thesisdown](https://github.com/ismayc/thesisdown)
+
+## RStudio project
+
+RStudio provides a nice option to create a new project. This in turn will create a new folder with a couple of special features helping you to stay organised and "containerising" your project.
+
+The following features apply to a project directory
+
+- A new R session (process) is started
+- The .Rprofile file in the project's main directory (if any) is sourced by R
+- The .RData file in the project's main directory is loaded (if project options indicate that it should be loaded).
+- The .Rhistory file in the project's main directory is loaded into the RStudio History pane (and used for Console Up/Down arrow command history).
+- The current working directory is set to the project directory.
+- Previously edited source documents are restored into editor tabs
+- Other RStudio settings (e.g. active tabs, splitter positions, etc.) are restored to where they were the last time the project was closed.
+
+[Taken from here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
 ## Setup
 

@@ -40,11 +40,12 @@ Attendees will learn how to:
 
 This workshop is an introduction to writing and communicating research using Rmarkdown. Rmarkdown is an easy way to create documents that include your R code and its output such figure and tables. Rmarkdown is a single documents that can be "knitted" and shared as various document types such as PDF and HTML. Rmarkdown supports scientific writing such as use of citations and figure cross-referencing. Rmarkdown can also be used to create presentations that include your R code and its output. We will also cover bookdown, which is an extension to Rmarkdown that allows creation of larger documents such as books with multiple chapters.
 
-In this workshop we will also cover [git version control tool](https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control) that can help with organising and "checkpointing" Rmarkdown documents, associated R code and data. Git is not a back up system, but it does allow one to retrieve older versions of your work. Git together with remote repositories like [GitHub](https://github.com) can provide centralised location for your research. All together Rmarkdown, git and github can enable reproducible research that is visiable and accessible by greater public including supervisors and management.
+In this workshop we will also cover [git version control tool](https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control) that can help with organising and "checkpointing" Rmarkdown documents, associated R code and data. Git is not a back up system, but it does allow one to retrieve older versions of your work. Git together with remote repositories like [GitHub](https://github.com) can provide centralised location for your research. All together Rmarkdown, git and github can enable reproducible research that is visible and accessible by greater public including supervisors and management.
 
 ## Prerequisite {-}
 
-This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recomended that you read [this article in full](https://peerj.com/preprints/3159/), if you have to prioritise, read at least these section (1,2,6,10).
+This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recommended that you read [this article in full](https://peerj.com/preprints/3159/), if you have to prioritise, read at least these section (1,2,6,10).
+Additionally it is highly recommended that you create an account at [GitHub](htts://github.com) and remember your password.
 
 ## Keywords {-}
 
@@ -56,13 +57,123 @@ This is an introductory level workshop, however some prior exposure to R and fam
 
 ## Schedule {-}
 
-- 10:00-10:30am (30 minutes) Welcome and warm up
-- 10:30-12:00pm (1.5 hours)  Rmarkdown
-- 12:00-1:00pm  (1 hour)     lunch
-- 1:00-3:00pm   (2 hours)    More Rmarkdown
-- 3:00-3:15pm   (15 minutes) Tea break
-- 3:15-4:45pm   (1.5 hours)  Even more Rmarkdown
-- 4:45-5:00pm   (15 minutes) Warm down
+<details>
+  <summary>
+  10:00-10:30am (30 minutes) Welcome and warm up
+  </summary>
+
+  ```
+  \( ﾟヮﾟ)/
+  ```
+</details>
+
+<details>
+  <summary>
+  10:30-12:00pm (1.5 hours)  Rmarkdown
+  </summary>
+
+- Introduction (30 minutes)
+- Vanilla markdown (30 minutes)
+- Rmarkdown (30 minutes)
+
+</details>
+
+<details>
+  <summary>
+  12:00-1:00pm  (1 hour)     lunch
+  </summary>
+
+<pre>
+
+                     __
+                    /
+                 .-/-.
+                 |'-'|
+                 |   |
+                 |   |   .-""""-.
+                 \___/  /' .  '. \   \|/\//
+                       (`-..:...-')  |`""`|
+                        ;-......-;   |    |
+                         '------'    \____/
+
+</pre>
+
+</details>
+
+<details>
+  <summary>
+  1:00-3:00pm   (2 hours)    More Rmarkdown
+  </summary>
+
+- Git and GitHub markdown (40 minutes)
+- More Rmarkdown (40 minutes)
+- YAML header (40 minutes)
+
+</details>
+
+<details>
+  <summary>
+  3:00-3:15pm   (15 minutes) Tea break
+  </summary>
+
+<pre>
+                     (  )  (   )  )
+                     ) (   )  (  (
+                     ( )  (    ) )
+                     _____________
+                    <_____________> ___
+                    |             |/ _ \
+                    |               | | |
+                    |               |_| |
+                 ___|             |\___/
+                /    \___________/    \
+                \_____________________/
+</pre>
+
+</details>
+
+<details>
+  <summary>
+  3:15-4:45pm   (1.5 hours)  Even more Rmarkdown
+  </summary>
+
+- Bibliographies (30 minutes)
+- Bookdown (30 minutes)
+- Miscellaneous (30 minutes)
+
+</details>
+
+<details>
+  <summary>
+  4:45-5:00pm   (15 minutes) Warm down
+  </summary>
+
+<pre>
+
+                                          (
+
+                *                           )   *
+                              )     *      (
+                    )        (                   (
+                   (          )     (             )
+                    )    *           )        )  (
+                   (                (        (      *
+                    )          H     )        )
+                              [ ]            (
+                       (  *   |-|       *     )    (
+                 *      )     |_|        .          )
+                       (      | |    .
+                 )           /   \     .    ' .        *
+                (           |_____|  '  .    .
+                 )          | ___ |  \~~~/  ' .   (
+                        *   | \ / |   \_/  \~~~/   )
+                            | _Y_ |    |    \_/   (
+                *           |-----|  __|__   |      *
+                            `-----`        __|__
+
+</pre>
+
+</details>
 
 ## Authors and copyright {-}
 

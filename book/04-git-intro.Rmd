@@ -6,21 +6,35 @@
 > How often will depend on your experience and desire not to fall
 > Git commit like you are vertically hanging off 70 feet rock
 
-I going to break to you right at the start that (unfortunatelly) doing git and GitHub is like rock climbing, but nonetheless it has great benefits for your research and analysis including making it more visiable, reproducible and potentially collaborative.
+I going to break to you right at the start that (unfortunately) doing git and GitHub is like rock climbing, but nonetheless it has great benefits for your research and analysis including making it more visible, reproducible and potentially very collaborative.
 
-[Git](https://git-scm.com/doc) is one of many tool, but very popular, that was design for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strickly design with scientific research projects in mind we will happily repurpose git to help us stay on top of our research projects. In git world everything rotates around git repository, which is "special" folder. Inside that folder every file and folder is "tracked" for changes. Git repositories often are synonymous with project folder. It is a "bucket" or "container" that holds everything related to a particular project.
+[Git](https://git-scm.com/doc) is one of many tools, but it is very popular. Git was design for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strictly design with scientific research projects in mind we will happily re-purpose git to help us stay on top of our research projects. In git world everything rotates around git repository, which is "special" folder. Inside that folder every file and folder is "tracked" for changes. Git repositories often are synonymous with project folder. In our case an RStudio project folder will be the same as git folder. In other words we are going to tack all changes in our project.
+Note that two, git and RStudio project, are independent of each other and you can use one or another or both.
 
-```{r echo=F, out.width="100%", fig.align="left", fig.cap="This is an example of git version cotrol vs DIY versioning via filesystem"}
+Below I am trying to illustrate of the differences between of do-it-yourself (DIY) version control system, which may be great, and git version control. DIY version control systems are great with two caveats:
+
+- no one else will understand it
+- the future you will forget the awesome schema that you have invented
+
+(ref:git1) This is an example of git version control vs DIY versioning via filesystem
+
+```{r echo=F, out.width="100%", fig.align="left", fig.cap='(ref:git1)'}
 knitr::include_graphics("figures/git_vs_filesystem.png")
 ```
 
-GitHub on the another hand is a place where people can deposit, store and share their git repositories. GitHub also one of many different places that people can choose to use to store and share their git repositories. Image below illustrates some of other common place one can choose to store they git repositories a.k.a projects
+From now onwards we are going to `git` version control tool. We are also going to use GitHub for storing our files remotely. GitHub isn't the only place that people can use with git for file storage and sharing. Below an illustration of some other common place one can choose to store they git repositories a.k.a projects.
 
-```{r echo=F, out.width="100%", fig.align="left", fig.cap = "https://www.geekboots.com/story/what-is-the-difference-between-bitbucket-github-and-gitlab"}
+(ref:github1) https://www.geekboots.com/story/what-is-the-difference-between-bitbucket-github-and-gitlab
+
+```{r echo=F, out.width="100%", fig.align="left", fig.cap = '(ref:github1)'}
 knitr::include_graphics("figures/remote_repos.jpg")
 ```
 
-For this workshop we are going to go with GitHub, mainly it is very popular and it has a lot of useful features, some of which I'll share with you later in the workshop.
+In theory and can also store `git` repositories in google drive or dropbox or other similar places, however neither those places haven't been optimised for `git` version control repositories. We will talk shortly about advantages that GitHub brings to the project.
+
+For this workshop we are going to use GitHub, mainly because is very popular and it has a lot of useful features.
+
+## Quick summary
 
 Git and GitHub will help you:
 
@@ -32,54 +46,46 @@ Git and GitHub will help you:
 
 ## Github setup
 
-There are a couple of different ways you start a project and initiate git repository - git tracking.
-We are going to start with GitHub first approach. An alternative approach discussed in [appendix section D](#d). I hope that everyone had already created [GitHub](https://github.com/) account. We are going to create a new github repository, which is also automatically a git repository. Remember that GitHub is just a place where we are storing out git repositories and you can only store git repositories on GitHub.
+There are a couple of different ways you can start a project and initiate git repository - git tracking. We are going to start with GitHub first approach. An alternative approach discussed in [appendix section D](#d). I hope that everyone had already created [GitHub](https://github.com/) account.
+We are going to make new github repository from [this template](https://github.com/MonashDataFluency/r-rep-res-git).
 
-Let's go to [GitHub](https://github.com/) and create new repository and let's name it "learning_rmarkdown".
+- sign in to github [github.com](https://github.com)
+- head over to [https://github.com/MonashDataFluency/r-rep-res-git](https://github.com/MonashDataFluency/r-rep-res-git)
+- click "Use this template"
 
-```{r echo = F, out.width = "100%", fig.align = "left"}
-knitr::include_graphics("figures/github1.png")
-```
-
-Description of the repository is optional, but a good idea to write a brief sentence there to message to yourself and the public what this project is about. Let's write the following brief sentence; "I'm learning Rmarkdown". Also note that I ticked "Initialize this repository with a README". This completely optional.
+You should see a screen like this
 
 ```{r echo = F, out.width = "100%", fig.align = "left"}
-knitr::include_graphics("figures/github2.png")
+knitr::include_graphics("figures/github6.png")
 ```
 
-This is the screen you are going to get when you've initialised it with a README file
+- Repository name "learning_rmarkdown"
+- Description "I'm learning Rmarkdown, yay!"
+- click "Create repository from template"
 
-```{r echo = F, out.width = "100%", fig.align = "left"}
-knitr::include_graphics("figures/github3.png")
-```
+Note that description of the repository is optional, but a good idea to write a brief sentence there to message yourself and the public what this project is about.
 
-And this is a screen you are going to get if you haven't initialised it with a README file
-
-```{r echo = F, out.width = "100%", fig.align = "left"}
-knitr::include_graphics("figures/github5.png")
-```
-
-A brief note about README files. It is regarded as a "silent" way of communication, where you can tell all necessary information another person need to know about your project. For a software tool you would put information about how to build that particular tool and dependencies. In our case we will add information how to build final html report. We will do this a bit later in the workshop.
-
-Either way is completely fine! Once we have our GitHub repository we need to find a link (URL) and copy a.k.a **clone** (git clone) our repository to our working computer, in our case [rstudio.cloud](https://rstudio.cloud). We want to establish connection between [rstudio.cloud](https://rstudio.cloud) and GitHub such that we can with little effort we can copy our work, that is file from [rstudio.cloud](https://rstudio.cloud) to GitHub.
+Once we have our GitHub repository we need to find a link (URL) and copy a.k.a **clone** (git clone) our repository to our working computer, in our case [rstudio.cloud](https://rstudio.cloud). We want to establish connection between [rstudio.cloud](https://rstudio.cloud) and GitHub such that we can with little effort we can copy our work, that is file from [rstudio.cloud](https://rstudio.cloud) to GitHub.
 
 This is how typical URL looks like
 
 ```
-https://github.com/serine/learing_rmarkdown.git
+https://github.com/kirill/learing_rmarkdown.git
 ```
 
 There are at least three components in that url
 
 - `https://github.com/` the place i.e the name of the website
-- `serine/` username
+- `kirill/` username
 - `learing_rmarkdown.git` repository name (project name)
 
 You can get this url, but either looking at the address bar of your browser or there is a little drop down menu on the right hand site.
 
 ```{r echo = F, out.width = "100%", fig.align = "left"}
-knitr::include_graphics("figures/github4.png")
+knitr::include_graphics("figures/github8.png")
 ```
+
+Note that by creating new github repository we are automatically initialising git for version tracking. Remember that GitHub is just a place where we are storing our git repository.
 
 ## RStudio setup
 
