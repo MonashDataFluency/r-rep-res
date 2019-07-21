@@ -1,4 +1,4 @@
-# (PART) {-}
+# (PART) Part {-}
 
 In this section we are going to cover two types of referencing; cross-referencing tables, figures and other text and sections through out the document and citation i.e referencing exterinal resources. Cross referencing internal section is relativelly straight forward we just need to point to the resource using "speack" key, which will talk about shortly, whereas for referencing an external resource we need an additional bibliographies files that will hold citation information.
 

@@ -10,3 +10,4 @@
 
   https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/
   https://rmarkdown.rstudio.com/lesson-9.html
+  https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html

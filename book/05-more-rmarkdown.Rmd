@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE,
 We are going to do our analysis with the help of [`tidyverse`](https://www.tidyverse.org/) library, that in itself includes many other libraries.
 
 
-```{r}
+```{r eval = F}
 library(tidyverse)
 ```
 

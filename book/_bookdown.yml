@@ -17,6 +17,6 @@ rmd_files:
   - 99-references.Rmd
   - 99-appendix.Rmd
 
-new_session: yes
+new_session: false # https://bookdown.org/yihui/bookdown/new-session.html
 output_dir: "../_book"
 book_filename: "Reproducible Research in R"

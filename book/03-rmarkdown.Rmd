@@ -1,8 +1,3 @@
-```{r}
-library(tidyverse)
-library(knitr)
-```
-
 # Rmarkdown
 
 The reason that we are learning [Rmarkdown](https://rmarkdown.rstudio.com/) is because it gives us very straight forward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.

@@ -161,6 +161,31 @@ link-citations: true
 ---
 ```
 
+## Citing R packages
+
+R provides convenient `citation()` function that one can use to cite R packages e.g
+
+```
+citation("ggplot2")
+```
+
+## Challenge: Bibliographies 1 {.exercise}
+
+> 2 minutes
+
+<details>
+
+  <summary>
+    1. Can you get `.bib` citation for `bookdown` package?
+  </summary>
+  You don't get `.bib` text content right away, but if you are careful at reading the message you will understand that you need to do this
+
+   ```{r eval = F}
+   citation("bookdown") %>% print(bibtex = TRUE)
+   ```
+
+</details>
+
 ## Location of the references
 
 

@@ -1,4 +1,4 @@
-# (PART) {-}
+# (PART) Part {-}
 
 In this part of the book we will beging by talking about Rmarkdown language, where it has originated and the ecosystem that surrounds it. We are then going to look closerly at the core parts of the Rmarkdown document. After that we will start with understanding basics of vanilla markdown as a building block of Rmarkdown. We will finish off this section of the book with hands on experience writting Rmarkdown documents with embeded R code chunks.
 

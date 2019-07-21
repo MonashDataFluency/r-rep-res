@@ -8,6 +8,11 @@ bibliography: "supplementary/bibliographies.bib"
 link-citations: true
 ---
 
+```{r echo = F, results = 'hide', message = F}
+library(tidyverse)
+library(knitr)
+```
+
 # Reproducible Research in R {#index -}
 
 > - Level: beginner-intermediate
