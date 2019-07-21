@@ -11,9 +11,10 @@ rmd_files:
   - 05-more-rmarkdown.Rmd
   - 06-yaml-header.Rmd
   # 1.5 hours
+  - 08-bibliography.Rmd
   - 07-bookdown.Rmd
-  - 08-referencing.Rmd
   - 99-working-doc.Rmd
+  - 99-references.Rmd
   - 99-appendix.Rmd
 
 new_session: yes

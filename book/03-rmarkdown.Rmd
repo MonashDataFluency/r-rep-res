@@ -82,7 +82,7 @@ Note that each chunk can be run independently in the console by pressing `ctrl^e
 Each code chunk is highly customisable via [chunk options](https://bookdown.org/yihui/rmarkdown/r-code.html). We are going to learn a few today, but we won't be able to cover all of them. You probably never going to use some of them, but as long as you know what to look for you'll be able to search for then. Note that all chunk options have a default value. Not specifying an options means you are using the default value. These are chunk options that we are going to cover today.
 
 ```{r echo = F, message = F}
-chunks <- readr::read_tsv("../supplementary/chunk_options.tsv") %>%
+chunks <- readr::read_tsv("supplementary/chunk_options.tsv") %>%
        		filter(this) %>%
        		arrange(type) %>%
 		select(-this)

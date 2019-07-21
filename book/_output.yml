@@ -31,7 +31,8 @@ bookdown::gitbook:
 bookdown::pdf_book:
   keep_tex: no
   latex_engine: xelatex
-  pandoc_args: [--top-level-division=chapter, --wrap=none]
+  pandoc_args: [--top-level-division=chapter,
+                --wrap=none]
   toc_depth: 3
   toc_unnumbered: no
   toc_appendix: yes

@@ -1,4 +1,4 @@
-# (PART) Part {-}
+# (PART) {-}
 
 # Git and GitHub introduction
 

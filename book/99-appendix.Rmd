@@ -10,8 +10,75 @@ library(knitr)
 ## Long list of chunk options
 
 ```{r echo = F, message = F}
-chunks <- readr::read_tsv("../supplementary/chunk_options.tsv") %>%
+chunks <- readr::read_tsv("supplementary/chunk_options.tsv") %>%
 		select(-this)
 chunks %>% kable
 ```
 
+## Citation
+
+### Yaml header
+
+You can also include citation into yaml header e.g
+
+```
+references:
+- id: fenner2012a
+  title: One-click science marketing
+  author:
+  - family: Fenner
+    given: Martin
+  container-title: Nature Materials
+  volume: 11
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  DOI: 10.1038/nmat3283
+  issue: 4
+  publisher: Nature Publishing Group
+  page: 261-263
+  type: article-journal
+  issued:
+    year: 2012
+    month: 3
+```
+
+While this is handy for one or two citation, but this isn't practical for a study that has more then a few citations.
+
+### Changing citation style
+
+Apparently if you go [here](https://github.com/citation-style-language/styles) and download individual `.csl` files, specific for your citation style you then should be able to reference that file in yaml header
+
+```
+---
+csl: "harvard-anglia-ruskin-university.csl"
+---
+```
+
+OR
+
+```
+---
+citation-style: "harvard-anglia-ruskin-university.csl"
+---
+```
+
+This is explained [here](https://r4ds.had.co.nz/r-markdown.html#yaml-header)
+
+However I wasn't able to change my style. I suspect there are some subtleties between bookdown and rmarkdown specifically `html_docment` and `html_docment2` outputs
+
+[Here](https://stackoverflow.com/questions/48965247/use-csl-file-for-pdf-output-in-bookdown) meant to be the solution by using
+
+```
+---
+pandoc_args: [--csl=../supplementary2/harvard-anglia-ruskin-university.csl]
+---
+```
+
+But that also didn't work for me.
+
+Also note that `biblio-style` ["only applied to LaTeX output. For other output formats, you need to use the csl option in YAML or --csl in pandoc_args:"](https://github.com/rstudio/bookdown/issues/354)
+
+```
+---
+biblio-style: apalike
+---
+```
