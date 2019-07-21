@@ -12,7 +12,7 @@ rmd_files:
   - 06-yaml-header.Rmd
   # 1.5 hours
   - 07-bookdown.Rmd
-  - 08-bibliographies.Rmd
+  - 08-referencing.Rmd
   - 99-working-doc.Rmd
   - 99-appendix.Rmd
 

@@ -1,0 +1,108 @@
+# Referencing
+
+In this section we are going to cover two types of referencing; cross-referencing tables, figures and other text and sections through out the document and citation i.e referencing exterinal resources. Cross referencing internal section is relativelly straight forward we just need to point to the resource using "speack" key, which will talk about shortly, whereas for referencing an external resource we need an additional bibliographies files that will hold citation information.
+
+## Bibliographies
+
+We have already talked about [yaml files format](#yaml-introduction) being a plain text and structured file format. I've also mentioned json in passing, as being abother plain text and structured file format. One of the main purposed for having structure is so that computer can understand (parse) the information.
+[bibtex](http://www.bibtex.org/) is yet another plain text, but structured file format, often times referred to as bibliographical database file. Bibtex originated in 1985, [here is an interview with the author, Oren Patashnik, of bibtex if you interested to know how it came to be](https://tug.org/interviews/patashnik.html). Whereas both yaml and json originated start of 2000's, 15 years later. The reason I am mentioning the dates is because in theory any one of those other formats, yaml or json, could have been easily re-purposed for citations. For example [Citation File Format (CFF)](https://citation-file-format.github.io/) is in fact, exactly that, yaml based, citation format. There are many different citation file formats (10-20). Rmarkdown once again leverages an external tool [pandoc-citepro](http://hackage.haskell.org/package/pandoc-citeproc) to generate and embed citation. [pandoc-citepro](http://hackage.haskell.org/package/pandoc-citeproc) can work with several different file formats including [bibtex](http://www.bibtex.org/), [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) and [EndNote](https://en.wikipedia.org/wiki/EndNote).
+Hopefully this gives you a bit of an overview what is possible and available regarding citations. In this workshop  we are going to use [bibtex](http://www.bibtex.org/) file format only. Note that very common file extension for [bibtex](http://www.bibtex.org/) is `.bib` and this is the one we are going to use. Let's have a look at a typical `.bib` file content, the one shown below has two citation entries.
+
+
+```
+@Manual{R-base,
+  title = {R: A Language and Environment for Statistical
+    Computing},
+  author = {{R Core Team}},
+  organization = {R Foundation for Statistical Computing},
+  address = {Vienna, Austria},
+  year = {2017},
+  url = {https://www.R-project.org/},
+}
+
+@book{xie_allaire_grolemund_2019,
+      place={Boca Raton},
+      title={R Markdown: the definitive guide},
+      publisher={CRC Press, Taylor & Francis Group},
+      author={Xie, Yihui and Allaire, J. J. and Grolemund, Garrett},
+      year={2019}
+}
+```
+
+There are three core parts to any citation in the `.bib` file:
+
+- `type` of the citation. Type begins with an `@` sign
+- `key` used in our document to include citation. First item inside curly brackets
+- `field` provide information about the thing that you are citing. Fields are key, value pairs
+
+One thing to note about `.bib` file it is case-insensitive i.e book, Book and BOOK have the same meaning and effect.
+
+## Challenge: Bibliographies 1 {.exercise}
+
+> 5 minutes
+
+<details>
+
+  <summary>
+    1. Can you identify types of references shown in above?
+  </summary>
+  There are two citation with two different types `manual` and `book`
+
+</details>
+
+<details>
+
+  <summary>
+    2. Can you identify keys for the references shown above?
+  </summary>
+  There are two citation with two unique key each, `R-base` and `xie_allaire_grolemund_2019`
+
+</details>
+
+<details>
+
+  <summary>
+    3. Can you identify at least two different fields in any of the citations?
+  </summary>
+  Everything that has an equals sign is a fields.
+
+</details>
+
+
+## Where do you get bibtex file?
+
+There are two ways to get `.bib` files:
+
+- manually curate one: remember that this is a plain text file format, so you can just type it out in a text editor and save as `.bib` file
+- export out of your citation management or the publication website
+
+I tried a couple of website, [pubmed](https://www.ncbi.nlm.nih.gov/pubmed/) and [nature.com](https://www.nature.com), neither of those appear to allow you to export `.bib`. Pubmed exports `.nbib`, which is a different file format if you look inside. Nature exports `.ris`, again not the one that we want. [Google scholar](https://scholar.google.com.au/) has a button **import into Bibtext** that will give the correct citation.
+
+As I've mentioned above all of those file formats are [actually supported](https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md) the only problem is figuring out which "key" you can use to include your citation into the document. And there isn't much resource out there to help you with other bibliography file formats. For now I would say the best and easiest option is to stick with `.bib` format.
+
+Let's practice including citation into our Rmarkdown document. This is the paper that we are going to cite __Excuse me, do you have a moment to talk about version control?__ . Go to this URL [https://peerj.com/preprints/3159/](https://peerj.com/preprints/3159/), look for "Download" button on the right hand site, from the drop down select "BibTex". This will download citation file. On my computer the file name was `peerj-preprints-3159.bib`.
+
+If you are curious to take a pick at the file content on your local computer, you can open such file with a text editor. Do not attempt to open with any other programs, such ash MS word or citation management tools. Most likely your computer will want to do just that, do not succumb! Mac people can use "TextMate" and windows people can use "Notepad" text editors. But this isn't necessary.
+
+One you have `.bib` file, let's upload it into `rstudio.cloud`. Navigate to your "Files" panel, there you should see "Upload" button. Use that menu to upload your `.bib` file onto `rstudio.cloud`. You should see `.bib` file in your file browser if you are successful.
+If you double click on that file if should open up in a different panel, text editor panel and you should see the content of that file.
+
+```{r child="supplementary/peerj-preprints-3159.bib"}
+
+```
+
+
+
+
+https://www.lifewire.com/bibtex-file-2619874
+
+## Cross-references
+
+A normal paragraph.
+
+(ref:foo) A scatterplot of the data `cars` using **base** R graphics.
+
+```{r fig.cap='(ref:foo)'}
+plot(cars)  # a scatterplot
+```
+
