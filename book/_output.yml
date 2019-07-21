@@ -2,6 +2,7 @@
 # https://bookdown.org/yihui/bookdown/html.html#gitbook-style
 bookdown::gitbook:
   css: ../css/style.css
+  df_print: paged
   config:
     toc:
       collapse: subsection

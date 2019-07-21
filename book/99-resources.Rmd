@@ -11,3 +11,6 @@
   https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/
   https://rmarkdown.rstudio.com/lesson-9.html
   https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+
+- [Section 2.6](https://bookdown.org/yihui/rmarkdown/r-code.html)
+- [Pimp my RMD](https://holtzy.github.io/Pimp-my-rmd/)

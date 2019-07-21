@@ -1,4 +1,4 @@
-# Work in progress
+# Miscellaneous
 
 In general think about fast turn around time and easi of editing.
 

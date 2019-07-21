@@ -7,13 +7,12 @@ rmd_files:
   - 03-rmarkdown.Rmd
   # 2 hours
   - 04-git-intro.Rmd
-  - 05-r-chunks.Rmd
   - 05-more-rmarkdown.Rmd
   - 06-yaml-header.Rmd
   # 1.5 hours
-  - 08-bibliography.Rmd
-  - 07-bookdown.Rmd
-  - 99-working-doc.Rmd
+  - 07-bibliography.Rmd
+  - 08-bookdown.Rmd
+  - 09-misc.Rmd
   - 99-references.Rmd
   - 99-appendix.Rmd
 
