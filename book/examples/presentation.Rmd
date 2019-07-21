@@ -2,16 +2,15 @@
 title: "Playing with domestic airline perfomance data"
 author: "Kirill"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
-output:
-  html_document:
-    df_print: paged
-    toc: true
-    toc_float: true
-    toc_collapsed: true
-    toc_depth: 3
-    number_sections: false
-    theme: sandstone
+output: ioslides_presentation
 ---
+
+```{r setup, echo = F}
+options(encoding="utf-8")
+
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE)
+```
 
 ## Introduction
 
@@ -63,14 +62,6 @@ df
 
 Now that we've got the data lets explore it. It always helps if we can find more information about the data set, particular what information each column might have.
 
-### External notes about the data
-
-```{r child="domestic_airline_performance_notes.txt"}
-
-```
-
-***
-
 ### Working with data
 
 Great, the information above gives us some starting material. However it wasn't that explicit what each column meant and how man columns are there. Let's quickly take a pick
@@ -121,7 +112,7 @@ df2 <- df %>%
 
 ## Visualising the data
 
-Here we are summarising so that we have an idea of how many times a particular location had be use per airline per year and we are only going to look at two airlines, 
+Here we are summarising so that we have an idea of how many times a particular location had be use per airline per year and we are only going to look at two airlines,
 Jetstar and Qantas.
 
 ```{r}
@@ -129,7 +120,7 @@ p2 <- df2 %>%
   group_by(Airline, Year, Departing_Port) %>%
   summarise(n = n()) %>%
   ungroup %>%
-  filter(Airline == "Jetstar" | Airline == "Qantas") %>% 
+  filter(Airline == "Jetstar" | Airline == "Qantas") %>%
   ggplot(aes(Departing_Port, n, color = Airline)) +
     geom_boxplot() +
     theme(axis.text.x=element_text(angle=45, hjust=1))
@@ -141,7 +132,7 @@ In any given year what is the distribution of cancellation
 
 ```{r, fig.width=15, fig.height=9}
 p3 <- df2 %>%
-        filter(Airline == "Jetstar" | Airline == "Qantas") %>% 
+        filter(Airline == "Jetstar" | Airline == "Qantas") %>%
         select(Airline, Departing_Port, Cancellations, Year) %>%
         ggplot(aes(Departing_Port, Cancellations, color = factor(Year))) +
           geom_boxplot() +
