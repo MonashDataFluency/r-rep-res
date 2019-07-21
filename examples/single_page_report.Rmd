@@ -5,6 +5,7 @@ date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output:
   html_document:
     df_print: paged
+    code_folding: "hide"
     toc: true
     toc_float: true
     toc_collapsed: true
