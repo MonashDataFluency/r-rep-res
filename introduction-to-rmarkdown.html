@@ -46,6 +46,8 @@
 
 
 
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <style type="text/css">
@@ -167,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.1.2</b> include</a></li>
 <li class="chapter" data-level="3.1.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.1.3</b> results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-code-chunks"><i class="fa fa-check"></i><b>3.2</b> Challenge: code chunks</a></li>
+<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.2</b> Challenge: Rmarkdown 1</a></li>
+<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#important-blob-about-include-vs-results"><i class="fa fa-check"></i><b>3.3</b> important blob about include vs results</a></li>
 </ul></li>
 <li class="part"><span><b>II Part</b></span></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
@@ -183,63 +186,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html#which-files-to-commit"><i class="fa fa-check"></i><b>4.7</b> Which files to commit?</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html"><i class="fa fa-check"></i><b>5</b> The R chunk 2</a><ul>
-<li class="chapter" data-level="5.1" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#working-with-code-chunks"><i class="fa fa-check"></i><b>5.1</b> Working with code chunks</a></li>
-<li class="chapter" data-level="5.2" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#figures-related-chunk-options"><i class="fa fa-check"></i><b>5.2</b> Figures related chunk options</a></li>
-<li class="chapter" data-level="5.3" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#challenge-code-chunks-1"><i class="fa fa-check"></i><b>5.3</b> Challenge: code chunks</a></li>
-<li class="chapter" data-level="5.4" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#more-useful-chunk-options"><i class="fa fa-check"></i><b>5.4</b> More useful chunk options</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#stand-alone-rmarkdown-file"><i class="fa fa-check"></i><b>5.4.1</b> Stand alone Rmarkdown file</a></li>
+<li class="chapter" data-level="5" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html"><i class="fa fa-check"></i><b>5</b> More Rmarkdown</a><ul>
+<li class="chapter" data-level="5.1" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#setup-1"><i class="fa fa-check"></i><b>5.1</b> Setup</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#setting-global-chunk-options"><i class="fa fa-check"></i><b>5.1.1</b> Setting global chunk options</a></li>
+<li class="chapter" data-level="5.1.2" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#loading-libraries"><i class="fa fa-check"></i><b>5.1.2</b> Loading libraries</a></li>
+<li class="chapter" data-level="5.1.3" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#downloading-the-data"><i class="fa fa-check"></i><b>5.1.3</b> Downloading the data</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#challenge-more-code-chunks"><i class="fa fa-check"></i><b>5.5</b> Challenge: more code chunks</a></li>
-<li class="chapter" data-level="5.6" data-path="the-r-chunk-2.html"><a href="the-r-chunk-2.html#references"><i class="fa fa-check"></i><b>5.6</b> References</a></li>
+<li class="chapter" data-level="5.2" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#exploring-the-data"><i class="fa fa-check"></i><b>5.2</b> Exploring the data</a></li>
+<li class="chapter" data-level="5.3" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#including-external-files"><i class="fa fa-check"></i><b>5.3</b> Including external files</a></li>
+<li class="chapter" data-level="5.4" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#challenge-more-rmarkdown-1"><i class="fa fa-check"></i><b>5.4</b> Challenge: More Rmarkdown 1</a></li>
+<li class="chapter" data-level="5.5" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#visualising-the-data"><i class="fa fa-check"></i><b>5.5</b> Visualising the data</a></li>
+<li class="chapter" data-level="5.6" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#challenge-more-rmarkdown-2"><i class="fa fa-check"></i><b>5.6</b> Challenge: More Rmarkdown 2</a></li>
+<li class="chapter" data-level="5.7" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#more-plots"><i class="fa fa-check"></i><b>5.7</b> More plots</a></li>
+<li class="chapter" data-level="5.8" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#more-chunk-options"><i class="fa fa-check"></i><b>5.8</b> More chunk options</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html"><i class="fa fa-check"></i><b>6</b> More Rmarkdown</a><ul>
-<li class="chapter" data-level="6.1" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#setup-1"><i class="fa fa-check"></i><b>6.1</b> Setup</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#setting-global-chunk-options"><i class="fa fa-check"></i><b>6.1.1</b> Setting global chunk options</a></li>
-<li class="chapter" data-level="6.1.2" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#loading-libraries"><i class="fa fa-check"></i><b>6.1.2</b> Loading libraries</a></li>
-<li class="chapter" data-level="6.1.3" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#downloading-the-data"><i class="fa fa-check"></i><b>6.1.3</b> Downloading the data</a></li>
+<li class="chapter" data-level="6" data-path="yaml-introduction.html"><a href="yaml-introduction.html"><i class="fa fa-check"></i><b>6</b> YAML introduction</a><ul>
+<li class="chapter" data-level="6.1" data-path="yaml-introduction.html"><a href="yaml-introduction.html#yaml-header-1"><i class="fa fa-check"></i><b>6.1</b> YAML header</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="yaml-introduction.html"><a href="yaml-introduction.html#example-1"><i class="fa fa-check"></i><b>6.1.1</b> Example 1</a></li>
+<li class="chapter" data-level="6.1.2" data-path="yaml-introduction.html"><a href="yaml-introduction.html#example-2"><i class="fa fa-check"></i><b>6.1.2</b> Example 2</a></li>
+<li class="chapter" data-level="6.1.3" data-path="yaml-introduction.html"><a href="yaml-introduction.html#example-3"><i class="fa fa-check"></i><b>6.1.3</b> Example 3</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#challenge-1"><i class="fa fa-check"></i><b>6.2</b> Challenge: 1</a></li>
-<li class="chapter" data-level="6.3" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#exploring-the-data"><i class="fa fa-check"></i><b>6.3</b> Exploring the data</a></li>
-<li class="chapter" data-level="6.4" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#challenge-1-1"><i class="fa fa-check"></i><b>6.4</b> Challenge: 1</a></li>
-<li class="chapter" data-level="6.5" data-path="more-rmarkdown.html"><a href="more-rmarkdown.html#visualising-the-data"><i class="fa fa-check"></i><b>6.5</b> Visualising the data</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="yaml-introduction.html"><a href="yaml-introduction.html"><i class="fa fa-check"></i><b>7</b> YAML introduction</a><ul>
-<li class="chapter" data-level="7.1" data-path="yaml-introduction.html"><a href="yaml-introduction.html#yaml-header-1"><i class="fa fa-check"></i><b>7.1</b> YAML header</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="yaml-introduction.html"><a href="yaml-introduction.html#example-1"><i class="fa fa-check"></i><b>7.1.1</b> Example 1</a></li>
-<li class="chapter" data-level="7.1.2" data-path="yaml-introduction.html"><a href="yaml-introduction.html#example-2"><i class="fa fa-check"></i><b>7.1.2</b> Example 2</a></li>
-<li class="chapter" data-level="7.1.3" data-path="yaml-introduction.html"><a href="yaml-introduction.html#example-3"><i class="fa fa-check"></i><b>7.1.3</b> Example 3</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="yaml-introduction.html"><a href="yaml-introduction.html#challenge-yaml-1"><i class="fa fa-check"></i><b>7.2</b> Challenge: YAML 1</a></li>
-<li class="chapter" data-level="7.3" data-path="yaml-introduction.html"><a href="yaml-introduction.html#general-yaml-header"><i class="fa fa-check"></i><b>7.3</b> General yaml header</a></li>
-<li class="chapter" data-level="7.4" data-path="yaml-introduction.html"><a href="yaml-introduction.html#challenge-yaml-2"><i class="fa fa-check"></i><b>7.4</b> Challenge: YAML 2</a></li>
-<li class="chapter" data-level="7.5" data-path="yaml-introduction.html"><a href="yaml-introduction.html#rmarkdown-yaml-header"><i class="fa fa-check"></i><b>7.5</b> Rmarkdown yaml header</a></li>
-<li class="chapter" data-level="7.6" data-path="yaml-introduction.html"><a href="yaml-introduction.html#rmarkdown-rendering"><i class="fa fa-check"></i><b>7.6</b> Rmarkdown rendering</a></li>
-<li class="chapter" data-level="7.7" data-path="yaml-introduction.html"><a href="yaml-introduction.html#challenge-yaml-3"><i class="fa fa-check"></i><b>7.7</b> Challenge: YAML 3</a></li>
-<li class="chapter" data-level="7.8" data-path="yaml-introduction.html"><a href="yaml-introduction.html#more-rmarkdown-tags"><i class="fa fa-check"></i><b>7.8</b> More Rmarkdown tags</a></li>
-<li class="chapter" data-level="7.9" data-path="yaml-introduction.html"><a href="yaml-introduction.html#presentation-slides"><i class="fa fa-check"></i><b>7.9</b> Presentation slides</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="bibliographies.html"><a href="bibliographies.html"><i class="fa fa-check"></i><b>8</b> Bibliographies</a><ul>
-<li class="chapter" data-level="8.1" data-path="bibliographies.html"><a href="bibliographies.html#challenge-bibliographies-1"><i class="fa fa-check"></i><b>8.1</b> Challenge: Bibliographies 1</a></li>
-<li class="chapter" data-level="8.2" data-path="bibliographies.html"><a href="bibliographies.html#where-do-you-get-bibtex-file"><i class="fa fa-check"></i><b>8.2</b> Where do you get bibtex file?</a></li>
-<li class="chapter" data-level="8.3" data-path="bibliographies.html"><a href="bibliographies.html#challenge-bibliographies-2"><i class="fa fa-check"></i><b>8.3</b> Challenge: Bibliographies 2</a></li>
-<li class="chapter" data-level="8.4" data-path="bibliographies.html"><a href="bibliographies.html#more-about-.bib-and-rmarkdown"><i class="fa fa-check"></i><b>8.4</b> More about <code>.bib</code> and Rmarkdown</a></li>
-<li class="chapter" data-level="8.5" data-path="bibliographies.html"><a href="bibliographies.html#citing-r-packages"><i class="fa fa-check"></i><b>8.5</b> Citing R packages</a></li>
-<li class="chapter" data-level="8.6" data-path="bibliographies.html"><a href="bibliographies.html#challenge-bibliographies-3"><i class="fa fa-check"></i><b>8.6</b> Challenge: Bibliographies 3</a></li>
+<li class="chapter" data-level="6.2" data-path="yaml-introduction.html"><a href="yaml-introduction.html#challenge-yaml-1"><i class="fa fa-check"></i><b>6.2</b> Challenge: YAML 1</a></li>
+<li class="chapter" data-level="6.3" data-path="yaml-introduction.html"><a href="yaml-introduction.html#general-yaml-header"><i class="fa fa-check"></i><b>6.3</b> General yaml header</a></li>
+<li class="chapter" data-level="6.4" data-path="yaml-introduction.html"><a href="yaml-introduction.html#challenge-yaml-2"><i class="fa fa-check"></i><b>6.4</b> Challenge: YAML 2</a></li>
+<li class="chapter" data-level="6.5" data-path="yaml-introduction.html"><a href="yaml-introduction.html#rmarkdown-yaml-header"><i class="fa fa-check"></i><b>6.5</b> Rmarkdown yaml header</a></li>
+<li class="chapter" data-level="6.6" data-path="yaml-introduction.html"><a href="yaml-introduction.html#rmarkdown-rendering"><i class="fa fa-check"></i><b>6.6</b> Rmarkdown rendering</a></li>
+<li class="chapter" data-level="6.7" data-path="yaml-introduction.html"><a href="yaml-introduction.html#challenge-yaml-3"><i class="fa fa-check"></i><b>6.7</b> Challenge: YAML 3</a></li>
+<li class="chapter" data-level="6.8" data-path="yaml-introduction.html"><a href="yaml-introduction.html#more-rmarkdown-tags"><i class="fa fa-check"></i><b>6.8</b> More Rmarkdown tags</a></li>
+<li class="chapter" data-level="6.9" data-path="yaml-introduction.html"><a href="yaml-introduction.html#presentation-slides"><i class="fa fa-check"></i><b>6.9</b> Presentation slides</a></li>
 </ul></li>
 <li class="part"><span><b>III Part</b></span></li>
-<li class="chapter" data-level="9" data-path="bookdown-1.html"><a href="bookdown-1.html"><i class="fa fa-check"></i><b>9</b> Bookdown</a><ul>
-<li class="chapter" data-level="9.1" data-path="bookdown-1.html"><a href="bookdown-1.html#work-in-progress"><i class="fa fa-check"></i><b>9.1</b> work in progress</a></li>
-<li class="chapter" data-level="9.2" data-path="bookdown-1.html"><a href="bookdown-1.html#cross-references"><i class="fa fa-check"></i><b>9.2</b> Cross-references</a></li>
+<li class="chapter" data-level="7" data-path="bibliographies.html"><a href="bibliographies.html"><i class="fa fa-check"></i><b>7</b> Bibliographies</a><ul>
+<li class="chapter" data-level="7.1" data-path="bibliographies.html"><a href="bibliographies.html#challenge-bibliographies-1"><i class="fa fa-check"></i><b>7.1</b> Challenge: Bibliographies 1</a></li>
+<li class="chapter" data-level="7.2" data-path="bibliographies.html"><a href="bibliographies.html#where-do-you-get-bibtex-file"><i class="fa fa-check"></i><b>7.2</b> Where do you get bibtex file?</a></li>
+<li class="chapter" data-level="7.3" data-path="bibliographies.html"><a href="bibliographies.html#challenge-bibliographies-2"><i class="fa fa-check"></i><b>7.3</b> Challenge: Bibliographies 2</a></li>
+<li class="chapter" data-level="7.4" data-path="bibliographies.html"><a href="bibliographies.html#more-about-.bib-and-rmarkdown"><i class="fa fa-check"></i><b>7.4</b> More about <code>.bib</code> and Rmarkdown</a></li>
+<li class="chapter" data-level="7.5" data-path="bibliographies.html"><a href="bibliographies.html#citing-r-packages"><i class="fa fa-check"></i><b>7.5</b> Citing R packages</a></li>
+<li class="chapter" data-level="7.6" data-path="bibliographies.html"><a href="bibliographies.html#challenge-bibliographies-3"><i class="fa fa-check"></i><b>7.6</b> Challenge: Bibliographies 3</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html"><i class="fa fa-check"></i><b>10</b> Work in progress</a><ul>
-<li class="chapter" data-level="10.1" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#yaml-1"><i class="fa fa-check"></i><b>10.1</b> YAML</a></li>
-<li class="chapter" data-level="10.2" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#latex-1"><i class="fa fa-check"></i><b>10.2</b> LaTeX</a></li>
-<li class="chapter" data-level="10.3" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#tabbed-sections"><i class="fa fa-check"></i><b>10.3</b> Tabbed sections</a></li>
-<li class="chapter" data-level="10.4" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#figure-options-via-yaml"><i class="fa fa-check"></i><b>10.4</b> Figure options via yaml</a></li>
-<li class="chapter" data-level="10.5" data-path="work-in-progress-1.html"><a href="work-in-progress-1.html#tables-rmarkdown"><i class="fa fa-check"></i><b>10.5</b> tables Rmarkdown</a></li>
+<li class="chapter" data-level="8" data-path="bookdown-1.html"><a href="bookdown-1.html"><i class="fa fa-check"></i><b>8</b> Bookdown</a><ul>
+<li class="chapter" data-level="8.1" data-path="bookdown-1.html"><a href="bookdown-1.html#work-in-progress"><i class="fa fa-check"></i><b>8.1</b> work in progress</a></li>
+<li class="chapter" data-level="8.2" data-path="bookdown-1.html"><a href="bookdown-1.html#cross-references"><i class="fa fa-check"></i><b>8.2</b> Cross-references</a></li>
+<li class="chapter" data-level="8.3" data-path="bookdown-1.html"><a href="bookdown-1.html#check"><i class="fa fa-check"></i><b>8.3</b> check</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="9" data-path="miscellaneous.html"><a href="miscellaneous.html"><i class="fa fa-check"></i><b>9</b> Miscellaneous</a><ul>
+<li class="chapter" data-level="9.1" data-path="miscellaneous.html"><a href="miscellaneous.html#yaml-1"><i class="fa fa-check"></i><b>9.1</b> YAML</a></li>
+<li class="chapter" data-level="9.2" data-path="miscellaneous.html"><a href="miscellaneous.html#latex-1"><i class="fa fa-check"></i><b>9.2</b> LaTeX</a></li>
+<li class="chapter" data-level="9.3" data-path="miscellaneous.html"><a href="miscellaneous.html#tabbed-sections"><i class="fa fa-check"></i><b>9.3</b> Tabbed sections</a></li>
+<li class="chapter" data-level="9.4" data-path="miscellaneous.html"><a href="miscellaneous.html#figure-options-via-yaml"><i class="fa fa-check"></i><b>9.4</b> Figure options via yaml</a></li>
+<li class="chapter" data-level="9.5" data-path="miscellaneous.html"><a href="miscellaneous.html#tables-rmarkdown"><i class="fa fa-check"></i><b>9.5</b> tables Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>A</b> Appendix</a><ul>
 <li class="chapter" data-level="A.1" data-path="appendix.html"><a href="appendix.html#long-list-of-chunk-options"><i class="fa fa-check"></i><b>A.1</b> Long list of chunk options</a></li>
@@ -272,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the Rmrkdown ecosystem discussed <a href="introduction-to-rmarkdown.html#rmarkdown-ecosystem">shortly</a>. <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> isn’t the only other flavour of markdown. There are other initiatives such as <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> which mainly enhances content appears on github site and <a href="http://commonmark.org/">CommonMark</a> that tries to unify all the different flavours of markdown syntax, but all will converge to pandoc tool.</p>
 <div id="rmarkdown-core-parts" class="section level2">
 <h2><span class="header-section-number">1.1</span> Rmarkdown core parts</h2>
-<p>Any <span class="citation">(see Xie, Allaire, and Grolemund <a href="references-1.html#ref-xie_allaire_grolemund_2019" role="doc-biblioref">2019</a>)</span> Rmarkdown documents is broken into three main parts:</p>
+<p>Any <span class="citation">(see Xie, Allaire, and Grolemund <a href="references.html#ref-xie_allaire_grolemund_2019" role="doc-biblioref">2019</a>)</span> Rmarkdown documents is broken into three main parts:</p>
 <ul>
 <li><a href="introduction-to-rmarkdown.html#yaml-header">YAML header</a></li>
 <li><a href="introduction-to-rmarkdown.html#the-r-chunks">The R chunks</a></li>

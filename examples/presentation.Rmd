@@ -1,0 +1,146 @@
+---
+title: "Playing with domestic airline perfomance data"
+author: "Kirill"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: ioslides_presentation
+---
+
+```{r setup, echo = F}
+options(encoding="utf-8")
+
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE)
+```
+
+## Introduction
+
+I found this rather interesting data set at [data.gov.au](https://data.gov.au), [Domestic Airlines - On Time Performance](https://data.gov.au/data/dataset/domestic-airline-on-time-performance) and I decided to investigate it a bit closer.
+
+First thing first is to download it. Note that `read_csv` from [`readr`](https://readr.tidyverse.org/) package can "read" directly from url, but I wasn't sure if everytime I compile html it would re-download the file or use chached version. The data is _Creative Commons Attribution 3.0 Australia_ and so no problem in downloading and using the data.
+
+### Loading libraries
+
+We are going to use
+```{r message = F}
+library(tidyverse)
+library(knitr)
+```
+
+### Downloading the data
+
+We are going to use [`tidyverse`](https://www.tidyverse.org/) library that includes several other useful libraries, such as:
+
+- `readr`
+- `tidyr`
+- `dplyr`
+- `ggplot2`
+
+to name a few
+
+Note that we are doing conditional download here, obviously don't want to re-download if we already have the file.
+
+```{r}
+fn_data <- "domestic_airline_performance.csv"
+fn_notes <- "domestic_airline_performance_notes.txt"
+
+if(!file.exists(fn_data)) {
+  url_data <- "https://data.gov.au/data/dataset/29128ebd-dbaa-4ff5-8b86-d9f30de56452/resource/cf663ed1-0c5e-497f-aea9-e74bfda9cf44/download/otp_time_series_web.csv"
+  url_notes <- "https://data.gov.au/data/dataset/29128ebd-dbaa-4ff5-8b86-d9f30de56452/resource/69e214b9-b66f-4636-9c84-3efda2d0d8ae/download/otptimeserieswebnotes.txt"
+
+  download.file(url_data, fn_data)
+  download.file(url_notes, fn_notes)
+}
+
+df <- read_csv(fn_data, quote = "")
+
+df
+```
+
+`kable` is a helper function to help us display tables in Rmarkdown
+
+## Exploring the data
+
+Now that we've got the data lets explore it. It always helps if we can find more information about the data set, particular what information each column might have.
+
+### Working with data
+
+Great, the information above gives us some starting material. However it wasn't that explicit what each column meant and how man columns are there. Let's quickly take a pick
+
+```{r}
+d <- df %>% dim
+```
+
+total number of observation `r d[1]` and total number of variables `r d[2]`
+
+There are many ways you can explore this data, but i just want to have a look at the types of Airlines there are.
+
+```{r}
+df %>%
+  select(Airline) %>%
+  distinct() %>%
+  arrange(Airline)
+```
+
+## Cleaning up
+
+I've noticed that there "All Airlines" name in the `Airline` column that appears to have the most number of occurrences in the data
+
+```{r}
+df %>%
+  group_by(Airline) %>%
+  summarise(n = n()) %>%
+  arrange(-n)
+```
+
+Also there one of the routes is `All Ports-All Ports`. Googling for that name didn't reveal any places in Australia by that name.
+
+```{r}
+df %>%
+  group_by(Route) %>%
+  summarise(n = n()) %>%
+  arrange(-n)
+```
+
+I decide going forward to drop those data points.
+
+```{r}
+df2 <- df %>%
+          filter(Airline != "All Airlines",
+                 Route != "All Ports-All Ports")
+```
+
+
+## Visualising the data
+
+Here we are summarising so that we have an idea of how many times a particular location had be use per airline per year and we are only going to look at two airlines,
+Jetstar and Qantas.
+
+```{r}
+p2 <- df2 %>%
+  group_by(Airline, Year, Departing_Port) %>%
+  summarise(n = n()) %>%
+  ungroup %>%
+  filter(Airline == "Jetstar" | Airline == "Qantas") %>%
+  ggplot(aes(Departing_Port, n, color = Airline)) +
+    geom_boxplot() +
+    theme(axis.text.x=element_text(angle=45, hjust=1))
+
+p2
+```
+
+In any given year what is the distribution of cancellation
+
+```{r, fig.width=15, fig.height=9}
+p3 <- df2 %>%
+        filter(Airline == "Jetstar" | Airline == "Qantas") %>%
+        select(Airline, Departing_Port, Cancellations, Year) %>%
+        ggplot(aes(Departing_Port, Cancellations, color = factor(Year))) +
+          geom_boxplot() +
+          facet_wrap(~Airline) +
+          theme(axis.text.x=element_text(angle= 45, hjust=1))
+p3
+```
+
+## References
+
+- [themes](http://www.datadreaming.org/post/r-markdown-theme-gallery/)
