@@ -102,7 +102,7 @@ Now let's use our article key to cite in the text `[@Bryan2017]` and re-compile 
 
 ## Challenge: Bibliographies 2 {.exercise}
 
-> 2 minutes
+> 5 minutes
 
 <details>
 
@@ -110,6 +110,15 @@ Now let's use our article key to cite in the text `[@Bryan2017]` and re-compile 
     1. Go to [google scholar](https://scholar.google.com.au/) and search for that same article _Excuse me, do you have a moment to talk about version control?_, find and export `.bib` citation and include it into our Rmarkdown document.
   </summary>
   Relatively hard task since I haven't explained how to include multiple `.bib` files into yaml header.
+
+</details>
+
+<details>
+
+  <summary>
+    2. If you are manually curating `.bib` file, how do you know which types and fields are allowed?
+  </summary>
+   This resource can be [useful](#bibtex)
 
 </details>
 
@@ -169,7 +178,7 @@ R provides convenient `citation()` function that one can use to cite R packages 
 citation("ggplot2")
 ```
 
-## Challenge: Bibliographies 1 {.exercise}
+## Challenge: Bibliographies 3 {.exercise}
 
 > 2 minutes
 
@@ -185,9 +194,3 @@ citation("ggplot2")
    ```
 
 </details>
-
-## Location of the references
-
-
-https://www.lifewire.com/bibtex-file-2619874
-

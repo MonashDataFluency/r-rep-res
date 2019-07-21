@@ -6,6 +6,7 @@ links-as-notes: yes
 github-repo: "MonashDataFluency/r-rep-res"
 bibliography: "supplementary/bibliographies.bib"
 link-citations: true
+reference-section-title: hey
 ---
 
 ```{r echo = F, results = 'hide', message = F}

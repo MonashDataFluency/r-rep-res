@@ -77,3 +77,13 @@ Also note that `biblio-style` ["only applied to LaTeX output. For other output f
 biblio-style: apalike
 ---
 ```
+
+<!--
+```{r child="../supplementary2/bib.Rmd"}
+
+```
+-->
+
+### BibTex
+
+This is a good [resource](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes.php) for manual bibtex curation.
