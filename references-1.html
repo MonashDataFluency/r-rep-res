@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction to Rmarkdown | Reproducible Research in R</title>
-  <meta name="description" content="1 Introduction to Rmarkdown | Reproducible Research in R" />
+  <title>References | Reproducible Research in R</title>
+  <meta name="description" content="References | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.11.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction to Rmarkdown | Reproducible Research in R" />
+  <meta property="og:title" content="References | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction to Rmarkdown | Reproducible Research in R" />
+  <meta name="twitter:title" content="References | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="vanilla-markdown.html">
+<link rel="prev" href="work-in-progress-1.html">
+<link rel="next" href="appendix.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -266,167 +266,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-rmarkdown" class="section level1">
-<h1><span class="header-section-number">1</span> Introduction to Rmarkdown</h1>
-<p>Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf documents and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let’s call it a thesis or a paper or a course book. And with essentially no effort you can change from “rendering” your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time.
-Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the Rmrkdown ecosystem discussed <a href="introduction-to-rmarkdown.html#rmarkdown-ecosystem">shortly</a>. <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> isn’t the only other flavour of markdown. There are other initiatives such as <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> which mainly enhances content appears on github site and <a href="http://commonmark.org/">CommonMark</a> that tries to unify all the different flavours of markdown syntax, but all will converge to pandoc tool.</p>
-<div id="rmarkdown-core-parts" class="section level2">
-<h2><span class="header-section-number">1.1</span> Rmarkdown core parts</h2>
-<p>Any <span class="citation">(see Xie, Allaire, and Grolemund <a href="references-1.html#ref-xie_allaire_grolemund_2019" role="doc-biblioref">2019</a>)</span> Rmarkdown documents is broken into three main parts:</p>
-<ul>
-<li><a href="introduction-to-rmarkdown.html#yaml-header">YAML header</a></li>
-<li><a href="introduction-to-rmarkdown.html#the-r-chunks">The R chunks</a></li>
-<li><a href="vanilla-markdown.html#vanilla-markdown">markdown - plain text</a></li>
-</ul>
-<p>Those are different parts of the document that all work together to form - render a final document. Each one of those parts can be customised with further options, which will cover later in the book.</p>
-<div id="yaml-header" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> <a href="introduction-to-rmarkdown.html#yaml-header">YAML header</a></h3>
-<p>YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, <code>---</code>. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.</p>
-<pre><code>---
-title: &quot;Hello world&quot;
-author: &quot;Kirill&quot;
-date: &quot;17 June 2019&quot;
-output: html_document
----</code></pre>
-</div>
-<div id="the-r-chunks" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> <a href="introduction-to-rmarkdown.html#the-r-chunks">The R chunks</a></h3>
-<p>These are special parts of the document that hold code that can be executed inline of the Rmarkdown document. R chunks are highly customisable via chunk options. We will spending a lot of time in the course working with code chunks and different options types.</p>
-<pre><code>```{r}
-plot(mtcars)
-```</code></pre>
-</div>
-<div id="everything-else-is-plain-old-markdown" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> <a href="vanilla-markdown.html#vanilla-markdown">Everything else is plain old markdown</a></h3>
-<pre><code> # Have I been Marked Down?</code></pre>
+<div id="references-1" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs">
+<div id="ref-xie_allaire_grolemund_2019">
+<p>Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2019. <em>R Markdown: The Definitive Guide</em>. CRC Press, Taylor &amp; Francis Group.</p>
 </div>
 </div>
-<div id="challenge-introduction-1" class="section level2 exercise">
-<h2><span class="header-section-number">1.2</span> Challenge: Introduction 1</h2>
-<blockquote>
-<p>5 minutes</p>
-</blockquote>
-<details>
-<p><summary>
-1. What file extention should we typically use for saving our <u><strong>Rm</strong></u>ark<u><strong>d</strong></u>own files?
-</summary>
-<a href="https://superuser.com/questions/249436/file-extension-for-markdown-files">answer link</a></p>
-</details>
-<details>
-<p><summary>
-2. What document types can be produced (compiled) from Rmarkdown?
-</summary></p>
-<p><a href="https://r4ds.had.co.nz/r-markdown-formats.html">
-<img src="figures/document_types2.png" title="Rmarkdown document types" alt="doc_types">
-</a></p>
-</details>
-<details>
-<p><summary>
-3. Will I have to learn more “languges” to use Rmarkdown (discussion question)?
-</summary></p>
-<p>The short answer is no. Learning and writing Rmarkdown will take you a very long way.</p>
-<p>The longer answer is yes. At some point in the future you might want to very sophisticated documents and for that you’ll most certainly will need at least tiny amount of html + css knowledge and maybe some knowledge about LaTeX (I’ve yet to learn a single thing about LaTeX - so far so good :D )</p>
-<p><a href="link%20to%20github%20that%20the%20line%20of%20code%20above">check out this bit of Rmarkdown</a></p>
-</details>
-</div>
-<div id="rmarkdown-ecosystem" class="section level2">
-<h2><span class="header-section-number">1.3</span> Rmarkdown ecosystem</h2>
-<p>Rmarkdown has relativelly complicated ecosystem. It includes several different R packages. Most of those packages wrap other existing tools, written by different people, thereby providing an “easy” way to interface with the tools via R language. A large part of the ecosystem exists thanks to <a href="https://pandoc.org/">pandoc</a> tool.</p>
-<div id="pandoc" class="section level3">
-<h3><span class="header-section-number">1.3.1</span> Pandoc</h3>
-<p>Pandoc is a stand alone tool (command line tool) that one can run in the terminal to convert markdown documents to other documents types including html, pdf and MS docs. Since vanilla markdown is pretty simple in what it can produce, pandoc added whole lot of “features”, additional marking tags, that one can use to build more elaborate documents from plain text.</p>
-</div>
-<div id="yaml" class="section level3">
-<h3><span class="header-section-number">1.3.2</span> YAML</h3>
-<p>This is stand along language that is used in variety of places, with main advantage to it is that it can be easily ready by humans as well easily parsed by computer. A lot of the time YAML can be used ad a configuration file. This is example how it is used with Rmarkdown. We will talk about <a href="#yaml-header-introduction">YAML in more depth in a different section</a>. In brief we will use YAML to set documents appearance and link additional files with the documents, such as bibliographies.</p>
-</div>
-<div id="latex" class="section level3">
-<h3><span class="header-section-number">1.3.3</span> LaTeX</h3>
-<pre><code>¯\_(ツ)_/¯
-</code></pre>
-</div>
-<div id="knitr" class="section level3">
-<h3><span class="header-section-number">1.3.4</span> Knitr</h3>
-<p>As was mentioned before we are using <a href="https://pandoc.org/">pandoc</a> to convert markdown to other document types. <a href="https://yihui.name/knitr/">knitr</a> provides function to convert Rmarkdown files into vanialla markdown, which then in turn can be converted by pandoc into html document for example. Some of the things that <a href="https://yihui.name/knitr/">knitr</a> does includes R code execution and assembling the results into markdown.</p>
-</div>
-<div id="rmarkdown" class="section level3">
-<h3><span class="header-section-number">1.3.5</span> Rmarkdown</h3>
-<p>An <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> will convert <code>.Rmd</code> files into other format types. Under the hood it will use <a href="https://pandoc.org/">pandoc</a> to do so. The main function that we are concerned with is <code>rmarkdown::render()</code> which will call <code>knitr::knit()</code> when required.</p>
-</div>
-<div id="bookdown" class="section level3">
-<h3><span class="header-section-number">1.3.6</span> Bookdown</h3>
-<p>A <a href="https://github.com/rstudio/bookdown">bookdown R package</a> enhances <a href="https://github.com/rstudio/rmarkdown">rmarkdown</a> by enabling multi-page documents e.g books and easy cross-referencing.</p>
-</div>
-<div id="others" class="section level3">
-<h3><span class="header-section-number">1.3.7</span> Others</h3>
-<p>These are more R packages that enable more things via Rmarkdown.</p>
-<ul>
-<li><a href="https://github.com/yihui/xaringan">xaringan</a></li>
-<li><a href="https://github.com/rstudio/blogdown">blogdown</a></li>
-<li><a href="https://github.com/ismayc/thesisdown">thesisdown</a></li>
-</ul>
-</div>
-</div>
-<div id="setup" class="section level2">
-<h2><span class="header-section-number">1.4</span> Setup</h2>
-<p>We will need to install these packages. Let’s install these packages</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-rmarkdown.html#cb5-1"></a>packages &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;tidyverse&quot;</span>,</span>
-<span id="cb5-2"><a href="introduction-to-rmarkdown.html#cb5-2"></a>              <span class="st">&quot;rmarkdown&quot;</span>,</span>
-<span id="cb5-3"><a href="introduction-to-rmarkdown.html#cb5-3"></a>              <span class="st">&quot;knitr&quot;</span>,</span>
-<span id="cb5-4"><a href="introduction-to-rmarkdown.html#cb5-4"></a>              <span class="st">&quot;bookdown&quot;</span>,</span>
-<span id="cb5-5"><a href="introduction-to-rmarkdown.html#cb5-5"></a>              <span class="st">&quot;tinytex&quot;</span>,</span>
-<span id="cb5-6"><a href="introduction-to-rmarkdown.html#cb5-6"></a>          <span class="st">&quot;citr&quot;</span>)</span>
-<span id="cb5-7"><a href="introduction-to-rmarkdown.html#cb5-7"></a></span>
-<span id="cb5-8"><a href="introduction-to-rmarkdown.html#cb5-8"></a>keep &lt;-<span class="st"> </span>packages[<span class="op">!</span>(packages <span class="op">%in%</span><span class="st"> </span><span class="kw">installed.packages</span>()[,<span class="st">&quot;Package&quot;</span>])]</span>
-<span id="cb5-9"><a href="introduction-to-rmarkdown.html#cb5-9"></a></span>
-<span id="cb5-10"><a href="introduction-to-rmarkdown.html#cb5-10"></a><span class="cf">if</span>(<span class="kw">length</span>(keep)) {</span>
-<span id="cb5-11"><a href="introduction-to-rmarkdown.html#cb5-11"></a>  <span class="kw">install.packages</span>(keep)</span>
-<span id="cb5-12"><a href="introduction-to-rmarkdown.html#cb5-12"></a>}</span></code></pre>
-</div>
-<div id="challenge-introduction-2" class="section level2 exercise">
-<h2><span class="header-section-number">1.5</span> Challenge: Introduction 2</h2>
-<blockquote>
-<p>2 minutes</p>
-</blockquote>
-<details>
-<p><summary>
-1. Now is a good time to tweak your RStudio to your needs.
-</summary></p>
-<ul>
-<li>change font size</li>
-<li>change themes and backgroung color</li>
-<li>rearrange panels</li>
-</ul>
-</details>
-<details>
-<p><summary>
-2. Please turn off “Restore .RData into workspace at startup” in “Tools -&gt; Global Options”.
-</summary></p>
-</details>
-</div>
-<div id="useful-tips" class="section level2">
-<h2><span class="header-section-number">1.6</span> Useful tips</h2>
-<!--
-#NOTE you found gold !
-> One cannot know all of Rmarkdown wisdom. One would continuesly learn to make oneself more Rsome.
--->
-<ul>
-<li>don’t attempt to compile to <code>pdf_document</code> until absolutelly necesserary. <code>LaTeX</code> engine that is used by Rmarkdown to pdf conversion known to have issues with aligning figures and tables. This typically causes figures and tables overflow to next pages and general text misalignment. Get your content written first, intermidiate compilation to <code>html_documents</code> are totaly fine, before worrying about technical issues</li>
-<li>don’t save data into <code>.RData</code>, this will make your work less reproducible</li>
-</ul>
 
-<!--
-https://stackoverflow.com/questions/35459166/embed-rmarkdown-with-rmarkdown-without-knitr-evaluation
--->
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vanilla-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="work-in-progress-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -456,7 +314,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/01-introduction.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/99-references.Rmd",
 "text": "Edit"
 },
 "history": {
