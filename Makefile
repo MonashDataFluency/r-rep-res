@@ -5,10 +5,10 @@ all: examples html pdf
 
 examples:
 	cd book/examples; \
-	Rscript -e "rmarkdown::render(input = 'final_report.Rmd', \
-	                              output_file = 'final_report.html')"
-	#Rscript -e "rmarkdown::render(input = 'presentation.Rmd', \
-	#							  output_file = 'presentation.html')"
+	Rscript -e "rmarkdown::render(input = 'single_page_report.Rmd', \
+	                              output_file = 'single_page_report.html')"; \
+	Rscript -e "rmarkdown::render(input = 'presentation.Rmd', \
+	                              output_file = 'presentation.html')"
 
 html:
 	if [ ! -d _book ];then mkdir _book;fi
@@ -29,6 +29,7 @@ clean:
 	rm -rf _book/* \
 	rm book/*.rds \
 	rm book/*.md \
+	rm book/examples/*.html \
 	rm -r book/_bookdown_files \
 	rm book/Reproducible-Research-in-R.* \
 	rm book/Reproducible\ Research\ in\ R.*
