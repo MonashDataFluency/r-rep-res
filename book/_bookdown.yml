@@ -19,3 +19,4 @@ rmd_files:
 new_session: false # https://bookdown.org/yihui/bookdown/new-session.html
 output_dir: "../_book"
 book_filename: "Reproducible Research in R"
+delete_merged_file: true
