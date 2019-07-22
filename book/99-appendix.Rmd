@@ -64,7 +64,7 @@ However I wasn't able to change my style. I suspect there are some subtleties be
 
 ```
 ---
-pandoc_args: [--csl=../supplementary2/harvard-anglia-ruskin-university.csl]
+pandoc_args: [--csl=harvard-anglia-ruskin-university.csl]
 ---
 ```
 
@@ -77,12 +77,6 @@ Also note that `biblio-style` ["only applied to LaTeX output. For other output f
 biblio-style: apalike
 ---
 ```
-
-<!--
-```{r child="../supplementary2/bib.Rmd"}
-
-```
--->
 
 ### BibTex
 

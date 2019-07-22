@@ -123,9 +123,12 @@ date: '13 July 2016'
   <summary>
     3. Is this a valid yaml?
 
-    ---
-    date: `r format(Sys.time(), '%d %B, %Y')`
-    ---
+    ```{r echo = F, comment = ""}
+    text <- c("---",
+              "date: `r format(Sys.time(), '%d %B, %Y')`",
+              "---")
+    cat(text, sep = "\n")
+    ```
 
   </summary>
   It is certainly valid by Rmarkdown standards, but it may not be in other systems
