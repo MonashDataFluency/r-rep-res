@@ -1,9 +1,9 @@
 # Rmarkdown
 
-The reason that we are learning [Rmarkdown](https://rmarkdown.rstudio.com/) is because it gives us very straight forward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.
-This approach of interleaving analysis code, commentary and description is very explicit, which has direct implication in reproducibility, shearability and collaboration.
+The reason that we are learning [Rmarkdown](https://rmarkdown.rstudio.com/) is because it gives us a very straightforward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.
+This approach of interleaving analysis code, commentary and description is very explicit, which has direct implication in reproducibility, shareability and collaboration.
 
-In [Markdown section](#vanilla-markdown) I've showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that again.
+In the [Markdown section](#vanilla-markdown) I've showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that again.
 
 ```
 File
@@ -42,7 +42,7 @@ cat(c(text1,
       text2), sep = "\n")
 ```
 
-I'm going to explain `knitr::opts_chunk` in [later section](#more-rmarkdown). An R chunk is a "special" block with in the document that will be read and evaluated by `knitr`, ultimatelly converting everything into plain markdown. But for us it means that we can focus on our analysis and embed R code without having to worry about it. Additionally there are lage number of chunk options that helps with different aspects of the document including code decoration and evaluation, results and plots rendering and display.
+I'm going to explain `knitr::opts_chunk` in [later section](#more-rmarkdown). An R chunk is a "special" block within the document that will be read and evaluated by `knitr`, ultimatelly converting everything into plain markdown. But for us it means that we can focus on our analysis and embed R code without having to worry about it. Additionally there are lage number of chunk options that helps with different aspects of the document including code decoration and evaluation, results and plots rendering and display.
 
 This is an R code chunk.
 
@@ -94,7 +94,7 @@ text <- c("```{r chunk_name, options}",
 cat(text, sep = "\n")
 ```
 
-Note a couple of things, there isn't a comma between `r` and `chunk_name`. Not sure why this is..
+Note a couple of things, there isn't a comma between `r` and `chunk_name`. Not sure why this is.
 Also note that `chunk_name` is optional, you can skip it, as we have in earlier examples. Naming chunks is good idea to conceptually label the chunk as to what it does, but also we you are going to build more sophisticated documents you'll be able to selectively include chunks by refer to them by the chunk name.
 
 Lets start off with these four chunk options:
@@ -172,7 +172,7 @@ print(ab)
 
 ### include
 
-This option also helps to manipulate your final document look. This option dictates whether the output of the executed code will be included into the final document. Sometimes you can simply trigger `eval` flag to achive similar result of code now being included, but other times you might way the code to actuall be executed but not included. For example when future R chunk relay on the output of this intermidiate chunk, but there is now need to include that into the document.
+This option also helps to manipulate your final document's look. This option dictates whether the output of the executed code will be included into the final document. Sometimes you can simply trigger the `eval` flag to achieve a similar result of code now being included, but other times you might want the code to actually be executed but not included. For example when future R chunk relies on the output of this intermediate chunk, but there is no need to include that into the document.
 
 
 ```{r echo=FALSE, comment=""}

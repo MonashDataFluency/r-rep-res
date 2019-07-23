@@ -96,7 +96,7 @@ Pandoc is a stand alone tool (command line tool) that one can run in the termina
 
 ### YAML
 
-This is stand along language that is used in variety of places, with main advantage to it is that it can be easily ready by humans as well easily parsed by computer. A lot of the time YAML can be used ad a configuration file. This is example how it is used with Rmarkdown. We will talk about [YAML in more depth in a different section](#yaml-header-introduction). In brief we will use YAML to set documents appearance and link additional files with the documents, such as bibliographies.
+This is stand along language that is used in variety of places, with main advantage to it is that it can be easily ready by humans as well easily parsed by computer. A lot of the time YAML can be used as a configuration file. This is example how it is used with Rmarkdown. We will talk about [YAML in more depth in a different section](#yaml-header-introduction). In brief we will use YAML to set documents appearance and link additional files with the documents, such as bibliographies.
 
 ### LaTeX
 
