@@ -16,3 +16,6 @@
 - [Pimp my RMD](https://holtzy.github.io/Pimp-my-rmd/)
 
   https://crsh.github.io/papaja_man/r-markdown-components.html#yaml-front-matter
+
+  https://kbroman.org/knitr_knutshell/
+  http://leisch.userweb.mwn.de/Sweave/

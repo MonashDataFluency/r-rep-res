@@ -130,7 +130,7 @@ p2
 
 In any given year what is the distribution of cancellation
 
-```{r, fig.width=15, fig.height=9}
+```{r, fig.width=12, fig.height=9}
 p3 <- df2 %>%
         filter(Airline == "Jetstar" | Airline == "Qantas") %>%
         select(Airline, Departing_Port, Cancellations, Year) %>%
