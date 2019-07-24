@@ -1,0 +1,55 @@
+---
+title: "Reproducible Research in R"
+author: "Adele Barugahare"
+date: "23/07/2019"
+output: 
+  ioslides_presentation:
+    smaller: true
+    css: slide_template.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Today's Objectives
+
+* use knitr, rmarkdown and bookdown R packages to build various document types including PDF, HTML and DOCX
+* work with git version control tool
+* create reproducible and “backed up” analysis via remote repositories (e.g github)
+
+What We Aren't Learning:
+
+* How to code in R itself
+
+## Reproducibility Crisis
+
+<div align="center">
+<img src="images/reprod.png" width=500 height=500>
+</div>
+
+## Why Use R/Rmarkdown
+
+- It's free legally & continous active development
+- Low risk of inadvertent data loss/mutation.
+  * By design, R requires you to load your data in, what you do with the data is then written in code (R language)
+- Collaborative: share your data and analysis
+
+## Why Use R/Rmarkdown
+
+[Well developed ecosystem](https://www.rstudio.com/products/rpackages/) of software packages that expands base R for data analysis, project management, visualisation, document generation, etc
+
+<div align="center">
+<img src="images/r_env.png" width=400 height=400>
+</div>
+
+
+## Reproducible Analysis
+
+* Document what you've done with your data in code
+* Maintain software versions used for the analysis 
+* Track changes to your analysis with version control
+
+<div align="center">
+<img src="images/version_control_1.png" width=400 height=400>
+</div>
