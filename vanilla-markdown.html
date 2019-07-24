@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -165,13 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#challenge-markdown-1"><i class="fa fa-check"></i><b>2.3</b> Challenge: Markdown 1</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html"><i class="fa fa-check"></i><b>3</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.1.1</b> echo and eval</a></li>
-<li class="chapter" data-level="3.1.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.1.2</b> include</a></li>
-<li class="chapter" data-level="3.1.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.1.3</b> results</a></li>
+<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a></li>
+<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#chunk-options"><i class="fa fa-check"></i><b>3.2</b> Chunk options</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.2.1</b> echo and eval</a></li>
+<li class="chapter" data-level="3.2.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.2.2</b> include</a></li>
+<li class="chapter" data-level="3.2.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.2.3</b> results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.2</b> Challenge: Rmarkdown 1</a></li>
-<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#important-blob-about-include-vs-results"><i class="fa fa-check"></i><b>3.3</b> important blob about include vs results</a></li>
+<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.3</b> Challenge: Rmarkdown 1</a></li>
 </ul></li>
 <li class="part"><span><b>II Part</b></span></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
@@ -248,6 +248,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2.3" data-path="appendix.html"><a href="appendix.html#bibtex"><i class="fa fa-check"></i><b>A.2.3</b> BibTex</a></li>
 </ul></li>
 <li class="chapter" data-level="A.3" data-path="appendix.html"><a href="appendix.html#git-and-github"><i class="fa fa-check"></i><b>A.3</b> Git and GitHub</a></li>
+<li class="chapter" data-level="A.4" data-path="appendix.html"><a href="appendix.html#difference-between-markdown-and-html"><i class="fa fa-check"></i><b>A.4</b> Difference between Markdown and HTML</a><ul>
+<li class="chapter" data-level="A.4.1" data-path="appendix.html"><a href="appendix.html#this-is-markdown"><i class="fa fa-check"></i><b>A.4.1</b> This is markdown</a></li>
+<li class="chapter" data-level="A.4.2" data-path="appendix.html"><a href="appendix.html#this-is-simplified-html"><i class="fa fa-check"></i><b>A.4.2</b> This is simplified HTML</a></li>
+<li class="chapter" data-level="A.4.3" data-path="appendix.html"><a href="appendix.html#this-is-simplified-latex"><i class="fa fa-check"></i><b>A.4.3</b> This is simplified LaTeX</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -268,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="vanilla-markdown" class="section level1">
 <h1><span class="header-section-number">2</span> Vanilla Markdown</h1>
-<p>The original (vanilla) version of Markdown invented by <a href="https://en.wikipedia.org/wiki/Markdown">John Gruber</a> defines a handful of tags, <a href="vanilla-markdown.html#vanilla-tags">discussed next</a>. Markdown is relativelly small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but it is greatly enhanced and extended by pandoc tool.</p>
+<p>The original (vanilla) version of Markdown invented by <a href="https://en.wikipedia.org/wiki/Markdown">John Gruber</a> defines a handful of tags, <a href="vanilla-markdown.html#vanilla-tags">discussed next</a>. Markdown is a relatively small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but it is greatly enhanced and extended by pandoc tool.</p>
 <div id="vanilla-tags" class="section level2">
 <h2><span class="header-section-number">2.1</span> Vanilla tags</h2>
 <p>Let’s open our first Markdown file.</p>
@@ -276,16 +281,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  └── New File
         └── R Markdown
 
-title = &quot;Learning Rmarkdown&quot;
+title = &quot;Learning Markdown&quot;
 author = &quot;Me&quot;</code></pre>
 <ul>
 <li>select document type <strong>HTML</strong></li>
-<li>to build (compile) the document press <code>knitr</code> button or <code>ctrl+alt+k</code></li>
-<li>to save as <code>.Rmd</code> file</li>
+<li>to build (compile) the document by press <code>knitr</code> button or <code>ctrl+alt+k</code></li>
+<li>save file by pressing <code>ctrl^S</code> and name the files <code>learning_markdown.Rmd</code></li>
 </ul>
-<p>Since we are using RStudio and R it is inevitable that will be using Rmarkdown flaour, but we can still write only vanilla markdown and remember that under the hood Rmarkdown will always be converted to vanilla markdown.</p>
-<p>From now onward we are going to start using <code>knitr</code> to complie Rmarkdown into html. Remember from the <a href="">Rmarkdown ecosystem</a> that <code>knitr</code> will convert Rmarkdown to markdonw and <code>rmarkdown</code> R package will convert - render markdown file into html. By pressing that blue button both things will happen automatically and we don’t need to think about, but I wanted you to know that.</p>
-<p>These are essintially all core (vanilla) markdown tags. Let’s practice writting them.</p>
+<p>Since we are using RStudio and R, it is inevitable that we will be using Rmarkdown flavour, but we can write vanilla markdown because under the hood Rmarkdown will always be converted to vanilla markdown.</p>
+<p>From now on we are going to start using <code>knitr</code> to compile Rmarkdown into html. Remember from the <a href="">Rmarkdown ecosystem</a> that <code>knitr</code> will convert Rmarkdown to markdown and <code>rmarkdown</code> R package will convert - render markdown files into html. By pressing that blue button both things will happen automatically and we don’t need to think about, but I wanted you to know that.</p>
+<p>These are essentially all core (vanilla) markdown tags. Let’s practice writing them.</p>
 <pre><code># Header1
 ## Header2
 ### Header3
@@ -324,18 +329,91 @@ A [link](http://example.com).
 </div>
 <div id="practice-vanilla-markdown" class="section level2">
 <h2><span class="header-section-number">2.2</span> Practice vanilla markdown</h2>
-<p>Now it’s just a matter of learning some of the markdown syntax. Let’s delete all current text from the opened document except the YAML header and type this new text in <code>Hello world, I'm learning R markdown !</code> and pressing the <code>knit HTML</code> button.</p>
+<p>Now, it’s just a matter of learning some of the markdown syntax. Let’s delete all current text from the opened document except the YAML header and type this new text: <code>Hello world, I'm learning R markdown !</code> and press the <code>knit HTML</code> button.</p>
 <pre><code>Hello world, I&#39;m learning R markdown !</code></pre>
-<p>Not much happened. This is because we didn’t mark our text in any way. You can put as much text as you want and it will appear as is, unless “specially” marked to look differently.</p>
+<p>Not much happened. This is because we didn’t mark our text in any way. You can put as much text as you want and it will appear as is, unless “specially” marked to look different.</p>
 <p>Now add the <code>#</code> symbol at the start of the line and press the <code>knit HTML</code> button again. We’ll be pressing this button a lot! For those who like keyboard short cuts use <code>ctrl+shift+k</code> instead.</p>
 <pre><code># Hello world, I&#39;m learning R markdown !</code></pre>
-<p>How about now? A single hash symbol made it whole lot bigger didn’t it? We’ve marked this whole line to be the header line.</p>
+<p>How about now? A single hash symbol made it a whole lot bigger didn’t it? We’ve marked this whole line to be the header line.</p>
 <p>Now make three new lines with the same text, but different numbers of <code>#</code> symbols, one, two and three respectively and keep pressing the <code>Knit HTML</code> button</p>
 <pre><code># Hello world, I&#39;m learning R markdown !
 ## Hello world, I&#39;m learning R markdown !
 ### Hello world, I&#39;m learning R markdown !</code></pre>
 <p>This is how you can specify different headers type using markdown.</p>
-<p><strong>Remember</strong> that <a href="https://daringfireball.net/projects/markdown/syntax">vanilla markdown</a> is comprised entirely of punctuation characters.</p>
+<p>Let’s now practice making very short document in markdown with a main topic section and two subsections. We will add short sentences in each section. We will start with main section header and a quote. Let’s type the following text and <code>knit</code> our document.</p>
+<pre><code># Learning Markdown
+
+&gt; I&#39;m still learning</code></pre>
+<p>Now let’s add three bullet points summarising what we are going to learn next and then <code>knit</code> the document again.</p>
+<pre><code># Learning Markdown
+
+&gt; I&#39;m still learning
+
+Here I&#39;ll be learning:
+
+- markdown
+- Rmarkdown
+- git and github</code></pre>
+<p>Now let’s add each one of those bullet items as a subsection to the main “Learning Markdown” section.We are going to use <code>##</code> to mark subsections and don’t forget to <code>knit</code> again.</p>
+<pre><code># Learning Markdown
+
+&gt; I&#39;m still learning
+
+Here I&#39;ll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+
+## Markdown
+
+## Rmarkdown
+
+## Git and GitHub</code></pre>
+<p>Now let’s add a sentence to each section, briefly describing what they are.</p>
+<pre><code># Learning Markdown
+
+&gt; I&#39;m still learning
+
+Here I&#39;ll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+
+## Markdown
+
+Here I&#39;ll learng vanilla markdown
+
+## Rmarkdown
+
+Whereas here I&#39;ll be learning Rmarkdown
+
+## Git and GitHub
+
+And this section is scary</code></pre>
+<p>Let’s add a emphasis to some of the words in our document. We are going to add <em>italic</em> emphasis to the word “vanilla” and we are going to add <strong>bold</strong> emphasis to the capital letter “R” in the word Rmarkdown. You’ll need to <code>knit</code> your document still.</p>
+<pre><code># Learning Markdown
+
+&gt; I&#39;m still learning
+
+Here I&#39;ll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+
+## Markdown
+
+Here I&#39;ll learng _vanilla_ markdown
+
+## Rmarkdown
+
+Whereas here I&#39;ll be learning **R**markdown
+
+## Git and GitHub
+
+And this section is scary</code></pre>
 </div>
 <div id="challenge-markdown-1" class="section level2 exercise">
 <h2><span class="header-section-number">2.3</span> Challenge: Markdown 1</h2>
@@ -349,12 +427,44 @@ A [link](http://example.com).
 <a href="https://softwareengineering.stackexchange.com/questions/207727/why-there-is-no-markdown-for-underline">answer link</a>
 </details>
 <details>
-<summary>
+<p><summary>
 2. Can markdown replace <a href="https://en.wikipedia.org/wiki/HTML">html</a> (discussion question)?
-</summary>
-It has replaced html and latex in documention and communication of results. My feeling is that data science ecosystem heavily rotates around markdown. But html, pdf and latex in this context are simply communication and sharing medium.
-On would not want to replace html + css for large website project
+</summary></p>
+<p>It has replaced html and latex in documentation and communication of results. My feeling is that the data science ecosystem heavily revolves around markdown. But html, pdf and latex, in this context, are simply communication and sharing mediums.
+On would not want to replace html + css for large website projects.</p>
 </details>
+<p>Let’s learn how to add external and internal links to your document, remember the syntax for adding links is <code>[DESCRIPTION](link-address)</code>. The external link that we are going to add is going to be this <a href="https://rmarkdown.rstudio.com/">https://rmarkdown.rstudio.com/</a>. Each one of the bullet points above going to become a link to it section. The way you reference internal section is by starting your address with a <code>#</code> symbol then simply using all lower case letters for the section name and all spaces need to be converted to a dash symbol <code>-</code>. Let’s add those things in and re-build our document.</p>
+<pre><code># Learning Markdown
+
+&gt; I&#39;m still learning
+
+[External resource](https://rmarkdown.rstudio.com/)
+
+Here I&#39;ll be learning:
+
+- [markdown](#markdown)
+- [Rmarkdown](#rmarkdown)
+- [git and github](#git-and-github)
+
+## Markdown
+
+Here I&#39;ll learng _vanilla_ markdown
+
+## Rmarkdown
+
+Whereas here I&#39;ll be learning **R**markdown
+
+## Git and GitHub
+
+And this section is scary</code></pre>
+<p>A bonus exercise is to add logos to each sections. Search internet for:</p>
+<ul>
+<li>Markdown logo, and add the image using <code>![](link_address)</code> syntax</li>
+<li>RMarkdown logo, and add the image using <code>![](link_address)</code> syntax</li>
+<li>Git logo, and add the image using <code>![](link_address)</code> syntax</li>
+<li>GitHub logo, and add the image using <code>![](link_address)</code> syntax</li>
+</ul>
+<p>Note for the external resource that is on internet the address must start with <code>www</code> or <code>https</code> otherwise address will be interpreted as file path.</p>
 
 </div>
 </div>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -165,13 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#challenge-markdown-1"><i class="fa fa-check"></i><b>2.3</b> Challenge: Markdown 1</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html"><i class="fa fa-check"></i><b>3</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.1.1</b> echo and eval</a></li>
-<li class="chapter" data-level="3.1.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.1.2</b> include</a></li>
-<li class="chapter" data-level="3.1.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.1.3</b> results</a></li>
+<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a></li>
+<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#chunk-options"><i class="fa fa-check"></i><b>3.2</b> Chunk options</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.2.1</b> echo and eval</a></li>
+<li class="chapter" data-level="3.2.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.2.2</b> include</a></li>
+<li class="chapter" data-level="3.2.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.2.3</b> results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.2</b> Challenge: Rmarkdown 1</a></li>
-<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#important-blob-about-include-vs-results"><i class="fa fa-check"></i><b>3.3</b> important blob about include vs results</a></li>
+<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.3</b> Challenge: Rmarkdown 1</a></li>
 </ul></li>
 <li class="part"><span><b>II Part</b></span></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
@@ -248,6 +248,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2.3" data-path="appendix.html"><a href="appendix.html#bibtex"><i class="fa fa-check"></i><b>A.2.3</b> BibTex</a></li>
 </ul></li>
 <li class="chapter" data-level="A.3" data-path="appendix.html"><a href="appendix.html#git-and-github"><i class="fa fa-check"></i><b>A.3</b> Git and GitHub</a></li>
+<li class="chapter" data-level="A.4" data-path="appendix.html"><a href="appendix.html#difference-between-markdown-and-html"><i class="fa fa-check"></i><b>A.4</b> Difference between Markdown and HTML</a><ul>
+<li class="chapter" data-level="A.4.1" data-path="appendix.html"><a href="appendix.html#this-is-markdown"><i class="fa fa-check"></i><b>A.4.1</b> This is markdown</a></li>
+<li class="chapter" data-level="A.4.2" data-path="appendix.html"><a href="appendix.html#this-is-simplified-html"><i class="fa fa-check"></i><b>A.4.2</b> This is simplified HTML</a></li>
+<li class="chapter" data-level="A.4.3" data-path="appendix.html"><a href="appendix.html#this-is-simplified-latex"><i class="fa fa-check"></i><b>A.4.3</b> This is simplified LaTeX</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -362,9 +367,11 @@ date: &#39;13 July 2016&#39;
 <details>
 <p><summary>
 3. Is this a valid yaml?</p>
-<pre><code>---
-date: 21 July, 2019
----</code></pre>
+<pre><code>```
+---
+date: `r format(Sys.time(), &#39;%d %B, %Y&#39;)`
+---
+```</code></pre>
 <p></summary>
 It is certainly valid by Rmarkdown standards, but it may not be in other systems</p>
 </details>
@@ -405,10 +412,10 @@ output:
 <h2><span class="header-section-number">6.6</span> Rmarkdown rendering</h2>
 <p>As we have discussed in the introduction Rmarkdown is an abmigious word. It could mean an <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> that converts or renders markdown into various document types. We can also be refering to an Rmarkdown document that we are writing. And we also could also use it in a more generic sence refering to the ecosystem.</p>
 <p>Here I’m going to specifically talk about Rmarkdown R package and the <code>render</code> function i.e <code>rmarkdown::render()</code>. <code>render</code> can take an option for output format. You can either specify the output format by directly giving it a function i.e</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="yaml-introduction.html#cb68-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="dt">output_format =</span> <span class="st">&quot;html_document&quot;</span>)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="yaml-introduction.html#cb65-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="dt">output_format =</span> <span class="st">&quot;html_document&quot;</span>)</span></code></pre>
 <p>Or pass that same information via yaml header. As you might have noted above, <code>html_document</code> itself has a bunch of options. There would be a way to pass them manually in R console, but it is much nice and more reproducible to pass them via yaml header.</p>
 <p>The two way to figure out which options are available for <code>html_document</code> is to either google (an obvious one) or take a look at the help page for that function i.e</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="yaml-introduction.html#cb69-1"></a>?rmarkdown<span class="op">::</span>html_document</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="yaml-introduction.html#cb66-1"></a>?rmarkdown<span class="op">::</span>html_document</span></code></pre>
 </div>
 <div id="challenge-yaml-3" class="section level2 exercise">
 <h2><span class="header-section-number">6.7</span> Challenge: YAML 3</h2>

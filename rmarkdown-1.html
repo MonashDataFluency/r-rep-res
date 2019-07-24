@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -165,13 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#challenge-markdown-1"><i class="fa fa-check"></i><b>2.3</b> Challenge: Markdown 1</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html"><i class="fa fa-check"></i><b>3</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.1.1</b> echo and eval</a></li>
-<li class="chapter" data-level="3.1.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.1.2</b> include</a></li>
-<li class="chapter" data-level="3.1.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.1.3</b> results</a></li>
+<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a></li>
+<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#chunk-options"><i class="fa fa-check"></i><b>3.2</b> Chunk options</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.2.1</b> echo and eval</a></li>
+<li class="chapter" data-level="3.2.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.2.2</b> include</a></li>
+<li class="chapter" data-level="3.2.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.2.3</b> results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.2</b> Challenge: Rmarkdown 1</a></li>
-<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#important-blob-about-include-vs-results"><i class="fa fa-check"></i><b>3.3</b> important blob about include vs results</a></li>
+<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.3</b> Challenge: Rmarkdown 1</a></li>
 </ul></li>
 <li class="part"><span><b>II Part</b></span></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
@@ -248,6 +248,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2.3" data-path="appendix.html"><a href="appendix.html#bibtex"><i class="fa fa-check"></i><b>A.2.3</b> BibTex</a></li>
 </ul></li>
 <li class="chapter" data-level="A.3" data-path="appendix.html"><a href="appendix.html#git-and-github"><i class="fa fa-check"></i><b>A.3</b> Git and GitHub</a></li>
+<li class="chapter" data-level="A.4" data-path="appendix.html"><a href="appendix.html#difference-between-markdown-and-html"><i class="fa fa-check"></i><b>A.4</b> Difference between Markdown and HTML</a><ul>
+<li class="chapter" data-level="A.4.1" data-path="appendix.html"><a href="appendix.html#this-is-markdown"><i class="fa fa-check"></i><b>A.4.1</b> This is markdown</a></li>
+<li class="chapter" data-level="A.4.2" data-path="appendix.html"><a href="appendix.html#this-is-simplified-html"><i class="fa fa-check"></i><b>A.4.2</b> This is simplified HTML</a></li>
+<li class="chapter" data-level="A.4.3" data-path="appendix.html"><a href="appendix.html#this-is-simplified-latex"><i class="fa fa-check"></i><b>A.4.3</b> This is simplified LaTeX</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -268,9 +273,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="rmarkdown-1" class="section level1">
 <h1><span class="header-section-number">3</span> Rmarkdown</h1>
-<p>The reason that we are learning <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> is because it gives us very straight forward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.
-This approach of interleaving analysis code, commentary and description is very explicit, which has direct implication in reproducibility, shearability and collaboration.</p>
-<p>In <a href="vanilla-markdown.html#vanilla-markdown">Markdown section</a> I’ve showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that again.</p>
+<p>The reason that we are learning <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> is because it gives us a very straightforward way of writing plain text documents with inline R code that will become a very sophisticated document types. The bonus points also come from the fact that Rmarkdown files are easy to version control (git) and see the difference between versions.
+This approach of interleaving analysis code, commentary and description is very explicit, which has direct implication in reproducibility, shareability and collaboration.</p>
+<p>In the <a href="vanilla-markdown.html#vanilla-markdown">Markdown section</a> I’ve showed you how to start new Rmarkdown document in RStudio, but lets briefly recap how we do that again.</p>
 <pre><code>File
  └── New File
         └── R Markdown
@@ -279,41 +284,41 @@ title = &quot;Learning Rmarkdown&quot;
 author = &quot;Me&quot;</code></pre>
 <ul>
 <li>select document type <strong>HTML</strong></li>
-<li>to build (compile) the document press <code>knitr</code> button or <code>ctrl+alt+k</code></li>
-<li>to save as <code>.Rmd</code> file</li>
+<li>to build (compile) the document by press <code>knitr</code> button or <code>ctrl+alt+k</code></li>
+<li>save file by pressing <code>ctrl^S</code> and name the files <code>learning_rmarkdown.Rmd</code>, not an additional <strong>r</strong> there.</li>
 </ul>
+<p>There is a hint in the name - <strong>R</strong> as to what programming language will be using for the rest of our course. Hopefully you have some familiarity with an R and it’s syntax or you have had some other exposure to other programming languages. I wont be asking you to write your own R code, most of it will be copy and paste from this book. However certain terminology will be assumed going forward. This is mainly things like “variable”, which in use in programming languages to store a value, can a string e.g “ten” or a number e.g 10. Typically to get the value out of the variable you’ll need to “print” it out. These are bear minimum understanding that you should have, and it’ll be enough to get you through this workshop. Let’s start by writing some R and embedding it into Rmarkdown documents.</p>
 <div id="embedding-r-code" class="section level2">
 <h2><span class="header-section-number">3.1</span> Embedding R code</h2>
-<p>RStudio templates <code>.Rmd</code> file for us. However lets delete all the text after the yaml header.</p>
+<p>RStudio templates <code>.Rmd</code> file for us. However lets delete all the text after the yaml header. The following text should remain in the file.</p>
 <pre><code>---
 title: &#39;Learning Rmarkdown&#39;
 author: &#39;Kirill&#39;
-date: &#39;21/06/2019&#39;
+date: &#39;25/07/2019&#39;
 output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```</code></pre>
-<p>I’m going to explain <code>knitr::opts_chunk</code> in <a href="more-rmarkdown.html#more-rmarkdown">later section</a>. An R chunk is a “special” block with in the document that will be read and evaluated by <code>knitr</code>, ultimatelly converting everything into plain markdown. But for us it means that we can focus on our analysis and embed R code without having to worry about it. Additionally there are lage number of chunk options that helps with different aspects of the document including code decoration and evaluation, results and plots rendering and display.</p>
-<p>This is an R code chunk.</p>
+---</code></pre>
+<p>I’m going to explain <code>knitr::opts_chunk</code> in <a href="more-rmarkdown.html#more-rmarkdown">later section</a>. An R chunk is a “special” block within the document that will be read and evaluated by <code>knitr</code>, ultimately converting everything into plain markdown. But for us it means that we can focus on our analysis and embed R code without having to worry about it. Additionally there are large number of chunk options that helps with different aspects of the document including code decoration and evaluation, results and plots rendering and display.</p>
+<p>This is how an R code chunk looks like. If you want to include code into your documents it has to be via R chunks. You can further customise the appearance of your code in the final document with chunk options.</p>
 <pre><code>```{r}
 
 ```</code></pre>
-<p>The little <code>r</code> there specifies the “engine”, basically telling Rmarkdown how to evalute the code inside the chunk. Here we are saying use <code>R</code> engine (language) to evaluate the code. The <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html">list of languages</a> is rather long, hence why earlier comments about Rmarkdown spanning much greater area then one might think. In this workshop we are only going to focus on R language.</p>
-<p>Let’s write our first bit of R code inside the Rmarkdown document. First we need to start a new R chunk, which can be done in either of three ways:</p>
+<p>The little <code>r</code> there specifies the “engine”, basically telling Rmarkdown how to evaluate the code inside the chunk. Here we are saying use <code>R</code> engine (language) to evaluate the code. The <a href="https://bookdown.org/yihui/rmarkdown/language-engines.html">list of languages</a> is rather long, hence why earlier comments about Rmarkdown spanning much greater area then one might think. In this workshop we are only going to focus on R language.</p>
+<p>Let’s write our first bit of R code inside the Rmarkdown document. First we need to start a new R chunk, which we can be done in these ways:</p>
 <ul>
 <li>simply type it out</li>
 <li>press insert button at the top of the window</li>
 <li><code>ctrl+alt+i</code></li>
 </ul>
-<p>Let’s start with a simple <code>print()</code> statement and print <code>Hello world, I'm learning Rmarkdown !</code> string, except we are going to split it between two variable</p>
+<p>Let’s start our new document with the main header section and type the following <code># Learning Rmarkdown</code>. Now let’s add simple R code to our chunk, type the following code <code>a &lt;- "Hello world, I'm learning Rmarkdown !"</code> and press <code>knitr</code> button to build html document. Note that as mentioned above we need to use <code>print()</code> statement to get the content of the variable to the scree/final document.</p>
 <pre><code>```{r}
-a &lt;- &#39;Hello world, Im learning Rmarkdown !&#39;
-a
+a &lt;- &#39;Hello world, I&#39;m learning Rmarkdown !&#39;
+print(a)
 ```</code></pre>
-<p>Note that each chunk can be run independently in the console by pressing <code>ctrl^enter</code> or little green arrow.</p>
-<p>Each code chunk is highly customisable via <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">chunk options</a>. We are going to learn a few today, but we won’t be able to cover all of them. You probably never going to use some of them, but as long as you know what to look for you’ll be able to search for then. Note that all chunk options have a default value. Not specifying an options means you are using the default value. These are chunk options that we are going to cover today.</p>
+<p>Tip: each chunk can be run independently in the console by pressing <code>ctrl^enter</code> or little green arrow.</p>
+</div>
+<div id="chunk-options" class="section level2">
+<h2><span class="header-section-number">3.2</span> Chunk options</h2>
+<p>Each code chunk is highly customisable via <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">chunk options</a>. We are going to learn a few today, but we won’t be able to cover all of them, but here is <a href="https://yihui.name/knitr/options/">definitive guide from the author of Rmarkdown</a>. However you probably never going to use some of them, but as long as you know what to look for you’ll be able to search for then. Note that all chunk options have a default value. Not specifying an options means you are using the default value. These are chunk options that we are going to cover today.</p>
 <table>
 <thead>
 <tr class="header">
@@ -402,111 +407,113 @@ a
 <pre><code>```{r chunk_name, options}
 
 ```</code></pre>
-<p>Note a couple of things, there isn’t a comma between <code>r</code> and <code>chunk_name</code>. Not sure why this is..
+<p>Note a couple of things, there isn’t a comma between <code>r</code> and <code>chunk_name</code>. Not sure why this is.
 Also note that <code>chunk_name</code> is optional, you can skip it, as we have in earlier examples. Naming chunks is good idea to conceptually label the chunk as to what it does, but also we you are going to build more sophisticated documents you’ll be able to selectively include chunks by refer to them by the chunk name.</p>
 <p>Lets start off with these four chunk options:</p>
 <ul>
-<li><code>echo</code> show what has been typed in i.e show the code</li>
-<li><code>eval</code> evaluate or execute that code</li>
-<li><code>include</code> include execute code into the document, relies on <code>eval = TRUE</code></li>
-<li><code>results</code> hide resulting output</li>
+<li><code>echo</code> add the content of the chunk into the document i.e the code itself</li>
+<li><code>eval</code> add results of the evaluated code to the document</li>
+<li><code>include</code> add code, results and figures to the document. If <code>include = FALSE</code> nothing related to that chunk will be added to the document.</li>
+<li><code>results</code> add results to the document. If <code>include = TRUE</code> and <code>results = "hide"</code> no results will be added to the document, except for figures.</li>
 </ul>
 <p>These allow us fine level control over the final document. Think about who are generating the document for and what type of information you need to share. Sometimes we might want to show the code, but not execute it and other times we might just want to execute it and share the results, e.g plot, without actually showing the code.</p>
+<p>Let’s add a subsection to our document, type the following <code>## chunk options intro</code>. In that section we are going to add a bit more code. We are going to split our <code>a</code> variable into three variables. We won’t discuss why you would want to do that in your programming practice, in fact this could simply come down to your personal preferences. I’m doing it here mainly to have more code in the code chunk to illustrate a couple of points about chunk options. Add this code to your chunk and press <code>knitr</code></p>
+<pre><code>```{r}
+a &lt;- &#39;Hello world,&#39;
+b &lt;- &#39;Im learning Rmarkdown !&#39;
+ab &lt;- paste(a, b)
+print(ab)
+```</code></pre>
 <div id="echo-and-eval" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> echo and eval</h3>
-<p>Let’s start with <code>echo = TRUE</code> and <code>eval = TRUE</code>.</p>
+<h3><span class="header-section-number">3.2.1</span> echo and eval</h3>
+<p>Let’s now explore these to chunk options, <code>eval</code> and <code>echo</code>. Note that the default value for them is <code>echo = TRUE</code> and <code>eval = TRUE</code>. We should not see any changes to our document.</p>
 <pre><code>```{r echo = T, eval = T}
 a &lt;- &#39;Hello world,&#39;
 b &lt;- &#39;Im learning Rmarkdown !&#39;
 ab &lt;- paste(a, b)
 print(ab)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="rmarkdown-1.html#cb18-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb18-2"><a href="rmarkdown-1.html#cb18-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb18-3"><a href="rmarkdown-1.html#cb18-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb18-4"><a href="rmarkdown-1.html#cb18-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>Now let’s turn <code>echo</code> off, <code>echo=FALSE</code>.</p>
+<p>But if now switch <code>echo</code> off by changing <code>TRUE</code> to <code>FLASE</code>, we should see a change in our final document. Don’t forget that you need to re-build your document.</p>
 <pre><code>```{r echo = F}
 a &lt;- &#39;Hello world,&#39;
 b &lt;- &#39;Im learning Rmarkdown !&#39;
 ab &lt;- paste(a, b)
 print(ab)
 ```</code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>Okay, we don’t see our original <code>print()</code> statement. And now let’s pass <code>eval=FALSE</code> options instead</p>
+<p>Okay, we don’t see any of our original code. This is the result that we were aiming for. Let’s now turn <code>echo</code> back on, by adding <code>echo = T</code> and turning <code>eval</code> off by adding <code>eval=FALSE</code>. Once again always re-build your document with <code>knitr</code>.</p>
 <pre><code>```{r eval = F}
 a &lt;- &#39;Hello world,&#39;
 b &lt;- &#39;Im learning Rmarkdown !&#39;
 ab &lt;- paste(a, b)
 print(ab)
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="rmarkdown-1.html#cb23-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb23-2"><a href="rmarkdown-1.html#cb23-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb23-3"><a href="rmarkdown-1.html#cb23-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb23-4"><a href="rmarkdown-1.html#cb23-4"></a><span class="kw">print</span>(ab)</span></code></pre>
+<p>The effect that we are seeing now is the opposite, i.e we see the results but don’t see the code, which is once again what we have anticipated.</p>
 </div>
 <div id="include" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> include</h3>
-<p>This option also helps to manipulate your final document look. This option dictates whether the output of the executed code will be included into the final document. Sometimes you can simply trigger <code>eval</code> flag to achive similar result of code now being included, but other times you might way the code to actuall be executed but not included. For example when future R chunk relay on the output of this intermidiate chunk, but there is now need to include that into the document.</p>
-<pre><code>```{r echo = T, eval = T, include = F}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
-```
-
-```{r, echo = T, include = T}
-ab
+<h3><span class="header-section-number">3.2.2</span> include</h3>
+<p>We going to create another subsection in our document, let’s type <code>## chunk options more</code>. In this section we are going to learn more chunk option to helps us manipulate our final document look. This option dictates whether the output of the executed code will be included into the final document. Sometimes you can simply trigger the <code>eval</code> flag to achieve a similar result of code not being included, but other times you might want the code to actually be executed but not included. For example when future R chunk relies on the output of this intermediate chunk, but there is no need to include that into the document.</p>
+<p><code>include</code> and <code>results</code> are best illustrated with a plot example, so we are going to use <code>mtcars</code> data set that is already available in RStudio, so you don’t have to do anything to get it. You can learn more about the data set by running the following in your R console <code>?mtcars</code>, but we are going to skip ahead, since knowing the data in this particular case isn’t important. Some of the syntax below can be new and unusual to you. The point of this exercise is to understand code chunk options and not to learn R code. It is totally fine for this example to copy and paste the code. Brief summary about the code <code>kable</code> function help with table printing in your final document and <code>qplot</code> helps us with plotting the data.</p>
+<p>Let’s type the following and then build our document.</p>
+<pre><code>```{r include = T}
+knitr::kable(mtcars)
+p1 &lt;- ggplot2::qplot(mtcars$mpg, mtcars$drat)
+p1
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="rmarkdown-1.html#cb25-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb25-2"><a href="rmarkdown-1.html#cb25-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb25-3"><a href="rmarkdown-1.html#cb25-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb25-4"><a href="rmarkdown-1.html#cb25-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="rmarkdown-1.html#cb26-1"></a>ab</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
+<p>We expect to see table with data and a plot.</p>
+<p>Let’s now turn <code>include</code> off, by switching <code>TRUE</code> to <code>FLASE</code> and re-build our document.</p>
+<pre><code>```{r include = F}
+knitr::kable(mtcars)
+p1 &lt;- ggplot2::qplot(mtcars$mpg, mtcars$drat)
+p1
+```</code></pre>
+<p>We don’t expect to see anything at all in our final document, remember that <code>include</code> controls code, results and figures output in our final document.</p>
 </div>
 <div id="results" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> results</h3>
-<p>Now we see the code, but not the output. The difference between <code>echo</code> and <code>results</code> is subtle, at least in my head. Let’s consider the following example.</p>
-<pre><code>```{r echo = T, eval = F, results = &#39;asis&#39;}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
+<h3><span class="header-section-number">3.2.3</span> results</h3>
+<p>I’m now going to introduce <code>results</code> options. It is similar to an <code>echo</code> option, and some things can be achieved with <code>echo</code> alone. In fact it’ll take some trial and error before fully appreciating differences between these options, <code>echo</code>, <code>eval</code>, <code>include</code> and <code>results</code>. <code>results</code> has four options, <a href="https://yihui.name/knitr/options/">definitions taken from here</a>:</p>
+<ul>
+<li><code>asis</code>: output as-is, i.e., write raw results from R into the output document</li>
+<li><code>hide</code>: hide results; this option only applies to normal R output (not warnings, messages or errors)</li>
+<li><code>markup</code>: mark up the results using the output hook, e.g. put results in a special LaTeX environment</li>
+<li><code>hold</code>: hold all the output pieces and push them to the end of a chunk</li>
+</ul>
+<p>We are only going to look at <code>asis</code> (default) and <code>hide</code> options mainly due to time constrains, but also because the use case for those options is for more advance/edge use cases.</p>
+<p>Let’s keep <code>include = TRUE</code> by now also add <code>results = 'hide'</code></p>
+<pre><code>```{r include = T, results=&#39;hide&#39;}
+knitr::kable(mtcars)
+p1 &lt;- ggplot2::qplot(mtcars$mpg, mtcars$drat)
+p1
+```</code></pre>
+<p>We some things but not others. We don’t see our table but we can see the plot in our final document.</p>
+<p>This is going to be rather complicated example. The purpose of it is to illustrate the fine turning that you might want to do in your report. We are going to have three chunk options <code>include = T</code>, <code>results = 'asis'</code> (default) and <code>eval = F</code>. We are also going to add a second code chunk to our document, without any options and we simply going to type <code>p1</code> variable in that chunk.</p>
+<pre><code>```{r include = T, results=&#39;asis&#39;, eval = F}
+knitr::kable(mtcars)
+p1 &lt;- ggplot2::qplot(mtcars$mpg, mtcars$drat)
 ```
 
 ```{r}
-ab
+p1
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="rmarkdown-1.html#cb29-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb29-2"><a href="rmarkdown-1.html#cb29-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb29-3"><a href="rmarkdown-1.html#cb29-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb29-4"><a href="rmarkdown-1.html#cb29-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="rmarkdown-1.html#cb30-1"></a>ab</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>Let’s turn <code>results = 'hide'</code></p>
-<pre><code>```{r echo = T, eval = F, results = &#39;hide&#39;}
-a &lt;- &#39;Hello world,&#39;
-b &lt;- &#39;Im learning Rmarkdown !&#39;
-ab &lt;- paste(a, b)
-print(ab)
+<p>In this case we getting our table with data, and two plots, one after another. Typically you wouldn’t have those two R chunks next each other, they’ll most likely be split apart by some text explaining the data flow.</p>
+<p>Remember that <code>eval</code> control execution of the code. And let’s assume that I don’t want to include any of the code in the first chunk in my document. I only want to include final figure i.e <code>p1</code> plot. Let’s try turning <code>eval</code> off, by switching it to <code>FALSE</code> and re-build our document</p>
+<pre><code>```{r include = T, results=&#39;asis&#39;, eval = F}
+knitr::kable(mtcars)
+p1 &lt;- ggplot2::qplot(mtcars$mpg, mtcars$drat)
 ```
+
 ```{r}
-ab
+p1
 ```</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="rmarkdown-1.html#cb33-1"></a>a &lt;-<span class="st"> &#39;Hello world,&#39;</span></span>
-<span id="cb33-2"><a href="rmarkdown-1.html#cb33-2"></a>b &lt;-<span class="st"> &#39;Im learning Rmarkdown !&#39;</span></span>
-<span id="cb33-3"><a href="rmarkdown-1.html#cb33-3"></a>ab &lt;-<span class="st"> </span><span class="kw">paste</span>(a, b)</span>
-<span id="cb33-4"><a href="rmarkdown-1.html#cb33-4"></a><span class="kw">print</span>(ab)</span></code></pre>
-<p>[1] “Hello world, Im learning Rmarkdown !”</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="rmarkdown-1.html#cb34-1"></a>ab</span></code></pre>
-<pre><code>## [1] &quot;Hello world, Im learning Rmarkdown !&quot;</code></pre>
-<p>And now we only see <code>print()</code> statement and no output.</p>
+<p>We get this error, because that R code hasn’t been evaluated and therefore <code>p1</code> hasn’t been formed.</p>
+<pre><code>Error in eval(expr, envir, enclos) : object &#39;p1&#39; not found
+Calls: &lt;Anonymous&gt; ... handle -&gt; withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval
+Execution halted</code></pre>
+<p>If you look at the code closely you will see that it tells you just that <strong>object ‘p1’ not found</strong> (with additional craft around it)</p>
+<p>The way to achieved this is to set <code>include = F</code> and <code>eval = T</code>. The role of <code>results = 'hide'</code> is subtle here but it is a fine level control of showing the code and not showing the code. Later on I’ll also show you a way to fold your code in the final document type, using <a href="yaml-introduction.html#yaml-introduction">yaml header</a> <code>code_folding: hide</code> option. This will hide all of your code in the final document, but will add a toggle to each code chunk to allow user to see the code if interested. The difference between <code>results</code> and <code>echo</code> is that former will completely remove results from the document, whereas the latter can have additional turning. Once again the reasons to each setting are use by use cases. Are you sharing the code and results or you just sharing results?</p>
 </div>
 </div>
 <div id="challenge-rmarkdown-1" class="section level2 exercise">
-<h2><span class="header-section-number">3.2</span> Challenge: Rmarkdown 1</h2>
+<h2><span class="header-section-number">3.3</span> Challenge: Rmarkdown 1</h2>
 <blockquote>
 <p>3 minutes</p>
 </blockquote>
@@ -518,11 +525,6 @@ ab
   {r chunk_name, options}
   ```</code></pre>
 </details>
-</div>
-<div id="important-blob-about-include-vs-results" class="section level2">
-<h2><span class="header-section-number">3.3</span> important blob about include vs results</h2>
-<p>Note that if include=FALSE, all of the code, results, and figures will be suppressed. If include=TRUE and results=“hide”, the results will be hidden but figures will still be shown. To hide the figures, use fig.show=“hide”.</p>
-<p>There are lots of different possible “chunk options”. Each must be real R code, as R will be used to evaluate them. So results=hide is wrong; you need results=“hide”.</p>
 
 </div>
 </div>

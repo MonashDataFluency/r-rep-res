@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -165,13 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="vanilla-markdown.html"><a href="vanilla-markdown.html#challenge-markdown-1"><i class="fa fa-check"></i><b>2.3</b> Challenge: Markdown 1</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html"><i class="fa fa-check"></i><b>3</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.1.1</b> echo and eval</a></li>
-<li class="chapter" data-level="3.1.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.1.2</b> include</a></li>
-<li class="chapter" data-level="3.1.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.1.3</b> results</a></li>
+<li class="chapter" data-level="3.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#embedding-r-code"><i class="fa fa-check"></i><b>3.1</b> Embedding R code</a></li>
+<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#chunk-options"><i class="fa fa-check"></i><b>3.2</b> Chunk options</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#echo-and-eval"><i class="fa fa-check"></i><b>3.2.1</b> echo and eval</a></li>
+<li class="chapter" data-level="3.2.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#include"><i class="fa fa-check"></i><b>3.2.2</b> include</a></li>
+<li class="chapter" data-level="3.2.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#results"><i class="fa fa-check"></i><b>3.2.3</b> results</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.2</b> Challenge: Rmarkdown 1</a></li>
-<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#important-blob-about-include-vs-results"><i class="fa fa-check"></i><b>3.3</b> important blob about include vs results</a></li>
+<li class="chapter" data-level="3.3" data-path="rmarkdown-1.html"><a href="rmarkdown-1.html#challenge-rmarkdown-1"><i class="fa fa-check"></i><b>3.3</b> Challenge: Rmarkdown 1</a></li>
 </ul></li>
 <li class="part"><span><b>II Part</b></span></li>
 <li class="chapter" data-level="4" data-path="git-and-github-introduction.html"><a href="git-and-github-introduction.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub introduction</a><ul>
@@ -248,6 +248,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2.3" data-path="appendix.html"><a href="appendix.html#bibtex"><i class="fa fa-check"></i><b>A.2.3</b> BibTex</a></li>
 </ul></li>
 <li class="chapter" data-level="A.3" data-path="appendix.html"><a href="appendix.html#git-and-github"><i class="fa fa-check"></i><b>A.3</b> Git and GitHub</a></li>
+<li class="chapter" data-level="A.4" data-path="appendix.html"><a href="appendix.html#difference-between-markdown-and-html"><i class="fa fa-check"></i><b>A.4</b> Difference between Markdown and HTML</a><ul>
+<li class="chapter" data-level="A.4.1" data-path="appendix.html"><a href="appendix.html#this-is-markdown"><i class="fa fa-check"></i><b>A.4.1</b> This is markdown</a></li>
+<li class="chapter" data-level="A.4.2" data-path="appendix.html"><a href="appendix.html#this-is-simplified-html"><i class="fa fa-check"></i><b>A.4.2</b> This is simplified HTML</a></li>
+<li class="chapter" data-level="A.4.3" data-path="appendix.html"><a href="appendix.html#this-is-simplified-latex"><i class="fa fa-check"></i><b>A.4.3</b> This is simplified LaTeX</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -268,20 +273,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introduction-to-rmarkdown" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction to Rmarkdown</h1>
-<p>Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown file can become pdf documents and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single multi-paged books with cross-referencing and citations, let’s call it a thesis or a paper or a course book. And with essentially no effort you can change from “rendering” your Rmarkdown into presentation slides instead of web-page, ready for a conference in little time.
-Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the Rmrkdown ecosystem discussed <a href="introduction-to-rmarkdown.html#rmarkdown-ecosystem">shortly</a>. <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> isn’t the only other flavour of markdown. There are other initiatives such as <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> which mainly enhances content appears on github site and <a href="http://commonmark.org/">CommonMark</a> that tries to unify all the different flavours of markdown syntax, but all will converge to pandoc tool.</p>
+<p>Rmarkdown has become much more then just embedding R code into a document. It enables construction of very sophisticated document types from plain text files. Rmarkdown files can become pdf documents and a static website at the same time. It can turn your analysis scattered across several different Rmarkdown documents into a single, multi-paged book with cross-referencing and citations, let’s call it a thesis, or a paper, or a course book. With essentially no effort, you can change from “rendering” your Rmarkdown into presentation slides instead of a web-page, ready for a conference in little time.
+Rmarkdown is a natural evolution of vanilla markdown, backed and extended by the Rmrkdown ecosystem discussed <a href="introduction-to-rmarkdown.html#rmarkdown-ecosystem">shortly</a>. <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> isn’t the only other flavour of markdown. There are other initiatives such as <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> which mainly enhances content appearing on the github site, and <a href="http://commonmark.org/">CommonMark</a> which tries to unify all of the different flavours of markdown syntax, “but all will converge to pandoc tool.” can this be expressed differently?</p>
 <div id="rmarkdown-core-parts" class="section level2">
 <h2><span class="header-section-number">1.1</span> Rmarkdown core parts</h2>
-<p>Any Rmarkdown documents is broken into three main parts:</p>
+<p>Rmarkdown documents are broken into three main parts:</p>
 <ul>
 <li><a href="introduction-to-rmarkdown.html#yaml-header">YAML header</a></li>
 <li><a href="introduction-to-rmarkdown.html#the-r-chunks">The R chunks</a></li>
 <li><a href="vanilla-markdown.html#vanilla-markdown">markdown - plain text</a></li>
 </ul>
-<p>Those are different parts of the document that all work together to form - render a final document. Each one of those parts can be customised with further options, which will cover later in the book.</p>
+<p>Those are different parts of the document that all work together to form or “render” a final document. Each part can be customised with further options, which will be covered later in the book.</p>
 <div id="yaml-header" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> <a href="introduction-to-rmarkdown.html#yaml-header">YAML header</a></h3>
-<p>YAML header will always seat at the very top of your Rmarkdown document and it starts and ends with triple dash symbols, <code>---</code>. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about amount of indentation you use and text strings will need to be quoted.</p>
+<p>The YAML header will always sits at the very top of your Rmarkdown document, and it starts and ends with triple dash symbols, <code>---</code>. Note that YAML is indentation and space sensitive, meaning you need to be rather strict about the amount of indentation you use and text strings will need to be quoted.</p>
 <pre><code>---
 title: &quot;Hello world&quot;
 author: &quot;Kirill&quot;
@@ -291,7 +296,7 @@ output: html_document
 </div>
 <div id="the-r-chunks" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> <a href="introduction-to-rmarkdown.html#the-r-chunks">The R chunks</a></h3>
-<p>These are special parts of the document that hold code that can be executed inline of the Rmarkdown document. R chunks are highly customisable via chunk options. We will spending a lot of time in the course working with code chunks and different options types.</p>
+<p>These are special parts of the document that hold code that can be executed “inline” of the Rmarkdown document. R chunks are highly customisable via chunk options. We will spending a lot of time in the course working with code chunks and different options types.</p>
 <pre><code>```{r}
 plot(mtcars)
 ```</code></pre>
@@ -322,23 +327,23 @@ plot(mtcars)
 </details>
 <details>
 <p><summary>
-3. Will I have to learn more “languges” to use Rmarkdown (discussion question)?
+3. Will I have to learn more “languages” to use Rmarkdown (discussion question)?
 </summary></p>
 <p>The short answer is no. Learning and writing Rmarkdown will take you a very long way.</p>
-<p>The longer answer is yes. At some point in the future you might want to very sophisticated documents and for that you’ll most certainly will need at least tiny amount of html + css knowledge and maybe some knowledge about LaTeX (I’ve yet to learn a single thing about LaTeX - so far so good :D )</p>
+<p>The longer answer is yes. At some point in the future you might want to generate very sophisticated documents and for that you’ll most certainly will need at least a tiny amount of html + css knowledge, and maybe some knowledge about LaTeX (I’ve yet to learn a single thing about LaTeX - so far so good :D).</p>
 <p><a href="link%20to%20github%20that%20the%20line%20of%20code%20above">check out this bit of Rmarkdown</a></p>
 </details>
 </div>
 <div id="rmarkdown-ecosystem" class="section level2">
 <h2><span class="header-section-number">1.3</span> Rmarkdown ecosystem</h2>
-<p>Rmarkdown has relativelly complicated ecosystem. It includes several different R packages. Most of those packages wrap other existing tools, written by different people, thereby providing an “easy” way to interface with the tools via R language. A large part of the ecosystem exists thanks to <a href="https://pandoc.org/">pandoc</a> tool.</p>
+<p>Rmarkdown has a relatively complicated ecosystem. It includes several different R packages. Most of those packages “wrap” other existing tools, (tools written by different people), thereby providing an “easy” way to interface with the tools via R language. A large part of the ecosystem exists thanks to <a href="https://pandoc.org/">pandoc</a> tool.</p>
 <div id="pandoc" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> Pandoc</h3>
-<p>Pandoc is a stand alone tool (command line tool) that one can run in the terminal to convert markdown documents to other documents types including html, pdf and MS docs. Since vanilla markdown is pretty simple in what it can produce, pandoc added whole lot of “features”, additional marking tags, that one can use to build more elaborate documents from plain text.</p>
+<p>Pandoc is a stand-alone tool (command line tool) that one can run in the terminal to convert markdown documents to other documents types including html, pdf and MS docs. Since vanilla markdown is pretty simple in what it can produce, pandoc added whole lot of “features”, additional marking tags, that one can use to build more elaborate documents from plain text.</p>
 </div>
 <div id="yaml" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> YAML</h3>
-<p>This is stand along language that is used in variety of places, with main advantage to it is that it can be easily ready by humans as well easily parsed by computer. A lot of the time YAML can be used ad a configuration file. This is example how it is used with Rmarkdown. We will talk about <a href="#yaml-header-introduction">YAML in more depth in a different section</a>. In brief we will use YAML to set documents appearance and link additional files with the documents, such as bibliographies.</p>
+<p>This is stand along language that is used in variety of places, with main advantage to it is that it can be easily ready by humans as well easily parsed by computer. A lot of the time YAML can be used as a configuration file. This is example how it is used with Rmarkdown. We will talk about <a href="#yaml-header-introduction">YAML in more depth in a different section</a>. In brief we will use YAML to set documents appearance and link additional files with the documents, such as bibliographies.</p>
 </div>
 <div id="latex" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> LaTeX</h3>
@@ -347,11 +352,11 @@ plot(mtcars)
 </div>
 <div id="knitr" class="section level3">
 <h3><span class="header-section-number">1.3.4</span> Knitr</h3>
-<p>As was mentioned before we are using <a href="https://pandoc.org/">pandoc</a> to convert markdown to other document types. <a href="https://yihui.name/knitr/">knitr</a> provides function to convert Rmarkdown files into vanialla markdown, which then in turn can be converted by pandoc into html document for example. Some of the things that <a href="https://yihui.name/knitr/">knitr</a> does includes R code execution and assembling the results into markdown.</p>
+<p>As was mentioned before, we are using <a href="https://pandoc.org/">pandoc</a> to convert markdown to other document types. <a href="https://yihui.name/knitr/">knitr</a> converts Rmarkdown files into vanilla markdown, which inturn can be converted by pandoc into an html document, for example. <a href="https://yihui.name/knitr/">knitr</a> can execute R code and assemble the results into markdown.</p>
 </div>
 <div id="rmarkdown" class="section level3">
 <h3><span class="header-section-number">1.3.5</span> Rmarkdown</h3>
-<p>An <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> will convert <code>.Rmd</code> files into other format types. Under the hood it will use <a href="https://pandoc.org/">pandoc</a> to do so. The main function that we are concerned with is <code>rmarkdown::render()</code> which will call <code>knitr::knit()</code> when required.</p>
+<p>An <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> will convert <code>.Rmd</code> files into other file format types. Under the hood it will use <a href="https://pandoc.org/">pandoc</a> to do so. The main function that we are concerned with is <code>rmarkdown::render()</code> which will call <code>knitr::knit()</code> when required.</p>
 </div>
 <div id="bookdown" class="section level3">
 <h3><span class="header-section-number">1.3.6</span> Bookdown</h3>
@@ -369,7 +374,7 @@ plot(mtcars)
 </div>
 <div id="rstudio-project" class="section level2">
 <h2><span class="header-section-number">1.4</span> RStudio project</h2>
-<p>RStudio provides a nice option to create a new project. This in turn will create a new folder with a couple of special features helping you to stay organised and “containerising” your project.</p>
+<p>RStudio provides a nice option to create a new project. This in turn will create a new folder with a couple of special features, helping you to stay organised and “containerising” your project.</p>
 <p>The following features apply to a project directory</p>
 <ul>
 <li>A new R session (process) is started</li>
@@ -377,7 +382,7 @@ plot(mtcars)
 <li>The .RData file in the project’s main directory is loaded (if project options indicate that it should be loaded).</li>
 <li>The .Rhistory file in the project’s main directory is loaded into the RStudio History pane (and used for Console Up/Down arrow command history).</li>
 <li>The current working directory is set to the project directory.</li>
-<li>Previously edited source documents are restored into editor tabs</li>
+<li>Previously edited source documents are restored into editor tabs.</li>
 <li>Other RStudio settings (e.g. active tabs, splitter positions, etc.) are restored to where they were the last time the project was closed.</li>
 </ul>
 <p><a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">Taken from here</a></p>
@@ -409,7 +414,7 @@ plot(mtcars)
 </summary></p>
 <ul>
 <li>change font size</li>
-<li>change themes and backgroung color</li>
+<li>change themes and background color</li>
 <li>rearrange panels</li>
 </ul>
 </details>
@@ -426,8 +431,8 @@ plot(mtcars)
 > One cannot know all of Rmarkdown wisdom. One would continuesly learn to make oneself more Rsome.
 -->
 <ul>
-<li>don’t attempt to compile to <code>pdf_document</code> until absolutelly necesserary. <code>LaTeX</code> engine that is used by Rmarkdown to pdf conversion known to have issues with aligning figures and tables. This typically causes figures and tables overflow to next pages and general text misalignment. Get your content written first, intermidiate compilation to <code>html_documents</code> are totaly fine, before worrying about technical issues</li>
-<li>don’t save data into <code>.RData</code>, this will make your work less reproducible</li>
+<li>don’t attempt to compile to <code>pdf_document</code> until absolutely necessary. <code>LaTeX</code> engine that is used by Rmarkdown to pdf conversion known to have issues with aligning figures and tables. This typically causes figures and tables overflow to next pages and general text misalignment. Get your content written first, intermediate compilation to <code>html_documents</code> are totally fine, before worrying about technical issues</li>
+<li>don’t save data into <code>.RData</code>, this will make your work less reproducible.</li>
 </ul>
 
 <!--
