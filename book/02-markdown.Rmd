@@ -15,13 +15,13 @@ File
  └── New File
         └── R Markdown
 
-title = "Learning Rmarkdown"
+title = "Learning Markdown"
 author = "Me"
 ```
 
 - select document type **HTML**
-- to build (compile) the document press `knitr` button or `ctrl+alt+k`
-- to save as `.Rmd` file
+- to build (compile) the document by press `knitr` button or `ctrl+alt+k`
+- save file by pressing `ctrl^S` and name the files `learning_markdown.Rmd`
 
 Since we are using RStudio and R, it is inevitable that we will be using Rmarkdown flavour, but we can write vanilla markdown because under the hood Rmarkdown will always be converted to vanilla markdown.
 
@@ -71,7 +71,6 @@ A [link](http://example.com).
 
 Now, it's just a matter of learning some of the markdown syntax. Let's delete all current text from the opened document except the YAML header and type this new text: `Hello world, I'm learning R markdown !` and press the `knit HTML` button.
 
-
 ```
 Hello world, I'm learning R markdown !
 ```
@@ -97,7 +96,99 @@ Now make three new lines with the same text, but different numbers of `#` symbol
 
 This is how you can specify different headers type using markdown.
 
-**Remember** that [vanilla markdown](https://daringfireball.net/projects/markdown/syntax) is comprised entirely of punctuation characters.
+Let's now practice making very short document in markdown with a main topic section and two subsections. We will add short sentences in each section. We will start with main section header and a quote. Let's type the following text and `knit` our document.
+
+```
+# Learning Markdown
+
+> I'm still learning
+```
+
+Now let's add three bullet points summarising what we are going to learn next and then `knit` the document again.
+
+```
+# Learning Markdown
+
+> I'm still learning
+
+Here I'll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+```
+
+Now let's add each one of those bullet items as a subsection to the main "Learning Markdown" section.We are going to use `##` to mark subsections and don't forget to `knit` again.
+
+```
+# Learning Markdown
+
+> I'm still learning
+
+Here I'll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+
+## Markdown
+
+## Rmarkdown
+
+## Git and GitHub
+```
+
+Now let's add a sentence to each section, briefly describing what they are.
+
+```
+# Learning Markdown
+
+> I'm still learning
+
+Here I'll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+
+## Markdown
+
+Here I'll learng vanilla markdown
+
+## Rmarkdown
+
+Whereas here I'll be learning Rmarkdown
+
+## Git and GitHub
+
+And this section is scary
+```
+
+Let's add a emphasis to some of the words in our document. We are going to add _italic_ emphasis to the word "vanilla" and we are going to add **bold** emphasis to the capital letter "R" in the word Rmarkdown. You'll need to `knit` your document still.
+
+```
+# Learning Markdown
+
+> I'm still learning
+
+Here I'll be learning:
+
+- markdown
+- Rmarkdown
+- git and github
+
+## Markdown
+
+Here I'll learng _vanilla_ markdown
+
+## Rmarkdown
+
+Whereas here I'll be learning **R**markdown
+
+## Git and GitHub
+
+And this section is scary
+```
 
 ## Challenge: Markdown 1 {.exercise}
 
@@ -114,7 +205,45 @@ This is how you can specify different headers type using markdown.
   <summary>
     2. Can markdown replace [html](https://en.wikipedia.org/wiki/HTML) (discussion question)?
   </summary>
+
   It has replaced html and latex in documentation and communication of results. My feeling is that the data science ecosystem heavily revolves around markdown. But html, pdf and latex, in this context, are simply communication and sharing mediums.
   On would not want to replace html + css for large website projects.
+
 </details>
 
+Let's learn how to add external and internal links to your document, remember the syntax for adding links is `[DESCRIPTION](link-address)`. The external link that we are going to add is going to be this [https://rmarkdown.rstudio.com/](https://rmarkdown.rstudio.com/). Each one of the bullet points above going to become a link to it section. The way you reference internal section is by starting your address with a `#` symbol then simply using all lower case letters for the section name and all spaces need to be converted to a dash symbol `-`. Let's add those things in and re-build our document.
+
+```
+# Learning Markdown
+
+> I'm still learning
+
+[External resource](https://rmarkdown.rstudio.com/)
+
+Here I'll be learning:
+
+- [markdown](#markdown)
+- [Rmarkdown](#rmarkdown)
+- [git and github](#git-and-github)
+
+## Markdown
+
+Here I'll learng _vanilla_ markdown
+
+## Rmarkdown
+
+Whereas here I'll be learning **R**markdown
+
+## Git and GitHub
+
+And this section is scary
+```
+
+A bonus exercise is to add logos to each sections. Search internet for:
+
+- Markdown logo, and add the image using `![](link_address)` syntax
+- RMarkdown logo, and add the image using `![](link_address)` syntax
+- Git logo, and add the image using `![](link_address)` syntax
+- GitHub logo, and add the image using `![](link_address)` syntax
+
+Note for the external resource that is on internet the address must start with `www` or `https` otherwise address will be interpreted as file path.
