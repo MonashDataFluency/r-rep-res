@@ -211,6 +211,8 @@ And this section is scary
 
 </details>
 
+## Cross-referencing
+
 Let's learn how to add external and internal links to your document, remember the syntax for adding links is `[DESCRIPTION](link-address)`. The external link that we are going to add is going to be this [https://rmarkdown.rstudio.com/](https://rmarkdown.rstudio.com/). Each one of the bullet points above going to become a link to it section. The way you reference internal section is by starting your address with a `#` symbol then simply using all lower case letters for the section name and all spaces need to be converted to a dash symbol `-`. Let's add those things in and re-build our document.
 
 ```
