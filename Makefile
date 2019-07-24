@@ -14,6 +14,7 @@ html:
 	if [ ! -d _book ];then mkdir _book;fi
 	cd book; \
 	Rscript -e "bookdown::render_book('.', 'bookdown::gitbook')"
+	cp -R book/css _book; \
 	cp -R book/figures _book; \
 	cp -R book/examples _book; \
 	cp -R book/supplementary _book
