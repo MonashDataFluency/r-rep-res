@@ -84,6 +84,14 @@ This is a good [resource](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes
 
 ## Git and GitHub
 
+You can turn any directories (folders) on your computers in to "special" git directory (repository) by running the following command.
+
+```
+git init
+```
+
+This assumes command line workflow. [Other tools](https://www.sourcetreeapp.com/) might have slightly different setup, but either way you need to initialise git tracking as a very first step.
+
 A brief note about README files. It is regarded as a "silent" way of communication, where you can tell all necessary information another person need to know about your project. For a software tool you would put information about how to build that particular tool and dependencies. In our case we will add information how to build final html report. We will do this a bit later in the workshop.
 
 ## Difference between Markdown and HTML

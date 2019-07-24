@@ -46,28 +46,36 @@ Git and GitHub will help you:
 
 ## Github setup
 
-There are a couple of different ways you can start a project and initiate git repository - git tracking. We are going to start with GitHub first approach. An alternative approach discussed in [appendix section D](#d). I hope that everyone had already created [GitHub](https://github.com/) account.
+There are a couple of different ways you can start a project and initiate git repository - git tracking. We are going to start with GitHub first approach. An alternative approach discussed in [appendix section](#git-and-github). I hope that everyone had already created [GitHub](https://github.com/) account.
 We are going to make new github repository from [this template](https://github.com/MonashDataFluency/r-rep-res-git).
 
-- sign in to github [github.com](https://github.com)
-- head over to [https://github.com/MonashDataFluency/r-rep-res-git](https://github.com/MonashDataFluency/r-rep-res-git)
+- head to your web-browser (chorme or firefox)
+- sign into github [github.com](https://github.com)
+- head over to this repository [https://github.com/MonashDataFluency/r-rep-res-git](https://github.com/MonashDataFluency/r-rep-res-git)
 - click "Use this template"
 
-You should see a screen like this
+You should see a screen like this.
 
 ```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github6.png")
 ```
 
+Let's populate all of the fields with the following information.
+
 - Repository name "learning_rmarkdown"
 - Description "I'm learning Rmarkdown, yay!"
 - click "Create repository from template"
 
-Note that a description of the repository is optional, but it is a good idea to write a brief sentence there to message yourself and the public what this project is about.
+Note that a description of the repository is optional, but it is a good  idea to write a brief sentence there. This is mainly to message (and remind) yourself and the public about the intentions of this project. More in depth description should also be added to the [README.md](#git-and-github) file, but we are going to skip this step in our workshop.
 
-Once we have our GitHub repository we need to find a link (URL) and copy a.k.a **clone** (git clone) our repository to our working computer, in our case [rstudio.cloud](https://rstudio.cloud). We want to establish connection between [rstudio.cloud](https://rstudio.cloud) and GitHub such that we can with little effort we can copy our work, that is file from [rstudio.cloud](https://rstudio.cloud) to GitHub.
+Once we have our GitHub repository we need to find a link or an address (URL) of this repository so that we can take copy of it a.k.a `git clone`. Cloning or coping is a routine step in any git + github workflow. In this case we are cloning our repository from the GitHub to our working computer, in our case [rstudio.cloud](https://rstudio.cloud). You can take as many copies of your repository as you like, just remember that at some point in futures you will need to merge different copies, if you like to incorporate the changes into main line.
+By cloning our repository we are establishing connection between [rstudio.cloud](https://rstudio.cloud) and GitHub such that we can with little effort we can copy our work, that is file from [rstudio.cloud](https://rstudio.cloud) to GitHub. This gives us few things:
 
-This is how a typical URL looks
+- a backed up copy of our code and analysis
+- remote access from other computers and places
+- visibility and shareability
+
+This is how a typical URL looks for github repository looks like
 
 ```
 https://github.com/kirill/learing_rmarkdown.git
@@ -77,37 +85,34 @@ There are at least three components in that url
 
 - `https://github.com/` the place i.e the name of the website
 - `kirill/` username
-- `learing_rmarkdown.git` repository name (project name)
+- `learing_rmarkdown.git` repository name (project name). Note that `.git` bit at the end can be omitted
 
-You can get this url, but either looking at the address bar of your browser or there is a little drop down menu on the right hand site.
+You can get this url, but either looking at the address bar of your browser or there is a little drop down menu on the right hand site. Copy that url to your clipboard, we will need it shortly.
 
 ```{r echo = F, out.width = "100%", fig.align = "left"}
 knitr::include_graphics("figures/github8.png")
 ```
 
-Note that by creating a new github repository we are automatically initialising git for version tracking. Remember that GitHub is just a place where we are storing our git repository.
+In general when we create a new github repository we automatically initialising git for version tracking. This may sound confusing, but this is mainly because we are starting with GitHub first. You can have git repository on your local computer and not have to store it anywhere else remotely. There are more details in [appendix](#git-and-github) how to start with git first.
+Remember that GitHub is just a place where we are storing our git repository, that gives us a few extras mentioned above.
 
 ## RStudio setup
 
-Add description about starting a project from a github at RStudio.
+Now that we have setted up our github repository and found our address for cloning the repo. We need to copy our repository to [rstudio.cloud](https://rstudio.cloud). For that follow these steps:
 
-## GitHub things
+- go to [rstudio.cloud](https://rstudio.cloud)
+- look for "New Project" button
+- from drop-down menu to select "New Project from Git Repo"
+- paste your GitHub repository url and press "ok"
 
-- PR (pull request)
-- gitissues place to talk about issues related to a project
-- stars acknowledgement
-- watch interested in updates on a projects
+```{r echo = F, out.width = "100%", fig.align = "left"}
+knitr::include_graphics("figures/rstudio.cloud_newproj1.png")
+knitr::include_graphics("figures/rstudio.cloud_newproj2.png")
+```
 
-<!--
-TODO in future need to make an annotated images to all those buttons
--->
+This will take a few seconds to initialise. After you can see Rstudio again be sure to name your project using a window at the top of the screen.
 
-collaborators and update dates/commits as a proxy of how active the project is. also do check which files typically being changed. Also mention the fact that it is very explicit when the project was started (initiated) how much work has gone into it (commits history) and roughly time frame and intervals of work
-
-in simple workflow and collaborations git merge will work just fine. git will happily merge two different branches i.e all files in one location with all files in the other location if no two file conflict
-
-
-## More git
+## Git intro
 
 Git is a command line tool however you don't have to learn command line just yet. There are a [few git clients available](https://happygitwithr.com/git-client.html) - graphical user interface (GUI) tool / applications that we can use instead of learning command line. We are going to use RStudio which has good git support and therefore Rstudio will be our git client. One rather important note about git clients, most (all) clients will "simply" form a git commands as you would type it out and execute on command line. This means a couple of things:
 
@@ -116,66 +121,29 @@ Git is a command line tool however you don't have to learn command line just yet
 
 An interesting note about command line git usage noted in [Happy Git with R book](https://happygitwithr.com/git-client.html); One might think that git via cli is "better", however it is more important to get the work done and have it version controlled rather then fight with the cli. Do take the simplest and quickest path to get your work version controlled. No one will care which client you are using in the end.
 
-## git no nos
+Tips:
 
 - no spaces in file names (this goes beyond git)
 - no git repositories inside an existing git repository
 
-## Starting with git
+## Git setup
 
-In Rstudio you can only start working with git when you have an existing Rproject directory
-
-```{r echo=F, out.width="100%", fig.align="left"}
-knitr::include_graphics("figures/rstudio-cloud6.png")
-```
-
-### Configuring git
-
-You will most certainly forget this step, because you only need to do it once per computer (or new installation of git). Git will remind if you haven't done these steps.
-These are our very first step in being organise and ready for future collaboration. We need to let git know our name and email address, which will get stored in configuration file.
-
-Unfortunately RStudio doesn't have support for setting up config. It was probably not worth implementing given that you only really do it once. We will have to use terminal (command line) just this once.
-
-Let's open up a terminal and run a couple of `git` commands
-
-Tools -> Terminal -> New Terminal
-
-```
-git config --global user.name kirill
-git config --global user.name "kirill.tsyganov@monash.edu"
-```
-
-One can then double check that all was set correctly bu running this command.
-
-```
-git config --global --list
-```
+If you are staring with git for very first time you need to a couple of configuration. You will need to add your name and email address to git configuration file. This is because git is all about version tracking and collaboration. It will not only track your changes and assign your name + email signature to every "milestones" (git commits), but it will be able to easily differentiate between a "milestone" from a different person, because there will be a different name + email signature.
+You only have to do this one per computer, so if you don't change your computer all that often you'll forget that you have ever done this before, but this is okay since git will happily remind you about that with this friendly message.
 
 ```{r echo=F, out.width="100%", fig.align="left"}
 knitr::include_graphics("figures/git2.png")
 ```
 
-### Intiating git repository
+Sadly RStudio doesn't provide smooth way of adding name + email to your git configuration file. There are perhaps several good reasons as to why. It is likely that because this is relatively "one off" thing, RStudio has it as a low priority feature. I have confidence that it will come in later additions.
 
-In git jargon repository is simply your working folder (folders sometimes also called directories). In our case
+For this workshop we are going to run a short script that came with our templated repository, `R/init.R`. Open this script in R studio to examine the content. Double click on `R/init.R` file in file browser panel to open it in text editor panel. There are four commands there, first two are must run, third simply a check of the config file to make sure it all worked and the 4th command is a convenience setting.
 
-`Rproject folder == Rproject directory == git repository == git repo`
+At the top of the file change `user_name` and `user_email` to your name and email and run the script by pressing green button "run" at the top of that panel or using keyboard shortcut `ctrl+shift+enter`
 
-Let's initate git repository
+It felt like a lot of setting up, but this is mainly because you are not familiar with git and doing it for the first time. In general those steps are "natural" part of your workflow, very quick and not noticeable.
 
-Tools -> Version Control -> Project Setup -> Git/SVN
-
-```{r echo=F, out.width="100%", fig.align="left"}
-knitr::include_graphics("figures/rstudio-cloud4.png")
-```
-
-And select from the drop down options "Version control system" Git
-
-```{r echo=F, out.width="100%", fig.align="left"}
-knitr::include_graphics("figures/rstudio-cloud5.png")
-```
-
-The command line equivalent is navigating to your project directory and running `git init`
+## Git and GitHub workflow
 
 ### First commit
 
@@ -220,6 +188,21 @@ Good thing is, as long as you "tracking" your deletes you can always go back to 
 Also note that commit message don't have to long, and can be as short as one work - "update2", but at the same time well written commit message will help you and other.
 
 http://r-pkgs.had.co.nz/git.html#commit-best-practices
+
+## Good thing about GitHub
+
+- PR (pull request)
+- gitissues place to talk about issues related to a project
+- stars acknowledgement
+- watch interested in updates on a projects
+
+<!--
+TODO in future need to make an annotated images of all those github buttons mentione above
+-->
+
+collaborators and update dates/commits as a proxy of how active the project is. also do check which files typically being changed. Also mention the fact that it is very explicit when the project was started (initiated) how much work has gone into it (commits history) and roughly time frame and intervals of work
+
+in simple workflow and collaborations git merge will work just fine. git will happily merge two different branches i.e all files in one location with all files in the other location if no two file conflict
 
 ## Which files to commit?
 
