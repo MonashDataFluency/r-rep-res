@@ -85,3 +85,114 @@ This is a good [resource](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes
 ## Git and GitHub
 
 A brief note about README files. It is regarded as a "silent" way of communication, where you can tell all necessary information another person need to know about your project. For a software tool you would put information about how to build that particular tool and dependencies. In our case we will add information how to build final html report. We will do this a bit later in the workshop.
+
+## Difference between Markdown and HTML
+
+### This is markdown
+
+```
+# Learning Markdown
+
+> I'm still learning
+
+[External resource](https://rmarkdown.rstudio.com/)
+
+Here I'll be learning:
+
+- [markdown](#markdown)
+- [Rmarkdown](#rmarkdown)
+- [git and github](#git-and-github)
+
+## Markdown
+
+Here I'll learng _vanilla_ markdown
+
+## Rmarkdown
+
+Whereas here I'll be learning **R**markdown
+
+## Git and GitHub
+
+And this section is scary
+```
+
+### This is simplified HTML
+
+In actual fact there is more html tags required at the top of the document to turn it into fully functioning web-page
+
+```
+<div id="learning-markdown" class="section level1">
+<h1>Learning Markdown</h1>
+<blockquote>
+<p>I’m still learning</p>
+</blockquote>
+<p><a href="https://rmarkdown.rstudio.com/">External resource</a></p>
+<p>Here I’ll be learning:</p>
+<ul>
+<li><a href="#markdown">markdown</a></li>
+<li><a href="#rmarkdown">Rmarkdown</a></li>
+<li><a href="#git-and-github">git and github</a></li>
+</ul>
+<div id="markdown" class="section level2">
+<h2>Markdown</h2>
+<p>Here I’ll be learng <em>vanilla</em> markdown</p>
+</div>
+<div id="rmarkdown" class="section level2">
+<h2>Rmarkdown</h2>
+<p>Whereas here I’ll be learning <strong>R</strong>markdown</p>
+</div>
+<div id="git-and-github" class="section level2">
+<h2>Git and GitHub</h2>
+<p>And this section is scary</p>
+</div>
+</div>
+```
+
+
+### This is simplified LaTeX
+
+Similar to HTML, there is more crafted goes at the top of the LaTeX document in order to turn into fully functioning document.
+
+```
+\begin{document}
+\maketitle
+
+\hypertarget{learning-markdown}{%
+\section{Learning Markdown}\label{learning-markdown}}
+
+\begin{quote}
+I'm still learning
+\end{quote}
+
+\href{https://rmarkdown.rstudio.com/}{External resource}
+
+Here I'll be learning:
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{markdown}{markdown}
+\item
+  \protect\hyperlink{rmarkdown}{Rmarkdown}
+\item
+  \protect\hyperlink{git-and-github}{git and github}
+\end{itemize}
+
+\hypertarget{markdown}{%
+\subsection{Markdown}\label{markdown}}
+
+Here I'll be learng \emph{vanilla} markdown
+
+\hypertarget{rmarkdown}{%
+\subsection{Rmarkdown}\label{rmarkdown}}
+
+Whereas here I'll be learning \textbf{R}markdown
+
+\hypertarget{git-and-github}{%
+\subsection{Git and GitHub}\label{git-and-github}}
+
+And this section is scary
+
+
+\end{document}
+```

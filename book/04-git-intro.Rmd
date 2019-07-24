@@ -6,12 +6,12 @@
 > How often will depend on your experience and desire not to fall
 > Git commit like you are vertically hanging off 70 feet rock
 
-I going to break to you right at the start that (unfortunately) doing git and GitHub is like rock climbing, but nonetheless it has great benefits for your research and analysis including making it more visible, reproducible and potentially very collaborative.
+I am going to break to you right at the start that (unfortunately) doing git and GitHub is like rock climbing, but nonetheless it has great benefits for your research and analysis including making it more visible, reproducible and potentially very collaborative.
 
-[Git](https://git-scm.com/doc) is one of many tools, but it is very popular. Git was design for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strictly design with scientific research projects in mind we will happily re-purpose git to help us stay on top of our research projects. In git world everything rotates around git repository, which is "special" folder. Inside that folder every file and folder is "tracked" for changes. Git repositories often are synonymous with project folder. In our case an RStudio project folder will be the same as git folder. In other words we are going to tack all changes in our project.
-Note that two, git and RStudio project, are independent of each other and you can use one or another or both.
+[Git](https://git-scm.com/doc) is one of many tools, but it is very popular. Git was designed for **tracking versions** of software development - a.k.a version control tool. While it hasn't been strictly design with scientific research projects in mind we will happily re-purpose git to help us stay on top of our research projects. In the git world everything rotates around a git repository, which is a "special" folder. Inside that folder every file and folder is "tracked" for changes. Git repositories often are synonymous with project folder. In our case the RStudio project folder will be the same as the git folder. In other words we are going to tack all changes in our project.
+Note that the two, git and RStudio project, are independent of each other and you can use one or another or both.
 
-Below I am trying to illustrate of the differences between of do-it-yourself (DIY) version control system, which may be great, and git version control. DIY version control systems are great with two caveats:
+Below I am trying to illustrate of the differences between do-it-yourself (DIY) version control system, which may be great, and git version control. DIY version control systems are great with two caveats:
 
 - no one else will understand it
 - the future you will forget the awesome schema that you have invented
@@ -22,7 +22,7 @@ Below I am trying to illustrate of the differences between of do-it-yourself (DI
 knitr::include_graphics("figures/git_vs_filesystem.png")
 ```
 
-From now onwards we are going to `git` version control tool. We are also going to use GitHub for storing our files remotely. GitHub isn't the only place that people can use with git for file storage and sharing. Below an illustration of some other common place one can choose to store they git repositories a.k.a projects.
+From now onwards we are going to use the `git` version control tool. We are also going to use GitHub for storing our files remotely. GitHub isn't the only place that people can use with git for file storage and sharing. Below an illustration of some other common place one can choose to store they git repositories a.k.a projects.
 
 (ref:github1) https://www.geekboots.com/story/what-is-the-difference-between-bitbucket-github-and-gitlab
 
@@ -30,7 +30,7 @@ From now onwards we are going to `git` version control tool. We are also going t
 knitr::include_graphics("figures/remote_repos.jpg")
 ```
 
-In theory and can also store `git` repositories in google drive or dropbox or other similar places, however neither those places haven't been optimised for `git` version control repositories. We will talk shortly about advantages that GitHub brings to the project.
+In theory one can also store `git` repositories in google drive or dropbox or other similar places, however neither of those places have been optimised for `git` version control repositories. We will talk shortly about advantages that GitHub brings to the project.
 
 For this workshop we are going to use GitHub, mainly because is very popular and it has a lot of useful features.
 
@@ -63,11 +63,11 @@ knitr::include_graphics("figures/github6.png")
 - Description "I'm learning Rmarkdown, yay!"
 - click "Create repository from template"
 
-Note that description of the repository is optional, but a good idea to write a brief sentence there to message yourself and the public what this project is about.
+Note that a description of the repository is optional, but it is a good idea to write a brief sentence there to message yourself and the public what this project is about.
 
 Once we have our GitHub repository we need to find a link (URL) and copy a.k.a **clone** (git clone) our repository to our working computer, in our case [rstudio.cloud](https://rstudio.cloud). We want to establish connection between [rstudio.cloud](https://rstudio.cloud) and GitHub such that we can with little effort we can copy our work, that is file from [rstudio.cloud](https://rstudio.cloud) to GitHub.
 
-This is how typical URL looks like
+This is how a typical URL looks
 
 ```
 https://github.com/kirill/learing_rmarkdown.git
@@ -85,7 +85,7 @@ You can get this url, but either looking at the address bar of your browser or t
 knitr::include_graphics("figures/github8.png")
 ```
 
-Note that by creating new github repository we are automatically initialising git for version tracking. Remember that GitHub is just a place where we are storing our git repository.
+Note that by creating a new github repository we are automatically initialising git for version tracking. Remember that GitHub is just a place where we are storing our git repository.
 
 ## RStudio setup
 
