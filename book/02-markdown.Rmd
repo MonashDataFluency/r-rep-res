@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/35459166/embed-rmarkdown-with-rmarkdown-with
 
 # Vanilla Markdown
 
-The original (vanilla) version of Markdown invented by [John Gruber](https://en.wikipedia.org/wiki/Markdown) defines a handful of tags, [discussed next](#vanilla-tags). Markdown is relatively small and simple language for writing plain text documents. It is entirely comprised out of punctuation characters. The goal of markdown is that it is easy-to-write and easy-to-read. Markdown has been greatly enhanced and extended by pandoc tool.
+The original (vanilla) version of Markdown invented by [John Gruber](https://en.wikipedia.org/wiki/Markdown) defines a handful of tags, [discussed next](#vanilla-tags). Markdown is a relatively small and simple language for writing plain text documents that are easy-to-write and easy-to-read, but it is greatly enhanced and extended by pandoc tool.
 
 ## Vanilla tags
 
@@ -23,11 +23,11 @@ author = "Me"
 - to build (compile) the document by press `knitr` button or `ctrl+alt+k`
 - save file by pressing `ctrl^S` and name the files `learning_markdown.Rmd`
 
-Since we are using RStudio and R it is inevitable that will be using Rmarkdown flaour, but we can still write only vanilla markdown and remember that under the hood Rmarkdown will always be converted to vanilla markdown.
+Since we are using RStudio and R, it is inevitable that we will be using Rmarkdown flavour, but we can write vanilla markdown because under the hood Rmarkdown will always be converted to vanilla markdown.
 
-From now onward we are going to start using `knitr` to complie Rmarkdown into html. Remember from the [Rmarkdown ecosystem]() that `knitr` will convert Rmarkdown to markdonw and `rmarkdown` R package will convert - render markdown file into html. By pressing that blue button both things will happen automatically and we don't need to think about, but I wanted you to know that.
+From now on we are going to start using `knitr` to compile Rmarkdown into html. Remember from the [Rmarkdown ecosystem]() that `knitr` will convert Rmarkdown to markdown and `rmarkdown` R package will convert - render markdown files into html. By pressing that blue button both things will happen automatically and we don't need to think about, but I wanted you to know that.
 
-These are essintially all core (vanilla) markdown tags. Let's practice writting them in the [next section](#practice-vanilla-markdown).
+These are essentially all core (vanilla) markdown tags. Let's practice writing them.
 
 ```
 # Header1
@@ -69,13 +69,13 @@ A [link](http://example.com).
 
 ## Practice vanilla markdown
 
-Now it's just a matter of learning some of the markdown syntax. Let's delete all current text from the opened document except the YAML header and type this new text in `Hello world, I'm learning R markdown !` and pressing the `knit HTML` button.
+Now, it's just a matter of learning some of the markdown syntax. Let's delete all current text from the opened document except the YAML header and type this new text: `Hello world, I'm learning R markdown !` and press the `knit HTML` button.
 
 ```
 Hello world, I'm learning R markdown !
 ```
 
-Not much happened. This is because we didn't mark our text in any way. You can put as much text as you want and it will appear as is, unless "specially" marked to look differently.
+Not much happened. This is because we didn't mark our text in any way. You can put as much text as you want and it will appear as is, unless "specially" marked to look different.
 
 Now add the `#` symbol at the start of the line and press the `knit HTML` button again. We'll be pressing this button a lot! For those who like keyboard short cuts use `ctrl+shift+k` instead.
 
@@ -83,7 +83,7 @@ Now add the `#` symbol at the start of the line and press the `knit HTML` button
 # Hello world, I'm learning R markdown !
 ```
 
-How about now? A single hash symbol made it whole lot bigger didn't it? We've marked this whole line to be the header line.
+How about now? A single hash symbol made it a whole lot bigger didn't it? We've marked this whole line to be the header line.
 
 Now make three new lines with the same text, but different numbers of `#` symbols, one, two and three respectively and keep pressing the `Knit HTML` button
 
@@ -205,8 +205,10 @@ And this section is scary
   <summary>
     2. Can markdown replace [html](https://en.wikipedia.org/wiki/HTML) (discussion question)?
   </summary>
-  It has replaced html and latex in documentation and communication of results space. My feeling is that data science ecosystem heavily rotates around markdown. But html, pdf and latex in this context are "simply" communication and sharing medium.
-  It would be very difficult to replace html + css for larger ("proper") website project.
+
+  It has replaced html and latex in documentation and communication of results. My feeling is that the data science ecosystem heavily revolves around markdown. But html, pdf and latex, in this context, are simply communication and sharing mediums.
+  On would not want to replace html + css for large website projects.
+
 </details>
 
 Let's learn how to add external and internal links to your document, remember the syntax for adding links is `[DESCRIPTION](link-address)`. The external link that we are going to add is going to be this [https://rmarkdown.rstudio.com/](https://rmarkdown.rstudio.com/). Each one of the bullet points above going to become a link to it section. The way you reference internal section is by starting your address with a `#` symbol then simply using all lower case letters for the section name and all spaces need to be converted to a dash symbol `-`. Let's add those things in and re-build our document.
