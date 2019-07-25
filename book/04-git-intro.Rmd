@@ -96,6 +96,28 @@ knitr::include_graphics("figures/github8.png")
 In general when we create a new github repository we automatically initialising git for version tracking. This may sound confusing, but this is mainly because we are starting with GitHub first. You can have git repository on your local computer and not have to store it anywhere else remotely. There are more details in [appendix](#git-and-github) how to start with git first.
 Remember that GitHub is just a place where we are storing our git repository, that gives us a few extras mentioned above.
 
+### Setting up GitHub pages
+
+I would like to add one extra thing to our GitHub setup. Let's activate [GitHub pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for our repository. All you need to know about [GitHub pages (gh-pages)](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for this workshop (and in general) is that it allows you to make your HTML content (file) available on internet for greater audience.
+
+In order to enable this feature we need to navigate to settings. This is how the page should look like.
+
+```{r echo = F, out.width = "100%", fig.align = "left"}
+knitr::include_graphics("figures/github_settings1.png")
+```
+
+Then scroll down to "GitHub Pages" section and select "Use the master branch for GitHub Pages"
+
+```{r echo = F, out.width = "100%", fig.align = "left"}
+knitr::include_graphics("figures/github_settings2.png")
+```
+
+This is all we need to do. This made our "master" branch, which is often a default branch, to be a little "special". Now you can access your content via url.
+
+```
+https://serine.github.io/learning_rmarkdown/
+```
+
 ## RStudio setup
 
 Now that we have setted up our github repository and found our address for cloning the repo. We need to copy our repository to [rstudio.cloud](https://rstudio.cloud). For that follow these steps:
