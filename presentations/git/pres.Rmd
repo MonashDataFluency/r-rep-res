@@ -56,7 +56,7 @@ background-size: cover
 
 ---
 
-background-image: url("images/linux.gif")
+background-image: url("figures/linux.gif")
 background-size: cover
 
 ---
@@ -79,7 +79,7 @@ class: inverse, center, middle
 ---
 class: inverse
 
-background-image: url("images/git_fuck.gif")
+background-image: url("figures/git_fuck.gif")
 background-size: contain
 
 ---
@@ -117,7 +117,7 @@ class: inverse, middle
 ???
 
 I want to make a point that linux wasn't designed to be user friendly
-Linus didn't give a toss about UI at all nor he really cared about other 
+Linus didn't give a toss about UI at all nor he really cared about other
 people's opinion
 
 https://news.ycombinator.com/item?id=18919599
@@ -173,6 +173,6 @@ background-size: contain
 ---
 class: inverse
 
-background-image: url("images/just_do_git.gif")
+background-image: url("figures/just_do_git.gif")
 background-size: contain
 
