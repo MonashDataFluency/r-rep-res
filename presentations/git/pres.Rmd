@@ -83,17 +83,6 @@ background-image: url("figures/git_fuck.gif")
 background-size: contain
 
 ---
-class: inverse
-
-background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2013/02/linus-eff-you-640x363.png)
-background-size: contain
-
----
-
-background-image: url(https://git-scm.com/images/logos/2color-lightbg@2x.png)
-background-size: contain
-
----
 class: inverse, middle
 
 # Git
@@ -122,6 +111,20 @@ people's opinion
 
 https://news.ycombinator.com/item?id=18919599
 
+---
+
+background-image: url(https://git-scm.com/images/logos/2color-lightbg@2x.png)
+background-size: contain
+
+---
+class: inverse
+
+background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2013/02/linus-eff-you-640x363.png)
+background-size: contain
+
+???
+
+Linus does care whethe you are going to like it or not
 ---
 class: inverse, center, middle
 
