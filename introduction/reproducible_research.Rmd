@@ -9,11 +9,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align="center")
 ```
 
 ## Today's Objectives
 
+* Introduction to writing and communicating research using Rmarkdown
 * use knitr, rmarkdown and bookdown R packages to build various document types including PDF, HTML and DOCX
 * work with git version control tool
 * create reproducible and “backed up” analysis via remote repositories (e.g github)
@@ -30,13 +31,13 @@ We're going to be teaching you how to use both internal and external software pa
 
 R + RStudio + Rmarkdown happens to be an ideal environment to work in but can also support other programming languages such as Python, Bash, SQL, etc.
 
-We're really only scratching the surface of what R/RStudio/Rmarkdown can do
+We're really only scratching the surface of what R/RStudio/Rmarkdown + Git can do
 
 ## Reproducibility Crisis
 
-<div align="center">
-<img src="images/reprod.png" width=500 height=500>
-</div>
+```{r, out.width="70%", out.height="70%"}
+knitr::include_graphics("images/reprod.png")
+```
 
 ## An Innocent Question
 
@@ -73,9 +74,9 @@ Researcher: can you please perform the analysis in this paper?
 
 Researcher: can you please perform the analysis in this paper?
 
-<div align="center">
-<img src="images/hark_meme.jpg" >
-</div>
+```{r}
+knitr::include_graphics("images/hark_meme.jpg")
+```
 
 > - I'm often performing an educated reconstruction of what I think went on in an paper.
 
@@ -84,6 +85,8 @@ Researcher: can you please perform the analysis in this paper?
 > - *Your experience may greatly vary depending on your field
 
 ## Things To Think About
+
+If you & another person are working together on an analysis, how do you ensure that changes are tracked between the two of you?
 
 How do you future-proof an analysis so that you can come back to it years and:
 
@@ -115,9 +118,9 @@ How do you future-proof an analysis so that you can come back to it years given 
 * Keep data & analysis in one place
 * Track changes to your analysis with version control
 
-<div align="center">
-<img src="images/version_control_1.png" width=350 height=350>
-</div>
+```{r, out.width="50%", out.width="50%"}
+knitr::include_graphics("images/version_control_1.png")
+```
 
 ## Open Reproducible Science
 
@@ -140,26 +143,25 @@ R - programming language for statistical computing and graphics
   * By design, R requires you to load your data in, what you do with the data is then written in code (R language)
 - Collaborative: share your data and analysis 
 
-<div align="center">
-<img src="images/r_logo.png" width=200 height=200>
-</div>
+```{r out.width="50%", out.width="50%"}
+knitr::include_graphics("images/r_logo.png")
+```
 
 ## Why Use R/Rmarkdown
 
 [Well developed ecosystem](https://www.rstudio.com/products/rpackages/) of software packages that expands base R for data analysis, project management, visualisation, document generation, etc
 
-<div align="center">
-<img src="images/r_env.png" width=400 height=400>
-</div>
+```{r out.width="50%", out.width="50%"}
+knitr::include_graphics("images/r_env.png")
+```
 
 ## R Ecosystem
 
 A small subset...
 
-<div align="center">
-<img src="images/R_ecosystem.png" width=600 height=450>
-</div>
-
+```{r out.width="70%", out.width="70%"}
+knitr::include_graphics("images/R_ecosystem.png")
+```
 
 ## What is Rmarkdown
 
@@ -167,9 +169,10 @@ The marriage between Markdown, a lightweight markup language and R, a programmin
 
 Rmarkdown is both an R package & a plain text file-type that allows you to embed R code chunks + plain text notes & images. 
 
-<div align="center">
-<img src="images/rmarkdown.png" width=300 height=300>
-</div>
+```{r out.width="40%", out.width="40%"}
+knitr::include_graphics("images/rmarkdown.png")
+```
+
 
 ---
 
@@ -204,4 +207,10 @@ Rmarkdown allows you to focus on generating content & doing your analysis withou
 * Attend this workshop again 
 * MBP & Data Fluency have a help session every Friday at Clayton 3pm
 * Data Fluency has a talk on the last Friday of the month
-* Data Fleuncy has a Slack channel where you can ask questions online - please join it 
+* Data Fluency has a Slack channel where you can ask questions online - please join it 
+
+## Today's Set-up
+
+Go to RStudio Cloud and create an account
+
+Do you have a GitHub account created?
