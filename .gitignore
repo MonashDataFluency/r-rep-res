@@ -1,4 +1,5 @@
 book/*.rds
+*.css
 /_book/
 /*.swp
 .Rproj.user
@@ -13,3 +14,5 @@ book/*.csv
 book/*.txt
 book/examples/libs
 book/examples/multi_page_report_files
+presentations/git/figures
+!presentations/git/figures/*.gif

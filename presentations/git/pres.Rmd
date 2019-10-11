@@ -154,6 +154,17 @@ class: inverse, middle
 * worth it
 
 ---
+
+background-image: url("figures/git_vs_filesystem.png")
+background-size: contain
+
+---
+class: inverse, middle
+
+background-image: url(http://www.companyfounder.com/wp-content/uploads/2017/07/You-are-in-control.png)
+background-size: cover
+
+---
 class: inverse, middle
 
 # There are alternatives to git
