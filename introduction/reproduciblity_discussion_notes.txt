@@ -1,0 +1,49 @@
+reproduciblity discussion notes:
+  
+Where do you store your raw data?
+
+Where do you store the files associated with your analysis?
+
+Do you keep track of what software version you are using?
+
+Does the analysis software allow you to save the analysis to a file or is it point and click?
+
+Point n click vs code based analysis
+
+Importance of recording which software versions used
+
+Keep your analysis in one place
+
+Backup your raw data - ALWAYS
+
+Can you rerun the analysis on the same data and get the same result as originally reported?
+
+Can someone else pick up your analysis and run it and get the same result as originally reported?
+
+Will the analysis work on new data?
+
+## Tips For Reproducible Analysis
+
+Before you start your analysis, think about how:
+
+If you & another person are working together on an analysis, how do you ensure that changes are tracked between the two of you?
+
+How do you future-proof an analysis so that you can come back to it years and:
+
+A) Rerun it and get the same original answer
+
+B) Understand why you did x, y and z in the analysis
+
+C) How easy is it to repeat the analysis on new data?*
+
+*This is verging on writing an R package and putting it out for the community's use but honestly - I'd be pretty happy if people just included the code that did the analysis in their paper rather than doing software development
+
+How do you future-proof an analysis so that you can come back to it years given that:
+
+* Future You isn't going to remember every step of an analysis: document your analysis
+* Software packages: updates, deprecation - will the tools you used now be available later?*
+* How easy is it to share your code/data for someone else** to run and duplicate the analysis
+
+*This is actually pretty important and we don't cover it in this workshop - R has the Packrat package to sorta address this but I'm not sure it's a complete solution
+**Someone else is often you two years from now
+Basically, try to be kind to future you and others
