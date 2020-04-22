@@ -1,0 +1,99 @@
+---
+title: "Root project directory"
+subtitle: "(internal structure for your root project directory)"
+#author: "Kirill Tsyganov"
+#institute: "Monash Bioinformatics Platform"
+#date: "11/10/2019 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(tidyverse)
+library(knitr)
+```
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, center, middle
+
+# Your view of your project organisation
+
+---
+
+background-image: url(https://assets.wired.com/photos/w_2000/wp-content/uploads/2016/10/Yankus_Three-Buildings-on-West-Tenth-Street_3.jpg)
+background-size: cover
+
+---
+
+class: inverse, center, middle
+
+# My view of your project organisation
+
+---
+
+background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Fbusy-street-in-new-york-city-picture-id134950978&f=1&nofb=1)
+background-size: cover
+
+---
+
+class: inverse, center, middle
+
+# Basically I have no hope finding Nemo
+
+---
+
+class: inverse, center, middle
+
+## But if I know that "root project directory" contain all information, I should be able to figure it out - maybe..?
+
+---
+
+background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F81%2F60%2F738160c22277b7f32c4b6f12101bdd60.jpg&f=1&nofb=1)
+background-size: cover
+
+---
+
+class: inverse, center, middle
+
+## Even if it looks like this ...
+
+---
+
+background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fwww.nicekicks.com%2Ffiles%2F2017%2F07%2Fextralarge.jpg%3Fresize%3D620%252C414&f=1&nofb=1)
+background-size: cover
+
+---
+
+class: inverse, center, middle
+
+## Better still to get some map of your directory layout
+
+---
+
+background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgeteasymove.com%2Fstorage%2Fphotos%2F1%2Fliving-room-size.jpg&f=1&nofb=1)
+background-size: cover
+
+---
+
+background-image: url(https://i0.wp.com/raw.githubusercontent.com/martinctc/blog/master/images/RPROJECT_2000dpi.png?w=456&ssl=1)
+background-size: contain
+
+---
+
+background-image: url(figures/rstudio-rproj2.png)
+background-size: contain
+
+---
+background-image: url(figures/rstudio-rproj3.png)
+background-size: contain

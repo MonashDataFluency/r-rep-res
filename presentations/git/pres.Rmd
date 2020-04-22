@@ -130,6 +130,10 @@ class: inverse, center, middle
 
 # Git repurposed for other areas
 
+```{r}
+print("Hey Rmarkdown!")
+```
+
 --
 
 ## e.g
