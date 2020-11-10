@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Reproducible Research in R</title>
-  <meta name="description" content="Reproducible Research in R" />
+  <title>Section 2 YAML header | Reproducible Research in R</title>
+  <meta name="description" content="Section 2 YAML header | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Reproducible Research in R" />
+  <meta property="og:title" content="Section 2 YAML header | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 2 YAML header | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="rmarkdown.html"/>
+<link rel="prev" href="rmarkdown.html"/>
+<link rel="next" href="r-code-chunks.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -209,182 +209,116 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Reproducible Research in R</h1>
-<p class="date"><em>2020-11-10</em></p>
+<div id="yaml-header" class="section level1" number="2">
+<h1><span class="header-section-number">Section 2</span> YAML header</h1>
+<p>YAML (yet another markup language) is a stand along language with it’s own file format, usually ending with <code>.yml</code>. We will come across files like <code>_site.yml</code>, <code>_output.yml</code> and <code>_bookdown.html</code> later in the book. However, we can also include YAML blob into our Rmarkdown file, at the very top of the <code>.Rmd</code> file.
+The YAML header enable higher degree of customisation for our final documents. It is via YAML header we can link to other external file such as bibliographies and styling sheets in the form of <a href="http://www.bibtex.org/Format/">BibTex</a> and <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">css</a> respectively.
+YAML has similarities to <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> in that it provides structured key value relationship, (sometimes keys can be called tags). Importantly YAML language, unlike json, is very sensitive to spaces and indentations.</p>
+<div id="introduction-1" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction</h2>
+<p>Thus far we have been relaying on some default setting to render Rmarkdown document, but we can add a lot more personality to our document via YAML configuration. For now we are going to be embedding YAML header into our document.</p>
+<p>YAML header must seat at the very top of the <code>.Rmd</code> file and be inclosed in triple dashes on either side e.g</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb16-1"><a href="yaml-header.html#cb16-1"></a><span class="pp">---</span></span>
+<span id="cb16-2"><a href="yaml-header.html#cb16-2"></a><span class="co"># header here</span></span>
+<span id="cb16-3"><a href="yaml-header.html#cb16-3"></a><span class="pp">---</span></span></code></pre></div>
+<p>Inside YAML header we can use <code>#</code> symbol to indicate a comment, those won’t have any effect on the document</p>
+<p>Typical structure of the YAML header is key, value pairs separated by a colon e.g</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb17-1"><a href="yaml-header.html#cb17-1"></a><span class="pp">---</span></span>
+<span id="cb17-2"><a href="yaml-header.html#cb17-2"></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
+<span id="cb17-3"><a href="yaml-header.html#cb17-3"></a><span class="pp">---</span></span></code></pre></div>
+<p>YAML is hierarchical and can have nested structure, key value pairs e.g</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb18-1"><a href="yaml-header.html#cb18-1"></a><span class="pp">---</span></span>
+<span id="cb18-2"><a href="yaml-header.html#cb18-2"></a><span class="fu">key1</span><span class="kw">:</span></span>
+<span id="cb18-3"><a href="yaml-header.html#cb18-3"></a><span class="at">  </span><span class="fu">value1</span><span class="kw">:</span></span>
+<span id="cb18-4"><a href="yaml-header.html#cb18-4"></a><span class="at">    </span><span class="fu">key1.1</span><span class="kw">:</span><span class="at"> value1.1</span></span>
+<span id="cb18-5"><a href="yaml-header.html#cb18-5"></a><span class="at">    </span><span class="fu">key1.2</span><span class="kw">:</span><span class="at"> value1.2</span></span>
+<span id="cb18-6"><a href="yaml-header.html#cb18-6"></a><span class="pp">---</span></span></code></pre></div>
+<p>Spaces (indentation) is very important to YAML header, so be sure to indent correct amount. Below are two examples of the valid YAML headers and one example of the invalid YAML header</p>
+<div id="example-1-correct-yaml" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Example 1 (Correct YAML)</h3>
+<p>This is a valid yaml header. In this example we have a key <code>title</code> with scalar value <code>Learning Rmarkdown</code></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb19-1"><a href="yaml-header.html#cb19-1"></a><span class="pp">---</span></span>
+<span id="cb19-2"><a href="yaml-header.html#cb19-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Learning Rmarkdown&quot;</span></span>
+<span id="cb19-3"><a href="yaml-header.html#cb19-3"></a><span class="pp">---</span></span></code></pre></div>
 </div>
-<div id="index" class="section level1 unnumbered" number="">
-<h1>Reproducible Research in R</h1>
-<blockquote>
+<div id="example-2-correct-yaml" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Example 2 (Correct YAML)</h3>
+<p>This is also valid YAML header. Here we have <code>rmd_files</code> key with list of values. We can specify a list value in two way</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb20-1"><a href="yaml-header.html#cb20-1"></a><span class="pp">---</span></span>
+<span id="cb20-2"><a href="yaml-header.html#cb20-2"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;00-index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;01-introduction.Rmd&quot;</span><span class="kw">]</span></span>
+<span id="cb20-3"><a href="yaml-header.html#cb20-3"></a><span class="pp">---</span></span></code></pre></div>
+<p>Alternatively</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb21-1"><a href="yaml-header.html#cb21-1"></a><span class="pp">---</span></span>
+<span id="cb21-2"><a href="yaml-header.html#cb21-2"></a><span class="fu">rmd_files</span><span class="kw">:</span></span>
+<span id="cb21-3"><a href="yaml-header.html#cb21-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> 00-index.Rmd</span></span>
+<span id="cb21-4"><a href="yaml-header.html#cb21-4"></a><span class="at">  </span><span class="kw">-</span><span class="at"> 01-introduction.Rmd</span></span>
+<span id="cb21-5"><a href="yaml-header.html#cb21-5"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="example-3-incorrect-yaml" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Example 3 (Incorrect YAML)</h3>
+<p>This on the other hand is incorrect YAML header because we are not specify a list values correctly</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb22-1"><a href="yaml-header.html#cb22-1"></a><span class="pp">---</span></span>
+<span id="cb22-2"><a href="yaml-header.html#cb22-2"></a><span class="fu">rmd_files</span><span class="kw">:</span></span>
+<span id="cb22-3"><a href="yaml-header.html#cb22-3"></a><span class="at">  00-index.Rmd</span></span>
+<span id="cb22-4"><a href="yaml-header.html#cb22-4"></a><span class="at">  01-introduction.Rmd</span></span>
+<span id="cb22-5"><a href="yaml-header.html#cb22-5"></a><span class="pp">---</span></span></code></pre></div>
+<p>— Alright, Let’s try it out!</p>
+</div>
+</div>
+<div id="title-date-and-author-keys" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Title, date and author keys</h2>
+<p>Let’s add our first YAML header to the top of our document. Let’s include the title of the document, author name i.e yourself and date. <strong>Note</strong> a nice trick of including inline <code>R</code> code inside the YAML header.</p>
+<p>Press <code>Knit</code> button to render the document</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb23-1"><a href="yaml-header.html#cb23-1"></a><span class="pp">---</span></span>
+<span id="cb23-2"><a href="yaml-header.html#cb23-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Rmarkdown&quot;</span></span>
+<span id="cb23-3"><a href="yaml-header.html#cb23-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Kirill&quot;</span></span>
+<span id="cb23-4"><a href="yaml-header.html#cb23-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2020-11-10&quot;</span></span>
+<span id="cb23-5"><a href="yaml-header.html#cb23-5"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="output-key" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Output key</h2>
+<p>Output is one of the central keys in Rmarkdown ecosystem, arguably. The final results directly depends on the value you are going to use for that key.</p>
+<p>Rmarkdown package can output several document types, each has various ke, value pairs a.k.a options of flags, refere to the documentation page for more information prefixing function name a <code>?</code>. Here are most common document types:</p>
 <ul>
-<li>Level: beginner-intermediate</li>
-<li>Duration: 6 hours</li>
-<li>Student numbers: 25-30</li>
+<li><code>rmarkdown::html_document</code></li>
+<li><code>rmarkdown::ioslides_presentation</code></li>
+<li><code>rmarkdown::word_document</code></li>
 </ul>
-</blockquote>
-<p>Welcome to the <a href="https://github.com/MonashDataFluency/r-rep-res">Reproducible Research in R (RRR)</a> workshop. The main aim of this workshop is to set you on the right path of making your research more reproducible and shariable. Reproducible research means that future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables. Reproducible research also implies well-documented research, your code should be well commented and the reasons behind functions and methods should be explained thoroughly throughout the analysis. The communication aspect should not be an afterthought, it should be recorded with your analysis as you are going through it. Rmarkdown is a way of <a href="http://www.literateprogramming.com/knuthweb.pdf">literate programing</a> that keeps code, words and sentences together. The ability to easily collaborate and share your analysis goes hand-in-hand with good record-keeping and reproducibility. We are going to repurpose the git version control tool and leverage the GitHub remote hosting provider for managing and sharing our work. Git + GitHub will provide a very powerful resource for global collaboration and exposure of your work. In this workshop, we are going to version control our work and push it to github, which can then be accessed by your collaborators and supervisors. Git + GitHub should become an integral part of your workflow.</p>
-<p>The RRR course given by the <a href="https://www.monash.edu/researchinfrastructure/bioinformatics">Monash Bioinformatics Platform</a> for the <a href="https://monashdatafluency.github.io/">Monash Data Fluency</a> initiative. Our teaching style is based on the style of <a href="https://carpentries.org/">The Carpentries</a>.</p>
-<div id="learning-outcomes" class="section level2 unnumbered" number="">
-<h2>Learning outcomes</h2>
-<p>Attendees will learn how to:</p>
-<ul>
-<li>write vanilla markdown, Rmarkdown and bookdown documents</li>
-<li>use <code>knitr</code>, <code>rmarkdown</code> and <code>bookdown</code> R packages to build various document types including PDF, HTML and DOCX</li>
-<li>create reproducible Rmarkdown documents leveraging <code>.Rproj</code> and <code>.RData</code></li>
-<li>include in-line citation and full references list in to Rmarkdown document using <code>.bib</code> files</li>
-<li>create presentations from Rmarkdown documents that include R code</li>
-<li>work with <code>git</code> version control tool</li>
-<li>create reproducible and “backed up” analysis via remote repositories (e.g github)</li>
-</ul>
+<p>Let’s try out <code>html_document</code> output type by including it into our YAML header and press <code>Knit</code></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb24-1"><a href="yaml-header.html#cb24-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span></code></pre></div>
+<p>If you don’t see much difference after including <code>html_document</code> this is because it is the default output. Now, however, we have means to further configurate our <em>html</em> document.</p>
 </div>
-<div id="workshop-description" class="section level2 unnumbered" number="">
-<h2>Workshop description</h2>
-<p>This workshop is an introduction to writing and communicating research using Rmarkdown. Rmarkdown is an easy way to create documents that include your R code and its output, such figure and tables. Rmarkdown is a single document that can be “knitted” and shared as various document types such as PDF and HTML. Rmarkdown supports scientific writing such as use of citations and figure cross-referencing. Rmarkdown can also be used to create presentations that include your R code and its output. We will also cover bookdown, which is an extension to Rmarkdown that allows the creation of larger documents, such as books with multiple chapters.</p>
-<p>In this workshop, we will also cover <a href="https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control">git version control tool</a> which can help with organising and “checkpointing” Rmarkdown documents, associated R code and data. Git is not a backup system, but it does allow one to retrieve older versions of your work. Git, together with remote repositories like <a href="https://github.com">GitHub</a> can provide a centralised location for your research. Together Rmarkdown, git and github can enable reproducible research that is visible and accessible to the greater public, including supervisors and management.</p>
+<div id="configuring-output-document" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Configuring output document</h2>
+<p>We will learn a bit later how to get information about all possible key, value pairs for any given document type, for now let’s just explores these few. Let’s add <code>toc</code> and <code>theme</code> keys to our YAML header and press <code>Knit</code></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb25-1"><a href="yaml-header.html#cb25-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb25-2"><a href="yaml-header.html#cb25-2"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb25-3"><a href="yaml-header.html#cb25-3"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb25-4"><a href="yaml-header.html#cb25-4"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> readable</span></span></code></pre></div>
+<p>— This looks great!</p>
 </div>
-<div id="prerequisite" class="section level2 unnumbered" number="">
-<h2>Prerequisite</h2>
-<p>This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recommended that you read <a href="https://peerj.com/preprints/3159/">this article in full</a>, if you have to prioritise, read at least these section (1,2,6,10).
-Additionally, it is highly recommended that you create an account at <a href="htts://github.com">GitHub</a> and remember your password.</p>
-</div>
-<div id="keywords" class="section level2 unnumbered" number="">
-<h2>Keywords</h2>
-<ul>
-<li>R</li>
-<li>Rmarkdown</li>
-<li>communication</li>
-<li>reproducibility</li>
-<li>git and github</li>
-</ul>
-</div>
-<div id="schedule" class="section level2 unnumbered" number="">
-<h2>Schedule</h2>
-<details>
-<p><summary>
-10:00-10:30am (30 minutes) Welcome and warm up
-</summary></p>
-<pre><code>  \( ﾟヮﾟ)/</code></pre>
-</details>
-<details>
-<p><summary>
-10:30-12:00pm (1.5 hours) Rmarkdown
-</summary></p>
-<ul>
-<li>Introduction (30 minutes)</li>
-<li>Vanilla markdown (30 minutes)</li>
-<li>Rmarkdown (30 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-12:00-1:00pm (1 hour) lunch
-</summary></p>
-<pre>
-
-                     __
-                    /
-                 .-/-.
-                 |'-'|
-                 |   |
-                 |   |   .-""""-.
-                 \___/  /' .  '. \   \|/\//
-                       (`-..:...-')  |`""`|
-                        ;-......-;   |    |
-                         '------'    \____/
-
-</pre>
-</details>
-<details>
-<p><summary>
-1:00-3:00pm (2 hours) More Rmarkdown
-</summary></p>
-<ul>
-<li>Git and GitHub markdown (40 minutes)</li>
-<li>More Rmarkdown (40 minutes)</li>
-<li>YAML header (40 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-3:00-3:15pm (15 minutes) Tea break
-</summary></p>
-<pre>
-                     (  )  (   )  )
-                     ) (   )  (  (
-                     ( )  (    ) )
-                     _____________
-                    <_____________> ___
-                    |             |/ _ \
-                    |               | | |
-                    |               |_| |
-                 ___|             |\___/
-                /    \___________/    \
-                \_____________________/
-</pre>
-</details>
-<details>
-<p><summary>
-3:15-4:45pm (1.5 hours) Even more Rmarkdown
-</summary></p>
-<ul>
-<li>Bibliographies (30 minutes)</li>
-<li>Bookdown (30 minutes)</li>
-<li>Miscellaneous (30 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-4:45-5:00pm (15 minutes) Warm down
-</summary></p>
-<pre>
-
-                                          (
-
-                *                           )   *
-                              )     *      (
-                    )        (                   (
-                   (          )     (             )
-                    )    *           )        )  (
-                   (                (        (      *
-                    )          H     )        )
-                              [ ]            (
-                       (  *   |-|       *     )    (
-                 *      )     |_|        .          )
-                       (      | |    .
-                 )           /   \     .    ' .        *
-                (           |_____|  '  .    .
-                 )          | ___ |  \~~~/  ' .   (
-                        *   | \ / |   \_/  \~~~/   )
-                            | _Y_ |    |    \_/   (
-                *           |-----|  __|__   |      *
-                            `-----`        __|__
-
-</pre>
-</details>
-</div>
-<div id="authors-and-copyright" class="section level2 unnumbered" number="">
-<h2>Authors and copyright</h2>
-<p>This course is developed for the Monash Bioinformatics Platform by:</p>
-<ul>
-<li><a href="mailto:paul.harrison@monash.edu">Paul Harrison</a></li>
-<li><a href="mailto:Adele.Barugahare@monash.edu">Adele Barugahare</a></li>
-<li><a href="mailto:kirill.tsyganov@monash.edu">Kirill Tsyganov</a></li>
-</ul>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY-4: Creative Commons Attribution 4.0 International License</a>. The attribution is “Monash Bioinformatics Platform” if copying or modifying these notes.</p>
-<p><img src="figures/CC-BY.png" width="44" /></p>
+<div id="final-look-1" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Final look</h2>
+<p>Just in case you’ve got lost, this is how our first section should look like</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb26-1"><a href="yaml-header.html#cb26-1"></a><span class="pp">---</span></span>
+<span id="cb26-2"><a href="yaml-header.html#cb26-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Rmarkdown&quot;</span></span>
+<span id="cb26-3"><a href="yaml-header.html#cb26-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Kirill&quot;</span></span>
+<span id="cb26-4"><a href="yaml-header.html#cb26-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2020-11-10&quot;</span></span>
+<span id="cb26-5"><a href="yaml-header.html#cb26-5"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb26-6"><a href="yaml-header.html#cb26-6"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb26-7"><a href="yaml-header.html#cb26-7"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb26-8"><a href="yaml-header.html#cb26-8"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> readable</span></span>
+<span id="cb26-9"><a href="yaml-header.html#cb26-9"></a><span class="pp">---</span></span></code></pre></div>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="rmarkdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rmarkdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-code-chunks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -416,7 +350,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/index.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/02-yaml-header.Rmd",
 "text": "Edit"
 },
 "history": {
