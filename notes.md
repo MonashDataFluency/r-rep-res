@@ -3,6 +3,19 @@ author: serine
 timestamp: 2019.05.13_23:20:48_AEST
 ---
 
+## 20.04.2020
+
+- start with Git presentation
+- do the first challenge - 5 minutes, how do people organise they directory / projects structure? Best way is to keep everything under a set directory, maybe use google drive to illustrate the point?
+I should give people some example of the "stuff" that we will be putting into those directories e.g raw-data/fastq_files, references/reference_files, scripts/some_R_scrripts.R supplementary, notes.. most important file of all - which is it? ->> README.md !! name says it all. Other typical files that you could have, perhaps briefly mention https://github.com/bionitio-team/bionitio? , probably not actually, this is for R packages more so.. make my own?
+
+## What is Rproj?
+
+What is R project?
+
+> RStudio projects make it straightforward to divide your work into multiple contexts, each with their own working directory, workspace, history, and source documents.
+
+
 # Reproducible research in R
 
 > RRR
@@ -62,3 +75,42 @@ timestamp: 2019.05.13_23:20:48_AEST
 
 - learning outcome
 - course description
+
+## todo
+
+- explain sections linking via [this is todo](#todo) and all spaces replaced with hiphen (`-`). this way I can use that in github section (04)
+- In the github intro section don't forget to include "gh-page" enabling. That it is out of the way
+
+## Things covered
+
+- working with images, `knitr::include_graphics()`
+- code externalization, `read_chunk()`
+
+## Mention
+
+- [thesisdown](https://github.com/ismayc/thesisdown)
+- blogdown (on the back of hugo)
+
+This message came up when I was using R from the terminal
+
+```
+Warning message:
+Auto-saved workspace file '.RData' detected. This is bad for reproducible code. You can remove it with unlink(".RData"). To avoid generating '.RData' files, start your session with 'R --no-save'or disable the saving of workspace images in the RStudio IDE settings.
+```
+
+## rant
+
+when you are opening rstudio and Rmarkdown file for the first time you'll need to install some packages, that step should be done at the introduction stage
+
+Here I want to rank about Rstudio being shit for git+github workflow, could/should turn this into a blogpost mainly so that other don't spend so much time figuring this out
+
+https://happygitwithr.com/ssh-keys.html
+
+https://github.com/rstudio/rstudio/issues/3805
+
+https://github.com/search?q=org%3Arstudio+rpostback-askpass&type=Code
+
+https://github.com/ropensci/git2r/issues/284
+https://github.com/OHI-Science/ohicore/issues/104
+
+https://stackoverflow.com/questions/32699891/rstudio-push-rpostback-askpass-error
