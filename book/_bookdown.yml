@@ -1,22 +1,17 @@
+book_filename: "Reproducible Research in R"
+output_dir: "../_book"
 repo: https://github.com/MonashDataFluency/r-rep-res/
 rmd_files:
-  - 00-index.Rmd
-  # 1.5 hours
+  - index.Rmd
   - 01-introduction.Rmd
-  - 02-markdown.Rmd
-  - 03-rmarkdown.Rmd
-  # 2 hours
-  - 04-git-intro.Rmd
-  - 05-more-rmarkdown.Rmd
-  - 06-yaml-header.Rmd
-  # 1.5 hours
-  - 07-bibliography.Rmd
-  - 08-bookdown.Rmd
-  - 09-misc.Rmd
-  - 99-references.Rmd
-  - 99-appendix.Rmd
-
+  - 02-yaml-header.Rmd
+  - 03-code-chunks.Rmd
+  - 04-extras.Rmd
+language:
+  label:
+    fig: "FIGURE "
+    tab: "TABLE "
+  ui:
+    chapter_name: "Section "
 new_session: false # https://bookdown.org/yihui/bookdown/new-session.html
-output_dir: "../_book"
-book_filename: "Reproducible Research in R"
 delete_merged_file: true

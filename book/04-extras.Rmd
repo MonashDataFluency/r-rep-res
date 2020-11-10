@@ -1,0 +1,213 @@
+# Extras
+
+So far you have learned the core set of features and knowledge that sets you up for recording your work in reproducible manner. We will show next a couple of useful tweaks that you can do to your document that might help in organising and presenting your work. In addition we will practice generating other document types.
+
+## Code folding
+
+We haven't talked a lot about `eval` and `echo` chunk options. You can both of them in combination to present relevant bit of information to the audience. For example some might be interested in the code, others in the results or maybe both. We will let you play with various combination of those options at your own time. Instead we are going to add another tags (key value pair) to our YAML header, `code_folding`. This belong to `html_document` and should be indented appropriately.
+
+Let's set it to `hide` and added to our header and press `Knit`
+
+```yaml
+code_folding: "hide"
+```
+
+overall it should have the following structure
+
+```yaml
+output:
+  html_document:
+    code_folding: "hide"
+```
+
+--- This looks neat !
+
+## Presentation slides (ioslides)
+
+Now that we have done all of the hard work of getting, wrangling and plotting the data, let's present it to others. 
+
+1. Make a copy of your original document
+
+_This isn't strictly needed, but most likely you will want to adjust things a little for your presentation, so let's make a copy by running the following command_
+
+```{r, eval = F}
+file.copy("learning.Rmd", "presenting.Rmd")
+```
+
+Alternatively use "Files" tab in one of your panes, under "More" dropdown menu select "copy" and type in `presenting.Rmd` name
+
+
+2. Change output type in YAML header
+
+Let's change our output type to `ioslides_presentation` and add a couple of useful tags
+
+```yaml
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+```
+
+3. Press `Knit` to render
+
+--- Ripper !
+
+## ioslides features
+
+Keyboard shortcuts:
+
+- `f`: enable fullscreen mode
+- `w`: toggle widescreen mode
+- `o`: enable overview mode
+- `p`: show presenter notes
+- `Esc` key: to exits
+
+Syntax to add presentor notes to the slide
+
+```html
+<div class="notes">
+This is my *note*.
+
+- It can contain markdown
+- like this list
+</div>
+```
+
+--- `:)`
+
+## Tabs
+
+Alternative to section can be tabs, in fact two can happily co-exist. To create tabs we need to use `{.tabset}` addition to the header e.g 
+
+```markdown
+# Header 1 {.tabset}
+```
+
+This will make all subsection of the next level to become tabs. That is level 2 headers will become tabs, but level three will remain inside the corresponding tab.
+
+Let's switch to our original document, `learning.Rmd` and try this out by adding `{.tabset}` to two of our first level header, `Introduction` and `R code` and press `Knit`
+
+```markdown
+# Introduction {.tabset}
+
+...
+
+# R code {.tabset}
+
+...
+```
+
+This look ok, but not the effect that I desired, instead what I wanted is to have two tabs, one for each of the main section. In order to get that results we will need to create new first level header and adjust levels of all other headers to the next deepest
+
+In additional I would set `toc` to false, `toc: false`, since table of content doesn't have a purpose anymore
+
+### Final look
+
+````markdown
+---
+title: "Rmarkdown"
+author: "Kirill"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: false
+    theme: readable
+    code_folding: "hide"
+---
+
+# TL;DR {.tabset}
+
+[place holder]()
+
+## Introduction
+
+> outcome:
+
+- learn how to create and share Rmarkdown document 
+- learn various document type, e.g html, pdf and docx
+- ~~learn to fly the rocket!~~
+
+
+The bottom line is - I would like to learn Rmarkdown!
+<br>
+Like **seriously** become **good** at it !
+
+### Task list for today
+
+- [X] Get aspired to learn Rmarkdown
+- [ ] Get to know three core components of the Rmarkdown document (header, body, R chunks)
+- [ ] Practice, practice !
+
+### Code
+
+You can use single backtick on each side of the code for inline code or triple backticks for standalone code block 
+
+`r ''````bash
+#!/bin/bash
+
+echo "Why am I doing BASH in this course?"
+
+Rscript --vanilla run_away.R
+`r ''````
+
+### Math
+
+This is a covariance equation, random variable $X$ co-variace with random variable $Y$, where $\bar{X} = mean(X)$ and $\bar{Y} = mean(Y)$ and $N$ is a size of a random sample from the population.
+
+$$cov(X,Y) = \frac{\sum(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{N-1}$$
+[for more LaxTex syntax here](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+
+### Images
+
+![](https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png){width=50%}
+
+## R code
+
+`r ''````{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+
+library(magrittr)
+library(dplyr)
+library(DT)
+library(ggplot2)
+`r ''````
+
+### Getting and wrangling the data
+
+`r ''````{r get_data}
+
+make_url <- function(package) {
+  paste0('<a href="https://cran.r-project.org/web/packages/', package, '">', package, '</a>')
+}
+
+library(magrittr)
+library(dplyr)
+
+avail_packages <- available.packages(contriburl = contrib.url("https://mirror.aarnet.edu.au/pub/CRAN/")) %>%
+                    as.data.frame() %>% 
+                    as.data.frame() %>% 
+                    as_tibble() %>% 
+                    rowwise() %>% 
+                    mutate(Depend = length(unlist(strsplit(Imports, split = ",")))) %>% 
+                    ungroup() %>% 
+                    select(Package, Version, Depend, Imports, License) %>% 
+                    mutate(Package = make_url(Package),
+                           Depend = ifelse(is.na(Imports), -1, Depend)) 
+`r ''````
+
+### Displaying table
+
+`r ''````{r make_table, message=FALSE, warning=FALSE}
+library(DT)
+avail_packages %>% datatable(escape = FALSE)
+`r ''````
+
+### Plot the data
+
+`r ''````{r plot}
+library(ggplot2)
+avail_packages %>% ggplot(aes(Depend)) + geom_bar()
+`r ''````
+````

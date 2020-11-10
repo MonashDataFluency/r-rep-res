@@ -1,0 +1,146 @@
+# YAML header
+
+YAML (yet another markup language) is a stand along language with it's own file format, usually ending with `.yml`. We will come across files like `_site.yml`, `_output.yml` and `_bookdown.html` later in the book. However, we can also include YAML blob into our Rmarkdown file, at the very top of the `.Rmd` file.
+The YAML header enable higher degree of customisation for our final documents. It is via YAML header we can link to other external file such as bibliographies and styling sheets in the form of [BibTex](http://www.bibtex.org/Format/) and [css](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) respectively.
+YAML has similarities to [JSON](https://en.wikipedia.org/wiki/JSON) in that it provides structured key value relationship, (sometimes keys can be called tags). Importantly YAML language, unlike json, is very sensitive to spaces and indentations. 
+
+## Introduction
+
+Thus far we have been relaying on some default setting to render Rmarkdown document, but we can add a lot more personality to our document via YAML configuration. For now we are going to be embedding YAML header into our document.
+
+YAML header must seat at the very top of the `.Rmd` file and be inclosed in triple dashes on either side e.g
+
+```yaml
+---
+# header here
+---
+```
+
+Inside YAML header we can use `#` symbol to indicate a comment, those won't have any effect on the document
+
+Typical structure of the YAML header is key, value pairs separated by a colon e.g 
+
+```yaml
+---
+key: value
+---
+```
+
+YAML is hierarchical and can have nested structure, key value pairs e.g
+
+```yaml
+---
+key1:
+  value1:
+    key1.1: value1.1
+    key1.2: value1.2
+---
+```
+
+Spaces (indentation) is very important to YAML header, so be sure to indent correct amount. Below are two examples of the valid YAML headers and one example of the invalid YAML header
+
+### Example 1 (Correct YAML)
+
+This is a valid yaml header. In this example we have a key `title` with scalar value `Learning Rmarkdown`
+
+```yaml
+---
+title: "Learning Rmarkdown"
+---
+```
+
+### Example 2 (Correct YAML)
+
+This is also valid YAML header. Here we have `rmd_files` key with list of values. We can specify a list value in two way
+
+```yaml
+---
+rmd_files: ["00-index.Rmd", "01-introduction.Rmd"]
+---
+```
+
+Alternatively
+
+```yaml
+---
+rmd_files:
+  - 00-index.Rmd
+  - 01-introduction.Rmd
+---
+```
+
+
+### Example 3 (Incorrect YAML)
+
+This on the other hand is incorrect YAML header because we are not specify a list values correctly
+
+```yaml
+---
+rmd_files:
+  00-index.Rmd
+  01-introduction.Rmd
+---
+```
+
+--- Alright, Let's try it out!
+
+## Title, date and author keys
+
+Let's add our first YAML header to the top of our document. Let's include the title of the document, author name i.e yourself and date. **Note** a nice trick of including inline `R` code inside the YAML header.
+
+Press `Knit` button to render the document
+
+```yaml
+---
+title: "Rmarkdown"
+author: "Kirill"
+date: "`r Sys.Date()`"
+---
+````
+
+## Output key
+
+Output is one of the central keys in Rmarkdown ecosystem, arguably. The final results directly depends on the value you are going to use for that key.
+
+Rmarkdown package can output several document types, each has various ke, value pairs a.k.a options of flags, refere to the documentation page for more information prefixing function name a `?`. Here are most common document types:
+
+- `rmarkdown::html_document`
+- `rmarkdown::ioslides_presentation`
+- `rmarkdown::word_document`
+
+Let's try out `html_document` output type by including it into our YAML header and press `Knit`
+
+```yaml
+output: html_document
+```
+
+If you don't see much difference after including `html_document` this is because it is the default output. Now, however, we have means to further configurate our _html_ document.
+
+## Configuring output document
+
+We will learn a bit later how to get information about all possible key, value pairs for any given document type, for now let's just explores these few. Let's add `toc` and `theme` keys to our YAML header and press `Knit`
+
+```yaml
+output:
+  html_document:
+    toc: true
+    theme: readable
+```
+
+--- This looks great!
+
+## Final look
+
+Just in case you've got lost, this is how our first section should look like
+
+```yaml
+---
+title: "Rmarkdown"
+author: "Kirill"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    theme: readable
+---
+```

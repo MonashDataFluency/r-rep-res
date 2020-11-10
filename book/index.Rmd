@@ -1,7 +1,8 @@
 ---
 title: Reproducible Research in R
 date: "`r Sys.Date()`"
-documentclass: book
+site: bookdown::bookdown_site
+#documentclass: book
 links-as-notes: yes
 github-repo: "MonashDataFluency/r-rep-res"
 bibliography: "supplementary/bibliographies.bib"
