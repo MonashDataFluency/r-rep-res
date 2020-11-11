@@ -1,4 +1,4 @@
-# (PART) Beginning {-}
+# (PART) Rmarkdown from scratch {-}
 
 # Rmarkdown
 
@@ -6,7 +6,13 @@ In the first part of the book we will discuss origins and the ecosystem of Rmark
 
 ## Introduction
 
-Let's begin with opening a plain text file by either executing the following command
+Let's begin with install `rmarkdown` package using the following command
+
+```{r eval = F}
+install.packages("rmarkdown")
+```
+
+Once we have the package installed, let's open a plain text file by either executing the following command
 
 ```{r, eval = FALSE}
 file.edit("learning.Rmd")

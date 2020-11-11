@@ -7,9 +7,12 @@ rmd_files:
   - 02-yaml-header.Rmd
   - 03-code-chunks.Rmd
   - 04-extras.Rmd
+  - 05-git1.Rmd
+  - 06-github.Rmd
+  - 07-git2.Rmd
 language:
   label:
-    fig: "FIGURE "
+    fig: "Figure "
     tab: "TABLE "
   ui:
     chapter_name: "Section "
