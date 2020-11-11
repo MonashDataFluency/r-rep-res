@@ -227,23 +227,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="git-part-one" class="section level1" number="5">
 <h1><span class="header-section-number">Section 5</span> Git (part one)</h1>
-<p>In this part one section of the book we will show you how to work with git on your local compute, without any regard to the external (remote) place such as GitHub. <a href="git-two.html#git-two">In part two</a> we will show how to work with external (remote) repositories hosted at GitHub</p>
+<p>In the part one section of the book we will show you how to work with git on your local compute, without any regard to the external (remote) place such as GitHub. <a href="git-two.html#git-two">In part two</a> we will show you how to work with external (remote) repositories hosted at GitHub</p>
 <div id="introduction-3" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introduction</h2>
 <p><a href="https://git-scm.com/doc">Git</a> is a version control tool, one of many tools, but it is very popular. Git was designed for <strong>tracking versions</strong> of software development, but it has been re-purpose for doing general tracking of text and data i.e scientific research.</p>
-<p>Below is an illustration of the differences between do-it-yourself (DIY) version control system, which may be great, and git version control. DIY version control systems are great with two caveats:</p>
+<p>Below is an illustration of the differences between do-it-yourself (DIY) version control system, and git version control. DIY version control systems are great with two caveats:</p>
 <ul>
 <li>no one else will understand it</li>
 <li>the future you will forget the awesome schema that you have invented</li>
 </ul>
-<p>(ref:git_vs_filesystem) This is an example of git version control vs DIY versioning via filesystem</p>
-<div class="figure" style="text-align: left">
-<img src="figures/git_vs_filesystem.png" alt="(ref:git_vs_filesystem)" width="100%" />
+
+<div class="figure" style="text-align: left"><span id="fig:git-vs-filesystem"></span>
+<img src="figures/git_vs_filesystem.png" alt="This is an example of git version control vs DIY versioning via filesystem" width="100%" />
 <p class="caption">
-(#fig:git_vs_filesystem)(ref:git_vs_filesystem)
+Figure 5.1: This is an example of git version control vs DIY versioning via filesystem
 </p>
 </div>
-<p>We are not going to dwell on git all that much, there are much better resources for that, like <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>. But we will learn a handful of git commands just to do bear minimum.</p>
+<p>We are not going to dwell on git long, there are much better resources for that, like <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>. But we will learn a handful of git commands just enough for us to track and share our research.</p>
 </div>
 <div id="git-init" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Git init</h2>
@@ -270,12 +270,12 @@ Version control system: git</code></pre>
 <li><code>presenting.Rmd</code></li>
 <li><code>presenting.html</code></li>
 </ul>
-<p>A new dialog should pop up, you should see this window <a href="git-part-one.html#fig:git1">5.1</a></p>
+<p>A new dialog should pop up, you should see this window <a href="git-part-one.html#fig:git1">5.2</a></p>
 
 <div class="figure" style="text-align: left"><span id="fig:git1"></span>
 <img src="figures/git1.png" alt="RStudio pop up dialog for git commit and other git related work" width="100%" />
 <p class="caption">
-Figure 5.1: RStudio pop up dialog for git commit and other git related work
+Figure 5.2: RStudio pop up dialog for git commit and other git related work
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
@@ -287,19 +287,19 @@ Figure 5.1: RStudio pop up dialog for git commit and other git related work
 <div class="figure" style="text-align: left"><span id="fig:git2"></span>
 <img src="figures/git2.png" alt="RStudio pop up dialog for git commit and other git related work with commit message" width="100%" />
 <p class="caption">
-Figure 5.2: RStudio pop up dialog for git commit and other git related work with commit message
+Figure 5.3: RStudio pop up dialog for git commit and other git related work with commit message
 </p>
 </div>
 <p>— happy days!</p>
 </div>
 <div id="git-username-and-useremail" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Git username and useremail</h2>
-<p>When you are using git for very first time on a new compute you will need to set up your username and email. Typically this is one off operation and almost always forgot about. But git will always remind you about that with the following message <a href="git-part-one.html#fig:git3">5.3</a></p>
+<p>When you are using git for very first time on a new compute you will need to set up your username and email. Typically this is one off operation and almost always forgot about. But git will always remind you about that with the following message <a href="git-part-one.html#fig:git3">5.4</a></p>
 
 <div class="figure" style="text-align: left"><span id="fig:git3"></span>
 <img src="figures/git3.png" alt="RStudio pop up dialog showing additional step needs doing before using git" width="100%" />
 <p class="caption">
-Figure 5.3: RStudio pop up dialog showing additional step needs doing before using git
+Figure 5.4: RStudio pop up dialog showing additional step needs doing before using git
 </p>
 </div>
 <p>Let’s execute the following two commands in R console pane, as suggested by the message. Note if you don’t use <code>--global</code> flag, then every new git repository will need those two commands (personal preference really).</p>
