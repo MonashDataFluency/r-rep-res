@@ -4,24 +4,24 @@ Git, GitHub and RStudio projects are three independent things; a tool, a place a
 
 # Git (part one)
 
-In this part one section of the book we will show you how to work with git on your local compute, without any regard to the external (remote) place such as GitHub. [In part two](#git-two) we will show how to work with external (remote) repositories hosted at GitHub
+In the part one section of the book we will show you how to work with git on your local compute, without any regard to the external (remote) place such as GitHub. [In part two](#git-two) we will show you how to work with external (remote) repositories hosted at GitHub
 
 ## Introduction
 
 [Git](https://git-scm.com/doc) is a version control tool, one of many tools, but it is very popular. Git was designed for **tracking versions** of software development, but it has been re-purpose for doing general tracking of text and data i.e scientific research.
 
-Below is an illustration of the differences between do-it-yourself (DIY) version control system, which may be great, and git version control. DIY version control systems are great with two caveats:
+Below is an illustration of the differences between do-it-yourself (DIY) version control system, and git version control. DIY version control systems are great with two caveats:
 
 - no one else will understand it
 - the future you will forget the awesome schema that you have invented
 
-(ref:git_vs_filesystem) This is an example of git version control vs DIY versioning via filesystem
+(ref:git-vs-filesystem) This is an example of git version control vs DIY versioning via filesystem
 
-```{r git_vs_filesystem, echo=F, out.width="100%", fig.align="left", fig.cap='(ref:git_vs_filesystem)'}
+```{r git-vs-filesystem, echo=F, out.width="100%", fig.align="left", fig.cap='(ref:git-vs-filesystem)'}
 knitr::include_graphics("figures/git_vs_filesystem.png")
 ```
 
-We are not going to dwell on git all that much, there are much better resources for that, like [Happy Git and GitHub for the useR](https://happygitwithr.com/). But we will learn a handful of git commands just to do bear minimum.
+We are not going to dwell on git long, there are much better resources for that, like [Happy Git and GitHub for the useR](https://happygitwithr.com/). But we will learn a handful of git commands just enough for us to track and share our research.
 
 ## Git init {#git-init}
 
