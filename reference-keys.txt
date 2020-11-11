@@ -1,3 +1,9 @@
+fig:git1
+fig:git2
+fig:git3
+fig:github1
+fig:github2
+fig:github3
 rmarkdown
 introduction
 rstudio-tweaks
@@ -32,3 +38,14 @@ presentation-slides-ioslides
 ioslides-features
 tabs
 final-look-3
+git-part-one
+introduction-3
+git-init
+git-commit
+git-username-and-useremail
+github
+introduction-4
+new-repository
+repository-address-git-remote
+linking-git-with-github
+git-two

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Reproducible Research in R</title>
-  <meta name="description" content="Reproducible Research in R" />
+  <title>Section 6 GitHub | Reproducible Research in R</title>
+  <meta name="description" content="Section 6 GitHub | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Reproducible Research in R" />
+  <meta property="og:title" content="Section 6 GitHub | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 6 GitHub | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="rmarkdown.html"/>
+<link rel="prev" href="git-part-one.html"/>
+<link rel="next" href="git-two.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -225,182 +225,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Reproducible Research in R</h1>
-<p class="date"><em>2020-11-11</em></p>
+<div id="github" class="section level1" number="6">
+<h1><span class="header-section-number">Section 6</span> GitHub</h1>
+<p>In this part of the book we will introduce <a href="https://github.com">GitHub</a>, which is one of several places you can host - store and display your project files. GitHub can only work with git tool, hence the name. However there are other vendors that are a more tools agnostic</p>
+<div id="introduction-4" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>GitHub has been around for more than 10 years. The original, and the most dominant still, purpose is store software source code in public. By putting your code on display gave at least two important benefits:</p>
+<ol style="list-style-type: decimal">
+<li>“free” and easy code oversight: sanity and bugs checks</li>
+<li>ease of collaboration: take a copy and play with it, PR (pull request) later</li>
+</ol>
+<p>GitHub platform has become indispensable to the software industry.</p>
+<p>There is some lingo that is associated with GitHub, the most central one is “repository” or “repo” for short. That simply refer to a folder (a.k.a directory) on your computer that had git initiated as per <a href="git-part-one.html#git-init">Git init</a> section. Your GitHub account can have any any number of repos, each one of them is a distinct project.</p>
 </div>
-<div id="index" class="section level1 unnumbered" number="">
-<h1>Reproducible Research in R</h1>
+<div id="new-repository" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> New repository</h2>
 <blockquote>
-<ul>
-<li>Level: beginner-intermediate</li>
-<li>Duration: 6 hours</li>
-<li>Student numbers: 25-30</li>
-</ul>
+<p>Prerequisite: Have to register for a GitHub account first at <a href="https://github.com">github.com</a></p>
 </blockquote>
-<p>Welcome to the <a href="https://github.com/MonashDataFluency/r-rep-res">Reproducible Research in R (RRR)</a> workshop. The main aim of this workshop is to set you on the right path of making your research more reproducible and shariable. Reproducible research means that future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables. Reproducible research also implies well-documented research, your code should be well commented and the reasons behind functions and methods should be explained thoroughly throughout the analysis. The communication aspect should not be an afterthought, it should be recorded with your analysis as you are going through it. Rmarkdown is a way of <a href="http://www.literateprogramming.com/knuthweb.pdf">literate programing</a> that keeps code, words and sentences together. The ability to easily collaborate and share your analysis goes hand-in-hand with good record-keeping and reproducibility. We are going to repurpose the git version control tool and leverage the GitHub remote hosting provider for managing and sharing our work. Git + GitHub will provide a very powerful resource for global collaboration and exposure of your work. In this workshop, we are going to version control our work and push it to github, which can then be accessed by your collaborators and supervisors. Git + GitHub should become an integral part of your workflow.</p>
-<p>The RRR course given by the <a href="https://www.monash.edu/researchinfrastructure/bioinformatics">Monash Bioinformatics Platform</a> for the <a href="https://monashdatafluency.github.io/">Monash Data Fluency</a> initiative. Our teaching style is based on the style of <a href="https://carpentries.org/">The Carpentries</a>.</p>
-<div id="learning-outcomes" class="section level2 unnumbered" number="">
-<h2>Learning outcomes</h2>
-<p>Attendees will learn how to:</p>
+<p>Let’s begin by making a new repository. Go to <a href="https://github.com">github.com</a> and look for plus sign (New repository). Interface may change time to time, but look at the top right hand corner. Once you’ve clicked on “New repository” button, you should see the following window <a href="github.html#fig:github1">6.1</a></p>
+
+<div class="figure" style="text-align: left"><span id="fig:github1"></span>
+<img src="figures/github1.png" alt="New repository dialog at github.com" width="100%" />
+<p class="caption">
+Figure 6.1: New repository dialog at github.com
+</p>
+</div>
+<p>Let’s give our new repository a name and a short description. Type the following text and press green button on the bottom of the screen “Create repository”</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb50-1"><a href="github.html#cb50-1"></a>learning_rmarkdown</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb51-1"><a href="github.html#cb51-1"></a>I&#39;m learning Rmarkdown, Git and GitHub</span></code></pre></div>
+<p>Notes:</p>
 <ul>
-<li>write vanilla markdown, Rmarkdown and bookdown documents</li>
-<li>use <code>knitr</code>, <code>rmarkdown</code> and <code>bookdown</code> R packages to build various document types including PDF, HTML and DOCX</li>
-<li>create reproducible Rmarkdown documents leveraging <code>.Rproj</code> and <code>.RData</code></li>
-<li>include in-line citation and full references list in to Rmarkdown document using <code>.bib</code> files</li>
-<li>create presentations from Rmarkdown documents that include R code</li>
-<li>work with <code>git</code> version control tool</li>
-<li>create reproducible and “backed up” analysis via remote repositories (e.g github)</li>
+<li>Don’t select any other options, keep repository public</li>
+<li>It is a good practice <strong>NOT</strong> to use spaces in your repository name. Here we are using an underscore instead.</li>
 </ul>
-</div>
-<div id="workshop-description" class="section level2 unnumbered" number="">
-<h2>Workshop description</h2>
-<p>This workshop is an introduction to writing and communicating research using Rmarkdown. Rmarkdown is an easy way to create documents that include your R code and its output, such figure and tables. Rmarkdown is a single document that can be “knitted” and shared as various document types such as PDF and HTML. Rmarkdown supports scientific writing such as use of citations and figure cross-referencing. Rmarkdown can also be used to create presentations that include your R code and its output. We will also cover bookdown, which is an extension to Rmarkdown that allows the creation of larger documents, such as books with multiple chapters.</p>
-<p>In this workshop, we will also cover <a href="https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control">git version control tool</a> which can help with organising and “checkpointing” Rmarkdown documents, associated R code and data. Git is not a backup system, but it does allow one to retrieve older versions of your work. Git, together with remote repositories like <a href="https://github.com">GitHub</a> can provide a centralised location for your research. Together Rmarkdown, git and github can enable reproducible research that is visible and accessible to the greater public, including supervisors and management.</p>
-</div>
-<div id="prerequisite" class="section level2 unnumbered" number="">
-<h2>Prerequisite</h2>
-<p>This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recommended that you read <a href="https://peerj.com/preprints/3159/">this article in full</a>, if you have to prioritise, read at least these section (1,2,6,10).
-Additionally, it is highly recommended that you create an account at <a href="htts://github.com">GitHub</a> and remember your password.</p>
-</div>
-<div id="keywords" class="section level2 unnumbered" number="">
-<h2>Keywords</h2>
-<ul>
-<li>R</li>
-<li>Rmarkdown</li>
-<li>communication</li>
-<li>reproducibility</li>
-<li>git and github</li>
-</ul>
-</div>
-<div id="schedule" class="section level2 unnumbered" number="">
-<h2>Schedule</h2>
-<details>
-<p><summary>
-10:00-10:30am (30 minutes) Welcome and warm up
-</summary></p>
-<pre><code>  \( ﾟヮﾟ)/</code></pre>
-</details>
-<details>
-<p><summary>
-10:30-12:00pm (1.5 hours) Rmarkdown
-</summary></p>
-<ul>
-<li>Introduction (30 minutes)</li>
-<li>Vanilla markdown (30 minutes)</li>
-<li>Rmarkdown (30 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-12:00-1:00pm (1 hour) lunch
-</summary></p>
-<pre>
 
-                     __
-                    /
-                 .-/-.
-                 |'-'|
-                 |   |
-                 |   |   .-""""-.
-                 \___/  /' .  '. \   \|/\//
-                       (`-..:...-')  |`""`|
-                        ;-......-;   |    |
-                         '------'    \____/
-
-</pre>
-</details>
-<details>
-<p><summary>
-1:00-3:00pm (2 hours) More Rmarkdown
-</summary></p>
-<ul>
-<li>Git and GitHub markdown (40 minutes)</li>
-<li>More Rmarkdown (40 minutes)</li>
-<li>YAML header (40 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-3:00-3:15pm (15 minutes) Tea break
-</summary></p>
-<pre>
-                     (  )  (   )  )
-                     ) (   )  (  (
-                     ( )  (    ) )
-                     _____________
-                    <_____________> ___
-                    |             |/ _ \
-                    |               | | |
-                    |               |_| |
-                 ___|             |\___/
-                /    \___________/    \
-                \_____________________/
-</pre>
-</details>
-<details>
-<p><summary>
-3:15-4:45pm (1.5 hours) Even more Rmarkdown
-</summary></p>
-<ul>
-<li>Bibliographies (30 minutes)</li>
-<li>Bookdown (30 minutes)</li>
-<li>Miscellaneous (30 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-4:45-5:00pm (15 minutes) Warm down
-</summary></p>
-<pre>
-
-                                          (
-
-                *                           )   *
-                              )     *      (
-                    )        (                   (
-                   (          )     (             )
-                    )    *           )        )  (
-                   (                (        (      *
-                    )          H     )        )
-                              [ ]            (
-                       (  *   |-|       *     )    (
-                 *      )     |_|        .          )
-                       (      | |    .
-                 )           /   \     .    ' .        *
-                (           |_____|  '  .    .
-                 )          | ___ |  \~~~/  ' .   (
-                        *   | \ / |   \_/  \~~~/   )
-                            | _Y_ |    |    \_/   (
-                *           |-----|  __|__   |      *
-                            `-----`        __|__
-
-</pre>
-</details>
+<div class="figure" style="text-align: left"><span id="fig:github2"></span>
+<img src="figures/github2.png" alt="New repository dialog at github.com, with text" width="100%" />
+<p class="caption">
+Figure 6.2: New repository dialog at github.com, with text
+</p>
 </div>
-<div id="authors-and-copyright" class="section level2 unnumbered" number="">
-<h2>Authors and copyright</h2>
-<p>This course is developed for the Monash Bioinformatics Platform by:</p>
-<ul>
-<li><a href="mailto:paul.harrison@monash.edu">Paul Harrison</a></li>
-<li><a href="mailto:Adele.Barugahare@monash.edu">Adele Barugahare</a></li>
-<li><a href="mailto:kirill.tsyganov@monash.edu">Kirill Tsyganov</a></li>
-</ul>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY-4: Creative Commons Attribution 4.0 International License</a>. The attribution is “Monash Bioinformatics Platform” if copying or modifying these notes.</p>
-<p><img src="figures/CC-BY.png" width="44" /></p>
+</div>
+<div id="repository-address-git-remote" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Repository address (git remote`)</h2>
+<p>Once you’ve clicked on “New repository” button you should see the following, new window appearing in front of your <a href="github.html#fig:github3">6.3</a> (provided you didn’t select any of the additional files, like README file)</p>
+<p>Copy on your clipboard URL that is presented to you at the top of the page. For me the url looks the following</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb52-1"><a href="github.html#cb52-1"></a>https://github.com/serine/learning_markdown.git</span></code></pre></div>
+<p>It will look very similar in your case, except the username part. The following if your typical URL structure for github repositories. Note that square brackets is a convention meaning “substituted with”, they don’t need to be included in your actual URL</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb53-1"><a href="github.html#cb53-1"></a>https://github.com/[USERNAME]/[REPOSITORY_NAME]</span></code></pre></div>
+
+<div class="figure" style="text-align: left"><span id="fig:github3"></span>
+<img src="figures/github3.png" alt="Secondary window, once new repository was created at github.com" width="100%" />
+<p class="caption">
+Figure 6.3: Secondary window, once new repository was created at github.com
+</p>
+</div>
+</div>
+<div id="linking-git-with-github" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Linking Git with GitHub</h2>
+<p>Now that you have successfully created new repository at GitHub we need to link (add) address of our github repository to our local git folder (also can be called repository). This simply means letting git tool know where to deposit (push) our code for storage and display.</p>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="rmarkdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git-part-one.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="git-two.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -432,7 +326,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/index.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/06-github.Rmd",
 "text": "Edit"
 },
 "history": {

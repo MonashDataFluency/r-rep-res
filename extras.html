@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2020-11-10" />
+<meta name="date" content="2020-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="r-code-chunks.html"/>
-
+<link rel="next" href="git-part-one.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
 </ul></li>
-<li class="part"><span><b>I Beginning</b></span></li>
+<li class="part"><span><b>I Rmarkdown from scratch</b></span></li>
 <li class="chapter" data-level="1" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>1</b> Rmarkdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
@@ -192,6 +192,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.1" data-path="extras.html"><a href="extras.html#final-look-3"><i class="fa fa-check"></i><b>4.4.1</b> Final look</a></li>
 </ul></li>
 </ul></li>
+<li class="part"><span><b>II Git, GitHub and RStudio Rproj file</b></span></li>
+<li class="chapter" data-level="5" data-path="git-part-one.html"><a href="git-part-one.html"><i class="fa fa-check"></i><b>5</b> Git (part one)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="git-part-one.html"><a href="git-part-one.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="git-part-one.html"><a href="git-part-one.html#git-init"><i class="fa fa-check"></i><b>5.2</b> Git init</a></li>
+<li class="chapter" data-level="5.3" data-path="git-part-one.html"><a href="git-part-one.html#git-commit"><i class="fa fa-check"></i><b>5.3</b> Git commit</a></li>
+<li class="chapter" data-level="5.4" data-path="git-part-one.html"><a href="git-part-one.html#git-username-and-useremail"><i class="fa fa-check"></i><b>5.4</b> Git username and useremail</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#new-repository"><i class="fa fa-check"></i><b>6.2</b> New repository</a></li>
+<li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#repository-address-git-remote"><i class="fa fa-check"></i><b>6.3</b> Repository address (git remote`)</a></li>
+<li class="chapter" data-level="6.4" data-path="github.html"><a href="github.html#linking-git-with-github"><i class="fa fa-check"></i><b>6.4</b> Linking Git with GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="git-two.html"><a href="git-two.html"><i class="fa fa-check"></i><b>7</b> Git (part two)</a></li>
 </ul>
 
       </nav>
@@ -216,11 +232,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Code folding</h2>
 <p>We haven’t talked a lot about <code>eval</code> and <code>echo</code> chunk options. You can both of them in combination to present relevant bit of information to the audience. For example some might be interested in the code, others in the results or maybe both. We will let you play with various combination of those options at your own time. Instead we are going to add another tags (key value pair) to our YAML header, <code>code_folding</code>. This belong to <code>html_document</code> and should be indented appropriately.</p>
 <p>Let’s set it to <code>hide</code> and added to our header and press <code>Knit</code></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb36-1"><a href="extras.html#cb36-1"></a><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;hide&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb37-1"><a href="extras.html#cb37-1"></a><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;hide&quot;</span></span></code></pre></div>
 <p>overall it should have the following structure</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb37-1"><a href="extras.html#cb37-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb37-2"><a href="extras.html#cb37-2"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb37-3"><a href="extras.html#cb37-3"></a><span class="at">    </span><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;hide&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb38-1"><a href="extras.html#cb38-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb38-2"><a href="extras.html#cb38-2"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb38-3"><a href="extras.html#cb38-3"></a><span class="at">    </span><span class="fu">code_folding</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;hide&quot;</span></span></code></pre></div>
 <p>— This looks neat !</p>
 </div>
 <div id="presentation-slides-ioslides" class="section level2" number="4.2">
@@ -230,16 +246,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Make a copy of your original document</li>
 </ol>
 <p><em>This isn’t strictly needed, but most likely you will want to adjust things a little for your presentation, so let’s make a copy by running the following command</em></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="extras.html#cb38-1"></a><span class="kw">file.copy</span>(<span class="st">&quot;learning.Rmd&quot;</span>, <span class="st">&quot;presenting.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="extras.html#cb39-1"></a><span class="kw">file.copy</span>(<span class="st">&quot;learning.Rmd&quot;</span>, <span class="st">&quot;presenting.Rmd&quot;</span>)</span></code></pre></div>
 <p>Alternatively use “Files” tab in one of your panes, under “More” dropdown menu select “copy” and type in <code>presenting.Rmd</code> name</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Change output type in YAML header</li>
 </ol>
 <p>Let’s change our output type to <code>ioslides_presentation</code> and add a couple of useful tags</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb39-1"><a href="extras.html#cb39-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb39-2"><a href="extras.html#cb39-2"></a><span class="at">  </span><span class="fu">ioslides_presentation</span><span class="kw">:</span></span>
-<span id="cb39-3"><a href="extras.html#cb39-3"></a><span class="at">    </span><span class="fu">widescreen</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb39-4"><a href="extras.html#cb39-4"></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb40-1"><a href="extras.html#cb40-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb40-2"><a href="extras.html#cb40-2"></a><span class="at">  </span><span class="fu">ioslides_presentation</span><span class="kw">:</span></span>
+<span id="cb40-3"><a href="extras.html#cb40-3"></a><span class="at">    </span><span class="fu">widescreen</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb40-4"><a href="extras.html#cb40-4"></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Press <code>Knit</code> to render</li>
 </ol>
@@ -256,148 +272,152 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>Esc</code> key: to exits</li>
 </ul>
 <p>Syntax to add presentor notes to the slide</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb40-1"><a href="extras.html#cb40-1"></a><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;notes&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb40-2"><a href="extras.html#cb40-2"></a>This is my *note*.</span>
-<span id="cb40-3"><a href="extras.html#cb40-3"></a></span>
-<span id="cb40-4"><a href="extras.html#cb40-4"></a>- It can contain markdown</span>
-<span id="cb40-5"><a href="extras.html#cb40-5"></a>- like this list</span>
-<span id="cb40-6"><a href="extras.html#cb40-6"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb41-1"><a href="extras.html#cb41-1"></a><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;notes&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb41-2"><a href="extras.html#cb41-2"></a>This is my *note*.</span>
+<span id="cb41-3"><a href="extras.html#cb41-3"></a></span>
+<span id="cb41-4"><a href="extras.html#cb41-4"></a>- It can contain markdown</span>
+<span id="cb41-5"><a href="extras.html#cb41-5"></a>- like this list</span>
+<span id="cb41-6"><a href="extras.html#cb41-6"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
 <p>— <code>:)</code></p>
 </div>
 <div id="tabs" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Tabs</h2>
 <p>Alternative to section can be tabs, in fact two can happily co-exist. To create tabs we need to use <code>{.tabset}</code> addition to the header e.g</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="extras.html#cb41-1"></a><span class="fu"># Header 1 {.tabset}</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="extras.html#cb42-1"></a><span class="fu"># Header 1 {.tabset}</span></span></code></pre></div>
 <p>This will make all subsection of the next level to become tabs. That is level 2 headers will become tabs, but level three will remain inside the corresponding tab.</p>
 <p>Let’s switch to our original document, <code>learning.Rmd</code> and try this out by adding <code>{.tabset}</code> to two of our first level header, <code>Introduction</code> and <code>R code</code> and press <code>Knit</code></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="extras.html#cb42-1"></a><span class="fu"># Introduction {.tabset}</span></span>
-<span id="cb42-2"><a href="extras.html#cb42-2"></a></span>
-<span id="cb42-3"><a href="extras.html#cb42-3"></a>...</span>
-<span id="cb42-4"><a href="extras.html#cb42-4"></a></span>
-<span id="cb42-5"><a href="extras.html#cb42-5"></a><span class="fu"># R code {.tabset}</span></span>
-<span id="cb42-6"><a href="extras.html#cb42-6"></a></span>
-<span id="cb42-7"><a href="extras.html#cb42-7"></a>...</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb43-1"><a href="extras.html#cb43-1"></a><span class="fu"># Introduction {.tabset}</span></span>
+<span id="cb43-2"><a href="extras.html#cb43-2"></a></span>
+<span id="cb43-3"><a href="extras.html#cb43-3"></a>...</span>
+<span id="cb43-4"><a href="extras.html#cb43-4"></a></span>
+<span id="cb43-5"><a href="extras.html#cb43-5"></a><span class="fu"># R code {.tabset}</span></span>
+<span id="cb43-6"><a href="extras.html#cb43-6"></a></span>
+<span id="cb43-7"><a href="extras.html#cb43-7"></a>...</span></code></pre></div>
 <p>This look ok, but not the effect that I desired, instead what I wanted is to have two tabs, one for each of the main section. In order to get that results we will need to create new first level header and adjust levels of all other headers to the next deepest</p>
 <p>In additional I would set <code>toc</code> to false, <code>toc: false</code>, since table of content doesn’t have a purpose anymore</p>
 <div id="final-look-3" class="section level3" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> Final look</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb43-1"><a href="extras.html#cb43-1"></a><span class="co">---</span></span>
-<span id="cb43-2"><a href="extras.html#cb43-2"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown&quot;</span></span>
-<span id="cb43-3"><a href="extras.html#cb43-3"></a><span class="an">author:</span><span class="co"> &quot;Kirill&quot;</span></span>
-<span id="cb43-4"><a href="extras.html#cb43-4"></a><span class="an">date:</span><span class="co"> &quot;2020-11-10&quot;</span></span>
-<span id="cb43-5"><a href="extras.html#cb43-5"></a><span class="an">output:</span></span>
-<span id="cb43-6"><a href="extras.html#cb43-6"></a><span class="co">  html_document:</span></span>
-<span id="cb43-7"><a href="extras.html#cb43-7"></a><span class="co">    toc: false</span></span>
-<span id="cb43-8"><a href="extras.html#cb43-8"></a><span class="co">    theme: readable</span></span>
-<span id="cb43-9"><a href="extras.html#cb43-9"></a><span class="co">    code_folding: &quot;hide&quot;</span></span>
-<span id="cb43-10"><a href="extras.html#cb43-10"></a><span class="co">---</span></span>
-<span id="cb43-11"><a href="extras.html#cb43-11"></a></span>
-<span id="cb43-12"><a href="extras.html#cb43-12"></a><span class="fu"># TL;DR {.tabset}</span></span>
-<span id="cb43-13"><a href="extras.html#cb43-13"></a></span>
-<span id="cb43-14"><a href="extras.html#cb43-14"></a><span class="co">[</span><span class="ot">place holder</span><span class="co">]()</span></span>
-<span id="cb43-15"><a href="extras.html#cb43-15"></a></span>
-<span id="cb43-16"><a href="extras.html#cb43-16"></a><span class="fu">## Introduction</span></span>
-<span id="cb43-17"><a href="extras.html#cb43-17"></a></span>
-<span id="cb43-18"><a href="extras.html#cb43-18"></a><span class="at">&gt; outcome:</span></span>
-<span id="cb43-19"><a href="extras.html#cb43-19"></a></span>
-<span id="cb43-20"><a href="extras.html#cb43-20"></a><span class="ss">- </span>learn how to create and share Rmarkdown document </span>
-<span id="cb43-21"><a href="extras.html#cb43-21"></a><span class="ss">- </span>learn various document type, e.g html, pdf and docx</span>
-<span id="cb43-22"><a href="extras.html#cb43-22"></a><span class="ss">- </span>~~learn to fly the rocket!~~</span>
-<span id="cb43-23"><a href="extras.html#cb43-23"></a></span>
-<span id="cb43-24"><a href="extras.html#cb43-24"></a></span>
-<span id="cb43-25"><a href="extras.html#cb43-25"></a>The bottom line is - I would like to learn Rmarkdown!</span>
-<span id="cb43-26"><a href="extras.html#cb43-26"></a><span class="kw">&lt;br&gt;</span></span>
-<span id="cb43-27"><a href="extras.html#cb43-27"></a>Like **seriously** become **good** at it !</span>
-<span id="cb43-28"><a href="extras.html#cb43-28"></a></span>
-<span id="cb43-29"><a href="extras.html#cb43-29"></a><span class="fu">### Task list for today</span></span>
-<span id="cb43-30"><a href="extras.html#cb43-30"></a></span>
-<span id="cb43-31"><a href="extras.html#cb43-31"></a><span class="ss">- </span><span class="co">[</span><span class="ot">X</span><span class="co">]</span> Get aspired to learn Rmarkdown</span>
-<span id="cb43-32"><a href="extras.html#cb43-32"></a><span class="ss">- </span><span class="va">[ ]</span> Get to know three core components of the Rmarkdown document (header, body, R chunks)</span>
-<span id="cb43-33"><a href="extras.html#cb43-33"></a><span class="ss">- </span><span class="va">[ ]</span> Practice, practice !</span>
-<span id="cb43-34"><a href="extras.html#cb43-34"></a></span>
-<span id="cb43-35"><a href="extras.html#cb43-35"></a><span class="fu">### Code</span></span>
-<span id="cb43-36"><a href="extras.html#cb43-36"></a></span>
-<span id="cb43-37"><a href="extras.html#cb43-37"></a>You can use single backtick on each side of the code for inline code or triple backticks for standalone code block </span>
-<span id="cb43-38"><a href="extras.html#cb43-38"></a></span>
-<span id="cb43-39"><a href="extras.html#cb43-39"></a><span class="in">```bash</span></span>
-<span id="cb43-40"><a href="extras.html#cb43-40"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb43-41"><a href="extras.html#cb43-41"></a></span>
-<span id="cb43-42"><a href="extras.html#cb43-42"></a><span class="bu">echo</span> <span class="st">&quot;Why am I doing BASH in this course?&quot;</span></span>
-<span id="cb43-43"><a href="extras.html#cb43-43"></a></span>
-<span id="cb43-44"><a href="extras.html#cb43-44"></a><span class="ex">Rscript</span> --vanilla run_away.R</span>
-<span id="cb43-45"><a href="extras.html#cb43-45"></a><span class="kw">```</span></span>
-<span id="cb43-46"><a href="extras.html#cb43-46"></a></span>
-<span id="cb43-47"><a href="extras.html#cb43-47"></a><span class="co">### Math</span></span>
-<span id="cb43-48"><a href="extras.html#cb43-48"></a></span>
-<span id="cb43-49"><a href="extras.html#cb43-49"></a><span class="ex">This</span> is a covariance equation, random variable <span class="va">$X</span>$ co-variace with random variable <span class="va">$Y</span>$, where $\bar<span class="dt">{X}</span> = mean(X)$ <span class="ex">and</span> $\bar<span class="dt">{Y}</span> = mean(Y)$ <span class="ex">and</span> <span class="va">$N</span>$ is a size of a random sample from the population.</span>
-<span id="cb43-50"><a href="extras.html#cb43-50"></a></span>
-<span id="cb43-51"><a href="extras.html#cb43-51"></a><span class="va">$$</span><span class="ex">cov</span>(X,Y) = \<span class="ex">frac</span><span class="dt">{\sum(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{N-1}</span><span class="va">$$</span></span>
-<span id="cb43-52"><a href="extras.html#cb43-52"></a>[<span class="ex">for</span> more LaxTex syntax here](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span>
-<span id="cb43-53"><a href="extras.html#cb43-53"></a></span>
-<span id="cb43-54"><a href="extras.html#cb43-54"></a><span class="co">### Images</span></span>
-<span id="cb43-55"><a href="extras.html#cb43-55"></a></span>
-<span id="cb43-56"><a href="extras.html#cb43-56"></a>![]<span class="kw">(</span><span class="ex">https</span>://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png<span class="kw">)</span><span class="dt">{width=50%}</span></span>
-<span id="cb43-57"><a href="extras.html#cb43-57"></a></span>
-<span id="cb43-58"><a href="extras.html#cb43-58"></a><span class="co">## R code</span></span>
-<span id="cb43-59"><a href="extras.html#cb43-59"></a></span>
-<span id="cb43-60"><a href="extras.html#cb43-60"></a><span class="kw">```</span>{<span class="ex">r</span> setup, include=FALSE}</span>
-<span id="cb43-61"><a href="extras.html#cb43-61"></a><span class="ex">knitr</span>::opts_chunk<span class="va">$set</span>(echo = TRUE,</span>
-<span id="cb43-62"><a href="extras.html#cb43-62"></a>                      <span class="ex">message</span> = FALSE,</span>
-<span id="cb43-63"><a href="extras.html#cb43-63"></a>                      <span class="ex">warning</span> = FALSE)</span>
-<span id="cb43-64"><a href="extras.html#cb43-64"></a></span>
-<span id="cb43-65"><a href="extras.html#cb43-65"></a><span class="ex">library</span>(magrittr)</span>
-<span id="cb43-66"><a href="extras.html#cb43-66"></a><span class="ex">library</span>(dplyr)</span>
-<span id="cb43-67"><a href="extras.html#cb43-67"></a><span class="ex">library</span>(DT)</span>
-<span id="cb43-68"><a href="extras.html#cb43-68"></a><span class="ex">library</span>(ggplot2)</span>
-<span id="cb43-69"><a href="extras.html#cb43-69"></a><span class="kw">```</span></span>
-<span id="cb43-70"><a href="extras.html#cb43-70"></a></span>
-<span id="cb43-71"><a href="extras.html#cb43-71"></a><span class="co">### Getting and wrangling the data</span></span>
-<span id="cb43-72"><a href="extras.html#cb43-72"></a></span>
-<span id="cb43-73"><a href="extras.html#cb43-73"></a><span class="kw">```</span>{<span class="ex">r</span> get_data}</span>
-<span id="cb43-74"><a href="extras.html#cb43-74"></a></span>
-<span id="cb43-75"><a href="extras.html#cb43-75"></a><span class="ex">make_url</span> <span class="op">&lt;</span>- function(package) <span class="kw">{</span></span>
-<span id="cb43-76"><a href="extras.html#cb43-76"></a>  <span class="ex">paste0</span>(<span class="st">&#39;&lt;a href=&quot;https://cran.r-project.org/web/packages/&#39;</span>, package, <span class="st">&#39;&quot;&gt;&#39;</span>, package, <span class="st">&#39;&lt;/a&gt;&#39;</span>)</span>
-<span id="cb43-77"><a href="extras.html#cb43-77"></a><span class="kw">}</span></span>
-<span id="cb43-78"><a href="extras.html#cb43-78"></a></span>
-<span id="cb43-79"><a href="extras.html#cb43-79"></a><span class="ex">library</span>(magrittr)</span>
-<span id="cb43-80"><a href="extras.html#cb43-80"></a><span class="ex">library</span>(dplyr)</span>
-<span id="cb43-81"><a href="extras.html#cb43-81"></a></span>
-<span id="cb43-82"><a href="extras.html#cb43-82"></a><span class="ex">avail_packages</span> <span class="op">&lt;</span>- available.packages(contriburl = contrib.url(<span class="st">&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;</span>)) <span class="ex">%</span><span class="op">&gt;</span>%</span>
-<span id="cb43-83"><a href="extras.html#cb43-83"></a>                    <span class="ex">as.data.frame</span>() <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-84"><a href="extras.html#cb43-84"></a>                    <span class="ex">as.data.frame</span>() <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-85"><a href="extras.html#cb43-85"></a>                    <span class="fu">as_tibble()</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-86"><a href="extras.html#cb43-86"></a>                    <span class="fu">rowwise()</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-87"><a href="extras.html#cb43-87"></a>                    <span class="ex">mutate</span>(Depend = length(unlist(strsplit(Imports, split = <span class="st">&quot;,&quot;</span>)))) <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-88"><a href="extras.html#cb43-88"></a>                    <span class="fu">ungroup()</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-89"><a href="extras.html#cb43-89"></a>                    <span class="kw">select(</span><span class="ex">Package</span>, Version, Depend, Imports, License<span class="kw">)</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
-<span id="cb43-90"><a href="extras.html#cb43-90"></a>                    <span class="ex">mutate</span>(Package = make_url(Package),</span>
-<span id="cb43-91"><a href="extras.html#cb43-91"></a>                           <span class="ex">Depend</span> = ifelse(is.na(Imports), <span class="ex">-1</span>, Depend)) </span>
-<span id="cb43-92"><a href="extras.html#cb43-92"></a><span class="kw">```</span></span>
-<span id="cb43-93"><a href="extras.html#cb43-93"></a></span>
-<span id="cb43-94"><a href="extras.html#cb43-94"></a><span class="co">### Displaying table</span></span>
-<span id="cb43-95"><a href="extras.html#cb43-95"></a></span>
-<span id="cb43-96"><a href="extras.html#cb43-96"></a><span class="kw">```</span>{<span class="ex">r</span> make_table, message=FALSE, warning=FALSE}</span>
-<span id="cb43-97"><a href="extras.html#cb43-97"></a><span class="ex">library</span>(DT)</span>
-<span id="cb43-98"><a href="extras.html#cb43-98"></a><span class="ex">avail_packages</span> %<span class="op">&gt;</span>% datatable(escape = FALSE)</span>
-<span id="cb43-99"><a href="extras.html#cb43-99"></a><span class="kw">```</span></span>
-<span id="cb43-100"><a href="extras.html#cb43-100"></a></span>
-<span id="cb43-101"><a href="extras.html#cb43-101"></a><span class="co">### Plot the data</span></span>
-<span id="cb43-102"><a href="extras.html#cb43-102"></a></span>
-<span id="cb43-103"><a href="extras.html#cb43-103"></a><span class="kw">```</span>{<span class="ex">r</span> plot}</span>
-<span id="cb43-104"><a href="extras.html#cb43-104"></a><span class="ex">library</span>(ggplot2)</span>
-<span id="cb43-105"><a href="extras.html#cb43-105"></a><span class="ex">avail_packages</span> %<span class="op">&gt;</span>% ggplot(aes(Depend)) <span class="ex">+</span> geom_bar()</span>
-<span id="cb43-106"><a href="extras.html#cb43-106"></a><span class="kw">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb44-1"><a href="extras.html#cb44-1"></a><span class="co">---</span></span>
+<span id="cb44-2"><a href="extras.html#cb44-2"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown&quot;</span></span>
+<span id="cb44-3"><a href="extras.html#cb44-3"></a><span class="an">author:</span><span class="co"> &quot;Kirill&quot;</span></span>
+<span id="cb44-4"><a href="extras.html#cb44-4"></a><span class="an">date:</span><span class="co"> &quot;2020-11-11&quot;</span></span>
+<span id="cb44-5"><a href="extras.html#cb44-5"></a><span class="an">output:</span></span>
+<span id="cb44-6"><a href="extras.html#cb44-6"></a><span class="co">  html_document:</span></span>
+<span id="cb44-7"><a href="extras.html#cb44-7"></a><span class="co">    toc: false</span></span>
+<span id="cb44-8"><a href="extras.html#cb44-8"></a><span class="co">    theme: readable</span></span>
+<span id="cb44-9"><a href="extras.html#cb44-9"></a><span class="co">    code_folding: &quot;hide&quot;</span></span>
+<span id="cb44-10"><a href="extras.html#cb44-10"></a><span class="co">---</span></span>
+<span id="cb44-11"><a href="extras.html#cb44-11"></a></span>
+<span id="cb44-12"><a href="extras.html#cb44-12"></a><span class="fu"># TL;DR {.tabset}</span></span>
+<span id="cb44-13"><a href="extras.html#cb44-13"></a></span>
+<span id="cb44-14"><a href="extras.html#cb44-14"></a><span class="co">[</span><span class="ot">place holder</span><span class="co">]()</span></span>
+<span id="cb44-15"><a href="extras.html#cb44-15"></a></span>
+<span id="cb44-16"><a href="extras.html#cb44-16"></a><span class="fu">## Introduction</span></span>
+<span id="cb44-17"><a href="extras.html#cb44-17"></a></span>
+<span id="cb44-18"><a href="extras.html#cb44-18"></a><span class="at">&gt; outcome:</span></span>
+<span id="cb44-19"><a href="extras.html#cb44-19"></a></span>
+<span id="cb44-20"><a href="extras.html#cb44-20"></a><span class="ss">- </span>learn how to create and share Rmarkdown document </span>
+<span id="cb44-21"><a href="extras.html#cb44-21"></a><span class="ss">- </span>learn various document type, e.g html, pdf and docx</span>
+<span id="cb44-22"><a href="extras.html#cb44-22"></a><span class="ss">- </span>~~learn to fly the rocket!~~</span>
+<span id="cb44-23"><a href="extras.html#cb44-23"></a></span>
+<span id="cb44-24"><a href="extras.html#cb44-24"></a></span>
+<span id="cb44-25"><a href="extras.html#cb44-25"></a>The bottom line is - I would like to learn Rmarkdown!</span>
+<span id="cb44-26"><a href="extras.html#cb44-26"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb44-27"><a href="extras.html#cb44-27"></a>Like **seriously** become **good** at it !</span>
+<span id="cb44-28"><a href="extras.html#cb44-28"></a></span>
+<span id="cb44-29"><a href="extras.html#cb44-29"></a><span class="fu">### Task list for today</span></span>
+<span id="cb44-30"><a href="extras.html#cb44-30"></a></span>
+<span id="cb44-31"><a href="extras.html#cb44-31"></a><span class="ss">- </span><span class="co">[</span><span class="ot">X</span><span class="co">]</span> Get aspired to learn Rmarkdown</span>
+<span id="cb44-32"><a href="extras.html#cb44-32"></a><span class="ss">- </span><span class="va">[ ]</span> Get to know three core components of the Rmarkdown document (header, body, R chunks)</span>
+<span id="cb44-33"><a href="extras.html#cb44-33"></a><span class="ss">- </span><span class="va">[ ]</span> Practice, practice !</span>
+<span id="cb44-34"><a href="extras.html#cb44-34"></a></span>
+<span id="cb44-35"><a href="extras.html#cb44-35"></a><span class="fu">### Code</span></span>
+<span id="cb44-36"><a href="extras.html#cb44-36"></a></span>
+<span id="cb44-37"><a href="extras.html#cb44-37"></a>You can use single backtick on each side of the code for inline code or triple backticks for standalone code block </span>
+<span id="cb44-38"><a href="extras.html#cb44-38"></a></span>
+<span id="cb44-39"><a href="extras.html#cb44-39"></a><span class="in">```bash</span></span>
+<span id="cb44-40"><a href="extras.html#cb44-40"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb44-41"><a href="extras.html#cb44-41"></a></span>
+<span id="cb44-42"><a href="extras.html#cb44-42"></a><span class="bu">echo</span> <span class="st">&quot;Why am I doing BASH in this course?&quot;</span></span>
+<span id="cb44-43"><a href="extras.html#cb44-43"></a></span>
+<span id="cb44-44"><a href="extras.html#cb44-44"></a><span class="ex">Rscript</span> --vanilla run_away.R</span>
+<span id="cb44-45"><a href="extras.html#cb44-45"></a><span class="kw">```</span></span>
+<span id="cb44-46"><a href="extras.html#cb44-46"></a></span>
+<span id="cb44-47"><a href="extras.html#cb44-47"></a><span class="co">### Math</span></span>
+<span id="cb44-48"><a href="extras.html#cb44-48"></a></span>
+<span id="cb44-49"><a href="extras.html#cb44-49"></a><span class="ex">This</span> is a covariance equation, random variable <span class="va">$X</span>$ co-variace with random variable <span class="va">$Y</span>$, where $\bar<span class="dt">{X}</span> = mean(X)$ <span class="ex">and</span> $\bar<span class="dt">{Y}</span> = mean(Y)$ <span class="ex">and</span> <span class="va">$N</span>$ is a size of a random sample from the population.</span>
+<span id="cb44-50"><a href="extras.html#cb44-50"></a></span>
+<span id="cb44-51"><a href="extras.html#cb44-51"></a><span class="va">$$</span><span class="ex">cov</span>(X,Y) = \<span class="ex">frac</span><span class="dt">{\sum(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{N-1}</span><span class="va">$$</span></span>
+<span id="cb44-52"><a href="extras.html#cb44-52"></a>[<span class="ex">for</span> more LaxTex syntax here](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span>
+<span id="cb44-53"><a href="extras.html#cb44-53"></a></span>
+<span id="cb44-54"><a href="extras.html#cb44-54"></a><span class="co">### Images</span></span>
+<span id="cb44-55"><a href="extras.html#cb44-55"></a></span>
+<span id="cb44-56"><a href="extras.html#cb44-56"></a>![]<span class="kw">(</span><span class="ex">https</span>://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png<span class="kw">)</span><span class="dt">{width=50%}</span></span>
+<span id="cb44-57"><a href="extras.html#cb44-57"></a></span>
+<span id="cb44-58"><a href="extras.html#cb44-58"></a><span class="co">## R code</span></span>
+<span id="cb44-59"><a href="extras.html#cb44-59"></a></span>
+<span id="cb44-60"><a href="extras.html#cb44-60"></a><span class="kw">```</span>{<span class="ex">r</span> setup, include=FALSE}</span>
+<span id="cb44-61"><a href="extras.html#cb44-61"></a><span class="ex">knitr</span>::opts_chunk<span class="va">$set</span>(echo = TRUE,</span>
+<span id="cb44-62"><a href="extras.html#cb44-62"></a>                      <span class="ex">message</span> = FALSE,</span>
+<span id="cb44-63"><a href="extras.html#cb44-63"></a>                      <span class="ex">warning</span> = FALSE)</span>
+<span id="cb44-64"><a href="extras.html#cb44-64"></a></span>
+<span id="cb44-65"><a href="extras.html#cb44-65"></a><span class="ex">library</span>(magrittr)</span>
+<span id="cb44-66"><a href="extras.html#cb44-66"></a><span class="ex">library</span>(dplyr)</span>
+<span id="cb44-67"><a href="extras.html#cb44-67"></a><span class="ex">library</span>(DT)</span>
+<span id="cb44-68"><a href="extras.html#cb44-68"></a><span class="ex">library</span>(ggplot2)</span>
+<span id="cb44-69"><a href="extras.html#cb44-69"></a><span class="kw">```</span></span>
+<span id="cb44-70"><a href="extras.html#cb44-70"></a></span>
+<span id="cb44-71"><a href="extras.html#cb44-71"></a><span class="co">### Getting and wrangling the data</span></span>
+<span id="cb44-72"><a href="extras.html#cb44-72"></a></span>
+<span id="cb44-73"><a href="extras.html#cb44-73"></a><span class="kw">```</span>{<span class="ex">r</span> get_data}</span>
+<span id="cb44-74"><a href="extras.html#cb44-74"></a></span>
+<span id="cb44-75"><a href="extras.html#cb44-75"></a><span class="ex">make_url</span> <span class="op">&lt;</span>- function(package) <span class="kw">{</span></span>
+<span id="cb44-76"><a href="extras.html#cb44-76"></a>  <span class="ex">paste0</span>(<span class="st">&#39;&lt;a href=&quot;https://cran.r-project.org/web/packages/&#39;</span>, package, <span class="st">&#39;&quot;&gt;&#39;</span>, package, <span class="st">&#39;&lt;/a&gt;&#39;</span>)</span>
+<span id="cb44-77"><a href="extras.html#cb44-77"></a><span class="kw">}</span></span>
+<span id="cb44-78"><a href="extras.html#cb44-78"></a></span>
+<span id="cb44-79"><a href="extras.html#cb44-79"></a><span class="ex">library</span>(magrittr)</span>
+<span id="cb44-80"><a href="extras.html#cb44-80"></a><span class="ex">library</span>(dplyr)</span>
+<span id="cb44-81"><a href="extras.html#cb44-81"></a></span>
+<span id="cb44-82"><a href="extras.html#cb44-82"></a><span class="ex">avail_packages</span> <span class="op">&lt;</span>- available.packages(contriburl = contrib.url(<span class="st">&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;</span>)) <span class="ex">%</span><span class="op">&gt;</span>%</span>
+<span id="cb44-83"><a href="extras.html#cb44-83"></a>                    <span class="ex">as.data.frame</span>() <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-84"><a href="extras.html#cb44-84"></a>                    <span class="ex">as.data.frame</span>() <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-85"><a href="extras.html#cb44-85"></a>                    <span class="fu">as_tibble()</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-86"><a href="extras.html#cb44-86"></a>                    <span class="fu">rowwise()</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-87"><a href="extras.html#cb44-87"></a>                    <span class="ex">mutate</span>(Depend = length(unlist(strsplit(Imports, split = <span class="st">&quot;,&quot;</span>)))) <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-88"><a href="extras.html#cb44-88"></a>                    <span class="fu">ungroup()</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-89"><a href="extras.html#cb44-89"></a>                    <span class="kw">select(</span><span class="ex">Package</span>, Version, Depend, Imports, License<span class="kw">)</span> <span class="ex">%</span><span class="op">&gt;</span>% </span>
+<span id="cb44-90"><a href="extras.html#cb44-90"></a>                    <span class="ex">mutate</span>(Package = make_url(Package),</span>
+<span id="cb44-91"><a href="extras.html#cb44-91"></a>                           <span class="ex">Depend</span> = ifelse(is.na(Imports), <span class="ex">-1</span>, Depend)) </span>
+<span id="cb44-92"><a href="extras.html#cb44-92"></a><span class="kw">```</span></span>
+<span id="cb44-93"><a href="extras.html#cb44-93"></a></span>
+<span id="cb44-94"><a href="extras.html#cb44-94"></a><span class="co">### Displaying table</span></span>
+<span id="cb44-95"><a href="extras.html#cb44-95"></a></span>
+<span id="cb44-96"><a href="extras.html#cb44-96"></a><span class="kw">```</span>{<span class="ex">r</span> make_table, message=FALSE, warning=FALSE}</span>
+<span id="cb44-97"><a href="extras.html#cb44-97"></a><span class="ex">library</span>(DT)</span>
+<span id="cb44-98"><a href="extras.html#cb44-98"></a><span class="ex">avail_packages</span> %<span class="op">&gt;</span>% datatable(escape = FALSE)</span>
+<span id="cb44-99"><a href="extras.html#cb44-99"></a><span class="kw">```</span></span>
+<span id="cb44-100"><a href="extras.html#cb44-100"></a></span>
+<span id="cb44-101"><a href="extras.html#cb44-101"></a><span class="co">### Plot the data</span></span>
+<span id="cb44-102"><a href="extras.html#cb44-102"></a></span>
+<span id="cb44-103"><a href="extras.html#cb44-103"></a><span class="kw">```</span>{<span class="ex">r</span> plot}</span>
+<span id="cb44-104"><a href="extras.html#cb44-104"></a><span class="ex">library</span>(ggplot2)</span>
+<span id="cb44-105"><a href="extras.html#cb44-105"></a><span class="ex">avail_packages</span> %<span class="op">&gt;</span>% ggplot(aes(Depend)) <span class="ex">+</span> geom_bar()</span>
+<span id="cb44-106"><a href="extras.html#cb44-106"></a><span class="kw">```</span></span></code></pre></div>
 
 </div>
 </div>
+</div>
+
+
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="r-code-chunks.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="r-code-chunks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="git-part-one.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

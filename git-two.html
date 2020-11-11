@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Reproducible Research in R</title>
-  <meta name="description" content="Reproducible Research in R" />
+  <title>Section 7 Git (part two) | Reproducible Research in R</title>
+  <meta name="description" content="Section 7 Git (part two) | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Reproducible Research in R" />
+  <meta property="og:title" content="Section 7 Git (part two) | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 7 Git (part two) | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="github.html"/>
 
-<link rel="next" href="rmarkdown.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -225,182 +225,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Reproducible Research in R</h1>
-<p class="date"><em>2020-11-11</em></p>
-</div>
-<div id="index" class="section level1 unnumbered" number="">
-<h1>Reproducible Research in R</h1>
-<blockquote>
-<ul>
-<li>Level: beginner-intermediate</li>
-<li>Duration: 6 hours</li>
-<li>Student numbers: 25-30</li>
-</ul>
-</blockquote>
-<p>Welcome to the <a href="https://github.com/MonashDataFluency/r-rep-res">Reproducible Research in R (RRR)</a> workshop. The main aim of this workshop is to set you on the right path of making your research more reproducible and shariable. Reproducible research means that future you and anyone else will be able to pick up your analysis and reproduce the same results, including figures and tables. Reproducible research also implies well-documented research, your code should be well commented and the reasons behind functions and methods should be explained thoroughly throughout the analysis. The communication aspect should not be an afterthought, it should be recorded with your analysis as you are going through it. Rmarkdown is a way of <a href="http://www.literateprogramming.com/knuthweb.pdf">literate programing</a> that keeps code, words and sentences together. The ability to easily collaborate and share your analysis goes hand-in-hand with good record-keeping and reproducibility. We are going to repurpose the git version control tool and leverage the GitHub remote hosting provider for managing and sharing our work. Git + GitHub will provide a very powerful resource for global collaboration and exposure of your work. In this workshop, we are going to version control our work and push it to github, which can then be accessed by your collaborators and supervisors. Git + GitHub should become an integral part of your workflow.</p>
-<p>The RRR course given by the <a href="https://www.monash.edu/researchinfrastructure/bioinformatics">Monash Bioinformatics Platform</a> for the <a href="https://monashdatafluency.github.io/">Monash Data Fluency</a> initiative. Our teaching style is based on the style of <a href="https://carpentries.org/">The Carpentries</a>.</p>
-<div id="learning-outcomes" class="section level2 unnumbered" number="">
-<h2>Learning outcomes</h2>
-<p>Attendees will learn how to:</p>
-<ul>
-<li>write vanilla markdown, Rmarkdown and bookdown documents</li>
-<li>use <code>knitr</code>, <code>rmarkdown</code> and <code>bookdown</code> R packages to build various document types including PDF, HTML and DOCX</li>
-<li>create reproducible Rmarkdown documents leveraging <code>.Rproj</code> and <code>.RData</code></li>
-<li>include in-line citation and full references list in to Rmarkdown document using <code>.bib</code> files</li>
-<li>create presentations from Rmarkdown documents that include R code</li>
-<li>work with <code>git</code> version control tool</li>
-<li>create reproducible and “backed up” analysis via remote repositories (e.g github)</li>
-</ul>
-</div>
-<div id="workshop-description" class="section level2 unnumbered" number="">
-<h2>Workshop description</h2>
-<p>This workshop is an introduction to writing and communicating research using Rmarkdown. Rmarkdown is an easy way to create documents that include your R code and its output, such figure and tables. Rmarkdown is a single document that can be “knitted” and shared as various document types such as PDF and HTML. Rmarkdown supports scientific writing such as use of citations and figure cross-referencing. Rmarkdown can also be used to create presentations that include your R code and its output. We will also cover bookdown, which is an extension to Rmarkdown that allows the creation of larger documents, such as books with multiple chapters.</p>
-<p>In this workshop, we will also cover <a href="https://git-scm.com/book/en/v1/Getting-Started-About-Version-Control">git version control tool</a> which can help with organising and “checkpointing” Rmarkdown documents, associated R code and data. Git is not a backup system, but it does allow one to retrieve older versions of your work. Git, together with remote repositories like <a href="https://github.com">GitHub</a> can provide a centralised location for your research. Together Rmarkdown, git and github can enable reproducible research that is visible and accessible to the greater public, including supervisors and management.</p>
-</div>
-<div id="prerequisite" class="section level2 unnumbered" number="">
-<h2>Prerequisite</h2>
-<p>This is an introductory level workshop, however some prior exposure to R and familiarity with RStudio is assumed. It is highly recommended that you read <a href="https://peerj.com/preprints/3159/">this article in full</a>, if you have to prioritise, read at least these section (1,2,6,10).
-Additionally, it is highly recommended that you create an account at <a href="htts://github.com">GitHub</a> and remember your password.</p>
-</div>
-<div id="keywords" class="section level2 unnumbered" number="">
-<h2>Keywords</h2>
-<ul>
-<li>R</li>
-<li>Rmarkdown</li>
-<li>communication</li>
-<li>reproducibility</li>
-<li>git and github</li>
-</ul>
-</div>
-<div id="schedule" class="section level2 unnumbered" number="">
-<h2>Schedule</h2>
-<details>
-<p><summary>
-10:00-10:30am (30 minutes) Welcome and warm up
-</summary></p>
-<pre><code>  \( ﾟヮﾟ)/</code></pre>
-</details>
-<details>
-<p><summary>
-10:30-12:00pm (1.5 hours) Rmarkdown
-</summary></p>
-<ul>
-<li>Introduction (30 minutes)</li>
-<li>Vanilla markdown (30 minutes)</li>
-<li>Rmarkdown (30 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-12:00-1:00pm (1 hour) lunch
-</summary></p>
-<pre>
-
-                     __
-                    /
-                 .-/-.
-                 |'-'|
-                 |   |
-                 |   |   .-""""-.
-                 \___/  /' .  '. \   \|/\//
-                       (`-..:...-')  |`""`|
-                        ;-......-;   |    |
-                         '------'    \____/
-
-</pre>
-</details>
-<details>
-<p><summary>
-1:00-3:00pm (2 hours) More Rmarkdown
-</summary></p>
-<ul>
-<li>Git and GitHub markdown (40 minutes)</li>
-<li>More Rmarkdown (40 minutes)</li>
-<li>YAML header (40 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-3:00-3:15pm (15 minutes) Tea break
-</summary></p>
-<pre>
-                     (  )  (   )  )
-                     ) (   )  (  (
-                     ( )  (    ) )
-                     _____________
-                    <_____________> ___
-                    |             |/ _ \
-                    |               | | |
-                    |               |_| |
-                 ___|             |\___/
-                /    \___________/    \
-                \_____________________/
-</pre>
-</details>
-<details>
-<p><summary>
-3:15-4:45pm (1.5 hours) Even more Rmarkdown
-</summary></p>
-<ul>
-<li>Bibliographies (30 minutes)</li>
-<li>Bookdown (30 minutes)</li>
-<li>Miscellaneous (30 minutes)</li>
-</ul>
-</details>
-<details>
-<p><summary>
-4:45-5:00pm (15 minutes) Warm down
-</summary></p>
-<pre>
-
-                                          (
-
-                *                           )   *
-                              )     *      (
-                    )        (                   (
-                   (          )     (             )
-                    )    *           )        )  (
-                   (                (        (      *
-                    )          H     )        )
-                              [ ]            (
-                       (  *   |-|       *     )    (
-                 *      )     |_|        .          )
-                       (      | |    .
-                 )           /   \     .    ' .        *
-                (           |_____|  '  .    .
-                 )          | ___ |  \~~~/  ' .   (
-                        *   | \ / |   \_/  \~~~/   )
-                            | _Y_ |    |    \_/   (
-                *           |-----|  __|__   |      *
-                            `-----`        __|__
-
-</pre>
-</details>
-</div>
-<div id="authors-and-copyright" class="section level2 unnumbered" number="">
-<h2>Authors and copyright</h2>
-<p>This course is developed for the Monash Bioinformatics Platform by:</p>
-<ul>
-<li><a href="mailto:paul.harrison@monash.edu">Paul Harrison</a></li>
-<li><a href="mailto:Adele.Barugahare@monash.edu">Adele Barugahare</a></li>
-<li><a href="mailto:kirill.tsyganov@monash.edu">Kirill Tsyganov</a></li>
-</ul>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY-4: Creative Commons Attribution 4.0 International License</a>. The attribution is “Monash Bioinformatics Platform” if copying or modifying these notes.</p>
-<p><img src="figures/CC-BY.png" width="44" /></p>
+<div id="git-two" class="section level1" number="7">
+<h1><span class="header-section-number">Section 7</span> Git (part two)</h1>
 
 </div>
-</div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
+<a href="github.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="rmarkdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -432,7 +267,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/index.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/07-git2.Rmd",
 "text": "Edit"
 },
 "history": {
