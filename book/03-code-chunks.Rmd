@@ -151,6 +151,14 @@ avail_packages %>% ggplot(aes(Depend)) + geom_bar()
 
 --- Amazing !
 
+## Session info
+
+Let's include session info
+
+```{r eval = F}
+sessionInfo()
+```
+
 ## Setup chunk
 
 While it is great to be able to configure each chunk individually, but sometimes setting up a "global" chunk can help with making document chunks more manageable and easier to read. 
