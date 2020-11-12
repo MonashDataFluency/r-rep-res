@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 5 Git (part one) | Reproducible Research in R</title>
-  <meta name="description" content="Section 5 Git (part one) | Reproducible Research in R" />
+  <title>Part I: Rmarkdown from scratch | Reproducible Research in R</title>
+  <meta name="description" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 5 Git (part one) | Reproducible Research in R" />
+  <meta property="og:title" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 5 Git (part one) | Reproducible Research in R" />
+  <meta name="twitter:title" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="git-github-and-rstudio-rproj-file.html"/>
-<link rel="next" href="github-part-one.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="markdown-syntax.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -227,98 +227,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="git-part-one" class="section level1" number="5">
-<h1><span class="header-section-number">Section 5</span> Git (part one)</h1>
-<p>In the part one section of the book we will show you how to work with git on your local compute, without any regard to the external (remote) place such as GitHub. <a href="git-two.html#git-two">In part two</a> we will show you how to work with external (remote) repositories hosted at GitHub</p>
-<div id="introduction-3" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Introduction</h2>
-<p><a href="https://git-scm.com/doc">Git</a> is a version control tool, one of many tools, but it is very popular. Git was designed for <strong>tracking versions</strong> of software development, but it has been re-purpose for doing general tracking of text and data i.e scientific research.</p>
-<p>Below is an illustration of the differences between do-it-yourself (DIY) version control system, and git version control. DIY version control systems are great with two caveats:</p>
-<ul>
-<li>no one else will understand it</li>
-<li>the future you will forget the awesome schema that you have invented</li>
-</ul>
-
-<div class="figure" style="text-align: left"><span id="fig:git-vs-filesystem"></span>
-<img src="figures/git_vs_filesystem.png" alt="This is an example of git version control vs DIY versioning via filesystem" width="100%" />
-<p class="caption">
-Figure 5.1: This is an example of git version control vs DIY versioning via filesystem
-</p>
-</div>
-<p>We are not going to dwell on git long, there are much better resources for that, like <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>. But we will learn a handful of git commands just enough for us to track and share our research.</p>
-</div>
-<div id="git-init" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Git init</h2>
-<p>Let’s initiate new git repository, which is a lingo for marking our current folder <strong>special</strong>. From now on everything in that folder will be tracked by git. <strong>BUT</strong> we still have to actively save (commit) changes.</p>
-<pre><code>Tools
- └── Version Control
-           └── Project setup
-           
-Version control system: git</code></pre>
-<p>Alternatively execute the following code in R console and re-launch RStudio project</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="git-part-one.html#cb47-1"></a><span class="kw">system</span>(<span class="st">&quot;git init&quot;</span>)</span></code></pre></div>
-<p>Once that’s done, you should see new <code>Git</code> tab appearing in “Environment, History …” pane</p>
-<p>— That was unusual …</p>
-</div>
-<div id="git-commit" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Git commit</h2>
-<p>Let’s click on that new “Git” tab and select a couple of file and then click “commit” button.</p>
-<ol style="list-style-type: decimal">
-<li>Select these files:</li>
-</ol>
-<ul>
-<li><code>learning.Rmd</code></li>
-<li><code>learning.html</code></li>
-<li><code>presenting.Rmd</code></li>
-<li><code>presenting.html</code></li>
-</ul>
-<p>A new dialog should pop up, you should see this window <a href="git-part-one.html#fig:git1">5.2</a></p>
-
-<div class="figure" style="text-align: left"><span id="fig:git1"></span>
-<img src="figures/git1.png" alt="RStudio pop up dialog for git commit and other git related work" width="100%" />
-<p class="caption">
-Figure 5.2: RStudio pop up dialog for git commit and other git related work
-</p>
-</div>
-<ol start="2" style="list-style-type: decimal">
-<li>Write down a commit message (free form, but keep it informative)</li>
-</ol>
-<p>Let’s write the following text in the commit message box and press “commit”</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb48-1"><a href="git-part-one.html#cb48-1"></a>saving my first Rmarkdown document</span></code></pre></div>
-
-<div class="figure" style="text-align: left"><span id="fig:git2"></span>
-<img src="figures/git2.png" alt="RStudio pop up dialog for git commit and other git related work with commit message" width="100%" />
-<p class="caption">
-Figure 5.3: RStudio pop up dialog for git commit and other git related work with commit message
-</p>
-</div>
-<p>— happy days!</p>
-</div>
-<div id="git-username-and-useremail" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Git username and useremail</h2>
-<p>When you are using git for very first time on a new compute you will need to set up your username and email. Typically this is one off operation and almost always forgot about. But git will always remind you about that with the following message <a href="git-part-one.html#fig:git3">5.4</a></p>
-
-<div class="figure" style="text-align: left"><span id="fig:git3"></span>
-<img src="figures/git3.png" alt="RStudio pop up dialog showing additional step needs doing before using git" width="100%" />
-<p class="caption">
-Figure 5.4: RStudio pop up dialog showing additional step needs doing before using git
-</p>
-</div>
-<p>Let’s execute the following two commands in R console pane, as suggested by the message. Note if you don’t use <code>--global</code> flag, then every new git repository will need those two commands (personal preference really).</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="git-part-one.html#cb49-1"></a><span class="kw">system</span>(<span class="st">&quot;git config --global user.name kirill&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="git-part-one.html#cb50-1"></a><span class="kw">system</span>(<span class="st">&quot;git config --global user.email tskiril@gmail.com&quot;</span>)</span></code></pre></div>
-<p>Let’s switch back to our commit, pop up, window close that messagea and click commit again.</p>
-<p>— oops, forgot about that</p>
-
-</div>
+<div id="part-i-rmarkdown-from-scratch" class="section level1 unnumbered" number="">
+<h1>Part I: Rmarkdown from scratch</h1>
+<p>In the first part of the book we will begging with blank text file and finish with a sophisticated HTML webpage ready to be shared with the world. We will learn three main components of the Rmarkdown document, markdown syntax, YAML header and the code chunks, together with the <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> we are table to convert Rmarkdown files into HTML, PDF and Word documents effortlessly.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="git-github-and-rstudio-rproj-file.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="github-part-one.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="markdown-syntax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -350,7 +269,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/05-git1.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/01-introduction.Rmd",
 "text": "Edit"
 },
 "history": {

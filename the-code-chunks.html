@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 3 The code chunks | Reproducible Research in R</title>
+  <meta name="description" content="Section 3 The code chunks | Reproducible Research in R" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 3 The code chunks | Reproducible Research in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 3 The code chunks | Reproducible Research in R" />
+  
+  
+  
+
+
+
+<meta name="date" content="2020-11-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="yaml-header.html"/>
+<link rel="next" href="extras.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Reproducible Research in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#workshop-description"><i class="fa fa-check"></i>Workshop description</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i>Prerequisite</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#keywords"><i class="fa fa-check"></i>Keywords</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="part-i-rmarkdown-from-scratch.html"><a href="part-i-rmarkdown-from-scratch.html"><i class="fa fa-check"></i>Part I: Rmarkdown from scratch</a></li>
+<li class="chapter" data-level="1" data-path="markdown-syntax.html"><a href="markdown-syntax.html"><i class="fa fa-check"></i><b>1</b> Markdown syntax</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="markdown-syntax.html"><a href="markdown-syntax.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="markdown-syntax.html"><a href="markdown-syntax.html#rstudio-tweaks"><i class="fa fa-check"></i><b>1.2</b> RStudio tweaks</a></li>
+<li class="chapter" data-level="1.3" data-path="markdown-syntax.html"><a href="markdown-syntax.html#headers"><i class="fa fa-check"></i><b>1.3</b> Headers</a></li>
+<li class="chapter" data-level="1.4" data-path="markdown-syntax.html"><a href="markdown-syntax.html#bullet-points"><i class="fa fa-check"></i><b>1.4</b> Bullet points</a></li>
+<li class="chapter" data-level="1.5" data-path="markdown-syntax.html"><a href="markdown-syntax.html#task-list"><i class="fa fa-check"></i><b>1.5</b> Task list</a></li>
+<li class="chapter" data-level="1.6" data-path="markdown-syntax.html"><a href="markdown-syntax.html#code-and-math-blocks"><i class="fa fa-check"></i><b>1.6</b> Code and Math blocks</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="markdown-syntax.html"><a href="markdown-syntax.html#code-chunk"><i class="fa fa-check"></i><b>1.6.1</b> Code chunk</a></li>
+<li class="chapter" data-level="1.6.2" data-path="markdown-syntax.html"><a href="markdown-syntax.html#math-chunk"><i class="fa fa-check"></i><b>1.6.2</b> Math chunk</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="markdown-syntax.html"><a href="markdown-syntax.html#images"><i class="fa fa-check"></i><b>1.7</b> Images</a></li>
+<li class="chapter" data-level="1.8" data-path="markdown-syntax.html"><a href="markdown-syntax.html#final-look"><i class="fa fa-check"></i><b>1.8</b> Final look</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="yaml-header.html"><a href="yaml-header.html"><i class="fa fa-check"></i><b>2</b> YAML header</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="yaml-header.html"><a href="yaml-header.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="yaml-header.html"><a href="yaml-header.html#example-1-correct-yaml"><i class="fa fa-check"></i><b>2.1.1</b> Example 1 (Correct YAML)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="yaml-header.html"><a href="yaml-header.html#example-2-correct-yaml"><i class="fa fa-check"></i><b>2.1.2</b> Example 2 (Correct YAML)</a></li>
+<li class="chapter" data-level="2.1.3" data-path="yaml-header.html"><a href="yaml-header.html#example-3-incorrect-yaml"><i class="fa fa-check"></i><b>2.1.3</b> Example 3 (Incorrect YAML)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="yaml-header.html"><a href="yaml-header.html#title-date-and-author-keys"><i class="fa fa-check"></i><b>2.2</b> Title, date and author keys</a></li>
+<li class="chapter" data-level="2.3" data-path="yaml-header.html"><a href="yaml-header.html#output-key"><i class="fa fa-check"></i><b>2.3</b> Output key</a></li>
+<li class="chapter" data-level="2.4" data-path="yaml-header.html"><a href="yaml-header.html#configuring-output-document"><i class="fa fa-check"></i><b>2.4</b> Configuring output document</a></li>
+<li class="chapter" data-level="2.5" data-path="yaml-header.html"><a href="yaml-header.html#final-look-1"><i class="fa fa-check"></i><b>2.5</b> Final look</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-code-chunks.html"><a href="the-code-chunks.html"><i class="fa fa-check"></i><b>3</b> The code chunks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-code-chunks.html"><a href="the-code-chunks.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="the-code-chunks.html"><a href="the-code-chunks.html#chunk-name"><i class="fa fa-check"></i><b>3.2</b> Chunk name</a></li>
+<li class="chapter" data-level="3.3" data-path="the-code-chunks.html"><a href="the-code-chunks.html#chunk-options"><i class="fa fa-check"></i><b>3.3</b> Chunk options</a></li>
+<li class="chapter" data-level="3.4" data-path="the-code-chunks.html"><a href="the-code-chunks.html#message-and-warning-options"><i class="fa fa-check"></i><b>3.4</b> Message and warning options</a></li>
+<li class="chapter" data-level="3.5" data-path="the-code-chunks.html"><a href="the-code-chunks.html#more-code-chunks-and-data-wragnling"><i class="fa fa-check"></i><b>3.5</b> More code chunks and data wragnling</a></li>
+<li class="chapter" data-level="3.6" data-path="the-code-chunks.html"><a href="the-code-chunks.html#session-info"><i class="fa fa-check"></i><b>3.6</b> Session info</a></li>
+<li class="chapter" data-level="3.7" data-path="the-code-chunks.html"><a href="the-code-chunks.html#setup-chunk"><i class="fa fa-check"></i><b>3.7</b> Setup chunk</a></li>
+<li class="chapter" data-level="3.8" data-path="the-code-chunks.html"><a href="the-code-chunks.html#final-look-2"><i class="fa fa-check"></i><b>3.8</b> Final look</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="extras.html"><a href="extras.html"><i class="fa fa-check"></i><b>4</b> Extras</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="extras.html"><a href="extras.html#code-folding"><i class="fa fa-check"></i><b>4.1</b> Code folding</a></li>
+<li class="chapter" data-level="4.2" data-path="extras.html"><a href="extras.html#presentation-slides-ioslides"><i class="fa fa-check"></i><b>4.2</b> Presentation slides (ioslides)</a></li>
+<li class="chapter" data-level="4.3" data-path="extras.html"><a href="extras.html#ioslides-features"><i class="fa fa-check"></i><b>4.3</b> ioslides features</a></li>
+<li class="chapter" data-level="4.4" data-path="extras.html"><a href="extras.html#tabs"><i class="fa fa-check"></i><b>4.4</b> Tabs</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="extras.html"><a href="extras.html#final-look-3"><i class="fa fa-check"></i><b>4.4.1</b> Final look</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-github-and-rstudio-rproj-file.html"><a href="git-github-and-rstudio-rproj-file.html"><i class="fa fa-check"></i>Git, GitHub and RStudio Rproj file</a></li>
+<li class="chapter" data-level="5" data-path="git-part-one.html"><a href="git-part-one.html"><i class="fa fa-check"></i><b>5</b> Git (part one)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="git-part-one.html"><a href="git-part-one.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="git-part-one.html"><a href="git-part-one.html#git-init"><i class="fa fa-check"></i><b>5.2</b> Git init</a></li>
+<li class="chapter" data-level="5.3" data-path="git-part-one.html"><a href="git-part-one.html#git-commit"><i class="fa fa-check"></i><b>5.3</b> Git commit</a></li>
+<li class="chapter" data-level="5.4" data-path="git-part-one.html"><a href="git-part-one.html#git-username-and-useremail"><i class="fa fa-check"></i><b>5.4</b> Git username and useremail</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github-part-one.html"><a href="github-part-one.html"><i class="fa fa-check"></i><b>6</b> GitHub (part one)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github-part-one.html"><a href="github-part-one.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="github-part-one.html"><a href="github-part-one.html#new-repository"><i class="fa fa-check"></i><b>6.2</b> New repository</a></li>
+<li class="chapter" data-level="6.3" data-path="github-part-one.html"><a href="github-part-one.html#repository-address-git-remote"><i class="fa fa-check"></i><b>6.3</b> Repository address (git remote`)</a></li>
+<li class="chapter" data-level="6.4" data-path="github-part-one.html"><a href="github-part-one.html#linking-git-with-github"><i class="fa fa-check"></i><b>6.4</b> Linking Git with GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="git-two.html"><a href="git-two.html"><i class="fa fa-check"></i><b>7</b> Git (part two)</a></li>
+<li class="chapter" data-level="8" data-path="github-part-two.html"><a href="github-part-two.html"><i class="fa fa-check"></i><b>8</b> GitHub (part two)</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducible Research in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-code-chunks" class="section level1" number="3">
+<h1><span class="header-section-number">Section 3</span> The code chunks</h1>
+<p>We have already seen that we can highlight any code with triple backticks and the language keyword in the <a href="markdown-syntax.html#markdown-syntax">first section</a> of the book. The <a href="https://cran.r-project.org/web/packages/knitr/">Knitr R package</a> provides a mechanism for including <strong>live</strong> code into the document instead. This means that apart from code, but can see and interact with the results of such code. This is extremely useful for research communication and reproducibility.</p>
+<p>For this part of the book, we will need to install a few additional packages. Copy and paste install packages code into your RStudio console</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="the-code-chunks.html#cb28-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;DT&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>))</span></code></pre></div>
+<div id="introduction-2" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Introduction</h2>
+<p>Each code block is referred to as “code chunk”. You can have as many code chunks as you like. The code chunk is essentially what we have already been using, i.e triple backticks on either side of the code blob, but now add curly brackets at the end of the first triplet e.g</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb29-1"><a href="the-code-chunks.html#cb29-1"></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href="the-code-chunks.html#cb29-2"></a></span>
+<span id="cb29-3"><a href="the-code-chunks.html#cb29-3"></a><span class="in">```</span></span></code></pre></div>
+<p>Look for green “insert” button at the top of the text editor pane, in order to insert R chunk. Alternatively use keyboard shortcut <code>alt+shift+i</code></p>
+<p>Each chunk is highly configurable via chunk options, using key value pairs once again. The very first chunk option is <code>engine</code> i.e which language is included in the code chunk. Yes Rmarkdown is capable of doing many different languages. Use drop down arrow on the green “insert” button to explore some of the most common languages.</p>
+<p><strong>N.B:</strong> Name of the engine i.e the language name, always position first in the R chunk, usually key “engine” is omitted.</p>
+<p>Let’s include our first bit of R code. We are going to load a library <code>magrittr</code>, to get a pipe operator (it isn’t overly important to understand the pipe operator for this course), then we are going to call base function <code>avaliable.packages()</code> and store results in the variable <code>avail_packages</code> and <code>Knit</code> our document once again. Note that I’m also including new section header.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="the-code-chunks.html#cb30-1"></a><span class="fu"># R code</span></span>
+<span id="cb30-2"><a href="the-code-chunks.html#cb30-2"></a></span>
+<span id="cb30-3"><a href="the-code-chunks.html#cb30-3"></a><span class="in">```{r}</span></span>
+<span id="cb30-4"><a href="the-code-chunks.html#cb30-4"></a><span class="in">library(magrittr)</span></span>
+<span id="cb30-5"><a href="the-code-chunks.html#cb30-5"></a></span>
+<span id="cb30-6"><a href="the-code-chunks.html#cb30-6"></a><span class="in">avail_packages &lt;- available.packages(contriburl = contrib.url(&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;))</span></span>
+<span id="cb30-7"><a href="the-code-chunks.html#cb30-7"></a></span>
+<span id="cb30-8"><a href="the-code-chunks.html#cb30-8"></a><span class="in">#head(avail_packages)</span></span>
+<span id="cb30-9"><a href="the-code-chunks.html#cb30-9"></a></span>
+<span id="cb30-10"><a href="the-code-chunks.html#cb30-10"></a><span class="in">avail_packages %&gt;% head</span></span>
+<span id="cb30-11"><a href="the-code-chunks.html#cb30-11"></a><span class="in">```</span></span></code></pre></div>
+<p>— It’s computing !</p>
+</div>
+<div id="chunk-name" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Chunk name</h2>
+<p>It is very useful to name your code chunks, they can server multiple purposes such as cross-referencing and debugging. Names are optional, but if you are including them, they must be in a second position.</p>
+<p>General layout of any chunk is</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb31-1"><a href="the-code-chunks.html#cb31-1"></a><span class="in">```{r chunk_name, options}</span></span>
+<span id="cb31-2"><a href="the-code-chunks.html#cb31-2"></a><span class="in">```</span></span></code></pre></div>
+<p>Let’s add a <code>get_data</code> name to our code chunk. We also going to wrangle our data a little bit to get most relevant information for us and press <code>Knit</code></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="the-code-chunks.html#cb32-1"></a><span class="in">```{r get_data}</span></span>
+<span id="cb32-2"><a href="the-code-chunks.html#cb32-2"></a></span>
+<span id="cb32-3"><a href="the-code-chunks.html#cb32-3"></a><span class="in">library(magrittr)</span></span>
+<span id="cb32-4"><a href="the-code-chunks.html#cb32-4"></a><span class="in">library(dplyr)</span></span>
+<span id="cb32-5"><a href="the-code-chunks.html#cb32-5"></a></span>
+<span id="cb32-6"><a href="the-code-chunks.html#cb32-6"></a><span class="in">avail_packages &lt;- available.packages(contriburl = contrib.url(&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;)) %&gt;% </span></span>
+<span id="cb32-7"><a href="the-code-chunks.html#cb32-7"></a><span class="in">                    as.data.frame() %&gt;% </span></span>
+<span id="cb32-8"><a href="the-code-chunks.html#cb32-8"></a><span class="in">                    as_tibble() %&gt;% </span></span>
+<span id="cb32-9"><a href="the-code-chunks.html#cb32-9"></a><span class="in">                    rowwise() %&gt;% </span></span>
+<span id="cb32-10"><a href="the-code-chunks.html#cb32-10"></a><span class="in">                    mutate(Depend = length(unlist(strsplit(Imports, split = &quot;,&quot;)))) %&gt;% </span></span>
+<span id="cb32-11"><a href="the-code-chunks.html#cb32-11"></a><span class="in">                    ungroup() %&gt;% </span></span>
+<span id="cb32-12"><a href="the-code-chunks.html#cb32-12"></a><span class="in">                    select(Package, Version, Depend, Imports, License)</span></span>
+<span id="cb32-13"><a href="the-code-chunks.html#cb32-13"></a><span class="in">```</span></span></code></pre></div>
+<p>— How is it looking?</p>
+</div>
+<div id="chunk-options" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Chunk options</h2>
+<p>For comprehensive overview of code chunks that <code>knitr</code> refer to <a href="https://yihui.name/knitr/options/">definitive guide</a> from the author of <code>Knitr</code> and <code>Rmarkdown</code> R packages.</p>
+<p>Here is a short list of the most common that tend to be used by me.</p>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="5%" />
+<col width="87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">value</th>
+<th align="left">type</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">child</td>
+<td align="left">NULL</td>
+<td align="left">code_evaluation</td>
+<td align="left">A character vector of filenames. Knitr will knit the files and place them into the main document.</td>
+</tr>
+<tr class="even">
+<td align="left">engine</td>
+<td align="left">‘R’</td>
+<td align="left">code_evaluation</td>
+<td align="left">Knitr will evaluate the chunk in the named language, e.g. engine = ‘python’. Run names(knitr::knit_engines$get()) to see supported languages.</td>
+</tr>
+<tr class="odd">
+<td align="left">eval</td>
+<td align="left">TRUE</td>
+<td align="left">code_evaluation</td>
+<td align="left">If FALSE, knitr will not run the code in the code chunk.</td>
+</tr>
+<tr class="even">
+<td align="left">include</td>
+<td align="left">TRUE</td>
+<td align="left">code_evaluation</td>
+<td align="left">If FALSE, knitr will run the chunk but not include the chunk in the final document.</td>
+</tr>
+<tr class="odd">
+<td align="left">fig.align</td>
+<td align="left">‘default’</td>
+<td align="left">plots</td>
+<td align="left">How to align graphics in the final document. One of ‘left’, ‘right’, or ‘center’.</td>
+</tr>
+<tr class="even">
+<td align="left">fig.cap</td>
+<td align="left">NULL</td>
+<td align="left">plots</td>
+<td align="left">A character string to be used as a figure caption in LaTex.</td>
+</tr>
+<tr class="odd">
+<td align="left">fig.height</td>
+<td align="left">7</td>
+<td align="left">plots</td>
+<td align="left">The height to use in R for plots created by the chunk (in inches).</td>
+</tr>
+<tr class="even">
+<td align="left">fig.width</td>
+<td align="left">7</td>
+<td align="left">plots</td>
+<td align="left">The width to use in R for plots created by the chunk (in inches).</td>
+</tr>
+<tr class="odd">
+<td align="left">echo</td>
+<td align="left">TRUE</td>
+<td align="left">results</td>
+<td align="left">If FALSE, knitr will not display the code in the code chunk above it’s results in the final document.</td>
+</tr>
+<tr class="even">
+<td align="left">results</td>
+<td align="left">‘markup’</td>
+<td align="left">results</td>
+<td align="left">If ‘hide’, knitr will not display the code’s results in the final document. If ‘hold’,knitr will delay displaying all output pieces until the end of the chunk. If ‘asis’,knitr will pass through results without reformatting them (useful if results return raw HTML,etc.)</td>
+</tr>
+<tr class="odd">
+<td align="left">message</td>
+<td align="left">TRUE</td>
+<td align="left">results</td>
+<td align="left">If FALSE, knitr will not display any messages generated by the code.</td>
+</tr>
+<tr class="even">
+<td align="left">warning</td>
+<td align="left">TRUE</td>
+<td align="left">results</td>
+<td align="left">If FALSE, knitr will not display any warning messages generated by the code.</td>
+</tr>
+</tbody>
+</table>
+<p>— There are way too many of them, good luck !</p>
+</div>
+<div id="message-and-warning-options" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Message and warning options</h2>
+<p>It is great that we have live code in our document, but results seems to be popluted with additional text. Those are “messages” from the package loading and some could be additional warning about casting values to different type. It depends, but generally suppressing message really helps with document apperance. I also tend to suppresss warnings, but this can cause issue in downstread analysis, be sure you understand your warnings before suppressing them.</p>
+<p>Let’s add a couple of options to our code chunk and press <code>Knit</code></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="the-code-chunks.html#cb33-1"></a><span class="in">```{r get_data, message = FALSE, warning = FALSE}</span></span></code></pre></div>
+<p>— Much better, yeah?</p>
+</div>
+<div id="more-code-chunks-and-data-wragnling" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> More code chunks and data wragnling</h2>
+<p>Let’s add a couple more chunks and wrangle our data a little more.</p>
+<p><em>It is okay if you don’t understand some of R code in this example. The main point of these R chunks is to illustrate what can be done</em></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb34-1"><a href="the-code-chunks.html#cb34-1"></a><span class="fu">## Getting and wrangling the data</span></span>
+<span id="cb34-2"><a href="the-code-chunks.html#cb34-2"></a></span>
+<span id="cb34-3"><a href="the-code-chunks.html#cb34-3"></a><span class="in">```{r get_data}</span></span>
+<span id="cb34-4"><a href="the-code-chunks.html#cb34-4"></a><span class="in">make_url &lt;- function(package) {</span></span>
+<span id="cb34-5"><a href="the-code-chunks.html#cb34-5"></a><span class="in">  paste0(&#39;&lt;a href=&quot;https://cran.r-project.org/web/packages/&#39;, package, &#39;&quot;&gt;&#39;, package, &#39;&lt;/a&gt;&#39;)</span></span>
+<span id="cb34-6"><a href="the-code-chunks.html#cb34-6"></a><span class="in">}</span></span>
+<span id="cb34-7"><a href="the-code-chunks.html#cb34-7"></a></span>
+<span id="cb34-8"><a href="the-code-chunks.html#cb34-8"></a><span class="in">library(magrittr)</span></span>
+<span id="cb34-9"><a href="the-code-chunks.html#cb34-9"></a><span class="in">library(dplyr)</span></span>
+<span id="cb34-10"><a href="the-code-chunks.html#cb34-10"></a></span>
+<span id="cb34-11"><a href="the-code-chunks.html#cb34-11"></a><span class="in">avail_packages &lt;- available.packages(contriburl = contrib.url(&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;)) %&gt;% </span></span>
+<span id="cb34-12"><a href="the-code-chunks.html#cb34-12"></a><span class="in">                    as.data.frame() %&gt;% </span></span>
+<span id="cb34-13"><a href="the-code-chunks.html#cb34-13"></a><span class="in">                    as_tibble() %&gt;% </span></span>
+<span id="cb34-14"><a href="the-code-chunks.html#cb34-14"></a><span class="in">                    rowwise() %&gt;% </span></span>
+<span id="cb34-15"><a href="the-code-chunks.html#cb34-15"></a><span class="in">                    mutate(Depend = length(unlist(strsplit(Imports, split = &quot;,&quot;)))) %&gt;% </span></span>
+<span id="cb34-16"><a href="the-code-chunks.html#cb34-16"></a><span class="in">                    ungroup() %&gt;% </span></span>
+<span id="cb34-17"><a href="the-code-chunks.html#cb34-17"></a><span class="in">                    select(Package, Version, Depend, Imports, License) %&gt;% </span></span>
+<span id="cb34-18"><a href="the-code-chunks.html#cb34-18"></a><span class="in">                    mutate(Package = make_url(Package),</span></span>
+<span id="cb34-19"><a href="the-code-chunks.html#cb34-19"></a><span class="in">                           Depend = ifelse(is.na(Imports), -1, Depend)) </span></span>
+<span id="cb34-20"><a href="the-code-chunks.html#cb34-20"></a><span class="in">```</span></span>
+<span id="cb34-21"><a href="the-code-chunks.html#cb34-21"></a></span>
+<span id="cb34-22"><a href="the-code-chunks.html#cb34-22"></a><span class="fu">## Displaying table</span></span>
+<span id="cb34-23"><a href="the-code-chunks.html#cb34-23"></a></span>
+<span id="cb34-24"><a href="the-code-chunks.html#cb34-24"></a><span class="in">```{r make_table, message=FALSE, warning=FALSE}</span></span>
+<span id="cb34-25"><a href="the-code-chunks.html#cb34-25"></a><span class="in">library(DT)</span></span>
+<span id="cb34-26"><a href="the-code-chunks.html#cb34-26"></a><span class="in">avail_packages %&gt;% datatable(escape = FALSE)</span></span>
+<span id="cb34-27"><a href="the-code-chunks.html#cb34-27"></a><span class="in">```</span></span>
+<span id="cb34-28"><a href="the-code-chunks.html#cb34-28"></a></span>
+<span id="cb34-29"><a href="the-code-chunks.html#cb34-29"></a><span class="fu">## Plot the data</span></span>
+<span id="cb34-30"><a href="the-code-chunks.html#cb34-30"></a></span>
+<span id="cb34-31"><a href="the-code-chunks.html#cb34-31"></a><span class="in">```{r plot}</span></span>
+<span id="cb34-32"><a href="the-code-chunks.html#cb34-32"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb34-33"><a href="the-code-chunks.html#cb34-33"></a><span class="in">avail_packages %&gt;% ggplot(aes(Depend)) + geom_bar()</span></span>
+<span id="cb34-34"><a href="the-code-chunks.html#cb34-34"></a><span class="in">```</span></span></code></pre></div>
+<p>— Amazing !</p>
+</div>
+<div id="session-info" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Session info</h2>
+<p>Let’s include session info</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="the-code-chunks.html#cb35-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+</div>
+<div id="setup-chunk" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Setup chunk</h2>
+<p>While it is great to be able to configure each chunk individually, but sometimes setting up a “global” chunk can help with making document chunks more manageable and easier to read.</p>
+<p>Let’s include a “setup” chunk (name of the chunk can be anything) and set some of the options globally for the entire document. Note that we can also move all of our libraries into that chunk. This may or may not be a good idea, once again all depends what you need to show the person you are communicate this too. Don’t forget to press <code>Knit</code></p>
+<p>Note that <code>include</code> option here set to <code>FALSE</code> meaning that chunk won’t be included at all into the final document, as oppose to <code>eval = FALSE</code> where chunk is included but not evaluated.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="the-code-chunks.html#cb36-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb36-2"><a href="the-code-chunks.html#cb36-2"></a><span class="in">knitr::opts_chunk$set(echo = TRUE,</span></span>
+<span id="cb36-3"><a href="the-code-chunks.html#cb36-3"></a><span class="in">                      message = FALSE,</span></span>
+<span id="cb36-4"><a href="the-code-chunks.html#cb36-4"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb36-5"><a href="the-code-chunks.html#cb36-5"></a></span>
+<span id="cb36-6"><a href="the-code-chunks.html#cb36-6"></a><span class="in">library(magrittr)</span></span>
+<span id="cb36-7"><a href="the-code-chunks.html#cb36-7"></a><span class="in">library(dplyr)</span></span>
+<span id="cb36-8"><a href="the-code-chunks.html#cb36-8"></a><span class="in">library(DT)</span></span>
+<span id="cb36-9"><a href="the-code-chunks.html#cb36-9"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb36-10"><a href="the-code-chunks.html#cb36-10"></a><span class="in">```</span></span></code></pre></div>
+<p>— How about that?</p>
+</div>
+<div id="final-look-2" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Final look</h2>
+<p>Just in case you’ve got lost, this is how our second section should look like</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb37-1"><a href="the-code-chunks.html#cb37-1"></a><span class="fu"># R code</span></span>
+<span id="cb37-2"><a href="the-code-chunks.html#cb37-2"></a></span>
+<span id="cb37-3"><a href="the-code-chunks.html#cb37-3"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb37-4"><a href="the-code-chunks.html#cb37-4"></a><span class="in">knitr::opts_chunk$set(echo = TRUE,</span></span>
+<span id="cb37-5"><a href="the-code-chunks.html#cb37-5"></a><span class="in">                      message = FALSE,</span></span>
+<span id="cb37-6"><a href="the-code-chunks.html#cb37-6"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb37-7"><a href="the-code-chunks.html#cb37-7"></a></span>
+<span id="cb37-8"><a href="the-code-chunks.html#cb37-8"></a><span class="in">library(magrittr)</span></span>
+<span id="cb37-9"><a href="the-code-chunks.html#cb37-9"></a><span class="in">library(dplyr)</span></span>
+<span id="cb37-10"><a href="the-code-chunks.html#cb37-10"></a><span class="in">library(DT)</span></span>
+<span id="cb37-11"><a href="the-code-chunks.html#cb37-11"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb37-12"><a href="the-code-chunks.html#cb37-12"></a><span class="in">```</span></span>
+<span id="cb37-13"><a href="the-code-chunks.html#cb37-13"></a></span>
+<span id="cb37-14"><a href="the-code-chunks.html#cb37-14"></a><span class="fu">## Getting and wrangling the data</span></span>
+<span id="cb37-15"><a href="the-code-chunks.html#cb37-15"></a></span>
+<span id="cb37-16"><a href="the-code-chunks.html#cb37-16"></a><span class="in">```{r get_data}</span></span>
+<span id="cb37-17"><a href="the-code-chunks.html#cb37-17"></a></span>
+<span id="cb37-18"><a href="the-code-chunks.html#cb37-18"></a><span class="in">make_url &lt;- function(package) {</span></span>
+<span id="cb37-19"><a href="the-code-chunks.html#cb37-19"></a><span class="in">  paste0(&#39;&lt;a href=&quot;https://cran.r-project.org/web/packages/&#39;, package, &#39;&quot;&gt;&#39;, package, &#39;&lt;/a&gt;&#39;)</span></span>
+<span id="cb37-20"><a href="the-code-chunks.html#cb37-20"></a><span class="in">}</span></span>
+<span id="cb37-21"><a href="the-code-chunks.html#cb37-21"></a></span>
+<span id="cb37-22"><a href="the-code-chunks.html#cb37-22"></a><span class="in">library(magrittr)</span></span>
+<span id="cb37-23"><a href="the-code-chunks.html#cb37-23"></a><span class="in">library(dplyr)</span></span>
+<span id="cb37-24"><a href="the-code-chunks.html#cb37-24"></a></span>
+<span id="cb37-25"><a href="the-code-chunks.html#cb37-25"></a><span class="in">avail_packages &lt;- available.packages(contriburl = contrib.url(&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;)) %&gt;% </span></span>
+<span id="cb37-26"><a href="the-code-chunks.html#cb37-26"></a><span class="in">                    as.data.frame() %&gt;% </span></span>
+<span id="cb37-27"><a href="the-code-chunks.html#cb37-27"></a><span class="in">                    as_tibble() %&gt;% </span></span>
+<span id="cb37-28"><a href="the-code-chunks.html#cb37-28"></a><span class="in">                    rowwise() %&gt;% </span></span>
+<span id="cb37-29"><a href="the-code-chunks.html#cb37-29"></a><span class="in">                    mutate(Depend = length(unlist(strsplit(Imports, split = &quot;,&quot;)))) %&gt;% </span></span>
+<span id="cb37-30"><a href="the-code-chunks.html#cb37-30"></a><span class="in">                    ungroup() %&gt;% </span></span>
+<span id="cb37-31"><a href="the-code-chunks.html#cb37-31"></a><span class="in">                    select(Package, Version, Depend, Imports, License) %&gt;% </span></span>
+<span id="cb37-32"><a href="the-code-chunks.html#cb37-32"></a><span class="in">                    mutate(Package = make_url(Package),</span></span>
+<span id="cb37-33"><a href="the-code-chunks.html#cb37-33"></a><span class="in">                           Depend = ifelse(is.na(Imports), -1, Depend)) </span></span>
+<span id="cb37-34"><a href="the-code-chunks.html#cb37-34"></a><span class="in">```</span></span>
+<span id="cb37-35"><a href="the-code-chunks.html#cb37-35"></a></span>
+<span id="cb37-36"><a href="the-code-chunks.html#cb37-36"></a><span class="fu">## Displaying table</span></span>
+<span id="cb37-37"><a href="the-code-chunks.html#cb37-37"></a></span>
+<span id="cb37-38"><a href="the-code-chunks.html#cb37-38"></a><span class="in">```{r make_table, message=FALSE, warning=FALSE}</span></span>
+<span id="cb37-39"><a href="the-code-chunks.html#cb37-39"></a><span class="in">library(DT)</span></span>
+<span id="cb37-40"><a href="the-code-chunks.html#cb37-40"></a><span class="in">avail_packages %&gt;% datatable(escape = FALSE)</span></span>
+<span id="cb37-41"><a href="the-code-chunks.html#cb37-41"></a><span class="in">```</span></span>
+<span id="cb37-42"><a href="the-code-chunks.html#cb37-42"></a></span>
+<span id="cb37-43"><a href="the-code-chunks.html#cb37-43"></a><span class="fu">## Plot the data</span></span>
+<span id="cb37-44"><a href="the-code-chunks.html#cb37-44"></a></span>
+<span id="cb37-45"><a href="the-code-chunks.html#cb37-45"></a><span class="in">```{r plot}</span></span>
+<span id="cb37-46"><a href="the-code-chunks.html#cb37-46"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb37-47"><a href="the-code-chunks.html#cb37-47"></a><span class="in">avail_packages %&gt;% ggplot(aes(Depend)) + geom_bar()</span></span>
+<span id="cb37-48"><a href="the-code-chunks.html#cb37-48"></a><span class="in">```</span></span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="yaml-header.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="extras.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/03-code-chunks.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["Reproducible-Research-in-R.pdf", "PDF"]],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

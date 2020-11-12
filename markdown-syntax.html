@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Markdown syntax | Reproducible Research in R</title>
+  <meta name="description" content="Section 1 Markdown syntax | Reproducible Research in R" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Markdown syntax | Reproducible Research in R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Markdown syntax | Reproducible Research in R" />
+  
+  
+  
+
+
+
+<meta name="date" content="2020-11-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="part-i-rmarkdown-from-scratch.html"/>
+<link rel="next" href="yaml-header.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Reproducible Research in R</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#workshop-description"><i class="fa fa-check"></i>Workshop description</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i>Prerequisite</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#keywords"><i class="fa fa-check"></i>Keywords</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#authors-and-copyright"><i class="fa fa-check"></i>Authors and copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="part-i-rmarkdown-from-scratch.html"><a href="part-i-rmarkdown-from-scratch.html"><i class="fa fa-check"></i>Part I: Rmarkdown from scratch</a></li>
+<li class="chapter" data-level="1" data-path="markdown-syntax.html"><a href="markdown-syntax.html"><i class="fa fa-check"></i><b>1</b> Markdown syntax</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="markdown-syntax.html"><a href="markdown-syntax.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="markdown-syntax.html"><a href="markdown-syntax.html#rstudio-tweaks"><i class="fa fa-check"></i><b>1.2</b> RStudio tweaks</a></li>
+<li class="chapter" data-level="1.3" data-path="markdown-syntax.html"><a href="markdown-syntax.html#headers"><i class="fa fa-check"></i><b>1.3</b> Headers</a></li>
+<li class="chapter" data-level="1.4" data-path="markdown-syntax.html"><a href="markdown-syntax.html#bullet-points"><i class="fa fa-check"></i><b>1.4</b> Bullet points</a></li>
+<li class="chapter" data-level="1.5" data-path="markdown-syntax.html"><a href="markdown-syntax.html#task-list"><i class="fa fa-check"></i><b>1.5</b> Task list</a></li>
+<li class="chapter" data-level="1.6" data-path="markdown-syntax.html"><a href="markdown-syntax.html#code-and-math-blocks"><i class="fa fa-check"></i><b>1.6</b> Code and Math blocks</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="markdown-syntax.html"><a href="markdown-syntax.html#code-chunk"><i class="fa fa-check"></i><b>1.6.1</b> Code chunk</a></li>
+<li class="chapter" data-level="1.6.2" data-path="markdown-syntax.html"><a href="markdown-syntax.html#math-chunk"><i class="fa fa-check"></i><b>1.6.2</b> Math chunk</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="markdown-syntax.html"><a href="markdown-syntax.html#images"><i class="fa fa-check"></i><b>1.7</b> Images</a></li>
+<li class="chapter" data-level="1.8" data-path="markdown-syntax.html"><a href="markdown-syntax.html#final-look"><i class="fa fa-check"></i><b>1.8</b> Final look</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="yaml-header.html"><a href="yaml-header.html"><i class="fa fa-check"></i><b>2</b> YAML header</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="yaml-header.html"><a href="yaml-header.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="yaml-header.html"><a href="yaml-header.html#example-1-correct-yaml"><i class="fa fa-check"></i><b>2.1.1</b> Example 1 (Correct YAML)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="yaml-header.html"><a href="yaml-header.html#example-2-correct-yaml"><i class="fa fa-check"></i><b>2.1.2</b> Example 2 (Correct YAML)</a></li>
+<li class="chapter" data-level="2.1.3" data-path="yaml-header.html"><a href="yaml-header.html#example-3-incorrect-yaml"><i class="fa fa-check"></i><b>2.1.3</b> Example 3 (Incorrect YAML)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="yaml-header.html"><a href="yaml-header.html#title-date-and-author-keys"><i class="fa fa-check"></i><b>2.2</b> Title, date and author keys</a></li>
+<li class="chapter" data-level="2.3" data-path="yaml-header.html"><a href="yaml-header.html#output-key"><i class="fa fa-check"></i><b>2.3</b> Output key</a></li>
+<li class="chapter" data-level="2.4" data-path="yaml-header.html"><a href="yaml-header.html#configuring-output-document"><i class="fa fa-check"></i><b>2.4</b> Configuring output document</a></li>
+<li class="chapter" data-level="2.5" data-path="yaml-header.html"><a href="yaml-header.html#final-look-1"><i class="fa fa-check"></i><b>2.5</b> Final look</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-code-chunks.html"><a href="the-code-chunks.html"><i class="fa fa-check"></i><b>3</b> The code chunks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-code-chunks.html"><a href="the-code-chunks.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="the-code-chunks.html"><a href="the-code-chunks.html#chunk-name"><i class="fa fa-check"></i><b>3.2</b> Chunk name</a></li>
+<li class="chapter" data-level="3.3" data-path="the-code-chunks.html"><a href="the-code-chunks.html#chunk-options"><i class="fa fa-check"></i><b>3.3</b> Chunk options</a></li>
+<li class="chapter" data-level="3.4" data-path="the-code-chunks.html"><a href="the-code-chunks.html#message-and-warning-options"><i class="fa fa-check"></i><b>3.4</b> Message and warning options</a></li>
+<li class="chapter" data-level="3.5" data-path="the-code-chunks.html"><a href="the-code-chunks.html#more-code-chunks-and-data-wragnling"><i class="fa fa-check"></i><b>3.5</b> More code chunks and data wragnling</a></li>
+<li class="chapter" data-level="3.6" data-path="the-code-chunks.html"><a href="the-code-chunks.html#session-info"><i class="fa fa-check"></i><b>3.6</b> Session info</a></li>
+<li class="chapter" data-level="3.7" data-path="the-code-chunks.html"><a href="the-code-chunks.html#setup-chunk"><i class="fa fa-check"></i><b>3.7</b> Setup chunk</a></li>
+<li class="chapter" data-level="3.8" data-path="the-code-chunks.html"><a href="the-code-chunks.html#final-look-2"><i class="fa fa-check"></i><b>3.8</b> Final look</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="extras.html"><a href="extras.html"><i class="fa fa-check"></i><b>4</b> Extras</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="extras.html"><a href="extras.html#code-folding"><i class="fa fa-check"></i><b>4.1</b> Code folding</a></li>
+<li class="chapter" data-level="4.2" data-path="extras.html"><a href="extras.html#presentation-slides-ioslides"><i class="fa fa-check"></i><b>4.2</b> Presentation slides (ioslides)</a></li>
+<li class="chapter" data-level="4.3" data-path="extras.html"><a href="extras.html#ioslides-features"><i class="fa fa-check"></i><b>4.3</b> ioslides features</a></li>
+<li class="chapter" data-level="4.4" data-path="extras.html"><a href="extras.html#tabs"><i class="fa fa-check"></i><b>4.4</b> Tabs</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="extras.html"><a href="extras.html#final-look-3"><i class="fa fa-check"></i><b>4.4.1</b> Final look</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-github-and-rstudio-rproj-file.html"><a href="git-github-and-rstudio-rproj-file.html"><i class="fa fa-check"></i>Git, GitHub and RStudio Rproj file</a></li>
+<li class="chapter" data-level="5" data-path="git-part-one.html"><a href="git-part-one.html"><i class="fa fa-check"></i><b>5</b> Git (part one)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="git-part-one.html"><a href="git-part-one.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="git-part-one.html"><a href="git-part-one.html#git-init"><i class="fa fa-check"></i><b>5.2</b> Git init</a></li>
+<li class="chapter" data-level="5.3" data-path="git-part-one.html"><a href="git-part-one.html#git-commit"><i class="fa fa-check"></i><b>5.3</b> Git commit</a></li>
+<li class="chapter" data-level="5.4" data-path="git-part-one.html"><a href="git-part-one.html#git-username-and-useremail"><i class="fa fa-check"></i><b>5.4</b> Git username and useremail</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github-part-one.html"><a href="github-part-one.html"><i class="fa fa-check"></i><b>6</b> GitHub (part one)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github-part-one.html"><a href="github-part-one.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="github-part-one.html"><a href="github-part-one.html#new-repository"><i class="fa fa-check"></i><b>6.2</b> New repository</a></li>
+<li class="chapter" data-level="6.3" data-path="github-part-one.html"><a href="github-part-one.html#repository-address-git-remote"><i class="fa fa-check"></i><b>6.3</b> Repository address (git remote`)</a></li>
+<li class="chapter" data-level="6.4" data-path="github-part-one.html"><a href="github-part-one.html#linking-git-with-github"><i class="fa fa-check"></i><b>6.4</b> Linking Git with GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="git-two.html"><a href="git-two.html"><i class="fa fa-check"></i><b>7</b> Git (part two)</a></li>
+<li class="chapter" data-level="8" data-path="github-part-two.html"><a href="github-part-two.html"><i class="fa fa-check"></i><b>8</b> GitHub (part two)</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducible Research in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="markdown-syntax" class="section level1" number="1">
+<h1><span class="header-section-number">Section 1</span> Markdown syntax</h1>
+<p>We will begging exploring concise markdown syntax in the first section of the book. You will be amazed how with just few additional text markups and the smart functions from <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> we can create a world of different document types.</p>
+<div id="introduction" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Introduction</h2>
+<p>Let’s begin with install <code>rmarkdown</code> package using the following command</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="markdown-syntax.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
+<p>Once we have the package installed, let’s open a plain text file by either executing the following command</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="markdown-syntax.html#cb3-1"></a><span class="kw">file.edit</span>(<span class="st">&quot;learning.Rmd&quot;</span>)</span></code></pre></div>
+<p>or via help menu at the top left of RStudio</p>
+<pre><code>File
+ └── New File
+        └── Text File</code></pre>
+<p>and then saving that file as <code>learning_rmd.Rmd</code> by pressing <code>ctrl+s</code>. Note that <code>.Rmd</code> extension is important it triggers RStudio to understand that we are working with Rmarkdown file, which results in new button <code>Knit</code> appearing at the top of the text editor window</p>
+<p>And let’s write our first bit of text and press <code>Knit</code> button at the top of the console pane or use keyboard shortbut <code>ctrl+shift+k</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="markdown-syntax.html#cb5-1"></a>I would like to learn Rmarkdown.</span></code></pre></div>
+<p>— Excellent work there !</p>
+</div>
+<div id="rstudio-tweaks" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> RStudio tweaks</h2>
+<p>Let’s do a couple quick RStduio tweaks to help us throughout the day. Use menu bar at the top to navigate to <code>Global Options</code> which should bring a new dialog up.</p>
+<pre><code>Tools
+ └── Global Options
+
+R General -&gt; (untick) Restore .RData into workspace at startup
+R General -&gt; Save workspace to .RData on exit: Never
+R Markdown -&gt; Show output preview in: Viewer Pane</code></pre>
+</div>
+<div id="headers" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Headers</h2>
+<p>Let’s start out first journey into marking text up (or down?)</p>
+<p>Add a <code>#</code> hash symbol in front of the short sentence that we wrote and press <code>Knit</code> again</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="markdown-syntax.html#cb7-1"></a><span class="co"># I would like to learn Rmarkdown</span></span></code></pre></div>
+<p>Now play with different header levels and don’t forget to press <code>Knit</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="markdown-syntax.html#cb8-1"></a><span class="co">#### I</span></span>
+<span id="cb8-2"><a href="markdown-syntax.html#cb8-2"></a></span>
+<span id="cb8-3"><a href="markdown-syntax.html#cb8-3"></a><span class="co">### would like</span></span>
+<span id="cb8-4"><a href="markdown-syntax.html#cb8-4"></a></span>
+<span id="cb8-5"><a href="markdown-syntax.html#cb8-5"></a><span class="co">## to learn</span></span>
+<span id="cb8-6"><a href="markdown-syntax.html#cb8-6"></a></span>
+<span id="cb8-7"><a href="markdown-syntax.html#cb8-7"></a><span class="co"># Rmarkdown</span></span></code></pre></div>
+<p>— Excellent, you are getting a hang of it!</p>
+</div>
+<div id="bullet-points" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Bullet points</h2>
+<p>Let’s now add a bit more content to our Rmarkdown document. First of all remove all of the previous text and type out this one and press <code>Knit</code> or <code>ctrl+shift+k</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="markdown-syntax.html#cb9-1"></a></span>
+<span id="cb9-2"><a href="markdown-syntax.html#cb9-2"></a><span class="fu"># Introduction</span></span>
+<span id="cb9-3"><a href="markdown-syntax.html#cb9-3"></a></span>
+<span id="cb9-4"><a href="markdown-syntax.html#cb9-4"></a><span class="at">&gt; outcomes:</span></span>
+<span id="cb9-5"><a href="markdown-syntax.html#cb9-5"></a></span>
+<span id="cb9-6"><a href="markdown-syntax.html#cb9-6"></a><span class="ss">- </span>learn how to create and share Rmarkdown document</span>
+<span id="cb9-7"><a href="markdown-syntax.html#cb9-7"></a><span class="ss">- </span>learn various document type, e.g html, pdf and docx</span>
+<span id="cb9-8"><a href="markdown-syntax.html#cb9-8"></a><span class="ss">- </span>~~learn to fly the rocket!~~</span>
+<span id="cb9-9"><a href="markdown-syntax.html#cb9-9"></a></span>
+<span id="cb9-10"><a href="markdown-syntax.html#cb9-10"></a></span>
+<span id="cb9-11"><a href="markdown-syntax.html#cb9-11"></a>The bottom line is - I would like to learn Rmarkdown!</span>
+<span id="cb9-12"><a href="markdown-syntax.html#cb9-12"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb9-13"><a href="markdown-syntax.html#cb9-13"></a>Like **seriously** become **good** at it !</span></code></pre></div>
+<p>— This is looking good!</p>
+</div>
+<div id="task-list" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Task list</h2>
+<p>You should understand by now that by using different number of <code>#</code> symbols we are creating different section in our document, so let’s create another section and <code>Knit</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="markdown-syntax.html#cb10-1"></a><span class="fu">## Task list for today</span></span>
+<span id="cb10-2"><a href="markdown-syntax.html#cb10-2"></a></span>
+<span id="cb10-3"><a href="markdown-syntax.html#cb10-3"></a><span class="ss">- </span><span class="co">[</span><span class="ot">X</span><span class="co">]</span> Get aspired to learn Rmarkdown</span>
+<span id="cb10-4"><a href="markdown-syntax.html#cb10-4"></a><span class="ss">- </span><span class="va">[ ]</span> Get to know three core components of the Rmarkdown document (header, body, R chunks)</span>
+<span id="cb10-5"><a href="markdown-syntax.html#cb10-5"></a><span class="ss">- </span><span class="va">[ ]</span> Practice, practice !</span></code></pre></div>
+</div>
+<div id="code-and-math-blocks" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Code and Math blocks</h2>
+<p>Both mathematical equations and code chunks can be embedded inline or standalone. Let’s first add new, code section to our document and include a short code chunk</p>
+<div id="code-chunk" class="section level3" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Code chunk</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="markdown-syntax.html#cb11-1"></a><span class="fu">## Code</span></span>
+<span id="cb11-2"><a href="markdown-syntax.html#cb11-2"></a></span>
+<span id="cb11-3"><a href="markdown-syntax.html#cb11-3"></a>You can use single backtick on each side of the code for inline or triple backticks for standalone code block</span>
+<span id="cb11-4"><a href="markdown-syntax.html#cb11-4"></a></span>
+<span id="cb11-5"><a href="markdown-syntax.html#cb11-5"></a><span class="in">```</span></span>
+<span id="cb11-6"><a href="markdown-syntax.html#cb11-6"></a><span class="in">#!/bin/bash</span></span>
+<span id="cb11-7"><a href="markdown-syntax.html#cb11-7"></a></span>
+<span id="cb11-8"><a href="markdown-syntax.html#cb11-8"></a><span class="in">echo &quot;Why am I doing BASH in this course?&quot;</span></span>
+<span id="cb11-9"><a href="markdown-syntax.html#cb11-9"></a></span>
+<span id="cb11-10"><a href="markdown-syntax.html#cb11-10"></a><span class="in">Rscript --vanilla run_away.R</span></span>
+<span id="cb11-11"><a href="markdown-syntax.html#cb11-11"></a><span class="in">```</span></span></code></pre></div>
+<p>One useful addition to the code block syntax (triple backticks) is ability to specify language for highlighting purposes, which realy helps with readability. The code about is <code>BASH</code> let’s add that to our code block <code>```BASH</code> and <code>Knit</code> again.</p>
+<p>It doesn’t matter if you use lower case <code>bash</code> or upper case <code>BASH</code> word, but for other languages it may matter, you should double check.</p>
+<p>We will get to this a bit later in the book, but a little spoiler, if you don’t mark your code chunk with any language name, <code>knitr</code> won’t be able to recognise that chunk as code and your Rmarkdown document will miss out on some useful features e.g <code>code_folding</code>, but let’s talk more about shortly</p>
+</div>
+<div id="math-chunk" class="section level3" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> Math chunk</h3>
+<p>Let’s add another section and include a one math equation into our document.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="markdown-syntax.html#cb12-1"></a><span class="fu">## Math</span></span>
+<span id="cb12-2"><a href="markdown-syntax.html#cb12-2"></a>This is a covariance equation, random variable $X$ co-variace with random variable $Y$, where $<span class="sc">\\</span>bar{X} = mean(X)$ and $<span class="sc">\\</span>bar{Y} = mean(Y)$ and $N$ is a size of a random sample from the population.</span>
+<span id="cb12-3"><a href="markdown-syntax.html#cb12-3"></a></span>
+<span id="cb12-4"><a href="markdown-syntax.html#cb12-4"></a>$$</span>
+<span id="cb12-5"><a href="markdown-syntax.html#cb12-5"></a>cov(X,Y) = \frac{<span class="sc">\\</span>sum(X_{i}-\\bar{X})(Y_{i}-<span class="sc">\\</span>bar{Y})}{N-1}</span>
+<span id="cb12-6"><a href="markdown-syntax.html#cb12-6"></a>$$</span></code></pre></div>
+<p><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">More on LaTex here</a></p>
+</div>
+</div>
+<div id="images" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Images</h2>
+<p>We add images the same way we add any other hyperlink using the following syntax, except we also add <code>!</code> symbol at the front to emphasize that this is an image and not a text hyperlink</p>
+<pre><code>[text](link)</code></pre>
+<p>where “link” is a path to the file, can be on the internet i.e URL or local path on your system</p>
+<p>Let’s add Rmarkdown Hex sticker image to our document under another section “Images” and press <code>Knit</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="markdown-syntax.html#cb14-1"></a><span class="fu">## Images</span></span>
+<span id="cb14-2"><a href="markdown-syntax.html#cb14-2"></a></span>
+<span id="cb14-3"><a href="markdown-syntax.html#cb14-3"></a><span class="al">![hex_image](https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png)</span></span></code></pre></div>
+<p>Everything had worked well and we can see the image, except the image is pretty much the only thing we can see now. Let’s adjust image size with the following addition. We are resizing the image to 50 % of the original size.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="markdown-syntax.html#cb15-1"></a><span class="fu">## Images</span></span>
+<span id="cb15-2"><a href="markdown-syntax.html#cb15-2"></a></span>
+<span id="cb15-3"><a href="markdown-syntax.html#cb15-3"></a><span class="al">![](https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png)</span>{width=50%}</span></code></pre></div>
+</div>
+<div id="final-look" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Final look</h2>
+<p>Just in case you’ve got lost, this is how our first section should look like</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="markdown-syntax.html#cb16-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb16-2"><a href="markdown-syntax.html#cb16-2"></a></span>
+<span id="cb16-3"><a href="markdown-syntax.html#cb16-3"></a><span class="at">&gt; outcome:</span></span>
+<span id="cb16-4"><a href="markdown-syntax.html#cb16-4"></a></span>
+<span id="cb16-5"><a href="markdown-syntax.html#cb16-5"></a><span class="ss">- </span>learn how to create and share Rmarkdown document</span>
+<span id="cb16-6"><a href="markdown-syntax.html#cb16-6"></a><span class="ss">- </span>learn various document type, e.g html, pdf and docx</span>
+<span id="cb16-7"><a href="markdown-syntax.html#cb16-7"></a><span class="ss">- </span>~~learn to fly the rocket!~~</span>
+<span id="cb16-8"><a href="markdown-syntax.html#cb16-8"></a></span>
+<span id="cb16-9"><a href="markdown-syntax.html#cb16-9"></a></span>
+<span id="cb16-10"><a href="markdown-syntax.html#cb16-10"></a>The bottom line is - I would like to learn Rmarkdown!</span>
+<span id="cb16-11"><a href="markdown-syntax.html#cb16-11"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb16-12"><a href="markdown-syntax.html#cb16-12"></a>Like **seriously** become **good** at it !</span>
+<span id="cb16-13"><a href="markdown-syntax.html#cb16-13"></a></span>
+<span id="cb16-14"><a href="markdown-syntax.html#cb16-14"></a><span class="fu">## Task list for today</span></span>
+<span id="cb16-15"><a href="markdown-syntax.html#cb16-15"></a></span>
+<span id="cb16-16"><a href="markdown-syntax.html#cb16-16"></a><span class="ss">- </span><span class="co">[</span><span class="ot">X</span><span class="co">]</span> Get aspired to learn Rmarkdown</span>
+<span id="cb16-17"><a href="markdown-syntax.html#cb16-17"></a><span class="ss">- </span><span class="va">[ ]</span> Get to know three core components of the Rmarkdown document (header, body, R chunks)</span>
+<span id="cb16-18"><a href="markdown-syntax.html#cb16-18"></a><span class="ss">- </span><span class="va">[ ]</span> Practice, practice !</span>
+<span id="cb16-19"><a href="markdown-syntax.html#cb16-19"></a></span>
+<span id="cb16-20"><a href="markdown-syntax.html#cb16-20"></a><span class="fu">## Code</span></span>
+<span id="cb16-21"><a href="markdown-syntax.html#cb16-21"></a></span>
+<span id="cb16-22"><a href="markdown-syntax.html#cb16-22"></a>You can use single backtick on each side of the code for inline code or triple backticks for standalone code block</span>
+<span id="cb16-23"><a href="markdown-syntax.html#cb16-23"></a></span>
+<span id="cb16-24"><a href="markdown-syntax.html#cb16-24"></a><span class="in">```bash</span></span>
+<span id="cb16-25"><a href="markdown-syntax.html#cb16-25"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb16-26"><a href="markdown-syntax.html#cb16-26"></a></span>
+<span id="cb16-27"><a href="markdown-syntax.html#cb16-27"></a><span class="bu">echo</span> <span class="st">&quot;Why am I doing BASH in this course?&quot;</span></span>
+<span id="cb16-28"><a href="markdown-syntax.html#cb16-28"></a></span>
+<span id="cb16-29"><a href="markdown-syntax.html#cb16-29"></a><span class="ex">Rscript</span> --vanilla run_away.R</span>
+<span id="cb16-30"><a href="markdown-syntax.html#cb16-30"></a><span class="kw">```</span></span>
+<span id="cb16-31"><a href="markdown-syntax.html#cb16-31"></a></span>
+<span id="cb16-32"><a href="markdown-syntax.html#cb16-32"></a><span class="co">## Math</span></span>
+<span id="cb16-33"><a href="markdown-syntax.html#cb16-33"></a></span>
+<span id="cb16-34"><a href="markdown-syntax.html#cb16-34"></a><span class="ex">This</span> is a covariance equation, random variable <span class="va">$X</span>$ co-variace with random variable <span class="va">$Y</span>$, where $\bar<span class="dt">{X}</span> = mean(X)$ <span class="ex">and</span> $\bar<span class="dt">{Y}</span> = mean(Y)$ <span class="ex">and</span> <span class="va">$N</span>$ is a size of a random sample from the population.</span>
+<span id="cb16-35"><a href="markdown-syntax.html#cb16-35"></a></span>
+<span id="cb16-36"><a href="markdown-syntax.html#cb16-36"></a><span class="va">$$</span><span class="ex">cov</span>(X,Y) = \<span class="ex">frac</span><span class="dt">{\sum(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{N-1}</span><span class="va">$$</span></span>
+<span id="cb16-37"><a href="markdown-syntax.html#cb16-37"></a></span>
+<span id="cb16-38"><a href="markdown-syntax.html#cb16-38"></a>[<span class="ex">for</span> more LaxTex syntax here](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span>
+<span id="cb16-39"><a href="markdown-syntax.html#cb16-39"></a></span>
+<span id="cb16-40"><a href="markdown-syntax.html#cb16-40"></a><span class="co">## Images</span></span>
+<span id="cb16-41"><a href="markdown-syntax.html#cb16-41"></a></span>
+<span id="cb16-42"><a href="markdown-syntax.html#cb16-42"></a>![]<span class="kw">(</span><span class="ex">https</span>://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png<span class="kw">)</span><span class="dt">{width=50%}</span></span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="part-i-rmarkdown-from-scratch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="yaml-header.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/01-introduction.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["Reproducible-Research-in-R.pdf", "PDF"]],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

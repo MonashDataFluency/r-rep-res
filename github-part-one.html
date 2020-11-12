@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 5 Git (part one) | Reproducible Research in R</title>
-  <meta name="description" content="Section 5 Git (part one) | Reproducible Research in R" />
+  <title>Section 6 GitHub (part one) | Reproducible Research in R</title>
+  <meta name="description" content="Section 6 GitHub (part one) | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 5 Git (part one) | Reproducible Research in R" />
+  <meta property="og:title" content="Section 6 GitHub (part one) | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 5 Git (part one) | Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 6 GitHub (part one) | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="git-github-and-rstudio-rproj-file.html"/>
-<link rel="next" href="github-part-one.html"/>
+<link rel="prev" href="git-part-one.html"/>
+<link rel="next" href="git-two.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -227,88 +227,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="git-part-one" class="section level1" number="5">
-<h1><span class="header-section-number">Section 5</span> Git (part one)</h1>
-<p>In the part one section of the book we will show you how to work with git on your local compute, without any regard to the external (remote) place such as GitHub. <a href="git-two.html#git-two">In part two</a> we will show you how to work with external (remote) repositories hosted at GitHub</p>
-<div id="introduction-3" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Introduction</h2>
-<p><a href="https://git-scm.com/doc">Git</a> is a version control tool, one of many tools, but it is very popular. Git was designed for <strong>tracking versions</strong> of software development, but it has been re-purpose for doing general tracking of text and data i.e scientific research.</p>
-<p>Below is an illustration of the differences between do-it-yourself (DIY) version control system, and git version control. DIY version control systems are great with two caveats:</p>
-<ul>
-<li>no one else will understand it</li>
-<li>the future you will forget the awesome schema that you have invented</li>
-</ul>
-
-<div class="figure" style="text-align: left"><span id="fig:git-vs-filesystem"></span>
-<img src="figures/git_vs_filesystem.png" alt="This is an example of git version control vs DIY versioning via filesystem" width="100%" />
-<p class="caption">
-Figure 5.1: This is an example of git version control vs DIY versioning via filesystem
-</p>
-</div>
-<p>We are not going to dwell on git long, there are much better resources for that, like <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>. But we will learn a handful of git commands just enough for us to track and share our research.</p>
-</div>
-<div id="git-init" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Git init</h2>
-<p>Let’s initiate new git repository, which is a lingo for marking our current folder <strong>special</strong>. From now on everything in that folder will be tracked by git. <strong>BUT</strong> we still have to actively save (commit) changes.</p>
-<pre><code>Tools
- └── Version Control
-           └── Project setup
-           
-Version control system: git</code></pre>
-<p>Alternatively execute the following code in R console and re-launch RStudio project</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="git-part-one.html#cb47-1"></a><span class="kw">system</span>(<span class="st">&quot;git init&quot;</span>)</span></code></pre></div>
-<p>Once that’s done, you should see new <code>Git</code> tab appearing in “Environment, History …” pane</p>
-<p>— That was unusual …</p>
-</div>
-<div id="git-commit" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Git commit</h2>
-<p>Let’s click on that new “Git” tab and select a couple of file and then click “commit” button.</p>
+<div id="github-part-one" class="section level1" number="6">
+<h1><span class="header-section-number">Section 6</span> GitHub (part one)</h1>
+<p>In this part of the book we will introduce <a href="https://github.com">GitHub</a>, which is one of several places you can host - store and display your project files. GitHub can only work with git tool, hence the name. However there are other vendors that are a more tools agnostic</p>
+<div id="introduction-4" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>GitHub has been around for more than 10 years. The original, and the most dominant still, purpose is store software source code in public. By putting your code on display gave at least two important benefits:</p>
 <ol style="list-style-type: decimal">
-<li>Select these files:</li>
+<li>“free” and easy code oversight: sanity and bugs checks</li>
+<li>ease of collaboration: take a copy and play with it, PR (pull request) later</li>
 </ol>
+<p>GitHub platform has become indispensable to the software industry.</p>
+<p>There is some lingo that is associated with GitHub, the most central one is “repository” or “repo” for short. That simply refer to a folder (a.k.a directory) on your computer that had git initiated as per <a href="git-part-one.html#git-init">Git init</a> section. Your GitHub account can have any any number of repos, each one of them is a distinct project.</p>
+</div>
+<div id="new-repository" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> New repository</h2>
+<blockquote>
+<p>Prerequisite: Have to register for a GitHub account first at <a href="https://github.com">github.com</a></p>
+</blockquote>
+<p>Let’s begin by making a new repository. Go to <a href="https://github.com">github.com</a> and look for plus sign (New repository). Interface may change time to time, but look at the top right hand corner. Once you’ve clicked on “New repository” button, you should see the following window <a href="github-part-one.html#fig:github1">6.1</a></p>
+
+<div class="figure" style="text-align: left"><span id="fig:github1"></span>
+<img src="figures/github1.png" alt="New repository dialog at github.com" width="100%" />
+<p class="caption">
+Figure 6.1: New repository dialog at github.com
+</p>
+</div>
+<p>Let’s give our new repository a name and a short description. Type the following text and press green button on the bottom of the screen “Create repository”</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb51-1"><a href="github-part-one.html#cb51-1"></a>learning_rmarkdown</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb52-1"><a href="github-part-one.html#cb52-1"></a>I&#39;m learning Rmarkdown, Git and GitHub</span></code></pre></div>
+<p>Notes:</p>
 <ul>
-<li><code>learning.Rmd</code></li>
-<li><code>learning.html</code></li>
-<li><code>presenting.Rmd</code></li>
-<li><code>presenting.html</code></li>
+<li>Don’t select any other options, keep repository public</li>
+<li>It is a good practice <strong>NOT</strong> to use spaces in your repository name. Here we are using an underscore instead.</li>
 </ul>
-<p>A new dialog should pop up, you should see this window <a href="git-part-one.html#fig:git1">5.2</a></p>
 
-<div class="figure" style="text-align: left"><span id="fig:git1"></span>
-<img src="figures/git1.png" alt="RStudio pop up dialog for git commit and other git related work" width="100%" />
+<div class="figure" style="text-align: left"><span id="fig:github2"></span>
+<img src="figures/github2.png" alt="New repository dialog at github.com, with text" width="100%" />
 <p class="caption">
-Figure 5.2: RStudio pop up dialog for git commit and other git related work
+Figure 6.2: New repository dialog at github.com, with text
 </p>
 </div>
-<ol start="2" style="list-style-type: decimal">
-<li>Write down a commit message (free form, but keep it informative)</li>
-</ol>
-<p>Let’s write the following text in the commit message box and press “commit”</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb48-1"><a href="git-part-one.html#cb48-1"></a>saving my first Rmarkdown document</span></code></pre></div>
+</div>
+<div id="repository-address-git-remote" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Repository address (git remote`)</h2>
+<p>Once you’ve clicked on “New repository” button you should see the following, new window appearing in front of your <a href="github-part-one.html#fig:github3">6.3</a> (provided you didn’t select any of the additional files, like README file)</p>
+<p>Copy on your clipboard URL that is presented to you at the top of the page. For me the url looks the following</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb53-1"><a href="github-part-one.html#cb53-1"></a>https://github.com/serine/learning_markdown.git</span></code></pre></div>
+<p>It will look very similar in your case, except the username part. The following if your typical URL structure for github repositories. Note that square brackets is a convention meaning “substituted with”, they don’t need to be included in your actual URL</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb54-1"><a href="github-part-one.html#cb54-1"></a>https://github.com/[USERNAME]/[REPOSITORY_NAME]</span></code></pre></div>
 
-<div class="figure" style="text-align: left"><span id="fig:git2"></span>
-<img src="figures/git2.png" alt="RStudio pop up dialog for git commit and other git related work with commit message" width="100%" />
+<div class="figure" style="text-align: left"><span id="fig:github3"></span>
+<img src="figures/github3.png" alt="Secondary window, once new repository was created at github.com" width="100%" />
 <p class="caption">
-Figure 5.3: RStudio pop up dialog for git commit and other git related work with commit message
+Figure 6.3: Secondary window, once new repository was created at github.com
 </p>
 </div>
-<p>— happy days!</p>
 </div>
-<div id="git-username-and-useremail" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Git username and useremail</h2>
-<p>When you are using git for very first time on a new compute you will need to set up your username and email. Typically this is one off operation and almost always forgot about. But git will always remind you about that with the following message <a href="git-part-one.html#fig:git3">5.4</a></p>
-
-<div class="figure" style="text-align: left"><span id="fig:git3"></span>
-<img src="figures/git3.png" alt="RStudio pop up dialog showing additional step needs doing before using git" width="100%" />
-<p class="caption">
-Figure 5.4: RStudio pop up dialog showing additional step needs doing before using git
-</p>
-</div>
-<p>Let’s execute the following two commands in R console pane, as suggested by the message. Note if you don’t use <code>--global</code> flag, then every new git repository will need those two commands (personal preference really).</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="git-part-one.html#cb49-1"></a><span class="kw">system</span>(<span class="st">&quot;git config --global user.name kirill&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="git-part-one.html#cb50-1"></a><span class="kw">system</span>(<span class="st">&quot;git config --global user.email tskiril@gmail.com&quot;</span>)</span></code></pre></div>
-<p>Let’s switch back to our commit, pop up, window close that messagea and click commit again.</p>
-<p>— oops, forgot about that</p>
+<div id="linking-git-with-github" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Linking Git with GitHub</h2>
+<p>Now that you have successfully created new repository at GitHub we need to link (add) address of our github repository to our local git folder (also called repository). This simply means letting git tool know where to deposit (push) our code for storage and display.</p>
+<p>Let’s switch back to the RStudio client, where we have been doing work and execute the following command in R console. Note you will need to <strong>substitute</strong> your own URL (github repository address) below.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="github-part-one.html#cb55-1"></a><span class="kw">system</span>(<span class="st">&quot;git remote add origin https://github.com/serine/learning_rmarkdown&quot;</span>)</span></code></pre></div>
+<p>Now you have linked your local git repository with remote one (a.k.a github repository) you can start synchronising your content between two locations. In git lingo <strong>pushing and pulling</strong>. Let’s talk more about that in the <a href="git-two.html#git-two">next section</a></p>
 
 </div>
 </div>
@@ -317,8 +298,8 @@ Figure 5.4: RStudio pop up dialog showing additional step needs doing before usi
           </div>
         </div>
       </div>
-<a href="git-github-and-rstudio-rproj-file.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="github-part-one.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git-part-one.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="git-two.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -350,7 +331,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/05-git1.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/06-github1.Rmd",
 "text": "Edit"
 },
 "history": {

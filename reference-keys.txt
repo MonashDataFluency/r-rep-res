@@ -5,7 +5,7 @@ fig:git3
 fig:github1
 fig:github2
 fig:github3
-rmarkdown
+markdown-syntax
 introduction
 rstudio-tweaks
 headers
@@ -25,12 +25,13 @@ title-date-and-author-keys
 output-key
 configuring-output-document
 final-look-1
-r-code-chunks
+the-code-chunks
 introduction-2
 chunk-name
 chunk-options
 message-and-warning-options
 more-code-chunks-and-data-wragnling
+session-info
 setup-chunk
 final-look-2
 extras
@@ -44,9 +45,10 @@ introduction-3
 git-init
 git-commit
 git-username-and-useremail
-github
+github-part-one
 introduction-4
 new-repository
 repository-address-git-remote
 linking-git-with-github
 git-two
+github-part-two
