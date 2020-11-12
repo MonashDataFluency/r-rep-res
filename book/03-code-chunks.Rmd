@@ -1,6 +1,6 @@
-# R code chunks
+# The code chunks
 
-[Knitr R package](https://cran.r-project.org/web/packages/knitr/) is pivotal in providing mechanism for including **live** code into the document. Thus far we have learned how to include blobs of code into our documents and even do simple code highlighting by using language keywords at the end of the triple backticks. with `Knitr` however, we can also execute a.k.a run the code inside the document and in additional to the blob of code, also display the result from it. This is extremely useful for research communication and reproducibility. 
+We have already seen that we can highlight any code with triple backticks and the language keyword in the [first section](#markdown-syntax) of the book. The [Knitr R package](https://cran.r-project.org/web/packages/knitr/) provides a mechanism for including **live** code into the document instead. This means that apart from code, but can see and interact with the results of such code. This is extremely useful for research communication and reproducibility. 
 
 For this part of the book, we will need to install a few additional packages. Copy and paste install packages code into your RStudio console
 

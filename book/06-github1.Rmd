@@ -1,4 +1,4 @@
-# GitHub
+# GitHub (part one)
 
 In this part of the book we will introduce [GitHub](https://github.com), which is one of several places you can host - store and display your project files. GitHub can only work with git tool, hence the name. However there are other vendors that are a more tools agnostic
 
@@ -70,6 +70,12 @@ knitr::include_graphics("figures/github3.png")
 
 ## Linking Git with GitHub
 
-Now that you have successfully created new repository at GitHub we need to link (add) address of our github repository to our local git folder (also can be called repository). This simply means letting git tool know where to deposit (push) our code for storage and display.
+Now that you have successfully created new repository at GitHub we need to link (add) address of our github repository to our local git folder (also called repository). This simply means letting git tool know where to deposit (push) our code for storage and display.
 
+Let's switch back to the RStudio client, where we have been doing work and execute the following command in R console. Note you will need to **substitute** your own URL (github repository address) below.
 
+```{r enval = F}
+system("git remote add origin https://github.com/serine/learning_rmarkdown")
+```
+
+Now you have linked your local git repository with remote one (a.k.a github repository) you can start synchronising your content between two locations. In git lingo **pushing and pulling**. Let's talk more about that in the [next section](#git-two)

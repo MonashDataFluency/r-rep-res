@@ -1,8 +1,10 @@
-# (PART) Rmarkdown from scratch {-}
+# Part I: Rmarkdown from scratch {-}
 
-# Rmarkdown
+In the first part of the book we will begging with blank text file and finish with a sophisticated HTML webpage ready to be shared with the world. We will learn three main components of the Rmarkdown document, markdown syntax, YAML header and the code chunks, together with the [rmarkdown R package](https://github.com/rstudio/rmarkdown) we are table to convert Rmarkdown files into HTML, PDF and Word documents effortlessly.
 
-In the first part of the book we will discuss origins and the ecosystem of Rmarkdown language. We will explore in details the three core parts of an Rmarkdown document and different output document types. This section follows hands-on style of teaching - code along !
+# Markdown syntax
+
+We will begging exploring concise markdown syntax in the first section of the book. You will be amazed how with just few additional text markups and the smart functions from [rmarkdown R package](https://github.com/rstudio/rmarkdown) we can create a world of different document types. 
 
 ## Introduction
 

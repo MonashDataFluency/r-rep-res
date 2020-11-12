@@ -8,8 +8,9 @@ rmd_files:
   - 03-code-chunks.Rmd
   - 04-extras.Rmd
   - 05-git1.Rmd
-  - 06-github.Rmd
+  - 06-github1.Rmd
   - 07-git2.Rmd
+  - 08-github2.Rmd
 language:
   label:
     fig: "Figure "

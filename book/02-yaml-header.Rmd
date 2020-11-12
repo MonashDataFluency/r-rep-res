@@ -1,14 +1,10 @@
 # YAML header
 
-YAML (yet another markup language) is a stand along language with it's own file format, usually ending with `.yml`. We will come across files like `_site.yml`, `_output.yml` and `_bookdown.html` later in the book. However, we can also include YAML blob into our Rmarkdown file, at the very top of the `.Rmd` file.
-The YAML header enable higher degree of customisation for our final documents. It is via YAML header we can link to other external file such as bibliographies and styling sheets in the form of [BibTex](http://www.bibtex.org/Format/) and [css](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) respectively.
-YAML has similarities to [JSON](https://en.wikipedia.org/wiki/JSON) in that it provides structured key value relationship, (sometimes keys can be called tags). Importantly YAML language, unlike json, is very sensitive to spaces and indentations. 
+YAML header is a short blob of text, specially formatted with `key: value` pairs tags, that seats at the top of our Rmarkdown document. The header not only dictates the final file format, but a style and feel for our final document. Later in the book we will learn that YAML header can seat in a stand alone file, such as `_site.yml` or _`_output.yml`.
 
 ## Introduction
 
-Thus far we have been relaying on some default setting to render Rmarkdown document, but we can add a lot more personality to our document via YAML configuration. For now we are going to be embedding YAML header into our document.
-
-YAML header must seat at the very top of the `.Rmd` file and be inclosed in triple dashes on either side e.g
+Let's begging by adding some personality to our document via YAML configuration. For now we are going to be embedding YAML header into our document right at the top. The header needs to be enclosed in triple dashes on either side as following
 
 ```yaml
 ---

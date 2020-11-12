@@ -1,4 +1,4 @@
-# (PART) Git, GitHub and RStudio Rproj file {-}
+# Git, GitHub and RStudio Rproj file {-}
 
 Git, GitHub and RStudio projects are three independent things; a tool, a place and an anchor respectively. It is however very hard to make a clear distinction between all three. Just know that all three together will help you with keeping on top of your project, minimise content and data loss and will make your work naturally more collaborative.
 
