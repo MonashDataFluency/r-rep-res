@@ -6,8 +6,7 @@ bookdown::gitbook:
   df_print: paged
   config:
     toc:
-      #collapse: subsection
-      collapse: section
+      collapse: subsection
       scroll_highlight: yes
       before: null
       after: null
