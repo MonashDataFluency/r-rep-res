@@ -1,4 +1,4 @@
-# GitHub (part one)
+# GitHub (part one) {#github-one}
 
 In this part of the book we will introduce [GitHub](https://github.com), which is one of several places you can host - store and display your project files. GitHub can only work with git tool, hence the name. However there are other vendors that are a more tools agnostic
 
@@ -68,7 +68,7 @@ https://github.com/[USERNAME]/[REPOSITORY_NAME]
 knitr::include_graphics("figures/github3.png")
 ```
 
-## Linking Git with GitHub
+## Linking Git with GitHub {#git-github-link}
 
 Now that you have successfully created new repository at GitHub we need to link (add) address of our github repository to our local git folder (also called repository). This simply means letting git tool know where to deposit (push) our code for storage and display.
 

@@ -84,6 +84,12 @@ This is a good [resource](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes
 
 ## Git and GitHub
 
+## Which files to commit?
+
+This section will be extended in the future release, but I highly recommend reading this article, specifically [section 10: Which files to commit from here](https://peerj.com/preprints/3159/)
+
+##
+
 You can turn any directories (folders) on your computers in to "special" git directory (repository) by running the following command.
 
 ```
