@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 8 GitHub (part two) | Reproducible Research in R</title>
-  <meta name="description" content="Section 8 GitHub (part two) | Reproducible Research in R" />
+  <title>Section 9 Text referencing | Reproducible Research in R</title>
+  <meta name="description" content="Section 9 Text referencing | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 8 GitHub (part two) | Reproducible Research in R" />
+  <meta property="og:title" content="Section 9 Text referencing | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 8 GitHub (part two) | Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 9 Text referencing | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="git-two.html"/>
-<link rel="next" href="refs.html"/>
+<link rel="prev" href="refs.html"/>
+
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -252,75 +252,133 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="github-two" class="section level1" number="8">
-<h1><span class="header-section-number">Section 8</span> GitHub (part two)</h1>
-<p>In this section of the book we will introduce to you a few GitHub platform specific features that greatly enhance the git tool and provide incredible visibility and transparency to your project.</p>
-<div id="readme.md" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> README.md</h2>
-<p><code>README</code> is a gold standard file that holds some essential information about the directory (project) that you found it in. The content of the file is free form, but we would say a bear minimum, at least in relation to the project we have in mind (research code and data, type repositories), <code>README</code> file should typically contain; short message about motivation for the project, installation instructions and usage as well as some examples.</p>
-<p>You might have realised that <code>.md</code> stands for markdown, as oppose to <code>.Rmd</code> - Rmarkdown. GitHub will seek this file <code>README.md</code> exactly, case sensitive, and it will turn it into a front page of your GitHub repository. We will leave this as home work for you todo later.</p>
-<blockquote>
-<p><strong>Home work:</strong>
-Create file called README.md, you can use the following command. Include, level one header with the project name and three level two headers coresponding to the section; motivations, usage and examples. Then save the file, git commit and git push. You should now have a front cover to your GitHub repository</p>
-</blockquote>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="github-two.html#cb59-1"></a><span class="kw">file.edit</span>(<span class="st">&quot;README.md&quot;</span>)</span></code></pre></div>
-<p>— clever</p>
+<div id="text-referencing" class="section level1" number="9">
+<h1><span class="header-section-number">Section 9</span> Text referencing</h1>
+<p>In this section we will explore two different ways for referencing text in the document, classical markdown way, supported by <code>rmarkdown::html_document</code> output type and more Rmarkdown specific way supported by <code>bookdown::html_document2</code> output type.</p>
+<div id="introduction-6" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Introduction</h2>
+<p>The most rudimentary referencing we can do in Rmarkdown is linking to the header of the section, which we briefly touched on at the <a href="markdown-syntax.html#images">beginning of the book</a>.</p>
+<div id="starting-blob-of-text-optional" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Starting blob of text (optional)</h3>
+<p>You may wish to skip this section and instead use any of your previously generated Rmarkdown document. We are going to use slightly trimmed version of what we have been building in the first part of the book.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="text-referencing.html#cb61-1"></a><span class="kw">file.edit</span>(<span class="st">&quot;learning2.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb62-1"><a href="text-referencing.html#cb62-1"></a><span class="co">---</span></span>
+<span id="cb62-2"><a href="text-referencing.html#cb62-2"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown&quot;</span></span>
+<span id="cb62-3"><a href="text-referencing.html#cb62-3"></a><span class="an">author:</span><span class="co"> &quot;Kirill&quot;</span></span>
+<span id="cb62-4"><a href="text-referencing.html#cb62-4"></a><span class="an">date:</span><span class="co"> &quot;2020-11-14&quot;</span></span>
+<span id="cb62-5"><a href="text-referencing.html#cb62-5"></a><span class="an">output:</span></span>
+<span id="cb62-6"><a href="text-referencing.html#cb62-6"></a><span class="co">  html_document:</span></span>
+<span id="cb62-7"><a href="text-referencing.html#cb62-7"></a><span class="co">    toc: false</span></span>
+<span id="cb62-8"><a href="text-referencing.html#cb62-8"></a><span class="co">    theme: readable</span></span>
+<span id="cb62-9"><a href="text-referencing.html#cb62-9"></a><span class="co">    code_folding: &quot;hide&quot;</span></span>
+<span id="cb62-10"><a href="text-referencing.html#cb62-10"></a><span class="co">---</span></span>
+<span id="cb62-11"><a href="text-referencing.html#cb62-11"></a></span>
+<span id="cb62-12"><a href="text-referencing.html#cb62-12"></a><span class="fu"># R code</span></span>
+<span id="cb62-13"><a href="text-referencing.html#cb62-13"></a></span>
+<span id="cb62-14"><a href="text-referencing.html#cb62-14"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb62-15"><a href="text-referencing.html#cb62-15"></a><span class="in">knitr::opts_chunk$set(echo = TRUE,</span></span>
+<span id="cb62-16"><a href="text-referencing.html#cb62-16"></a><span class="in">                      message = FALSE,</span></span>
+<span id="cb62-17"><a href="text-referencing.html#cb62-17"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb62-18"><a href="text-referencing.html#cb62-18"></a></span>
+<span id="cb62-19"><a href="text-referencing.html#cb62-19"></a><span class="in">library(magrittr)</span></span>
+<span id="cb62-20"><a href="text-referencing.html#cb62-20"></a><span class="in">library(dplyr)</span></span>
+<span id="cb62-21"><a href="text-referencing.html#cb62-21"></a><span class="in">library(DT)</span></span>
+<span id="cb62-22"><a href="text-referencing.html#cb62-22"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb62-23"><a href="text-referencing.html#cb62-23"></a><span class="in">```</span></span>
+<span id="cb62-24"><a href="text-referencing.html#cb62-24"></a></span>
+<span id="cb62-25"><a href="text-referencing.html#cb62-25"></a><span class="fu">## Getting and wrangling the data</span></span>
+<span id="cb62-26"><a href="text-referencing.html#cb62-26"></a></span>
+<span id="cb62-27"><a href="text-referencing.html#cb62-27"></a><span class="in">```{r get_data}</span></span>
+<span id="cb62-28"><a href="text-referencing.html#cb62-28"></a></span>
+<span id="cb62-29"><a href="text-referencing.html#cb62-29"></a><span class="in">make_url &lt;- function(package) {</span></span>
+<span id="cb62-30"><a href="text-referencing.html#cb62-30"></a><span class="in">file.edit(&quot;learning2.Rmd&quot;)</span></span>
+<span id="cb62-31"><a href="text-referencing.html#cb62-31"></a><span class="in">  paste0(&#39;&lt;a href=&quot;https://cran.r-project.org/web/packages/&#39;, package, &#39;&quot;&gt;&#39;, package, &#39;&lt;/a&gt;&#39;)</span></span>
+<span id="cb62-32"><a href="text-referencing.html#cb62-32"></a><span class="in">}</span></span>
+<span id="cb62-33"><a href="text-referencing.html#cb62-33"></a></span>
+<span id="cb62-34"><a href="text-referencing.html#cb62-34"></a><span class="in">library(magrittr)</span></span>
+<span id="cb62-35"><a href="text-referencing.html#cb62-35"></a><span class="in">library(dplyr)</span></span>
+<span id="cb62-36"><a href="text-referencing.html#cb62-36"></a></span>
+<span id="cb62-37"><a href="text-referencing.html#cb62-37"></a><span class="in">avail_packages &lt;- available.packages(contriburl = contrib.url(&quot;https://mirror.aarnet.edu.au/pub/CRAN/&quot;)) %&gt;%</span></span>
+<span id="cb62-38"><a href="text-referencing.html#cb62-38"></a><span class="in">                    as.data.frame() %&gt;% </span></span>
+<span id="cb62-39"><a href="text-referencing.html#cb62-39"></a><span class="in">                    as.data.frame() %&gt;% </span></span>
+<span id="cb62-40"><a href="text-referencing.html#cb62-40"></a><span class="in">                    as_tibble() %&gt;% </span></span>
+<span id="cb62-41"><a href="text-referencing.html#cb62-41"></a><span class="in">                    rowwise() %&gt;% </span></span>
+<span id="cb62-42"><a href="text-referencing.html#cb62-42"></a><span class="in">                    mutate(Depend = length(unlist(strsplit(Imports, split = &quot;,&quot;)))) %&gt;% </span></span>
+<span id="cb62-43"><a href="text-referencing.html#cb62-43"></a><span class="in">                    ungroup() %&gt;% </span></span>
+<span id="cb62-44"><a href="text-referencing.html#cb62-44"></a><span class="in">                    select(Package, Version, Depend, Imports, License) %&gt;% </span></span>
+<span id="cb62-45"><a href="text-referencing.html#cb62-45"></a><span class="in">                    mutate(Package = make_url(Package),</span></span>
+<span id="cb62-46"><a href="text-referencing.html#cb62-46"></a><span class="in">                           Depend = ifelse(is.na(Imports), -1, Depend)) </span></span>
+<span id="cb62-47"><a href="text-referencing.html#cb62-47"></a><span class="in">```</span></span>
+<span id="cb62-48"><a href="text-referencing.html#cb62-48"></a></span>
+<span id="cb62-49"><a href="text-referencing.html#cb62-49"></a><span class="fu">## Displaying table</span></span>
+<span id="cb62-50"><a href="text-referencing.html#cb62-50"></a></span>
+<span id="cb62-51"><a href="text-referencing.html#cb62-51"></a><span class="in">```{r make_table}</span></span>
+<span id="cb62-52"><a href="text-referencing.html#cb62-52"></a><span class="in">library(DT)</span></span>
+<span id="cb62-53"><a href="text-referencing.html#cb62-53"></a><span class="in">avail_packages %&gt;% datatable(escape = FALSE)</span></span>
+<span id="cb62-54"><a href="text-referencing.html#cb62-54"></a><span class="in">```</span></span>
+<span id="cb62-55"><a href="text-referencing.html#cb62-55"></a></span>
+<span id="cb62-56"><a href="text-referencing.html#cb62-56"></a><span class="fu">## Plot the data</span></span>
+<span id="cb62-57"><a href="text-referencing.html#cb62-57"></a></span>
+<span id="cb62-58"><a href="text-referencing.html#cb62-58"></a><span class="in">```{r plot}</span></span>
+<span id="cb62-59"><a href="text-referencing.html#cb62-59"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb62-60"><a href="text-referencing.html#cb62-60"></a><span class="in">avail_packages %&gt;% ggplot(aes(Depend)) + geom_bar()</span></span>
+<span id="cb62-61"><a href="text-referencing.html#cb62-61"></a><span class="in">```</span></span></code></pre></div>
 </div>
-<div id="github-pages-gh-pages" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> GitHub pages (gh-pages)</h2>
-<p>Another useful feature of the GitHub platform is GitHub pages, which allows us to host HTML files. Hosting means making files accessible to the greater internet, sometimes with ability to setup allowed list of users (i.e username and password sign in page). GitHub platform provides <strong>open access hosting</strong> only, to everyone on internet.</p>
-<p>Let’s enable that feature for our GitHub repository by going to the settings tab, at the top of our repository page and scrolling down to the “GitHub Pages” section, see image <a href="github-two.html#fig:github4">8.1</a>. Select from the drop down menu “master” and click “save” button, you should see the following image <a href="github-two.html#fig:github5">8.2</a>. Copy and Paste URL that appeared at the top of GitHub Pages section, once you’ve clicked save (you might have to scroll back down to it), you should see the following image <a href="github-two.html#fig:github6">8.3</a></p>
-
-<div class="figure" style="text-align: left"><span id="fig:github4"></span>
-<img src="figures/github4.png" alt="GitHub Pages section at the GitHub website" width="100%" />
-<p class="caption">
-Figure 8.1: GitHub Pages section at the GitHub website
-</p>
-</div>
-
-<div class="figure" style="text-align: left"><span id="fig:github5"></span>
-<img src="figures/github5.png" alt="GitHub Pages section at the GitHub website, with “master” branch selected" width="100%" />
-<p class="caption">
-Figure 8.2: GitHub Pages section at the GitHub website, with “master” branch selected
-</p>
-</div>
-
-<div class="figure" style="text-align: left"><span id="fig:github6"></span>
-<img src="figures/github6.png" alt="GitHub Pages section at the GitHub website, with URL displayed" width="100%" />
-<p class="caption">
-Figure 8.3: GitHub Pages section at the GitHub website, with URL displayed
-</p>
-</div>
-<p>Once you’ve set GitHub Pages you can access your HTML file using that URL with additional text pointing to your desired file, for example if I would like to see <code>learning.html</code> file I would use the following url <a href="https://serine.github.io/learning_rmarkdown/learning.html">https://serine.github.io/learning_rmarkdown/learning.html</a></p>
-<p>General schema for GitHub Pages URL as follows</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb60-1"><a href="github-two.html#cb60-1"></a>https://[USERNAME].github.io/[REPOSITORY_NAMEl]/[FILENAME].html</span></code></pre></div>
-<p>— fair dinkum !</p>
-</div>
-<div id="visible-contributions" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Visible contributions</h2>
-
-<div class="figure"><span id="fig:github-contrib1"></span>
-<img src="figures/github-contrib1.png" alt="Reproducible Research in R (this book) GitHub page, insight tab showing contribution from other users" width="100%" height="100%" />
-<p class="caption">
-Figure 8.4: Reproducible Research in R (this book) GitHub page, insight tab showing contribution from other users
-</p>
-</div>
-
-<div class="figure" style="text-align: left"><span id="fig:github-contrib2"></span>
-<img src="figures/github-contrib2.png" alt="Rmarkdown R package GitHub page, insight tab showing contribution from other users" width="100%" />
-<p class="caption">
-Figure 8.5: Rmarkdown R package GitHub page, insight tab showing contribution from other users
-</p>
-</div>
-<p>It is hard to easily see a number of contributors to rmarkdown R package project, however number of “forks” is one reasonable indicator for how many people are attempting to collaborate.</p>
-<p>Compare:</p>
+<div id="linking" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Linking</h3>
+<p>Three things to know about text linking:</p>
 <ul>
-<li>community contributions</li>
-<li>stars</li>
-<li>forks</li>
-<li>issue</li>
-<li>pull request</li>
+<li>the syntax <code>[text](link)</code></li>
+<li>the “link” part of the syntax can’t have any spaces, replace them with a dash symbol</li>
+<li>the hash symbol (<code>#</code>) signals an internal link to the header, as oppose external link to the internet</li>
 </ul>
+<p><em>allowed alphanumeric characters <code>(a-z, A-Z, 0-9)</code>, <code>-</code>, <code>/</code></em></p>
+<p>Let’s create a new section at the bottom of our document, using level 1 header with a short sentence beneath.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb63-1"><a href="text-referencing.html#cb63-1"></a><span class="fu"># Text linking</span></span>
+<span id="cb63-2"><a href="text-referencing.html#cb63-2"></a></span>
+<span id="cb63-3"><a href="text-referencing.html#cb63-3"></a>Here is a link to the <span class="co">[</span><span class="ot">Displaying table</span><span class="co">](#displaying-table)</span> section above</span></code></pre></div>
+</div>
+</div>
+<div id="bookdownhtml_document2" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> <code>bookdown::html_document2</code></h2>
+<p>Thus far we have been using <code>output: html_document</code> to generate our Rmarkdown documents. That function belong to <code>rmarkdown</code> package. Let’s us introduce to you another R package, <a href="https://github.com/rstudio/bookdown">bookdown</a>. This package is an extension of <a href="https://github.com/rstudio/rmarkdown">rmarkdown</a> package from the same team. <code>bookdown::html_document2</code> function inherent from <code>rmarkdown::html_document</code> and provides the following additional features, which we will explore in subsequent section, one at a time:</p>
+<ul>
+<li>text referencing</li>
+<li>cross referencing (figure, tables and sections)</li>
+<li>numbering (figure, tables and sections)</li>
+</ul>
+<p>Let’s begging by updating our YAML header to this new output type - <code>bookdown::html_document2</code> and press <code>Kint</code> button. Remember you can use comments symbol (<code>#</code>) at the start of the line to mask specific lines in the YAML header.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb64-1"><a href="text-referencing.html#cb64-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb64-2"><a href="text-referencing.html#cb64-2"></a><span class="at">  bookdown:</span><span class="fu">:html_document2</span><span class="kw">:</span></span>
+<span id="cb64-3"><a href="text-referencing.html#cb64-3"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb64-4"><a href="text-referencing.html#cb64-4"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> redable</span></span></code></pre></div>
+</div>
+<div id="creating-labels" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Creating labels</h2>
+<p>Let’s create our first text label with the following syntax <code>(ref:label)</code>, where <code>label</code> can be any name and add a short sentence that we will want to insert elsewhere in the document later and press <code>Knit</code></p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="text-referencing.html#cb65-1"></a>(ref<span class="op">:</span>barplot) Barplot displaying frequency of dependencies <span class="cf">for</span> all of the R packages <span class="cf">in</span> the CRAN repository to date <span class="st">`</span><span class="dt">r Sys.Date()</span><span class="st">`</span></span></code></pre></div>
+<p>Note that you should <strong>NOTE</strong> see any text appearing in your final document. This is because we haven’t yet referenced the label anywhere in the text</p>
+<p>— interesting</p>
+</div>
+<div id="using-labels" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Using labels</h2>
+<p>Let’s use our newly created label for figure capture. We will add additional code chunk option into our <code>plot</code> chunk using the following code.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb66-1"><a href="text-referencing.html#cb66-1"></a><span class="in">```{r plot, fig.cap=&#39;(ref:barplot)&#39;}</span></span></code></pre></div>
+<p>We can reuse that reference label anywhere with the document</p>
+<p>— +1</p>
+</div>
+<div id="cross-referencing" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Cross referencing</h2>
+<ul>
+<li><code>\@ref(intro)</code>: referencing header section (same results as <a href="text-referencing.html#linking">linking</a>)</li>
+</ul>
+<p>can add a section header labels with the following syntax</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb67-1"><a href="text-referencing.html#cb67-1"></a><span class="fu">## Rather long header name {#long-header}</span></span></code></pre></div>
+<ul>
+<li><p><code>\@ref(fig:label)</code>: provides pointer to the specific figure</p></li>
+<li><p><code>\@ref(table:label)</code>: provies pointer to the specific table</p></li>
+</ul>
+<p>where label is the chunk name</p>
 
 </div>
 </div>
@@ -329,8 +387,8 @@ Figure 8.5: Rmarkdown R package GitHub page, insight tab showing contribution fr
           </div>
         </div>
       </div>
-<a href="git-two.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="refs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="refs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -362,7 +420,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/08-github2.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/10-text-refs.Rmd",
 "text": "Edit"
 },
 "history": {

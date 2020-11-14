@@ -67,3 +67,11 @@ github-two
 readme.md
 github-pages-gh-pages
 visible-contributions
+text-referencing
+introduction-6
+starting-blob-of-text-optional
+linking
+bookdownhtml_document2
+creating-labels
+using-labels
+cross-referencing
