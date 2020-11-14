@@ -45,7 +45,7 @@ system("git remote add project_x_github_repo https://github.com/serine/learning_
 ```
 
 ```{r eval = F}
-system("git remote -v"
+system("git remote -v")
 ```
 
 ## git push

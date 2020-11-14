@@ -58,7 +58,7 @@ A new dialog should pop up, you should see this window \@ref(fig:git1)
 
 (ref:git1) RStudio pop up dialog for git commit and other git related work
 
-```{r git1, echo=F, out.width="100%", fig.align="left", fig.cap='(ref:git1)'}
+```{r git1, echo=F, out.width="100%", fig.cap='(ref:git1)'}
 knitr::include_graphics("figures/git1.png")
 ```
 

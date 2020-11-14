@@ -1,0 +1,163 @@
+# Part III: Text referencing, Cross referencing and Citation {- #refs}
+
+Linking and referencing different components of the document provides clear pointers to the exact part of the document you are referring to, making it much easier to navigate the document. More importantly referencing external sources demonstrates depth of work and gives rightful acknowledgment to all of the previous authors. 
+
+> Citations are the scientific currency, please always cite others work
+
+# Text referencing
+
+In this section we will explore two different ways for referencing text in the document, classical markdown way, supported by `rmarkdown::html_document` output type and more Rmarkdown specific way supported by `bookdown::html_document2` output type.
+
+## Introduction
+
+The most rudimentary referencing we can do in Rmarkdown is linking to the header of the section, which we briefly touched on at the [beginning of the book](#images).
+
+### Starting blob of text (optional)
+
+You may wish to skip this section and instead use any of your previously generated Rmarkdown document. We are going to use slightly trimmed version of what we have been building in the first part of the book.
+
+```{r eval = F}
+file.edit("learning2.Rmd")
+```
+
+````markdown
+---
+title: "Rmarkdown"
+author: "Kirill"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: false
+    theme: readable
+    code_folding: "hide"
+---
+
+# R code
+
+`r ''````{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+
+library(magrittr)
+library(dplyr)
+library(DT)
+library(ggplot2)
+`r ''````
+
+## Getting and wrangling the data
+
+`r ''````{r get_data}
+
+make_url <- function(package) {
+file.edit("learning2.Rmd")
+  paste0('<a href="https://cran.r-project.org/web/packages/', package, '">', package, '</a>')
+}
+
+library(magrittr)
+library(dplyr)
+
+avail_packages <- available.packages(contriburl = contrib.url("https://mirror.aarnet.edu.au/pub/CRAN/")) %>%
+                    as.data.frame() %>% 
+                    as.data.frame() %>% 
+                    as_tibble() %>% 
+                    rowwise() %>% 
+                    mutate(Depend = length(unlist(strsplit(Imports, split = ",")))) %>% 
+                    ungroup() %>% 
+                    select(Package, Version, Depend, Imports, License) %>% 
+                    mutate(Package = make_url(Package),
+                           Depend = ifelse(is.na(Imports), -1, Depend)) 
+`r ''````
+
+## Displaying table
+
+`r ''````{r make_table}
+library(DT)
+avail_packages %>% datatable(escape = FALSE)
+`r ''````
+
+## Plot the data
+
+`r ''````{r plot}
+library(ggplot2)
+avail_packages %>% ggplot(aes(Depend)) + geom_bar()
+`r ''````
+````
+
+### Linking
+
+Three things to know about text linking:
+
+- the syntax `[text](link)`
+- the "link" part of the syntax can't have any spaces, replace them with a dash symbol
+- the hash symbol (`#`) signals an internal link to the header, as oppose external link to the internet
+
+_allowed alphanumeric characters `(a-z, A-Z, 0-9)`, `-`, `/`_
+
+Let's create a new section at the bottom of our document, using level 1 header with a short sentence beneath. 
+
+```markdown
+# Text linking
+
+Here is a link to the [Displaying table](#displaying-table) section above
+```
+
+## `bookdown::html_document2`
+
+Thus far we have been using `output: html_document` to generate our Rmarkdown documents. That function belong to `rmarkdown` package. Let's us introduce to you another R package, [bookdown](https://github.com/rstudio/bookdown). This package is an extension of [rmarkdown](https://github.com/rstudio/rmarkdown) package from the same team. `bookdown::html_document2` function inherent from `rmarkdown::html_document` and provides the following additional features, which we will explore in subsequent section, one at a time:
+
+- text referencing
+- cross referencing (figure, tables and sections)
+- numbering (figure, tables and sections)
+
+Let's begging by updating our YAML header to this new output type - `bookdown::html_document2` and press `Kint` button. Remember you can use comments symbol (`#`) at the start of the line to mask specific lines in the YAML header.
+
+```yaml
+output:
+  bookdown::html_document2:
+    toc: true
+    theme: redable
+```
+
+## Creating labels
+
+Let's create our first text label with the following syntax `(ref:label)`, where `label` can be any name and add a short sentence that we will want to insert elsewhere in the document later and press `Knit`
+
+```{r eval = F}
+(ref:barplot) Barplot displaying frequency of dependencies for all of the R packages in the CRAN repository to date `r Sys.Date()`
+```
+
+Note that you should **NOTE** see any text appearing in your final document. This is because we haven't yet referenced the label anywhere in the text
+
+--- interesting
+
+## Using labels
+
+Let's use our newly created label for figure capture. We will add additional code chunk option into our `plot` chunk using the following code. 
+
+````markdown
+`r ''````{r plot, fig.cap='(ref:barplot)'}
+
+````
+
+We can reuse that reference label anywhere with the document
+
+--- +1
+
+## Cross referencing
+
+
+- `\@ref(intro)`: referencing header section (same results as [linking](#linking))
+
+can add a section header labels with the following syntax 
+
+```markdown
+## Rather long header name {#long-header}
+```
+
+- `\@ref(fig:label)`: provides pointer to the specific figure
+
+- `\@ref(table:label)`: provies pointer to the specific table
+
+where label is the chunk name
+

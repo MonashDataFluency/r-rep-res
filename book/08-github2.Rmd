@@ -55,7 +55,7 @@ https://[USERNAME].github.io/[REPOSITORY_NAMEl]/[FILENAME].html
 
 (ref:github-contrib1) Reproducible Research in R (this book) GitHub page, insight tab showing contribution from other users
 
-```{r github-contrib1, echo=F, out.width="100%", fig.align="left", fig.cap='(ref:github-contrib1)'}
+```{r github-contrib1, echo=F, out.width="100%", out.height="100%", fig.cap='(ref:github-contrib1)'}
 knitr::include_graphics("figures/github-contrib1.png")
 ```
 

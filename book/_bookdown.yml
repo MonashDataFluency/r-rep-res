@@ -11,6 +11,8 @@ rmd_files:
   - 06-github1.Rmd
   - 07-git2.Rmd
   - 08-github2.Rmd
+  #- 09-rproj.Rmd
+  - 10-text-refs.Rmd
 language:
   label:
     fig: "Figure "
