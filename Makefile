@@ -2,6 +2,7 @@
 .PHONY : all html pdf examples deploy clean
 
 all: examples html pdf
+publish: clean html deploy
 
 examples:
 	cd book/examples; \
