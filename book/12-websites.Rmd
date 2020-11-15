@@ -1,3 +1,5 @@
+# Part IV: Multipaged websites with rmarkdown and bookdown packages
+
 # Bookdown
 
 All `.Rmd` files located in the same directory will be compiled into the book in the (alphabetical?) order.
