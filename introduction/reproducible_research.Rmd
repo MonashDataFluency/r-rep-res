@@ -1,11 +1,12 @@
 ---
 title: "Reproducible Research in R"
 subtitle: ""
-author: "Kirll Tsyganov & Adele Barugahare"
+author: "Kirill Tsyganov & Adele Barugahare"
 institute: "Monash Bioinformatics Platform"
 date: "23/07/2019 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
+    css: xaringan-themer.css
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -17,30 +18,75 @@ output:
 knitr::opts_chunk$set(echo = FALSE, fig.align="center")
 ```
 
-# Workshop Objectives
+```{r, include=FALSE, eval=FALSE}
+library(xaringanthemer)
+style_mono_accent_inverse(base_color = "#00a3cc")
+```
 
-* introduction to writing and communicating research using R Markdown
-* use knitr, rmarkdown and bookdown R packages to build various document types including PDF, HTML and DOCX
-* work with git version control tool
-* create reproducible and “backed up” analysis via remote repositories (e.g github)
 
-What We Aren't Learning:
+## Workshop Housekeeping
 
-* How to code with R itself
+Please keep yourself unmuted and video off
+
+Ask questions on the Slack chat (or unmute yourself!)
+
+Today, we'll focus on R Markdown, and a lil on Git
+
+Tomorrow: Git + GitHub + R Markdown
+
+Data Fluency has a git workshop - strongly recommend if you want to learn more
+
+Course material is freely available online - come back to it anytime
+
+MBP & Data Fluency have a help session every Friday at 3pm
+
+The workshop Slack channel will be archived after the workshop, however stay involved by asking questions on general and coding-help channels on the Data Fluency Slack channels
 
 ---
 
-# What Are We Learning
+## Workshop Objectives
 
-R + R Markdown = create documents that can contain both code and formatted text
+Introduction to writing and communicating research using R Markdown
 
-Git + Git Hub = how to version control your analysis 
+Use the rmarkdown package to build various document types including PDF, HTML and DOCX
 
-R + RStudio + R Markdown happens to be an ideal environment to work in but can also support other programming languages such as Python, Bash, SQL, etc.
+Work with git version control tool
+
+Create reproducible and "backed up" analysis via remote repositories (e.g github)
+
+### What We Aren't Learning:
+
+How to code with R itself
+
+---
+
+.pull-left[
+### The Tools
+
+R Markdown = create documents that can contain both code and formatted text
+
+Git + Git Hub = how to version control your analysis & share it
+
+]
+
+.pull-right[
+
+### The Workflow
+
+* Write your analysis with an R Markdown document
+* Record software versions
+* Track changes to the document with git
+* Collaborate with others using git + github
+* Share with github
+]
+
+R + RStudio + R Markdown is an ideal environment to work in but can also support other programming languages such as Python, Bash, SQL, etc.
 
 Git/Git Hub and R Markdown/R Studio are two seperate ecosystems that work together quite nicely for data science purposes for project management and communication
 
 ---
+
+exclude: true
 
 # Reproducibility Crisis
 
@@ -50,19 +96,21 @@ knitr::include_graphics("images/reprod.png")
 
 ---
 
+exclude: true
+
 # Reproducibility
 
 Can the results of a paper be attained by a different team using the same methods* described by that paper?
 
---
+#--
 
 *this depends on how well the methods are documented
 
---
+#--
 
 Depending on field, your mileage may vary greatly on the level of documentation
 
---
+#--
 
 e.g:
 
@@ -71,6 +119,8 @@ knitr::include_graphics("images/methods_section.png")
 ```
 
 ---
+
+exclude: true
 
 ## A Bioinformatics Example
 
@@ -81,27 +131,29 @@ knitr::include_graphics("images/methods_section.png")
 
 Oh cool, they used BOWTIE and MACS for their analysis...
 
---
+#--
 
 ...or did they? This paper was published in **2013**
 
---
+#--
 
 MACS2 was released in *2011*
 
---
+#--
 
 Bowtie2 was published in *2012*
 
---
+#--
 
 Both Bowtie2 and MACS2 are the recommended versions to use - my gut feeling here is that they definitely used MACS2 - and may or may not have used Bowtie2
 
---
+#--
 
 From Bowtie 2's manual: `Bowtie 2 is not a “drop-in” replacement for Bowtie 1.`
 
 ---
+
+exclude: true
 
 ## A Bioinformatics Example
 
@@ -110,6 +162,8 @@ knitr::include_graphics("images/hark_meme.jpg")
 ```
 
 ---
+
+exclude: true
 
 ## A Bioinformatics Example
 
@@ -121,11 +175,15 @@ knitr::include_graphics("images/example_code.png")
 
 ---
 
+exclude: true
+
 ### Discussion `r anicon::faa("question", animate="bounce", speed = "slow")`
 
 What makes an analysis reproducible?
 
 ---
+
+exclude: true
 
 ## Will The Analysis Stand Up Over Time
 
@@ -133,7 +191,11 @@ What makes an analysis reproducible?
 knitr::include_graphics("images/analysis_over_time.png")
 ```
 
+exclude: true
+
 ---
+
+exclude: true
 
 ## Some Tips For Reproducible Analysis 
 
@@ -146,7 +208,83 @@ knitr::include_graphics("images/analysis_over_time.png")
 knitr::include_graphics("images/version_control_1.png")
 ```
 
+
 ---
+
+exclude: true
+
+## R
+
+Programming language for statistical computing and graphics
+
+- Free legally & continous active development
+- Low risk of inadvertent data loss/mutation:
+  * By design, R requires you to load your data in, what you do with the data is then written in code (R language)
+- Collaborative: share your data and analysis 
+
+```{r fig.cap="Well developed ecosystem of tools for data analysis"}
+knitr::include_graphics("images/analysis_cycle.png")
+```
+
+---
+
+exclude: true
+
+### Why not use an R script for communication?
+
+```
+# Start of my analysis
+# Define the variables I'm going to use
+z <- c(1:10)
+x <- c(11:20)
+v <- sample(1:500, 10)
+# Let's examine the relationship between z and x
+plot(z, x)
+# It's interesting to see that z and x....
+```
+
+The # symbol is used to write notes in a R script and it's not really ideal for note-taking or including other things such as images, hyperlinks and tables into the script.
+---
+
+exclude: true
+
+background-image: url(images/rmarkdown_packages.png)
+
+---
+
+## What is R Markdown
+
+R Markdown is a package for publishing documents in R
+
+An Rmarkdown file is a plain text file that allows you to embed R code chunks & text & images. 
+
+The file can both save and execute code as well as generate high quality reports.
+
+Everytime you produce an output document from an R Markdown file, it will re-excute all of your code by default, ensuring the results are up-to-date (and if you've broken your code, it will fail to execute)
+
+```{r out.width="80%", out.width="80%"}
+knitr::include_graphics("images/rmarkdownflow.png")
+```
+
+---
+
+exclude: true
+
+## R Markdown
+
+One file, so many outputs
+
+```{r out.width="40%", out.width="40%", fig.align="center"}
+knitr::include_graphics("images/rmarkdownoutputformats.png")
+```
+
+The more places (files) an analysis is spread across, the more work it is to keep all of it accurate and up-to-date.
+
+R Markdown allows you to focus on generating content & doing your analysis without (hopefully) spending too much time fighting your document itself
+
+
+---
+
 ## Version Control with Git
 
 Version Control - system for tracking changes in a file
@@ -160,6 +298,16 @@ knitr::include_graphics("images/github_flow.png")
 ```
 
 ---
+
+## Avoids `r anicon::nia("This", animate="bounce", speed = "slow")`
+
+```{r, out.width="50%", out.width="50%"}
+knitr::include_graphics("images/version_control_1.png")
+```
+
+---
+
+exclude: true
 
 ## Pro/Cons of Git
 
@@ -186,89 +334,15 @@ knitr::include_graphics("images/git_logo.png")
 
 ---
 
+exclude: true
+
 background-image: url(images/r_logo.png)
 background-position: 50% 50%
 class: center, bottom
 
----
-
-## R
-
-Programming language for statistical computing and graphics
-
-- Free legally & continous active development
-- Low risk of inadvertent data loss/mutation:
-  * By design, R requires you to load your data in, what you do with the data is then written in code (R language)
-- Collaborative: share your data and analysis 
-
-```{r fig.cap="Well developed ecosystem of tools for data analysis"}
-knitr::include_graphics("images/analysis_cycle.png")
-```
 
 ---
 
-### Why not use an R script for communication?
-
-```
-# Start of my analysis
-# Define the variables I'm going to use
-z <- c(1:10)
-x <- c(11:20)
-v <- sample(1:500, 10)
-# Let's examine the relationship between z and x
-plot(z, x)
-# It's interesting to see that z and x....
-```
-
-The # symbol is used to write notes in a R script and it's not really ideal for note-taking or including other things such as images, hyperlinks and tables into the script.
----
-
-
-background-image: url(images/rmarkdown_packages.png)
-
-
----
-
-## What is R Markdown
-
-The marriage between Markdown, a lightweight markup language and R, a programming language for statistics
-
-R Markdown is both an R package & a plain text file-type that allows you to embed R code chunks + plain text notes & images. 
-
-A single R Markdown file can both save and execute code as well as generate high quality reports.
-
-Everytime you produce an output document from an R Markdown file, it will re-excute all of your code by default, ensuring the results are up-to-date (and if you've broken your code, it will fail to execute)
-
-```{r out.width="80%", out.width="80%"}
-knitr::include_graphics("images/rmarkdownflow.png")
-```
-
----
-
-## R Markdown
-
-One file, so many outputs
-
-```{r out.width="40%", out.width="40%", fig.align="center"}
-knitr::include_graphics("images/rmarkdownoutputformats.png")
-```
-
-The more places (files) an analysis is spread across, the more work it is to keep all of it accurate and up-to-date.
-
-R Markdown allows you to focus on generating content & doing your analysis without (hopefully) spending too much time fighting your document itself
-
----
-
-## About Today's Workshop
-
-* Today, we'll focus on R Markdown, tomorrow on Git and GitHub
-* Ask questions throughout this workshop!
-* Course material is freely available online - come back to it anytime
-* Attend this workshop again 
-* MBP & Data Fluency have a help session every Friday at 3pm
-* The workshop Slack channel will be archived after the workshop, however stay involved by asking questions on the general and coding-help channels on the Data Fluency Slack channels
-
----
 
 ## Set-up
 
