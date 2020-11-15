@@ -60,34 +60,6 @@ How to code with R itself
 
 ---
 
-.pull-left[
-### The Tools
-
-R Markdown = create documents that can contain both code and formatted text
-
-Git + Git Hub = how to version control your analysis & share it
-
-]
-
-.pull-right[
-
-### The Workflow
-
-* Write your analysis with an R Markdown document
-* Record software versions
-* Track changes to the document with git
-* Collaborate with others using git + github
-* Share with github
-]
-
-R + RStudio + R Markdown is an ideal environment to work in but can also support other programming languages such as Python, Bash, SQL, etc.
-
-Git/Git Hub and R Markdown/R Studio are two seperate ecosystems that work together quite nicely for data science purposes for project management and communication
-
----
-
-exclude: true
-
 # Reproducibility Crisis
 
 ```{r, out.width="70%", out.height="70%"}
@@ -208,6 +180,32 @@ exclude: true
 knitr::include_graphics("images/version_control_1.png")
 ```
 
+
+---
+
+.pull-left[
+### The Tools
+
+R Markdown = create documents that can contain both code and formatted text
+
+Git + Git Hub = how to version control your analysis & share it
+
+]
+
+.pull-right[
+
+### The Workflow
+
+* Write your analysis with an R Markdown document
+* Record software versions
+* Track changes to the document with git
+* Collaborate with others using git + github
+* Share with github
+]
+
+R + RStudio + R Markdown is an ideal environment to work in but can also support other programming languages such as Python, Bash, SQL, etc.
+
+Git/Git Hub and R Markdown/R Studio are two seperate ecosystems that work together quite nicely for data science purposes for project management and communication
 
 ---
 
