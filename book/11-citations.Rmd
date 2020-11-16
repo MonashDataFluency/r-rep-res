@@ -26,7 +26,7 @@ citation("rmarkdown")
 
 [BibTex](http://www.bibtex.org/Format/) is one of many citation formats, [this is a more comprehensive list](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Specifying_a_Bibliography) of all possible citation formats. Rmarkdown works best with [BibTex](http://www.bibtex.org/Format/) file format and this is the one we are going to cover today. Typical file extention for BibTex is `.bib`
 
-Let's try converting our citation into bibtex format using the following code
+Let's try converting our citation text into bibtex format using the following code
 
 ```{r, comment=""}
 #toBibTex(citation("rmarkdown"))
@@ -36,8 +36,7 @@ citation("rmarkdown") %>% toBibtex()
 
 ### `knitr::write_bib` {#make-refs}
 
-We have seen in the previous section how we can generate citation and `.bib` format. In order for us to start using those citations within our Rmarkdown documents we need them to be saved into a `.bib` file. For that we are going to use `write_bib()` function from [knitr package](https://cran.r-project.org/web/packages/knitr). 
-
+It's great to be able to get a BibTex text and we can manually copy and paste it into a file, but instead we can use `write_bib()` function from [knitr package](https://cran.r-project.org/web/packages/knitr) package to do that. Let's run the following code in order to generate `references.bib` file
 
 ```{r}
 knitr::write_bib("rmarkdown", file = "references.bib")
@@ -45,7 +44,7 @@ knitr::write_bib("rmarkdown", file = "references.bib")
 
 ### BibTex keys {#bib-keys}
 
-It is a bit of a round trip, for some read `citation()` function in [BibTex section above](#bibtex) doesn't make keys for our bibtex entries, whereas `knitr::write_bib()` function does. Let's read our bibtex file back in using the following code to see what our keys are. We will learn how to use those key in the [Inline citation section below](#inline-cite)
+It is a bit of a round trip, for some reason `citation()` function in [BibTex section above](#bibtex) doesn't make keys for our bibtex entries, whereas `knitr::write_bib()` function does. Let's read our bibtex file back in using the following code to see what our keys are. We will learn how to use those key in the [Inline citation section below](#inline-cite)
 
 ```{r, comment=""}
 library(bibtex)

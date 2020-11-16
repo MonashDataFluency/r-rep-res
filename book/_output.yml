@@ -30,12 +30,12 @@ bookdown::gitbook:
       instapaper: no
       vk: no
       all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
-#bookdown::pdf_book:
-#  keep_tex: no
-#  latex_engine: xelatex
-#  pandoc_args: [--top-level-division=chapter,
-#                --wrap=none]
-#  toc_depth: 3
-#  toc_unnumbered: no
-#  toc_appendix: yes
-#  highlight_bw: yes
+bookdown::pdf_book:
+  keep_tex: no
+  latex_engine: xelatex
+  pandoc_args: [--top-level-division=chapter,
+                --wrap=none]
+  toc_depth: 3
+  toc_unnumbered: no
+  toc_appendix: yes
+  highlight_bw: yes
