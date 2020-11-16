@@ -16,4 +16,4 @@ book/examples/libs
 book/examples/multi_page_report_files
 presentations/git/figures
 !presentations/git/figures/*.gif
-!book/references*.bib
+book/references*.bib
