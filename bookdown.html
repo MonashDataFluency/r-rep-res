@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Part I: Rmarkdown from scratch | Reproducible Research in R</title>
-  <meta name="description" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
+  <title>Section 12 Bookdown | Reproducible Research in R</title>
+  <meta name="description" content="Section 12 Bookdown | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
+  <meta property="og:title" content="Section 12 Bookdown | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 12 Bookdown | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="markdown-syntax.html"/>
+<link rel="prev" href="static-website-1.html"/>
+<link rel="next" href="resources.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -298,17 +298,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="part-i-rmarkdown-from-scratch" class="section level1 unnumbered" number="">
-<h1>Part I: Rmarkdown from scratch</h1>
-<p>In the first part of the book we will begging with blank text file and finish with a sophisticated HTML webpage ready to be shared with the world. We will learn three main components of the Rmarkdown document, markdown syntax, YAML header and the code chunks, together with the <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> we are table to convert Rmarkdown files into HTML, PDF and Word documents effortlessly.</p>
+<div id="bookdown" class="section level1" number="12">
+<h1><span class="header-section-number">Section 12</span> Bookdown</h1>
+<p>In this section we are going just touch on <code>bookdown::bookdown_site</code>, which is a custom “function” for generating multi-paged document, books, thesis and other documents.</p>
+<div id="introduction-8" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Introduction</h2>
+<p>Thus far in this part of the book we have been using default <code>site</code> generation function</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb98-1"><a href="bookdown.html#cb98-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> rmarkdown::default_site</span></span></code></pre></div>
+<p>Bookdown package provide another convenient function to build multi-paged book or alike documents by setting <code>site</code> key to the following value in our YAML <code>_site.yml</code> file. Let’s add the following code into our <code>_site.ytml</code> file and press “Build”</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb99-1"><a href="bookdown.html#cb99-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span></code></pre></div>
 </div>
+<div id="masking-files" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Masking files</h2>
+<p>As was mention previous, any files with an <code>_</code> at the front won’t be included into our site. Since presentations are well suited for the book format, let’s suppress <code>presenting.Rmd</code> file using the following command. Alternative use point and click navigation in the “File” tab to rename the file.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="bookdown.html#cb100-1"></a><span class="kw">file.rename</span>(<span class="st">&quot;presenting.Rmd&quot;</span>, <span class="st">&quot;_presenting.Rmd&quot;</span>)</span></code></pre></div>
+</div>
+<div id="adding-section-headers" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Adding section headers</h2>
+<p>Let’s add a couple of section headers into <code>index.Rmd</code> and <code>about.Rmd</code> files and press “Build” again.</p>
+</div>
+<div id="bookdown-skeleton" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Bookdown skeleton</h2>
+<div id="apporach-1" class="section level3" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> Apporach 1</h3>
+<p>This approach wont work on the desktop (and server) clients.</p>
+<pre><code>File
+ └── New Project
+ 
+Then select &quot;New Directory&quot; -&gt; &quot;Book project using bookdown&quot;</code></pre>
+<p>Everything will be setup, including building tools. Once the project loaded press “Build” button</p>
+</div>
+<div id="approach-2" class="section level3" number="12.4.2">
+<h3><span class="header-section-number">12.4.2</span> Approach 2</h3>
+<p>Since rstudio.cloud automatically starts as a RStudio project, we are not able to select which project “type” we would like. However we can exectu the following command, which will give the same overall results.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="bookdown.html#cb102-1"></a>bookdown<span class="op">:::</span><span class="kw">bookdown_skeleton</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+
+</div>
+</div>
+</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="markdown-syntax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="static-website-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -340,7 +377,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/01-introduction.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/13-bookdown.Rmd",
 "text": "Edit"
 },
 "history": {

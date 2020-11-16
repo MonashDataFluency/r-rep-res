@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Part I: Rmarkdown from scratch | Reproducible Research in R</title>
-  <meta name="description" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
+  <title>Section 11 Static website | Reproducible Research in R</title>
+  <meta name="description" content="Section 11 Static website | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
+  <meta property="og:title" content="Section 11 Static website | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part I: Rmarkdown from scratch | Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 11 Static website | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="markdown-syntax.html"/>
+<link rel="prev" href="static-website.html"/>
+<link rel="next" href="bookdown.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -298,17 +298,103 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="part-i-rmarkdown-from-scratch" class="section level1 unnumbered" number="">
-<h1>Part I: Rmarkdown from scratch</h1>
-<p>In the first part of the book we will begging with blank text file and finish with a sophisticated HTML webpage ready to be shared with the world. We will learn three main components of the Rmarkdown document, markdown syntax, YAML header and the code chunks, together with the <a href="https://github.com/rstudio/rmarkdown">rmarkdown R package</a> we are table to convert Rmarkdown files into HTML, PDF and Word documents effortlessly.</p>
+<div id="static-website-1" class="section level1" number="11">
+<h1><span class="header-section-number">Section 11</span> Static website</h1>
+<p>In this section we are going to learn about basic files skeleton for generating website with Rmarkdown and how to configure build tools in RStudio for building websites</p>
+<div id="introduction-7" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Introduction</h2>
+<p>We are still going to continue writing Rmarkdown, except now each new website page, will be defined in new, stand alone <code>.Rmd</code> file. Since we are going to have multiple <code>.Rmd</code> file we will move our YAML header into stand alone file <code>_site.yml</code>.</p>
+<p>The bear minimum and must have files for static website generation are:</p>
+<ul>
+<li><code>index.Rmd</code></li>
+<li><code>_site.yml</code></li>
+</ul>
+<p>All other <code>.Rmd</code> files can have any name. Files that have leading underscore, treated differently and aren’t included into your final website.</p>
+<p>Instead of using <code>Knit</code> button to generate HTML file, we instead going to be using “Build …” button, located in the “Environment, History, …” pane, under “Build” tab. Note that this tab may be missing and requires additional setting up.</p>
+</div>
+<div id="build-tools-setup" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Build tools setup</h2>
+<p>Let’s set up our build system by using menu options at the top of the screen as follows, after which you should see “Build” tab appearing</p>
+<pre><code>Build
+ └── Configure Build Tools...
+ 
+Project build tools: website</code></pre>
+</div>
+<div id="first-three-files" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> First three files</h2>
+<p>Let’s start generating an initial skeleton for our website. For that we will need to open few files and append some content into them.</p>
+<p>You can either use menu drop down option to open a new <code>.Rmd</code> files, as described in the <a href="markdown-syntax.html#intro1">introduction</a> as a “Text File” and then save as either <code>.Rmd</code> or <code>.yml</code>. Alternatively execute the following commands, in turn to open files for editing.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="static-website-1.html#cb88-1"></a><span class="kw">file.edit</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span></code></pre></div>
+<p>Let’s append the following content into <code>index.Rmd</code> file</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb89-1"><a href="static-website-1.html#cb89-1"></a><span class="co">---</span></span>
+<span id="cb89-2"><a href="static-website-1.html#cb89-2"></a><span class="an">title:</span><span class="co"> &quot;Welcome to my website&quot;</span></span>
+<span id="cb89-3"><a href="static-website-1.html#cb89-3"></a><span class="co">---</span></span>
+<span id="cb89-4"><a href="static-website-1.html#cb89-4"></a></span>
+<span id="cb89-5"><a href="static-website-1.html#cb89-5"></a>This is my very first website, Yay !!</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="static-website-1.html#cb90-1"></a><span class="kw">file.edit</span>(<span class="st">&quot;about.Rmd&quot;</span>)</span></code></pre></div>
+<p>Let’s append the following content into <code>about.Rmd</code> file.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb91-1"><a href="static-website-1.html#cb91-1"></a><span class="co">---</span></span>
+<span id="cb91-2"><a href="static-website-1.html#cb91-2"></a><span class="an">title:</span><span class="co"> &quot;About Me&quot;</span></span>
+<span id="cb91-3"><a href="static-website-1.html#cb91-3"></a><span class="co">---</span></span>
+<span id="cb91-4"><a href="static-website-1.html#cb91-4"></a></span>
+<span id="cb91-5"><a href="static-website-1.html#cb91-5"></a>I am a keen bean, always lookiing for the next, best project to get my hands into. </span>
+<span id="cb91-6"><a href="static-website-1.html#cb91-6"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb91-7"><a href="static-website-1.html#cb91-7"></a>In this site I will talk about some of my project. I try my best to keep all of my code version with git and shared via GitHub platform</span>
+<span id="cb91-8"><a href="static-website-1.html#cb91-8"></a></span>
+<span id="cb91-9"><a href="static-website-1.html#cb91-9"></a>Feel free to get in touch</span>
+<span id="cb91-10"><a href="static-website-1.html#cb91-10"></a></span>
+<span id="cb91-11"><a href="static-website-1.html#cb91-11"></a>:)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="static-website-1.html#cb92-1"></a><span class="kw">file.edit</span>(<span class="st">&quot;_site.yml&quot;</span>)</span></code></pre></div>
+<p>Let’s add the following code into our <code>_site.yml</code> file. Note the new key, <code>navbar</code> for navigation bar, typically seats at the top of your website, or floats on the side somewhere. We won’t a lot of time to discuss <code>navbar</code>. It is however highly configurable, with lots of different options.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb93-1"><a href="static-website-1.html#cb93-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;my-website&quot;</span></span>
+<span id="cb93-2"><a href="static-website-1.html#cb93-2"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb93-3"><a href="static-website-1.html#cb93-3"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Website&quot;</span></span>
+<span id="cb93-4"><a href="static-website-1.html#cb93-4"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb93-5"><a href="static-website-1.html#cb93-5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
+<span id="cb93-6"><a href="static-website-1.html#cb93-6"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
+<span id="cb93-7"><a href="static-website-1.html#cb93-7"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;About&quot;</span></span>
+<span id="cb93-8"><a href="static-website-1.html#cb93-8"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.html</span></span></code></pre></div>
+<p>After all of this initial setup let’s navigate to our “Build” tab and press “Build website”</p>
+</div>
+<div id="output-directory-name" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Output directory name</h2>
+<p>The default location for you static website is in <code>_site</code>. You can host that directory on places like GitHub and have your own website - Yay !</p>
+<p>We can change default location with the following YAML syntax, let’s add that in to our <code>_site.yml</code> and press “Build” again</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb94-1"><a href="static-website-1.html#cb94-1"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> website</span></span></code></pre></div>
+<p>We might have to remove our previous <code>_site</code> folder</p>
+</div>
+<div id="more-content" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> More content</h2>
+<p>Let’s our previous generated Rmarkdown report and presentation. Since this is a stand alone projectd and we are working on <a href="https://rstudio.cloud">rstudio.cloud</a> we aren’t able to copy those previous files to the current project (folder), we will leverage GitHub and download our files directly from it. In real life the easiest thing would be to copy them across from the previous project. Let’s execute the following command</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="static-website-1.html#cb95-1"></a><span class="kw">download.file</span>(<span class="st">&quot;https://serine.github.io/learning_rmarkdown/learning.Rmd&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;learning.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="static-website-1.html#cb96-1"></a><span class="kw">download.file</span>(<span class="st">&quot;https://serine.github.io/learning_rmarkdown/presenting.Rmd&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;presenting.Rmd&quot;</span>)</span></code></pre></div>
+<p>Let’s now update our <code>_site.yml</code> to bundle new pages into our website. Add the following code to your configuration YAML file and press “Build website” button</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb97-1"><a href="static-website-1.html#cb97-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;my-website&quot;</span></span>
+<span id="cb97-2"><a href="static-website-1.html#cb97-2"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb97-3"><a href="static-website-1.html#cb97-3"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My Website&quot;</span></span>
+<span id="cb97-4"><a href="static-website-1.html#cb97-4"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb97-5"><a href="static-website-1.html#cb97-5"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
+<span id="cb97-6"><a href="static-website-1.html#cb97-6"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
+<span id="cb97-7"><a href="static-website-1.html#cb97-7"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;About&quot;</span></span>
+<span id="cb97-8"><a href="static-website-1.html#cb97-8"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> about.html</span></span>
+<span id="cb97-9"><a href="static-website-1.html#cb97-9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Projects&quot;</span></span>
+<span id="cb97-10"><a href="static-website-1.html#cb97-10"></a><span class="at">      </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-archive</span></span>
+<span id="cb97-11"><a href="static-website-1.html#cb97-11"></a><span class="at">      </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb97-12"><a href="static-website-1.html#cb97-12"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Rmarkdown report&quot;</span></span>
+<span id="cb97-13"><a href="static-website-1.html#cb97-13"></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> learning.html</span></span>
+<span id="cb97-14"><a href="static-website-1.html#cb97-14"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;IO slides presentation&quot;</span></span>
+<span id="cb97-15"><a href="static-website-1.html#cb97-15"></a><span class="at">          </span><span class="fu">href</span><span class="kw">:</span><span class="at"> presenting.html</span></span>
+<span id="cb97-16"><a href="static-website-1.html#cb97-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;---------&quot;</span></span></code></pre></div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="markdown-syntax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="static-website.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -340,7 +426,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/01-introduction.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/12-websites.Rmd",
 "text": "Edit"
 },
 "history": {
