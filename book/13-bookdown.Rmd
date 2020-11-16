@@ -1,0 +1,52 @@
+# Bookdown
+
+In this section we are going just touch on `bookdown::bookdown_site`, which is a custom "function" for generating multi-paged document, books, thesis and other documents.
+
+## Introduction
+
+Thus far in this part of the book we have been using default `site` generation function
+
+```YAML
+site: rmarkdown::default_site
+```
+
+Bookdown package provide another convenient function to build multi-paged book or alike documents by setting `site` key to the following value in our YAML `_site.yml` file. Let's add the following code into our `_site.ytml` file and press "Build"
+
+```YAML
+site: bookdown::bookdown_site
+```
+
+## Masking files
+
+As was mention previous, any files with an `_` at the front won't be included into our site. Since presentations are well suited for the book format, let's suppress `presenting.Rmd` file using the following command. Alternative use point and click navigation in the "File" tab to rename the file.
+
+```{r eval = F}
+file.rename("presenting.Rmd", "_presenting.Rmd")
+```
+
+## Adding section headers
+
+Let's add a couple of section headers into `index.Rmd` and `about.Rmd` files and press "Build" again.
+
+## Bookdown skeleton
+
+### Apporach 1
+
+This approach wont work on the desktop (and server) clients. 
+
+```
+File
+ └── New Project
+ 
+Then select "New Directory" -> "Book project using bookdown"
+```
+
+Everything will be setup, including building tools. Once the project loaded press "Build" button
+
+### Approach 2
+
+Since rstudio.cloud automatically starts as a RStudio project, we are not able to select which project "type" we would like. However we can exectu the following command, which will give the same overall results.
+
+```{r eval = F}
+bookdown:::bookdown_skeleton(".")
+```

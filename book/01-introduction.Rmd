@@ -6,7 +6,7 @@ In the first part of the book we will begging with blank text file and finish wi
 
 We will begging exploring concise markdown syntax in the first section of the book. You will be amazed how with just few additional text markups and the smart functions from [rmarkdown R package](https://github.com/rstudio/rmarkdown) we can create a world of different document types. 
 
-## Introduction
+## Introduction {#intro1}
 
 Let's begin with install `rmarkdown` package using the following command
 

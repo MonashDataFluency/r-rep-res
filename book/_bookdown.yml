@@ -14,6 +14,10 @@ rmd_files:
   #- 09-rproj.Rmd
   - 10-text-refs.Rmd
   - 11-citations.Rmd
+  - 12-websites.Rmd
+  - 13-bookdown.Rmd
+  #- 98-references.Rmd
+  - 99-appendix.Rmd
 language:
   label:
     fig: "Figure "

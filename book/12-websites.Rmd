@@ -1,66 +1,136 @@
-# Part IV: Static, multipaged website with rmarkdown and bookdown
+# Part IV: Static, multi-paged website with rmarkdown and bookdown {- #static-website}
 
-Thus far we have been doing one to one mapping, from single Rmarkdown file to a single HTML file,
-from a single Rmarkdow approach is very similar generating multi pages website)
+Thus far we have been generating single HTML page from an Rmarkdown document. Both rmarkdown and bookdown package also allow us to build a multi-paged, static website, from one or more rmarkdown files. We are then going to extend static website generation with particular _type_ of website, gitbook site, using bookdown package.
 
-introduce two new, must files
- index.Rmd
-_site.yml
-don't show navbar at the start, just three pages, index, aboutme and "blog entry"
-explain website build via build tab/ button as oppose knit button (maybe need to confiigure the project?)
-name: my_site and output_dir: website
-check to see if you can do without navbar? maybe not, not a big deal if cant
-reiterate output html_document or html_document2 both will work
-this is the site generating function, site: rmarkdown::default_site or site: bookdown::bookdown_site
+# Static website
 
-# Bookdown
+In this section we are going to learn about basic files skeleton for generating website with Rmarkdown and how to configure build tools in RStudio for building websites
 
-All `.Rmd` files located in the same directory will be compiled into the book in the (alphabetical?) order.
+## Introduction
 
-- files that start with an underscore are skipped
-- if there is an `index.Rmd` it will always be treated as a first file
-- those settings can be overwritten via `_bookdown.yml`
-- `_bookdown.yml` must co-exist with `.Rmd` files in the "book" directory
+We are still going to continue writing Rmarkdown, except now each new website page, will be defined in new, stand alone `.Rmd` file. Since we are going to have multiple `.Rmd` file we will move our YAML header into stand alone file `_site.yml`.
 
-Bookdown has extended markdown even further for math https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#tab:theorem-envs
+The bear minimum and must have files for static website generation are:
 
-## work in progress
+- `index.Rmd`
+- `_site.yml`
 
-Besides these html_document() options,
+All other `.Rmd` files can have any name. Files that have leading underscore, treated differently and aren't included into your final website.
 
-gitbook() has three other arguments:
-
-- `split_by` argument specifies how you want to split the HTML output into multiple pages
-
-    - `rmd`: use the base filenames of the input Rmd files to create the HTML filenames, e.g., generate chapter3.html for chapter3.Rmd.
-    - `none`: do not split the HTML file (the book will be a single HTML file).
-    - `chapter`: split the file by the first-level headers.
-    - `section`: split the file by the second-level headers.
-    - `chapter+number` and `section+number`: similar to chapter and section, but the files will be numbered.
-
-- `split_bib`
-- `config`
-
-- `collapse`
-    - `section`
-    - `subsection`
-
-      scroll_highlight: yes
-      before: null
+Instead of using `Knit` button to generate HTML file, we instead going to be using "Build ..." button, located in the "Environment, History, ..." pane, under "Build" tab. Note that this tab may be missing and requires additional setting up.
 
 
-## Cross-references
+## Build tools setup
 
-A normal paragraph.
+Let's set up our build system by using menu options at the top of the screen as follows, after which you should see "Build" tab appearing
 
-(ref:foo) A scatterplot of the data `cars` using **base** R graphics.
-
-```{r fig.cap='(ref:foo)'}
-plot(cars)  # a scatterplot
+```
+Build
+ └── Configure Build Tools...
+ 
+Project build tools: website
 ```
 
-## check
+## First three files
 
-need to address difference between `html_document2` vs `gitbook`
+Let's start generating an initial skeleton for our website. For that we will need to open few files and append some content into them.
 
-https://bookdown.org/yihui/rmarkdown/bookdown-output.html#bookdown-output
+You can either use menu drop down option to open a new `.Rmd` files, as described in the [introduction](#intro1) as a "Text File" and then save as either `.Rmd` or `.yml`. Alternatively execute the following commands, in turn to open files for editing.
+
+```{r, eval=F}
+file.edit("index.Rmd")
+```
+
+Let's append the following content into `index.Rmd` file
+
+```markdown
+---
+title: "Welcome to my website"
+---
+
+This is my very first website, Yay !!
+```
+
+```{r, eval=F}
+file.edit("about.Rmd")
+```
+
+Let's append the following content into `about.Rmd` file. 
+
+```markdown
+---
+title: "About Me"
+---
+
+I am a keen bean, always lookiing for the next, best project to get my hands into. 
+<br>
+In this site I will talk about some of my project. I try my best to keep all of my code version with git and shared via GitHub platform
+
+Feel free to get in touch
+
+:)
+```
+
+```{r, eval=F}
+file.edit("_site.yml")
+```
+
+Let's add the following code into our `_site.yml` file. Note the new key, `navbar` for navigation bar, typically seats at the top of your website, or floats on the side somewhere. We won't a lot of time to discuss `navbar`. It is however highly configurable, with lots of different options.
+
+```YAML
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+```
+
+After all of this initial setup let's navigate to our "Build" tab and press "Build website"
+
+## Output directory name
+
+The default location for you static website is in `_site`. You can host that directory on places like GitHub and have your own website - Yay !
+
+We can change default location with the following YAML syntax, let's add that in to our `_site.yml` and press "Build" again
+
+```YAML
+output_dir: website
+```
+
+We might have to remove our previous `_site` folder
+
+## More content
+
+Let's our previous generated Rmarkdown report and presentation. Since this is a stand alone projectd and we are working on [rstudio.cloud](https://rstudio.cloud) we aren't able to copy those previous files to the current project (folder), we will leverage GitHub and download our files directly from it. In real life the easiest thing would be to copy them across from the previous project. Let's execute the following command
+
+```{r eval = F}
+download.file("https://serine.github.io/learning_rmarkdown/learning.Rmd", destfile = "learning.Rmd")
+```
+
+```{r eval = F}
+download.file("https://serine.github.io/learning_rmarkdown/presenting.Rmd", destfile = "presenting.Rmd")
+```
+
+Let's now update our `_site.yml` to bundle new pages into our website. Add the following code to your configuration YAML file and press "Build website" button
+
+```YAML
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Projects"
+      icon: fa-archive
+      menu:
+        - text: "Rmarkdown report"
+          href: learning.html
+        - text: "IO slides presentation"
+          href: presenting.html
+        - text: "---------"
+```

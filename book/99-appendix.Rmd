@@ -1,8 +1,6 @@
 # (APPENDIX) Appendix {-}
 
-# Appendix
-
-## Resources
+# Resources
 
 - [knitr vs rmarkdown vs bookdown](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)
