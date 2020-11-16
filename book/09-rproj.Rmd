@@ -1,28 +1,6 @@
+# RStudio project (`*.Rproj` file)
 
-# Organising your project directory
-
-## Challenge: Warm up 1 {.exercise}
-
-> 10 minutes
-
-<details>
-  <summary>
-    1. Arrange the file into subdirectories the best way you can, that makes it easier for you and other to understand this (messy) project
-
-    - go to google team drive (link on slack)
-   - open `23.04.2020-workshop-ex1` folder
-   - make your personal folder with your name e.g KirillTsyganov
-   - copy files accross from `unsorted` folder into your directory arranging file in a more meanigful way
-
-  </summary>
-  Bonus points for creating the most important file of all in your directory
-</details>
-
-## check
-
-```{r echo=F, out.width="100%", fig.align="left", fig.cap='(ref:rproj)'}
-knitr::include_graphics("figures/rstudio-rproj3.png")
-```
+## Introdunction
 
 ## Being clear
 

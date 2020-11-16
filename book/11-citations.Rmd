@@ -1,151 +1,201 @@
 # Citations
 
+In this section of the book you will learn how to include bibliographies into your document, how to generate citations or source them from external places. We will touch on [RefMangeR](https://github.com/ropensci/RefManageR/) and [bibtex](https://cran.r-project.org/web/packages/bibtex/index.html) packages to help us with references. In addition we will also learn [citr](https://github.com/crsh/citr) package. Finally we will mention external software that can help you manage large number of citations.
+
+For this section of the book we need to install these additional packages
+
+```{r, eval = F}
+install.packages(c("bibtex", "RefManageR"))
+```
+
 ## Introductions
 
-Talks about diff citation manages
+[A citation is a reference to a source (from wikipedia)](https://en.wikipedia.org/wiki/Citation). R provides nice function `citation()` that helps us generating citation blob for R packages that we have used
+
+Let's try generating citation text for [rmarkdown](https://github.com/rstudio/rmarkdown) package by using the following command
+
+```{r, comment=""}
+citation("rmarkdown")
+```
+
+--- great
+
+## BibTex {#bibtex}
+
+### Introduction
+
+[BibTex](http://www.bibtex.org/Format/) is one of many citation formats, [this is a more comprehensive list](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Specifying_a_Bibliography) of all possible citation formats. Rmarkdown works best with [BibTex](http://www.bibtex.org/Format/) file format and this is the one we are going to cover today. Typical file extention for BibTex is `.bib`
+
+Let's try converting our citation into bibtex format using the following code
+
+```{r, comment=""}
+#toBibTex(citation("rmarkdown"))
+
+citation("rmarkdown") %>% toBibtex()
+```
+
+### `knitr::write_bib` {#make-refs}
+
+We have seen in the previous section how we can generate citation and `.bib` format. In order for us to start using those citations within our Rmarkdown documents we need them to be saved into a `.bib` file. For that we are going to use `write_bib()` function from [knitr package](https://cran.r-project.org/web/packages/knitr). 
+
+
+```{r}
+knitr::write_bib("rmarkdown", file = "references.bib")
+```
+
+### BibTex keys {#bib-keys}
+
+It is a bit of a round trip, for some read `citation()` function in [BibTex section above](#bibtex) doesn't make keys for our bibtex entries, whereas `knitr::write_bib()` function does. Let's read our bibtex file back in using the following code to see what our keys are. We will learn how to use those key in the [Inline citation section below](#inline-cite)
+
+```{r, comment=""}
+library(bibtex)
+
+refs <- read.bib("references.bib")
+keys <- names(refs)
+keys
+```
+
+Let's open our `references.bib` file by clicking on it in the "File" pane-tab and compare that bibtex with the one in [BibTex section above](#bibtex). Can't you find location of those keys in the bibtex file?
+
+```{r echo = F, comment=""}
+toBibtex(refs)
+```
+
+## Where do I get `.bib` file?
+
+### Citation managment software
+
+This a short list of external software that may help you with managing citation. Those four will have an option to export a list of citation as a `.bib` file. I will leave for you as a home to figure out how to export `.bib` file from your citation manager of choice.
 
 - [Zotero](https://www.zotero.org/)
 - [Paperpile](https://paperpile.com)
 - [Mendeley](https://www.mendeley.com)
 - [EndNote](https://endnote.com/)
 
-## BibTex 
+### ZoteroBib service
 
-Talk about bibtex
+> [zbib.org](https://zbib.org/)
 
-```{r}
-citation("rmarkdown")
+Zotero provides nice free service for getting citation and exporting them as `.bib` files 
+
+### RefMangeR
+
+The [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) maybe a useful package to try to source external references
+
+```{r eval = F}
+library(RefManageR)
+
+#keywords <- c("FastQC",
+#              "BWA-MEM",
+#              "featureCounts",
+#              "RNAsik")
+
+#citations <- lapply(keywords, ReadCrossRef, limit = 1)
+
+titles <- c("FastQC: A Quality Control Tool for High Throughput Sequence Data",
+            "Aligning Sequence Reads, Clone Sequences and Assembly Contigs with BWA-MEM",
+            "featureCounts: An Efficient General Purpose Program for Assigning Sequence Reads to Genomic Features",
+            "RNAsik: A Pipeline for Complete and Reproducible RNA-Seq Analysis That Runs Anywhere with Speed and Ease")
+
+citations <- lapply(titles, ReadCrossRef, limit = 1)
+
+citations
+
+lapply(citations, WriteBib, file = "references2.bib", append = TRUE)
 ```
 
-## RefMangeR
+### Journal websites
 
+A lot of journal website as well as [Google Scholar](https://scholar.google.com/) will have some export citation button. Look for those "export" button and select `.bib` file format
 
-## Where do you get bibtex file?
+## Linking `.bib` file with Rmarkdown document
 
-There are two ways to get `.bib` files:
+Let's practice linking bibtex file with our Rmarkdown document via YAML header. We are going to use `references.bib` file that we have generated in the [section above](#make-refs). Start by including the following key value pair into your YAML header
 
-- manually curate one: remember that this is a plain text file format, so you can just type it out in a text editor and save as `.bib` file
-- export out of your citation management or the publication website
-
-I tried a couple of website, [pubmed](https://www.ncbi.nlm.nih.gov/pubmed/) and [nature.com](https://www.nature.com), neither of those appear to allow you to export `.bib`. Pubmed exports `.nbib`, which is a different file format if you look inside. Nature exports `.ris`, again not the one that we want. [Google scholar](https://scholar.google.com.au/) has a button **import into Bibtext** that will give the correct citation.
-
-As I've mentioned above all of those file formats are [actually supported](https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md) the only problem is figuring out which "key" you can use to include your citation into the document. And there isn't much resource out there to help you with other bibliography file formats. For now I would say the best and easiest option is to stick with `.bib` format.
-
-Let's practice including citation into our Rmarkdown document. This is the paper that we are going to cite _Excuse me, do you have a moment to talk about version control?_. Go to this URL [https://peerj.com/preprints/3159/](https://peerj.com/preprints/3159/), look for "Download" button on the right hand site, from the drop down select "BibTex". This will download citation file. On my computer the file name was `peerj-preprints-3159.bib`.
-
-If you are curious to take a pick at the file content on your local computer, you can open such file with a text editor. Do not attempt to open with any other programs, such ash MS word or citation management tools. Most likely your computer will want to do just that, do not succumb! Mac people can use "TextMate" and windows people can use "Notepad" text editors. But this isn't necessary.
-
-One you have `.bib` file, let's upload it into `rstudio.cloud`. Navigate to your "Files" panel, there you should see "Upload" button. Use that menu to upload your `.bib` file onto `rstudio.cloud`. You should see `.bib` file in your file browser if you are successful.
-If you double click on that file it should open up in a different panel, text editor panel, and you should see the content of that file as shown below.
-
-```{r echo = F, comment = ""}
-text <- readr::read_file("supplementary/peerj-preprints-3159.bib")
-cat(text, sep = "")
-```
-
-I hope every can identify "key" for this citation - `10.7287/peerj.preprints.3159v2`. To me this is very annoying key to use since it is not very memorable and hard to type. Let's edit this file in place and change that key to `Bryan2017`. Remember that key has to be unique per `.bib` file, but they can be any text. Make sure you save your changes (`ctrl^S`) and you can close this file now.
-
-Let's include a reference to this `.bib` file in our Rmarkdown document via yaml header, using `bibliography` key.
-
-```
+```YAML
 ---
-bibliography: "peerj-preprints-3159.bib"
----
-```
-
-Now let's use our article key to cite in the text `[@Bryan2017]` and re-compile our html document.
-
-## Challenge: Bibliographies 2 {.exercise}
-
-> 5 minutes
-
-<details>
-
-  <summary>
-    1. Go to [google scholar](https://scholar.google.com.au/) and search for that same article _Excuse me, do you have a moment to talk about version control?_, find and export `.bib` citation and include it into our Rmarkdown document.
-  </summary>
-  Relatively hard task since I haven't explained how to include multiple `.bib` files into yaml header.
-
-</details>
-
-<details>
-
-  <summary>
-    2. If you are manually curating `.bib` file, how do you know which types and fields are allowed?
-  </summary>
-   This resource can be [useful](#bibtex)
-
-</details>
-
-## More about `.bib` and Rmarkdown
-
-As was mentioned above one can append multiple references into a single `.bib` file or you can provide a list of `.bib` file
-
-```
----
-bibliography: ["peerj-preprints-3159.bib", "another_reference.bib"]
+bibliography: "references.bib"
 ---
 ```
 
-OR
+You can include multiple reference files using the following syntax, alternatively you can concatenate two bib files into one.
 
-```
+```YAML
 ---
-bibliography:
-  - "peerj-preprints-3159.bib"
-  - "another_reference.bib"
+bibliography: ["references1.bib", "references2.bib"]
 ---
 ```
 
-If you want to reference multiple articles in the text each key should be separated by a semicolon (`;`)
+## Inline citation {#inline-cite}
+
+Now we can start using those bib keys that we have learned [just before](#bib-keys), using the following syntax
+
+- `[@key]` for single citation
+- `[@key1; @key2]` multiple citation can be separated by semi-colon
+- `[-@key]` in order to suppress author name, and just display the year
+- `[see @key1 p 12; also this ref @key2]` is alos a valid syntax
 
 
-```
-[@Bryan2017; @bryan2018excuse]
-```
+Let's start by citing the [rmarkdown package](https://cran.r-project.org/web/packages/rmarkdown/index.html) using the following code and press `Knit` button. I am also including a new first level header and a short sentence.
 
-You can include any text inside square brackets
+```{r eval = F}
+# Citation section
 
-```
-[see @Bryan2017 p 12; also this ref @bryan2018excuse]
-```
-
-If you would like to suppress author's name you can use minus sign
-
-
-```
-[-@Bryan2017; -@bryan2018excuse]
+I have been using Rmarkdown package [@R-rmarkdown]. It is pretty cool. I should also go and read [@rmarkdown2018; and @rmarkdown2020] books. 
 ```
 
-You can also enable hyperlinking of the citation to the corresponding entry in the references as follows
+## References section
 
+As you can see references list will be added to the very end of the document. If add a new header called "References" to the bottom of our document that will section our references list out. Let's see what happens when we include first level header at the bottom of the document and press `Knit`, use the following code
+
+```markdown
+# References
 ```
+
+Alternatively we can use the following code to include references anywhere in the document. Let's try puting our references list at the very top, just to that we can.
+
+```markdown
+# References
+
+<div id="refs"></div>
+```
+
+--- funny 
+
+## Citation style
+
+> [list of csl files on zotero](shttps://www.zotero.org/styles)
+
+Most likely you will need to use specific style for your citation. [Citation Style Language (CSL)](https://citationstyles.org/) is the language used to define the style in the `.csl` file. You need to download the `.csl` file for your desired style and link it with Rmarkdown document via YAML header. [Zotero's website](https://www.zotero.org/styles) is the most comprehensive collection of styles, but there are other places to source `.csl` files, for example [this github repository](https://github.com/citation-style-language/styles).
+
+Let's programmatically download [Nature's journal](https://nature.com) citation style from [zotero](shttps://www.zotero.org/styles), link it with our Rmarkdown document and `Knit` using the following code
+
+```{r, eval = F}
+download.file("https://www.zotero.org/styles/nature?source=1", destfile = "nature.csl")
+```
+
+```YAML
+---
+csl: nature.csl
+---
+```
+
+## Linking inline citation with the references list
+
+You can also enable internal linking of the citation to the corresponding entry in the references list using the following YAML key
+
+```YAML
 ---
 link-citations: true
 ---
 ```
 
-## Citing R packages
+## Footnotes
 
-R provides convenient `citation()` function that one can use to cite R packages e.g
-
-```
-citation("ggplot2")
+```{r, eval = F}
+^[Footnote goes here]
 ```
 
-## Challenge: Bibliographies 3 {.exercise}
+##  Citr addin
 
-> 2 minutes
-
-<details>
-
-  <summary>
-    1. Can you get `.bib` citation for `bookdown` package?
-  </summary>
-  You don't get `.bib` text content right away, but if you are careful at reading the message you will understand that you need to do this
-
-   ```{r eval = F}
-   citation("bookdown") %>% print(bibtex = TRUE)
-   ```
-
-</details>
+https://github.com/crsh/citr

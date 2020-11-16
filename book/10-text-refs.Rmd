@@ -146,6 +146,7 @@ We can reuse that reference label anywhere with the document
 
 ## Cross referencing
 
+Let me introduce the syntax for the cross-referencing and then we are going to practice it. 
 
 - `\@ref(intro)`: referencing header section (same results as [linking](#linking))
 
@@ -157,7 +158,7 @@ can add a section header labels with the following syntax
 
 - `\@ref(fig:label)`: provides pointer to the specific figure
 
-- `\@ref(table:label)`: provies pointer to the specific table
+- `\@ref(table:label)`: provides pointer to the specific table
 
 where label is the chunk name
 

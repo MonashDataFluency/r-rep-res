@@ -13,6 +13,7 @@ rmd_files:
   - 08-github2.Rmd
   #- 09-rproj.Rmd
   - 10-text-refs.Rmd
+  - 11-citations.Rmd
 language:
   label:
     fig: "Figure "
