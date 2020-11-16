@@ -2,4 +2,4 @@ dist: focal
 language: R
 pandoc_version: 2.11.1.1
 script:
-    - make html
+    - make publish
