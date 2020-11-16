@@ -1,4 +1,17 @@
-# Part IV: Multipaged websites with rmarkdown and bookdown packages
+# Part IV: Static, multipaged website with rmarkdown and bookdown
+
+Thus far we have been doing one to one mapping, from single Rmarkdown file to a single HTML file,
+from a single Rmarkdow approach is very similar generating multi pages website)
+
+introduce two new, must files
+ index.Rmd
+_site.yml
+don't show navbar at the start, just three pages, index, aboutme and "blog entry"
+explain website build via build tab/ button as oppose knit button (maybe need to confiigure the project?)
+name: my_site and output_dir: website
+check to see if you can do without navbar? maybe not, not a big deal if cant
+reiterate output html_document or html_document2 both will work
+this is the site generating function, site: rmarkdown::default_site or site: bookdown::bookdown_site
 
 # Bookdown
 

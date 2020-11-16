@@ -2,211 +2,26 @@
 
 # Appendix
 
-## Long list of chunk options
+## Resources
 
-```{r echo = F, message = F}
-chunks <- readr::read_tsv("supplementary/chunk_options.tsv") %>%
-		select(-this)
-chunks %>% kable
-```
+- [knitr vs rmarkdown vs bookdown](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+- [RMarkdown for Scientists by Nicholas Tierney](https://rmd4sci.njtierney.com/)
+- [related stackoverflow question](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
+- [Presentation slides on Rmarkdown ecosystem](https://slides.yihui.name/2017-DSM-rmarkdown-Yihui-Xie.html)
+- [R chunks](https://kbroman.org/knitr_knutshell/pages/Rmarkdown.html)
+- [Here is nice cheatsheet](http://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) that has comprehensive cover of all the options you can pass in.
 
-## Citation
+  https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/
+  https://rmarkdown.rstudio.com/lesson-9.html
+  https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
 
-### Yaml header
+- [Section 2.6](https://bookdown.org/yihui/rmarkdown/r-code.html)
+- [Pimp my RMD](https://holtzy.github.io/Pimp-my-rmd/)
 
-You can also include citation into yaml header e.g
+  https://crsh.github.io/papaja_man/r-markdown-components.html#yaml-front-matter
 
-```
-references:
-- id: fenner2012a
-  title: One-click science marketing
-  author:
-  - family: Fenner
-    given: Martin
-  container-title: Nature Materials
-  volume: 11
-  URL: 'http://dx.doi.org/10.1038/nmat3283'
-  DOI: 10.1038/nmat3283
-  issue: 4
-  publisher: Nature Publishing Group
-  page: 261-263
-  type: article-journal
-  issued:
-    year: 2012
-    month: 3
-```
+  https://kbroman.org/knitr_knutshell/
+  http://leisch.userweb.mwn.de/Sweave/
 
-While this is handy for one or two citation, but this isn't practical for a study that has more then a few citations.
-
-### Changing citation style
-
-Apparently if you go [here](https://github.com/citation-style-language/styles) and download individual `.csl` files, specific for your citation style you then should be able to reference that file in yaml header
-
-```
----
-csl: "harvard-anglia-ruskin-university.csl"
----
-```
-
-OR
-
-```
----
-citation-style: "harvard-anglia-ruskin-university.csl"
----
-```
-
-This is explained [here](https://r4ds.had.co.nz/r-markdown.html#yaml-header)
-
-However I wasn't able to change my style. I suspect there are some subtleties between bookdown and rmarkdown specifically `html_docment` and `html_docment2` outputs
-
-[Here](https://stackoverflow.com/questions/48965247/use-csl-file-for-pdf-output-in-bookdown) meant to be the solution by using
-
-```
----
-pandoc_args: [--csl=harvard-anglia-ruskin-university.csl]
----
-```
-
-But that also didn't work for me.
-
-Also note that `biblio-style` ["only applied to LaTeX output. For other output formats, you need to use the csl option in YAML or --csl in pandoc_args:"](https://github.com/rstudio/bookdown/issues/354)
-
-```
----
-biblio-style: apalike
----
-```
-
-### BibTex
-
-This is a good [resource](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes.php) for manual bibtex curation.
-
-## Git and GitHub
-
-## Which files to commit?
-
-This section will be extended in the future release, but I highly recommend reading this article, specifically [section 10: Which files to commit from here](https://peerj.com/preprints/3159/)
-
-##
-
-You can turn any directories (folders) on your computers in to "special" git directory (repository) by running the following command.
-
-```
-git init
-```
-
-This assumes command line workflow. [Other tools](https://www.sourcetreeapp.com/) might have slightly different setup, but either way you need to initialise git tracking as a very first step.
-
-A brief note about README files. It is regarded as a "silent" way of communication, where you can tell all necessary information another person need to know about your project. For a software tool you would put information about how to build that particular tool and dependencies. In our case we will add information how to build final html report. We will do this a bit later in the workshop.
-
-## Difference between Markdown and HTML
-
-### This is markdown
-
-```
-# Learning Markdown
-
-> I'm still learning
-
-[External resource](https://rmarkdown.rstudio.com/)
-
-Here I'll be learning:
-
-- [markdown](#markdown)
-- [Rmarkdown](#rmarkdown)
-- [git and github](#git-and-github)
-
-## Markdown
-
-Here I'll learng _vanilla_ markdown
-
-## Rmarkdown
-
-Whereas here I'll be learning **R**markdown
-
-## Git and GitHub
-
-And this section is scary
-```
-
-### This is simplified HTML
-
-In actual fact there is more html tags required at the top of the document to turn it into fully functioning web-page
-
-```
-<div id="learning-markdown" class="section level1">
-<h1>Learning Markdown</h1>
-<blockquote>
-<p>I’m still learning</p>
-</blockquote>
-<p><a href="https://rmarkdown.rstudio.com/">External resource</a></p>
-<p>Here I’ll be learning:</p>
-<ul>
-<li><a href="#markdown">markdown</a></li>
-<li><a href="#rmarkdown">Rmarkdown</a></li>
-<li><a href="#git-and-github">git and github</a></li>
-</ul>
-<div id="markdown" class="section level2">
-<h2>Markdown</h2>
-<p>Here I’ll be learng <em>vanilla</em> markdown</p>
-</div>
-<div id="rmarkdown" class="section level2">
-<h2>Rmarkdown</h2>
-<p>Whereas here I’ll be learning <strong>R</strong>markdown</p>
-</div>
-<div id="git-and-github" class="section level2">
-<h2>Git and GitHub</h2>
-<p>And this section is scary</p>
-</div>
-</div>
-```
-
-
-### This is simplified LaTeX
-
-Similar to HTML, there is more crafted goes at the top of the LaTeX document in order to turn into fully functioning document.
-
-```
-\begin{document}
-\maketitle
-
-\hypertarget{learning-markdown}{%
-\section{Learning Markdown}\label{learning-markdown}}
-
-\begin{quote}
-I'm still learning
-\end{quote}
-
-\href{https://rmarkdown.rstudio.com/}{External resource}
-
-Here I'll be learning:
-
-\begin{itemize}
-\tightlist
-\item
-  \protect\hyperlink{markdown}{markdown}
-\item
-  \protect\hyperlink{rmarkdown}{Rmarkdown}
-\item
-  \protect\hyperlink{git-and-github}{git and github}
-\end{itemize}
-
-\hypertarget{markdown}{%
-\subsection{Markdown}\label{markdown}}
-
-Here I'll be learng \emph{vanilla} markdown
-
-\hypertarget{rmarkdown}{%
-\subsection{Rmarkdown}\label{rmarkdown}}
-
-Whereas here I'll be learning \textbf{R}markdown
-
-\hypertarget{git-and-github}{%
-\subsection{Git and GitHub}\label{git-and-github}}
-
-And this section is scary
-
-
-\end{document}
-```
+- [section 10: Which files to commit from here](https://peerj.com/preprints/3159/)
