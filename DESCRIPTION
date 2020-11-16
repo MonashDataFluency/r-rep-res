@@ -7,10 +7,9 @@ Authors@R: c(
 Description: Using Rmarkdown for reproducible research
 Imports:
     dplyr,
+    knitr,
     rmarkdown,
     bookdown,
-    knitr,
-    citr,
 Depends: R (>= 4.2.0)
 License: Creative Commons Attribution-NonCommercial 4.0 International License
 Language: en-US
