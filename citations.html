@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Part III: Text referencing, Cross referencing and Citation | Reproducible Research in R</title>
-  <meta name="description" content="Part III: Text referencing, Cross referencing and Citation | Reproducible Research in R" />
+  <title>Section 10 Citations | Reproducible Research in R</title>
+  <meta name="description" content="Section 10 Citations | Reproducible Research in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Part III: Text referencing, Cross referencing and Citation | Reproducible Research in R" />
+  <meta property="og:title" content="Section 10 Citations | Reproducible Research in R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="MonashDataFluency/r-rep-res" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Part III: Text referencing, Cross referencing and Citation | Reproducible Research in R" />
+  <meta name="twitter:title" content="Section 10 Citations | Reproducible Research in R" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="github-two.html"/>
-<link rel="next" href="text-referencing.html"/>
+<link rel="prev" href="text-referencing.html"/>
+
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -276,20 +276,237 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="refs" class="section level1 unnumbered" number="">
-<h1>Part III: Text referencing, Cross referencing and Citation</h1>
-<p>Linking and referencing different components of the document provides clear pointers to the exact part of the document you are referring to, making it much easier to navigate the document. More importantly referencing external sources demonstrates depth of work and gives rightful acknowledgment to all of the previous authors.</p>
+<div id="citations" class="section level1" number="10">
+<h1><span class="header-section-number">Section 10</span> Citations</h1>
+<p>In this section of the book you will learn how to include bibliographies into your document, how to generate citations or source them from external places. We will touch on <a href="https://github.com/ropensci/RefManageR/">RefMangeR</a> and <a href="https://cran.r-project.org/web/packages/bibtex/index.html">bibtex</a> packages to help us with references. In addition we will also learn <a href="https://github.com/crsh/citr">citr</a> package. Finally we will mention external software that can help you manage large number of citations.</p>
+<p>For this section of the book we need to install these additional packages</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="citations.html#cb68-1"></a><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;bibtex&quot;</span>, <span class="st">&quot;RefManageR&quot;</span>))</span></code></pre></div>
+<div id="introductions" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Introductions</h2>
+<p><a href="https://en.wikipedia.org/wiki/Citation">A citation is a reference to a source (from wikipedia)</a>. R provides nice function <code>citation()</code> that helps us generating citation blob for R packages that we have used</p>
+<p>Let’s try generating citation text for <a href="https://github.com/rstudio/rmarkdown">rmarkdown</a> package by using the following command</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="citations.html#cb69-1"></a><span class="kw">citation</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
+<pre><code>
+To cite the &#39;rmarkdown&#39; package in publications, please use:
+
+  JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi
+  and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and
+  Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic
+  Documents for R. R package version 2.5. URL
+  https://rmarkdown.rstudio.com.
+
+  Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). R Markdown:
+  The Definitive Guide. Chapman and Hall/CRC. ISBN 9781138359338. URL
+  https://bookdown.org/yihui/rmarkdown.
+
+  Yihui Xie and Christophe Dervieux and Emily Riederer (2020). R
+  Markdown Cookbook. Chapman and Hall/CRC. ISBN 9780367563837. URL
+  https://bookdown.org/yihui/rmarkdown-cookbook.
+
+To see these entries in BibTeX format, use &#39;print(&lt;citation&gt;,
+bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
+&#39;options(citation.bibtex.max=999)&#39;.</code></pre>
+<p>— great</p>
+</div>
+<div id="bibtex" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> BibTex</h2>
+<div id="introduction-7" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Introduction</h3>
+<p><a href="http://www.bibtex.org/Format/">BibTex</a> is one of many citation formats, <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Specifying_a_Bibliography">this is a more comprehensive list</a> of all possible citation formats. Rmarkdown works best with <a href="http://www.bibtex.org/Format/">BibTex</a> file format and this is the one we are going to cover today. Typical file extention for BibTex is <code>.bib</code></p>
+<p>Let’s try converting our citation into bibtex format using the following code</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="citations.html#cb71-1"></a><span class="co">#toBibTex(citation(&quot;rmarkdown&quot;))</span></span>
+<span id="cb71-2"><a href="citations.html#cb71-2"></a></span>
+<span id="cb71-3"><a href="citations.html#cb71-3"></a><span class="kw">citation</span>(<span class="st">&quot;rmarkdown&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">toBibtex</span>()</span></code></pre></div>
+<pre><code>@Manual{,
+  title = {rmarkdown: Dynamic Documents for R},
+  author = {JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone},
+  year = {2020},
+  note = {R package version 2.5},
+  url = {https://github.com/rstudio/rmarkdown},
+}
+
+@Book{,
+  title = {R Markdown: The Definitive Guide},
+  author = {Yihui Xie and J.J. Allaire and Garrett Grolemund},
+  publisher = {Chapman and Hall/CRC},
+  address = {Boca Raton, Florida},
+  year = {2018},
+  note = {ISBN 9781138359338},
+  url = {https://bookdown.org/yihui/rmarkdown},
+}
+
+@Book{,
+  title = {R Markdown Cookbook},
+  author = {Yihui Xie and Christophe Dervieux and Emily Riederer},
+  publisher = {Chapman and Hall/CRC},
+  address = {Boca Raton, Florida},
+  year = {2020},
+  note = {ISBN 9780367563837},
+  url = {https://bookdown.org/yihui/rmarkdown-cookbook},
+}</code></pre>
+</div>
+<div id="make-refs" class="section level3" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> <code>knitr::write_bib</code></h3>
+<p>We have seen in the previous section how we can generate citation and <code>.bib</code> format. In order for us to start using those citations within our Rmarkdown documents we need them to be saved into a <code>.bib</code> file. For that we are going to use <code>write_bib()</code> function from <a href="https://cran.r-project.org/web/packages/knitr">knitr package</a>.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="citations.html#cb73-1"></a>knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="st">&quot;rmarkdown&quot;</span>, <span class="dt">file =</span> <span class="st">&quot;references.bib&quot;</span>)</span></code></pre></div>
+</div>
+<div id="bib-keys" class="section level3" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> BibTex keys</h3>
+<p>It is a bit of a round trip, for some read <code>citation()</code> function in <a href="citations.html#bibtex">BibTex section above</a> doesn’t make keys for our bibtex entries, whereas <code>knitr::write_bib()</code> function does. Let’s read our bibtex file back in using the following code to see what our keys are. We will learn how to use those key in the <a href="citations.html#inline-cite">Inline citation section below</a></p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="citations.html#cb74-1"></a><span class="kw">library</span>(bibtex)</span>
+<span id="cb74-2"><a href="citations.html#cb74-2"></a></span>
+<span id="cb74-3"><a href="citations.html#cb74-3"></a>refs &lt;-<span class="st"> </span><span class="kw">read.bib</span>(<span class="st">&quot;references.bib&quot;</span>)</span>
+<span id="cb74-4"><a href="citations.html#cb74-4"></a>keys &lt;-<span class="st"> </span><span class="kw">names</span>(refs)</span>
+<span id="cb74-5"><a href="citations.html#cb74-5"></a>keys</span></code></pre></div>
+<pre><code>[1] &quot;R-rmarkdown&quot;   &quot;rmarkdown2018&quot; &quot;rmarkdown2020&quot;</code></pre>
+<p>Let’s open our <code>references.bib</code> file by clicking on it in the “File” pane-tab and compare that bibtex with the one in <a href="citations.html#bibtex">BibTex section above</a>. Can’t you find location of those keys in the bibtex file?</p>
+<pre><code>@Manual{R-rmarkdown,
+  title = {rmarkdown: Dynamic Documents for R},
+  author = {JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone},
+  year = {2020},
+  note = {R package version 2.5},
+  url = {https://github.com/rstudio/rmarkdown},
+}
+
+@Book{rmarkdown2018,
+  title = {R Markdown: The Definitive Guide},
+  author = {Yihui Xie and J.J. Allaire and Garrett Grolemund},
+  publisher = {Chapman and Hall/CRC},
+  address = {Boca Raton, Florida},
+  year = {2018},
+  note = {ISBN 9781138359338},
+  url = {https://bookdown.org/yihui/rmarkdown},
+}
+
+@Book{rmarkdown2020,
+  title = {R Markdown Cookbook},
+  author = {Yihui Xie and Christophe Dervieux and Emily Riederer},
+  publisher = {Chapman and Hall/CRC},
+  address = {Boca Raton, Florida},
+  year = {2020},
+  note = {ISBN 9780367563837},
+  url = {https://bookdown.org/yihui/rmarkdown-cookbook},
+}</code></pre>
+</div>
+</div>
+<div id="where-do-i-get-.bib-file" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Where do I get <code>.bib</code> file?</h2>
+<div id="citation-managment-software" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Citation managment software</h3>
+<p>This a short list of external software that may help you with managing citation. Those four will have an option to export a list of citation as a <code>.bib</code> file. I will leave for you as a home to figure out how to export <code>.bib</code> file from your citation manager of choice.</p>
+<ul>
+<li><a href="https://www.zotero.org/">Zotero</a></li>
+<li><a href="https://paperpile.com">Paperpile</a></li>
+<li><a href="https://www.mendeley.com">Mendeley</a></li>
+<li><a href="https://endnote.com/">EndNote</a></li>
+</ul>
+</div>
+<div id="zoterobib-service" class="section level3" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> ZoteroBib service</h3>
 <blockquote>
-<p>Citations are the scientific currency, please always cite others work</p>
+<p><a href="https://zbib.org/">zbib.org</a></p>
 </blockquote>
+<p>Zotero provides nice free service for getting citation and exporting them as <code>.bib</code> files</p>
+</div>
+<div id="refmanger" class="section level3" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> RefMangeR</h3>
+<p>The <a href="https://cran.r-project.org/web/packages/RefManageR/index.html">RefManageR</a> maybe a useful package to try to source external references</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="citations.html#cb77-1"></a><span class="kw">library</span>(RefManageR)</span>
+<span id="cb77-2"><a href="citations.html#cb77-2"></a></span>
+<span id="cb77-3"><a href="citations.html#cb77-3"></a><span class="co">#keywords &lt;- c(&quot;FastQC&quot;,</span></span>
+<span id="cb77-4"><a href="citations.html#cb77-4"></a><span class="co">#              &quot;BWA-MEM&quot;,</span></span>
+<span id="cb77-5"><a href="citations.html#cb77-5"></a><span class="co">#              &quot;featureCounts&quot;,</span></span>
+<span id="cb77-6"><a href="citations.html#cb77-6"></a><span class="co">#              &quot;RNAsik&quot;)</span></span>
+<span id="cb77-7"><a href="citations.html#cb77-7"></a></span>
+<span id="cb77-8"><a href="citations.html#cb77-8"></a><span class="co">#citations &lt;- lapply(keywords, ReadCrossRef, limit = 1)</span></span>
+<span id="cb77-9"><a href="citations.html#cb77-9"></a></span>
+<span id="cb77-10"><a href="citations.html#cb77-10"></a>titles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;FastQC: A Quality Control Tool for High Throughput Sequence Data&quot;</span>,</span>
+<span id="cb77-11"><a href="citations.html#cb77-11"></a>            <span class="st">&quot;Aligning Sequence Reads, Clone Sequences and Assembly Contigs with BWA-MEM&quot;</span>,</span>
+<span id="cb77-12"><a href="citations.html#cb77-12"></a>            <span class="st">&quot;featureCounts: An Efficient General Purpose Program for Assigning Sequence Reads to Genomic Features&quot;</span>,</span>
+<span id="cb77-13"><a href="citations.html#cb77-13"></a>            <span class="st">&quot;RNAsik: A Pipeline for Complete and Reproducible RNA-Seq Analysis That Runs Anywhere with Speed and Ease&quot;</span>)</span>
+<span id="cb77-14"><a href="citations.html#cb77-14"></a></span>
+<span id="cb77-15"><a href="citations.html#cb77-15"></a>citations &lt;-<span class="st"> </span><span class="kw">lapply</span>(titles, ReadCrossRef, <span class="dt">limit =</span> <span class="dv">1</span>)</span>
+<span id="cb77-16"><a href="citations.html#cb77-16"></a></span>
+<span id="cb77-17"><a href="citations.html#cb77-17"></a>citations</span>
+<span id="cb77-18"><a href="citations.html#cb77-18"></a></span>
+<span id="cb77-19"><a href="citations.html#cb77-19"></a><span class="kw">lapply</span>(citations, WriteBib, <span class="dt">file =</span> <span class="st">&quot;references2.bib&quot;</span>, <span class="dt">append =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="journal-websites" class="section level3" number="10.3.4">
+<h3><span class="header-section-number">10.3.4</span> Journal websites</h3>
+<p>A lot of journal website as well as <a href="https://scholar.google.com/">Google Scholar</a> will have some export citation button. Look for those “export” button and select <code>.bib</code> file format</p>
+</div>
+</div>
+<div id="linking-.bib-file-with-rmarkdown-document" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Linking <code>.bib</code> file with Rmarkdown document</h2>
+<p>Let’s practice linking bibtex file with our Rmarkdown document via YAML header. We are going to use <code>references.bib</code> file that we have generated in the <a href="citations.html#make-refs">section above</a>. Start by including the following key value pair into your YAML header</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb78-1"><a href="citations.html#cb78-1"></a><span class="pp">---</span></span>
+<span id="cb78-2"><a href="citations.html#cb78-2"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;references.bib&quot;</span></span>
+<span id="cb78-3"><a href="citations.html#cb78-3"></a><span class="pp">---</span></span></code></pre></div>
+<p>You can include multiple reference files using the following syntax, alternatively you can concatenate two bib files into one.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb79-1"><a href="citations.html#cb79-1"></a><span class="pp">---</span></span>
+<span id="cb79-2"><a href="citations.html#cb79-2"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;references1.bib&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;references2.bib&quot;</span><span class="kw">]</span></span>
+<span id="cb79-3"><a href="citations.html#cb79-3"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="inline-cite" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Inline citation</h2>
+<p>Now we can start using those bib keys that we have learned <a href="citations.html#bib-keys">just before</a>, using the following syntax</p>
+<ul>
+<li><code>[@key]</code> for single citation</li>
+<li><code>[@key1; @key2]</code> multiple citation can be separated by semi-colon</li>
+<li><code>[-@key]</code> in order to suppress author name, and just display the year</li>
+<li><code>[see @key1 p 12; also this ref @key2]</code> is alos a valid syntax</li>
+</ul>
+<p>Let’s start by citing the <a href="https://cran.r-project.org/web/packages/rmarkdown/index.html">rmarkdown package</a> using the following code and press <code>Knit</code> button. I am also including a new first level header and a short sentence.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="citations.html#cb80-1"></a><span class="co"># Citation section</span></span>
+<span id="cb80-2"><a href="citations.html#cb80-2"></a></span>
+<span id="cb80-3"><a href="citations.html#cb80-3"></a>I have been using Rmarkdown package [<span class="op">@</span>R<span class="op">-</span>rmarkdown]. It is pretty cool. I should also go and read [<span class="op">@</span>rmarkdown2018; and <span class="op">@</span>rmarkdown2020] books. </span></code></pre></div>
+</div>
+<div id="references-section" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> References section</h2>
+<p>As you can see references list will be added to the very end of the document. If add a new header called “References” to the bottom of our document that will section our references list out. Let’s see what happens when we include first level header at the bottom of the document and press <code>Knit</code>, use the following code</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb81-1"><a href="citations.html#cb81-1"></a><span class="fu"># References</span></span></code></pre></div>
+<p>Alternatively we can use the following code to include references anywhere in the document. Let’s try puting our references list at the very top, just to that we can.</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb82-1"><a href="citations.html#cb82-1"></a><span class="fu"># References</span></span>
+<span id="cb82-2"><a href="citations.html#cb82-2"></a></span>
+<span id="cb82-3"><a href="citations.html#cb82-3"></a><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;refs&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span></code></pre></div>
+<p>— funny</p>
+</div>
+<div id="citation-style" class="section level2" number="10.7">
+<h2><span class="header-section-number">10.7</span> Citation style</h2>
+<blockquote>
+<p><a href="shttps://www.zotero.org/styles">list of csl files on zotero</a></p>
+</blockquote>
+<p>Most likely you will need to use specific style for your citation. <a href="https://citationstyles.org/">Citation Style Language (CSL)</a> is the language used to define the style in the <code>.csl</code> file. You need to download the <code>.csl</code> file for your desired style and link it with Rmarkdown document via YAML header. <a href="https://www.zotero.org/styles">Zotero’s website</a> is the most comprehensive collection of styles, but there are other places to source <code>.csl</code> files, for example <a href="https://github.com/citation-style-language/styles">this github repository</a>.</p>
+<p>Let’s programmatically download <a href="https://nature.com">Nature’s journal</a> citation style from <a href="shttps://www.zotero.org/styles">zotero</a>, link it with our Rmarkdown document and <code>Knit</code> using the following code</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="citations.html#cb83-1"></a><span class="kw">download.file</span>(<span class="st">&quot;https://www.zotero.org/styles/nature?source=1&quot;</span>, <span class="dt">destfile =</span> <span class="st">&quot;nature.csl&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb84-1"><a href="citations.html#cb84-1"></a><span class="pp">---</span></span>
+<span id="cb84-2"><a href="citations.html#cb84-2"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> nature.csl</span></span>
+<span id="cb84-3"><a href="citations.html#cb84-3"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="linking-inline-citation-with-the-references-list" class="section level2" number="10.8">
+<h2><span class="header-section-number">10.8</span> Linking inline citation with the references list</h2>
+<p>You can also enable internal linking of the citation to the corresponding entry in the references list using the following YAML key</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb85-1"><a href="citations.html#cb85-1"></a><span class="pp">---</span></span>
+<span id="cb85-2"><a href="citations.html#cb85-2"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb85-3"><a href="citations.html#cb85-3"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div id="footnotes" class="section level2" number="10.9">
+<h2><span class="header-section-number">10.9</span> Footnotes</h2>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="citations.html#cb86-1"></a><span class="op">^</span>[Footnote goes here]</span></code></pre></div>
+</div>
+<div id="citr-addin" class="section level2" number="10.10">
+<h2><span class="header-section-number">10.10</span> Citr addin</h2>
+<p><a href="https://github.com/crsh/citr" class="uri">https://github.com/crsh/citr</a></p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="github-two.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="text-referencing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="text-referencing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -321,7 +538,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/10-text-refs.Rmd",
+"link": "https://github.com/MonashDataFluency/r-rep-res/edit/master/book/11-citations.Rmd",
 "text": "Edit"
 },
 "history": {

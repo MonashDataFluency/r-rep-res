@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="refs.html"/>
-
+<link rel="next" href="citations.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -235,6 +235,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4" data-path="text-referencing.html"><a href="text-referencing.html#using-labels"><i class="fa fa-check"></i><b>9.4</b> Using labels</a></li>
 <li class="chapter" data-level="9.5" data-path="text-referencing.html"><a href="text-referencing.html#cross-referencing"><i class="fa fa-check"></i><b>9.5</b> Cross referencing</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>10</b> Citations</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="citations.html"><a href="citations.html#introductions"><i class="fa fa-check"></i><b>10.1</b> Introductions</a></li>
+<li class="chapter" data-level="10.2" data-path="citations.html"><a href="citations.html#bibtex"><i class="fa fa-check"></i><b>10.2</b> BibTex</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="citations.html"><a href="citations.html#introduction-7"><i class="fa fa-check"></i><b>10.2.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2.2" data-path="citations.html"><a href="citations.html#make-refs"><i class="fa fa-check"></i><b>10.2.2</b> <code>knitr::write_bib</code></a></li>
+<li class="chapter" data-level="10.2.3" data-path="citations.html"><a href="citations.html#bib-keys"><i class="fa fa-check"></i><b>10.2.3</b> BibTex keys</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="citations.html"><a href="citations.html#where-do-i-get-.bib-file"><i class="fa fa-check"></i><b>10.3</b> Where do I get <code>.bib</code> file?</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="citations.html"><a href="citations.html#citation-managment-software"><i class="fa fa-check"></i><b>10.3.1</b> Citation managment software</a></li>
+<li class="chapter" data-level="10.3.2" data-path="citations.html"><a href="citations.html#zoterobib-service"><i class="fa fa-check"></i><b>10.3.2</b> ZoteroBib service</a></li>
+<li class="chapter" data-level="10.3.3" data-path="citations.html"><a href="citations.html#refmanger"><i class="fa fa-check"></i><b>10.3.3</b> RefMangeR</a></li>
+<li class="chapter" data-level="10.3.4" data-path="citations.html"><a href="citations.html#journal-websites"><i class="fa fa-check"></i><b>10.3.4</b> Journal websites</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="citations.html"><a href="citations.html#linking-.bib-file-with-rmarkdown-document"><i class="fa fa-check"></i><b>10.4</b> Linking <code>.bib</code> file with Rmarkdown document</a></li>
+<li class="chapter" data-level="10.5" data-path="citations.html"><a href="citations.html#inline-cite"><i class="fa fa-check"></i><b>10.5</b> Inline citation</a></li>
+<li class="chapter" data-level="10.6" data-path="citations.html"><a href="citations.html#references-section"><i class="fa fa-check"></i><b>10.6</b> References section</a></li>
+<li class="chapter" data-level="10.7" data-path="citations.html"><a href="citations.html#citation-style"><i class="fa fa-check"></i><b>10.7</b> Citation style</a></li>
+<li class="chapter" data-level="10.8" data-path="citations.html"><a href="citations.html#linking-inline-citation-with-the-references-list"><i class="fa fa-check"></i><b>10.8</b> Linking inline citation with the references list</a></li>
+<li class="chapter" data-level="10.9" data-path="citations.html"><a href="citations.html#footnotes"><i class="fa fa-check"></i><b>10.9</b> Footnotes</a></li>
+<li class="chapter" data-level="10.10" data-path="citations.html"><a href="citations.html#citr-addin"><i class="fa fa-check"></i><b>10.10</b> Citr addin</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -369,6 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="cross-referencing" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> Cross referencing</h2>
+<p>Let me introduce the syntax for the cross-referencing and then we are going to practice it.</p>
 <ul>
 <li><code>\@ref(intro)</code>: referencing header section (same results as <a href="text-referencing.html#linking">linking</a>)</li>
 </ul>
@@ -376,7 +401,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb67"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb67-1"><a href="text-referencing.html#cb67-1"></a><span class="fu">## Rather long header name {#long-header}</span></span></code></pre></div>
 <ul>
 <li><p><code>\@ref(fig:label)</code>: provides pointer to the specific figure</p></li>
-<li><p><code>\@ref(table:label)</code>: provies pointer to the specific table</p></li>
+<li><p><code>\@ref(table:label)</code>: provides pointer to the specific table</p></li>
 </ul>
 <p>where label is the chunk name</p>
 
@@ -387,8 +412,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="refs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="refs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="citations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
