@@ -313,7 +313,7 @@ bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
 <div id="introduction-7" class="section level3" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Introduction</h3>
 <p><a href="http://www.bibtex.org/Format/">BibTex</a> is one of many citation formats, <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#Specifying_a_Bibliography">this is a more comprehensive list</a> of all possible citation formats. Rmarkdown works best with <a href="http://www.bibtex.org/Format/">BibTex</a> file format and this is the one we are going to cover today. Typical file extention for BibTex is <code>.bib</code></p>
-<p>Let’s try converting our citation into bibtex format using the following code</p>
+<p>Let’s try converting our citation text into bibtex format using the following code</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="citations.html#cb71-1"></a><span class="co">#toBibTex(citation(&quot;rmarkdown&quot;))</span></span>
 <span id="cb71-2"><a href="citations.html#cb71-2"></a></span>
 <span id="cb71-3"><a href="citations.html#cb71-3"></a><span class="kw">citation</span>(<span class="st">&quot;rmarkdown&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">toBibtex</span>()</span></code></pre></div>
@@ -347,12 +347,12 @@ bibtex=TRUE)&#39;, &#39;toBibtex(.)&#39;, or set
 </div>
 <div id="make-refs" class="section level3" number="10.2.2">
 <h3><span class="header-section-number">10.2.2</span> <code>knitr::write_bib</code></h3>
-<p>We have seen in the previous section how we can generate citation and <code>.bib</code> format. In order for us to start using those citations within our Rmarkdown documents we need them to be saved into a <code>.bib</code> file. For that we are going to use <code>write_bib()</code> function from <a href="https://cran.r-project.org/web/packages/knitr">knitr package</a>.</p>
+<p>It’s great to be able to get a BibTex text and we can manually copy and paste it into a file, but instead we can use <code>write_bib()</code> function from <a href="https://cran.r-project.org/web/packages/knitr">knitr package</a> package to do that. Let’s run the following code in order to generate <code>references.bib</code> file</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="citations.html#cb73-1"></a>knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="st">&quot;rmarkdown&quot;</span>, <span class="dt">file =</span> <span class="st">&quot;references.bib&quot;</span>)</span></code></pre></div>
 </div>
 <div id="bib-keys" class="section level3" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> BibTex keys</h3>
-<p>It is a bit of a round trip, for some read <code>citation()</code> function in <a href="citations.html#bibtex">BibTex section above</a> doesn’t make keys for our bibtex entries, whereas <code>knitr::write_bib()</code> function does. Let’s read our bibtex file back in using the following code to see what our keys are. We will learn how to use those key in the <a href="citations.html#inline-cite">Inline citation section below</a></p>
+<p>It is a bit of a round trip, for some reason <code>citation()</code> function in <a href="citations.html#bibtex">BibTex section above</a> doesn’t make keys for our bibtex entries, whereas <code>knitr::write_bib()</code> function does. Let’s read our bibtex file back in using the following code to see what our keys are. We will learn how to use those key in the <a href="citations.html#inline-cite">Inline citation section below</a></p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="citations.html#cb74-1"></a><span class="kw">library</span>(bibtex)</span>
 <span id="cb74-2"><a href="citations.html#cb74-2"></a></span>
 <span id="cb74-3"><a href="citations.html#cb74-3"></a>refs &lt;-<span class="st"> </span><span class="kw">read.bib</span>(<span class="st">&quot;references.bib&quot;</span>)</span>
