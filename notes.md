@@ -114,3 +114,37 @@ https://github.com/ropensci/git2r/issues/284
 https://github.com/OHI-Science/ohicore/issues/104
 
 https://stackoverflow.com/questions/32699891/rstudio-push-rpostback-askpass-error
+
+## Figure options via yaml
+
+> This sounds interesting
+
+ok, I've tested out and fig_height and width via yaml do the same thing as when passed through chunk options. I guess yaml allows global defition, although one can set chunk options globally too..
+
+also need to cover `out.width = "70%"`
+
+pretty good resource about image resizing https://sebastiansauer.github.io/figure_sizing_knitr/
+
+## tables Rmarkdown
+
+can't really describe at this stage where this is come from. it appears that it has links with pagedown and paged.js library
+
+- `paged`
+
+max.print	The number of rows to print.
+rows.print	The number of rows to display.
+cols.print	The number of columns to display.
+cols.min.print	The minimum number of columns to display.
+pages.print	The number of pages to display under page navigation.
+paged.print	When set to FALSE turns off paged tables.
+rownames.print	When set to FALSE turns off row names.
+
+##
+
+Read this https://harzing.com/blog/2019/05/two-new-kids-on-the-block-crossref-and-dimensions
+
+https://github.com/ropensci/bibtex
+
+https://ropensci.org/technotes/2020/05/07/rmd-citations/#fnref:1
+
+https://zbib.org/

@@ -9,11 +9,11 @@ Description: Using Rmarkdown for reproducible research
 Imports:
     readr,
     dplyr,
-    bibtext,
     knitr,
     rmarkdown,
     bookdown,
     tinytex,
+    bibtex,
 Depends: R (>= 4.0.3)
 License: Creative Commons Attribution-NonCommercial 4.0 International License
 Language: en-US
