@@ -75,7 +75,7 @@ This a short list of external software that may help you with managing citation.
 
 > [zbib.org](https://zbib.org/)
 
-Zotero provides nice free service for getting citation and exporting them as `.bib` files 
+Zotero provides nice free service for getting citation and exporting them as `.bib` files
 
 ### RefMangeR
 
@@ -140,7 +140,7 @@ Let's start by citing the [rmarkdown package](https://cran.r-project.org/web/pac
 ```{r eval = F}
 # Citation section
 
-I have been using Rmarkdown package [@R-rmarkdown]. It is pretty cool. I should also go and read [@rmarkdown2018; and @rmarkdown2020] books. 
+I have been using Rmarkdown package [@R-rmarkdown]. It is pretty cool. I should also go and read [@rmarkdown2018; and @rmarkdown2020] books.
 ```
 
 ## References section
@@ -159,11 +159,11 @@ Alternatively we can use the following code to include references anywhere in th
 <div id="refs"></div>
 ```
 
---- funny 
+--- funny
 
 ## Citation style
 
-> [list of csl files on zotero](shttps://www.zotero.org/styles)
+> [list of csl files on zotero](https://www.zotero.org/styles)
 
 Most likely you will need to use specific style for your citation. [Citation Style Language (CSL)](https://citationstyles.org/) is the language used to define the style in the `.csl` file. You need to download the `.csl` file for your desired style and link it with Rmarkdown document via YAML header. [Zotero's website](https://www.zotero.org/styles) is the most comprehensive collection of styles, but there are other places to source `.csl` files, for example [this github repository](https://github.com/citation-style-language/styles).
 

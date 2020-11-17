@@ -6,6 +6,7 @@ Authors@R: c(
     person("Paul", "Harrison", email = "paul.harrison@monash.edu ", role = "aut"))
 Description: Using Rmarkdown for reproducible research
 Imports:
+    readr,
     dplyr,
     knitr,
     rmarkdown,
