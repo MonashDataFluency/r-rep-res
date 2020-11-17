@@ -1,5 +1,8 @@
 dist: focal
-language: R
+language: r
 pandoc_version: 2.11.1.1
+apt_packages:
+  - libxml2-dev
+  - texlive-xetex
 script:
     - make publish

@@ -3,15 +3,18 @@ Title: Reproducible Research in R
 Version: 0.2
 Authors@R: c(
     person("Kirill", "Tsyganov", email = "kirill.tsyganov@monash.edu", role = "cre"),
+    person("Adele", "Barugahare", email = "Adele.Barugahare@monash.edu", role = "aut"),
     person("Paul", "Harrison", email = "paul.harrison@monash.edu ", role = "aut"))
 Description: Using Rmarkdown for reproducible research
 Imports:
     readr,
     dplyr,
+    bibtext,
     knitr,
     rmarkdown,
     bookdown,
-Depends: R (>= 4.2.0)
+    tinytex,
+Depends: R (>= 4.0.3)
 License: Creative Commons Attribution-NonCommercial 4.0 International License
 Language: en-US
 URL: https://github.com/MonashDataFluency/r-rep-res
