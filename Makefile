@@ -24,8 +24,12 @@ pdf:
 	cd book; \
 	Rscript -e "bookdown::render_book('.', 'bookdown::pdf_book')"
 
+# add git worktree
+worktree:
+	./_helper.bash worktree
+
 deploy:
-	./_deploy.bash
+	./_helper.bash deploy
 
 clean:
 	rm -rf _book/* \
