@@ -5,5 +5,5 @@ apt_packages:
   - libxml2-dev
   - texlive-xetex
 script:
-    - make worktree
-    - make publish
+    - make html
+    - make pdf
